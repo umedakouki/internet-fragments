@@ -1,0 +1,11 @@
+{
+  "collections": [
+    {
+      "date": "2026-06-13",
+      "title": "街角の異体字標本",
+      "itemCount": 15,
+      "path": "data/collections/2026-06-13.json",
+      "diaryPath": "diary/2026-06-13.md"
+    }
+  ]
+}

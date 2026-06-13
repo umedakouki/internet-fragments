@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="インターネットの片隅に散らばる、まだ名前のない収集ジャンルを毎日ひとつずつ保存する標本室。">
+  <title>余白採集室 | Internet Fragments</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23171813'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='40' fill='%23ece9df'%3E%E4%BD%99%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="余白採集室 ホーム">
+      <span class="brand-mark">余</span>
+      <span>余白採集室</span>
+    </a>
+    <nav aria-label="主要ナビゲーション">
+      <a href="#collection">標本</a>
+      <a href="#field-note">採集記</a>
+      <a href="#policy">方針</a>
+    </nav>
+    <span class="status"><i></i> DAILY SURVEY</span>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div id="hero-index" class="hero-index" aria-hidden="true">001</div>
+      <div class="hero-copy">
+        <p class="eyebrow">AN ARCHIVE OF UNNAMED GENRES</p>
+        <h1>まだ名前のないものを、<br><em>集めてから考える。</em></h1>
+        <p class="lead">インターネットの片隅に大量に散らばり、ひとつでは見過ごされる断片。毎日ひとつの仮説を立て、10～50件を同じ棚に置く。</p>
+      </div>
+      <div class="hero-aside">
+        <div class="date-block">
+          <span>CURRENT SURVEY</span>
+          <strong id="hero-date">----</strong>
+        </div>
+        <p>収集は分類の後ではなく、分類を発見するために行う。</p>
+      </div>
+    </section>
+
+    <section class="collection-intro" id="collection">
+      <div>
+        <p id="collection-number" class="section-number">COLLECTION ---</p>
+        <h2 id="collection-title">読み込み中</h2>
+      </div>
+      <div class="collection-description">
+        <p id="collection-subtitle" class="subtitle"></p>
+        <p id="collection-description"></p>
+      </div>
+      <div class="collection-count">
+        <strong id="item-count">--</strong>
+        <span>SPECIMENS</span>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="コレクションの絞り込み">
+      <div class="collection-picker">
+        <label for="collection-select">ARCHIVE</label>
+        <select id="collection-select" aria-label="表示するコレクション"></select>
+      </div>
+      <div id="filters" class="filters"></div>
+      <p>標本を選ぶと採集メモと権利情報を表示します。</p>
+    </section>
+
+    <section id="gallery" class="gallery" aria-live="polite"></section>
+
+    <section class="field-note" id="field-note">
+      <div class="note-heading">
+        <p id="field-note-date" class="section-number">FIELD NOTE / ----</p>
+        <h2 id="field-note-title">採集の方法と、<br>今日の仮説。</h2>
+      </div>
+      <div class="note-body">
+        <p id="field-note-description"></p>
+        <p id="field-note-method"></p>
+        <a id="diary-link" class="text-link" href="diary/2026-06-13.md">採集日記を読む <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="policy" id="policy">
+      <p class="section-number">COLLECTING POLICY</p>
+      <div class="policy-grid">
+        <article><span>01</span><h3>漂流する</h3><p>検索語を決めすぎず、隣接する資料へ横滑りする。</p></article>
+        <article><span>02</span><h3>並べる</h3><p>10～50件を同じ棚に置き、差異と反復を見る。</p></article>
+        <article><span>03</span><h3>出典を残す</h3><p>原典、作者、権利条件を標本と切り離さない。</p></article>
+        <article><span>04</span><h3>棚を作り直す</h3><p>ジャンルは仮説。凍結、結合、分離をためらわない。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand"><span class="brand-mark">余</span><span>余白採集室</span></div>
+    <p>Collected from the open web, with sources attached.</p>
+    <p>© 2026 Curatorial notes / Images retain their original licenses.</p>
+  </footer>
+
+  <dialog id="specimen-dialog" class="specimen-dialog">
+    <button class="dialog-close" type="button" aria-label="閉じる">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
