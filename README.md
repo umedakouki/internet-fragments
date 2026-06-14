@@ -25,6 +25,7 @@ python -m http.server 8000
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-genre.ps1 -All
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-site.ps1 -Genre street-letterforms
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-pages.ps1 -Genre street-letterforms
 ```
 
 ## 公開先

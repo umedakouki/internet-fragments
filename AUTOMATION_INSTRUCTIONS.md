@@ -73,6 +73,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/run-utf8.ps1 -Pa
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-genre.ps1 -All
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-genre.ps1 -Genre genre-id -CheckLinks
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-site.ps1 -Genre genre-id
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-pages.ps1 -Genre genre-id
 ```
 
 機械検証では、ジャンルID・状態・タグ・関連先・転送先・履歴順・日記・代表資料・件数・主所属・全棚横断のID／原典重複・ローカル資産・媒体・権利情報を確認する。
