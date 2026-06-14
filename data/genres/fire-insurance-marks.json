@@ -14,7 +14,8 @@
   ],
   "relatedGenres": [
     "street-letterforms",
-    "dated-rainwater-castings"
+    "dated-rainwater-castings",
+    "european-historic-signs"
   ],
   "mapPosition": {
     "x": 50,
@@ -28,6 +29,12 @@
       "date": "2026-06-14",
       "type": "created",
       "summary": "Missouri History Museum所蔵の各国火災保険標章20件で棚を開始。",
+      "diaryPath": "diary/2026-06-14.md"
+    },
+    {
+      "date": "2026-06-14",
+      "type": "related",
+      "summary": "文字景観の分割に合わせ、欧州の古書体看板との関連を追加。",
       "diaryPath": "diary/2026-06-14.md"
     }
   ],

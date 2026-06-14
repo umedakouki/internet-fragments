@@ -1,86 +1,116 @@
 {
-    "genres":  [
-                   {
-                       "id":  "street-letterforms",
-                       "title":  "街角の異体字標本",
-                       "subtitle":  "現代の看板に生き残る旧字・廃字・古書体",
-                       "itemCount":  20,
-                       "path":  "data/genres/street-letterforms.json",
-                       "status":  "published",
-                       "tags":  [
-                                    "文字景観",
-                                    "街路",
-                                    "看板",
-                                    "タイポグラフィ",
-                                    "建築"
-                                ],
-                       "relatedGenres":  [
-                                             "dated-rainwater-castings",
-                                             "fire-insurance-marks"
-                                         ],
-                       "mapPosition":  {
-                                           "x":  31,
-                                           "y":  45
-                                       },
-                       "representativeAsset":  "assets/collections/2026-06-13/147647103.jpeg",
-                       "createdAt":  "2026-06-13",
-                       "updatedAt":  "2026-06-14"
-                   },
-                   {
-                       "id":  "dated-rainwater-castings",
-                       "title":  "雨樋に刻まれた建築年",
-                       "subtitle":  "雨水頭・ホッパー・縦樋に残る日付鋳物",
-                       "itemCount":  26,
-                       "path":  "data/genres/dated-rainwater-castings.json",
-                       "status":  "published",
-                       "tags":  [
-                                    "建築部材",
-                                    "年号",
-                                    "鋳物",
-                                    "外壁",
-                                    "文字景観"
-                                ],
-                       "relatedGenres":  [
-                                             "street-letterforms",
-                                             "fire-insurance-marks"
-                                         ],
-                       "mapPosition":  {
-                                           "x":  69,
-                                           "y":  55
-                                       },
-                       "representativeAsset":  "assets/collections/2026-06-14/149081475.jpg",
-                       "createdAt":  "2026-06-14",
-                       "updatedAt":  "2026-06-14"
-                   },
-                   {
-                       "id":  "fire-insurance-marks",
-                       "title":  "壁に残る火災保険標章",
-                       "subtitle":  "会社の紋章と文字を建物へ留めた小さな金属板",
-                       "itemCount":  20,
-                       "path":  "data/genres/fire-insurance-marks.json",
-                       "status":  "published",
-                       "tags":  [
-                                    "保険標章",
-                                    "建築部材",
-                                    "企業紋章",
-                                    "文字景観",
-                                    "金属工芸"
-                                ],
-                       "relatedGenres":  [
-                                             "street-letterforms",
-                                             "dated-rainwater-castings"
-                                         ],
-                       "mapPosition":  {
-                                           "x":  50,
-                                           "y":  22
-                                       },
-                       "representativeAsset":  "assets/collections/fire-insurance-marks/61685380.jpg",
-                       "createdAt":  "2026-06-14",
-                       "updatedAt":  "2026-06-14"
-                   }
-               ],
-    "legacyCollections":  {
-                              "2026-06-13":  "street-letterforms",
-                              "2026-06-14":  "dated-rainwater-castings"
-                          }
+  "genres": [
+    {
+      "id": "street-letterforms",
+      "title": "街角に残る仮名と旧字",
+      "subtitle": "変体仮名・旧字体・踊り字が現役の表示に残る例",
+      "itemCount": 7,
+      "path": "data/genres/street-letterforms.json",
+      "status": "published",
+      "tags": [
+        "文字景観",
+        "東アジア",
+        "看板",
+        "変体仮名",
+        "旧字"
+      ],
+      "relatedGenres": [
+        "european-historic-signs",
+        "fire-insurance-marks",
+        "dated-rainwater-castings"
+      ],
+      "mapPosition": {
+        "x": 24,
+        "y": 48
+      },
+      "representativeAsset": "assets/collections/2026-06-13/147647103.jpeg",
+      "createdAt": "2026-06-13",
+      "updatedAt": "2026-06-14"
+    },
+    {
+      "id": "european-historic-signs",
+      "title": "欧州の古書体看板",
+      "subtitle": "フラクトゥール、ブラックレターと街路の歴史資料",
+      "itemCount": 13,
+      "path": "data/genres/european-historic-signs.json",
+      "status": "published",
+      "tags": [
+        "文字景観",
+        "欧州",
+        "看板",
+        "フラクトゥール",
+        "ブラックレター"
+      ],
+      "relatedGenres": [
+        "street-letterforms",
+        "fire-insurance-marks",
+        "dated-rainwater-castings"
+      ],
+      "mapPosition": {
+        "x": 42,
+        "y": 43
+      },
+      "representativeAsset": "assets/collections/2026-06-13/133787833.jpeg",
+      "createdAt": "2026-06-14",
+      "updatedAt": "2026-06-14"
+    },
+    {
+      "id": "dated-rainwater-castings",
+      "title": "雨樋に刻まれた建築年",
+      "subtitle": "雨水頭・ホッパー・縦樋に残る日付鋳物",
+      "itemCount": 26,
+      "path": "data/genres/dated-rainwater-castings.json",
+      "status": "published",
+      "tags": [
+        "建築部材",
+        "年号",
+        "鋳物",
+        "外壁",
+        "文字景観"
+      ],
+      "relatedGenres": [
+        "street-letterforms",
+        "fire-insurance-marks",
+        "european-historic-signs"
+      ],
+      "mapPosition": {
+        "x": 69,
+        "y": 55
+      },
+      "representativeAsset": "assets/collections/2026-06-14/149081475.jpg",
+      "createdAt": "2026-06-14",
+      "updatedAt": "2026-06-14"
+    },
+    {
+      "id": "fire-insurance-marks",
+      "title": "壁に残る火災保険標章",
+      "subtitle": "会社の紋章と文字を建物へ留めた小さな金属板",
+      "itemCount": 20,
+      "path": "data/genres/fire-insurance-marks.json",
+      "status": "published",
+      "tags": [
+        "保険標章",
+        "建築部材",
+        "企業紋章",
+        "文字景観",
+        "金属工芸"
+      ],
+      "relatedGenres": [
+        "street-letterforms",
+        "dated-rainwater-castings",
+        "european-historic-signs"
+      ],
+      "mapPosition": {
+        "x": 50,
+        "y": 22
+      },
+      "representativeAsset": "assets/collections/fire-insurance-marks/61685380.jpg",
+      "createdAt": "2026-06-14",
+      "updatedAt": "2026-06-14"
+    }
+  ],
+  "legacyCollections": {
+    "2026-06-13": "street-letterforms",
+    "2026-06-14": "dated-rainwater-castings"
+  }
 }

@@ -14,7 +14,8 @@
              ],
     "relatedGenres":  [
                           "street-letterforms",
-                          "fire-insurance-marks"
+                          "fire-insurance-marks",
+                          "european-historic-signs"
                       ],
     "mapPosition":  {
                         "x":  69,
@@ -40,6 +41,12 @@
                         "date":  "2026-06-14",
                         "type":  "migrated",
                         "summary":  "日付棚から安定IDを持つジャンル棚へ移行し、タグと街角文字棚との関係を追加。",
+                        "diaryPath":  "diary/2026-06-14.md"
+                    },
+                    {
+                        "date":  "2026-06-14",
+                        "type":  "related",
+                        "summary":  "文字景観の分割に合わせ、欧州の古書体看板との関連を追加。",
                         "diaryPath":  "diary/2026-06-14.md"
                     }
                 ],
