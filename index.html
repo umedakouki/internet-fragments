@@ -15,44 +15,43 @@
       <span class="brand-mark">余</span><span>余白採集室</span>
     </a>
     <nav aria-label="主要ナビゲーション">
-      <a href="#explore">探索する</a>
-      <a href="#about">この場所について</a>
+      <a href="#explore">ジャンルを探す</a>
+      <a href="#about">このサイトについて</a>
     </nav>
-    <span class="status"><i></i> OPEN ARCHIVE</span>
+    <span class="status"><i></i> 3 GENRES / 61 SPECIMENS</span>
   </header>
 
   <main id="top">
-    <section class="site-intro" aria-labelledby="site-title">
-      <p class="eyebrow">AN ARCHIVE OF INTERNET FRAGMENTS</p>
-      <div class="site-intro-grid">
-        <div>
-          <h1 id="site-title">余白採集室</h1>
-          <p class="intro-catch">名前のつく前のものを、<br>インターネットから拾う。</p>
-        </div>
-        <div class="site-intro-copy">
-          <p>写真、文章、音、映像、ウェブページ。媒体を問わず、まだ一般的な収集ジャンルになっていない断片を、出典と権利情報とともに集めています。</p>
-          <p>地図から棚を選ぶか、偶然の標本から関係をたどってください。</p>
-          <div class="intro-actions">
-            <button id="start-exploration" class="primary-action" type="button">探索を始める</button>
-            <a class="text-action" href="#explore" data-list-start>一覧から選ぶ</a>
-          </div>
-        </div>
+    <section class="site-overview" aria-labelledby="site-title">
+      <div>
+        <p class="eyebrow">AN ARCHIVE OF INTERNET FRAGMENTS</p>
+        <h1 id="site-title">余白採集室</h1>
       </div>
+      <p class="overview-copy"><strong>まだ名前のない集まりを、インターネットから拾う。</strong><span>写真、文章、音、映像、ウェブページを、出典と権利情報付きで公開する小さなアーカイブです。</span></p>
+      <dl class="overview-facts" aria-label="アーカイブの規模">
+        <div><dt id="overview-genre-count">3</dt><dd>ジャンル</dd></div>
+        <div><dt id="overview-item-count">61</dt><dd>標本</dd></div>
+        <div><dt>随時</dt><dd>更新</dd></div>
+      </dl>
     </section>
 
     <section id="explore" class="explorer" aria-labelledby="explorer-title">
       <div class="explorer-heading">
-        <div>
-          <p class="eyebrow">EXPLORE</p>
-          <h2 id="explorer-title">気になる気配を選ぶ</h2>
+        <div class="zone-title">
+          <span>1</span>
+          <div>
+            <p class="eyebrow">CHOOSE A GENRE</p>
+            <h2 id="explorer-title">ジャンルを選ぶ</h2>
+          </div>
         </div>
+        <p class="explorer-guide">画像のまとまりを選ぶと、右側に標本が開きます。</p>
         <div class="explorer-tools">
           <div class="view-switch" role="group" aria-label="ジャンルの表示方法">
             <button type="button" data-view="map" aria-pressed="true">地図</button>
             <button type="button" data-view="list" aria-pressed="false">一覧</button>
           </div>
           <details id="tag-filter" class="tag-filter">
-            <summary>タグで絞る</summary>
+            <summary>タグ</summary>
             <div class="tag-filter-body"></div>
           </details>
         </div>
@@ -73,10 +72,9 @@
 
         <aside id="exploration-panel" class="exploration-panel" aria-live="polite">
           <div class="panel-empty">
-            <p class="section-number">START HERE</p>
-            <h2>ひとつ選ぶと、探索が始まります。</h2>
-            <p>地図の気配や一覧の棚を選ぶと、ここに標本が現れます。</p>
-            <button class="primary-action" type="button" data-random-entry>偶然の標本を見る</button>
+            <div class="panel-zone-title"><span>2</span><div><p class="section-number">EXPLORE SPECIMENS</p><h2>標本を探索する</h2></div></div>
+            <p>左のジャンルを選ぶと、標本と次の行き先がここに現れます。</p>
+            <button class="primary-action" type="button" data-random-entry>おまかせで1点見る</button>
           </div>
         </aside>
       </div>
@@ -84,20 +82,20 @@
 
     <section id="about" class="about-section" aria-labelledby="about-title">
       <div>
-        <p class="eyebrow">ABOUT THIS ARCHIVE</p>
-        <h2 id="about-title">この場所について</h2>
+        <p class="eyebrow">ABOUT</p>
+        <h2 id="about-title">このサイトについて</h2>
       </div>
       <div class="about-grid">
         <article>
-          <h3>採集方法</h3>
-          <p>標本は日付ではなく、似方や関係で育つジャンルへ置きます。各標本はひとつの主ジャンルに属し、複数のタグから別の棚へつながります。</p>
+          <h3>何を集めている？</h3>
+          <p>ネット上で見つけた、少し変わった共通点を持つ写真や文章などです。雨樋の年号、街角の古い字形のように、並べると新しい見方が生まれるものを集めています。</p>
         </article>
         <article>
-          <h3>出典と権利</h3>
-          <p>各標本に原典と権利条件を付けます。再配布できない資料は複製せず、短い説明やメタデータと原典リンクだけを記録します。</p>
+          <h3>安心して見られる？</h3>
+          <p>すべての標本に元ページと権利情報を付けています。転載できないものはコピーせず、紹介文と元ページへのリンクだけを掲載します。</p>
         </article>
         <article>
-          <h3>最近の更新</h3>
+          <h3>新しい更新</h3>
           <ol id="recent-updates" class="recent-updates"><li>読み込み中</li></ol>
         </article>
       </div>

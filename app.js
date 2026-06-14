@@ -121,14 +121,34 @@ function renderMedia(item, detailed = false, eager = false) {
   return mediaPlaceholder(item, type);
 }
 
-function metadataRows(item) {
-  const creator = item.creator || item.artist || "記載なし", rights = item.license || item.rights || "原典参照";
-  const rightsValue = item.licenseUrl ? `<a href="${escapeHtml(item.licenseUrl)}" target="_blank" rel="noreferrer">${escapeHtml(rights)}</a>` : escapeHtml(rights);
-  const rows = [["媒体", mediaTypeOf(item)], ["作者", creator], ["制作日", item.date || "記載なし"], ["権利", rightsValue, true]];
-  if (item.width && item.height) rows.push(["寸法", `${item.width} × ${item.height} px`]);
-  if (item.duration) rows.push(["長さ", item.duration]);
-  if (item.format) rows.push(["形式", item.format]);
-  return rows.map(([label, value, html]) => `<div><dt>${label}</dt><dd>${html ? value : escapeHtml(value)}</dd></div>`).join("");
+function formatRecordDate(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return "不明";
+  let match = raw.match(/^after\s+(\d{4})/i);
+  if (match) return `${match[1]}年以降`;
+  match = raw.match(/^circa\s+(\d{4})/i);
+  if (match) return `${match[1]}年頃`;
+  match = raw.match(/^between\s+(\d{4})\s+and\s+(\d{4})/i);
+  if (match) return `${match[1]}年〜${match[2]}年`;
+  match = raw.match(/^(\d{4})-tal$/i);
+  if (match) return `${match[1]}年代`;
+  match = raw.match(/^Taken on\s+(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/i);
+  if (match) {
+    const months = { january: 1, february: 2, march: 3, april: 4, may: 5, june: 6, july: 7, august: 8, september: 9, october: 10, november: 11, december: 12 };
+    const month = months[match[2].toLowerCase()];
+    if (month) return `${match[3]}年${month}月${Number(match[1])}日`;
+  }
+  match = raw.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (match) return `${match[1]}年${Number(match[2])}月${Number(match[3])}日`;
+  match = raw.match(/^(\d{4})-(\d{2})$/);
+  if (match) return `${match[1]}年${Number(match[2])}月`;
+  match = raw.match(/^(\d{4})$/);
+  if (match) return `${match[1]}年`;
+  return raw;
+}
+
+function recordDateRow(item) {
+  return `<div><dt>記録日</dt><dd>${escapeHtml(formatRecordDate(item.date))}</dd></div>`;
 }
 
 function renderMap() {
@@ -246,7 +266,11 @@ async function selectGenre(id, options = {}) {
     if (requestId !== state.requestId) return;
     if (options.itemId) {
       const item = genre.items.find((candidate) => String(candidate.id) === String(options.itemId));
-      if (item) return showItem(genre, item, { history: options.history, replace: options.replace });
+      if (item) {
+        showItem(genre, item, { history: options.history, replace: options.replace });
+        revealPanelOnMobile();
+        return;
+      }
     }
     renderGenrePanel(genre, entry);
   } catch (error) {
@@ -261,8 +285,14 @@ function showEmptyPanel(updateHistory = true) {
   document.querySelectorAll(".selected").forEach((node) => node.classList.remove("selected"));
   if (updateHistory) updateUrl();
   elements.panel.dataset.state = "empty";
-  elements.panel.innerHTML = `<div class="panel-empty"><p class="section-number">START HERE</p><h2>ひとつ選ぶと、探索が始まります。</h2><p>地図の気配や一覧の棚を選ぶと、ここに標本が現れます。</p><button class="primary-action" type="button" data-random-entry>偶然の標本を見る</button></div>`;
+  elements.panel.innerHTML = `<div class="panel-empty"><div class="panel-zone-title"><span>2</span><div><p class="section-number">EXPLORE SPECIMENS</p><h2>標本を探索する</h2></div></div><p>左のジャンルを選ぶと、標本と次の行き先がここに現れます。</p><button class="primary-action" type="button" data-random-entry>おまかせで1点見る</button></div>`;
   elements.panel.querySelector("[data-random-entry]").addEventListener("click", randomEntry);
+}
+
+function revealPanelOnMobile() {
+  if (matchMedia("(max-width: 900px)").matches) {
+    requestAnimationFrame(() => elements.panel.scrollIntoView({ behavior: "smooth", block: "start" }));
+  }
 }
 
 function filteredItems(genre) {
@@ -281,7 +311,8 @@ function renderGenrePanel(genre, entry) {
   elements.panel.dataset.state = "genre";
   elements.panel.dataset.genre = genre.id;
   elements.panel.dataset.ready = "true";
-  elements.panel.innerHTML = `<nav class="breadcrumbs" aria-label="現在地"><button type="button" data-panel-home>地図</button><span>›</span><b>${escapeHtml(genre.title)}</b></nav>
+  elements.panel.innerHTML = `<div class="panel-topbar"><div class="panel-zone-title compact"><span>2</span><div><p class="section-number">EXPLORE SPECIMENS</p><h2>標本を探索する</h2></div></div><button type="button" class="text-button" data-random-entry>別の1点へ</button></div>
+    <nav class="breadcrumbs" aria-label="現在地"><button type="button" data-panel-home>ジャンル選択</button><span>›</span><b>${escapeHtml(genre.title)}</b></nav>
     <div class="panel-heading"><p class="section-number">GENRE / ${genre.itemCount}標本</p><div class="panel-cover"><img src="${escapeHtml(entry.representativeAsset)}" alt=""></div><h2>${escapeHtml(genre.title)}</h2><p class="panel-subtitle">${escapeHtml(genre.subtitle)}</p><p>${escapeHtml(genre.description)}</p></div>
     <div class="panel-tags">${genre.tags.map((tag) => `<button type="button" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`).join("")}</div>
     <div class="panel-section-heading"><h3>標本を見る</h3><button type="button" class="text-button" data-shuffle>別の標本を表示</button></div>
@@ -290,6 +321,7 @@ function renderGenrePanel(genre, entry) {
     <button class="secondary-action" type="button" data-show-all>${state.showAll ? "標本を少なく表示" : `すべての標本を見る（${items.length}）`}</button>
     <details class="genre-details"><summary>この棚の見方と更新履歴</summary><p>${escapeHtml(genre.method)}</p><ol>${historyItems.map((item) => { const diary = item.diaryPath || item.diary; return `<li><time>${escapeHtml(item.date)}</time><p>${escapeHtml(item.summary || item.note || item.action || "更新")}</p>${diary ? `<a href="${escapeHtml(diary)}">採集日記</a>` : ""}</li>`; }).join("")}</ol></details>`;
   elements.panel.querySelector("[data-panel-home]").addEventListener("click", () => showEmptyPanel());
+  elements.panel.querySelector("[data-random-entry]").addEventListener("click", randomEntry);
   elements.panel.querySelectorAll("[data-tag]").forEach((button) => button.addEventListener("click", () => { chooseTag(button.dataset.tag); elements.tagFilter.open = true; }));
   elements.panel.querySelector("[data-shuffle]").addEventListener("click", () => {
     state.sampleOffset = items.length ? (state.sampleOffset + 6) % items.length : 0;
@@ -305,8 +337,9 @@ function renderGenrePanel(genre, entry) {
   elements.panel.querySelector("[data-show-all]").addEventListener("click", () => { state.showAll = !state.showAll; renderGenrePanel(genre, entry); });
   elements.panel.querySelectorAll("[data-item]").forEach((button) => button.addEventListener("click", () => {
     const item = genre.items.find((candidate) => String(candidate.id) === button.dataset.item);
-    if (item) showItem(genre, item);
+    if (item) { showItem(genre, item); revealPanelOnMobile(); }
   }));
+  revealPanelOnMobile();
 }
 
 function renderTrail() {
@@ -361,16 +394,16 @@ async function renderBranches(genre, item) {
     if (!current || state.selectedGenre !== genre.id || String(state.selectedItem) !== String(item.id)) return;
     const used = new Set();
     const definitions = [
-      ["same", "同じ徴を追う", "共通するタグや形から次へ"],
-      ["cross", "別のジャンルへ", "共通点を残して別の棚へ"],
-      ["far", "遠くへ逸れる", "異なる形や場所へ大きく移動"]
+      ["same", "似たもの", "共通する特徴から選ぶ", "↝"],
+      ["cross", "別ジャンル", "共通点のある別の棚へ", "→"],
+      ["far", "意外なもの", "離れた特徴へ飛ぶ", "↗"]
     ];
-    const branches = definitions.map(([mode, label, description]) => {
+    const branches = definitions.map(([mode, label, description, symbol]) => {
       const candidate = pickBranch(current, specimens, mode, used);
       if (candidate) used.add(candidate.key);
-      return { mode, label, description, candidate };
+      return { mode, label, description, symbol, candidate };
     }).filter((branch) => branch.candidate);
-    target.innerHTML = branches.map((branch) => `<button type="button" data-branch-genre="${escapeHtml(branch.candidate.genre.id)}" data-branch-item="${escapeHtml(branch.candidate.item.id)}"><small>${branch.label}</small><b>${escapeHtml(branch.candidate.item.title)}</b><span>${branch.description}</span></button>`).join("");
+    target.innerHTML = branches.map((branch) => `<button type="button" data-branch-genre="${escapeHtml(branch.candidate.genre.id)}" data-branch-item="${escapeHtml(branch.candidate.item.id)}"><i>${branch.symbol}</i><span><small>${branch.label}</small><b>${escapeHtml(branch.candidate.item.title)}</b><em>${branch.description}</em></span></button>`).join("");
     target.querySelectorAll("[data-branch-item]").forEach((button) => button.addEventListener("click", () => selectGenre(button.dataset.branchGenre, { itemId: button.dataset.branchItem })));
   } catch (error) {
     target.innerHTML = `<p class="error compact">次の候補を読み込めませんでした。</p>`;
@@ -391,15 +424,15 @@ function showItem(genre, item, options = {}) {
   elements.panel.dataset.genre = genre.id;
   elements.panel.dataset.item = item.id;
   elements.panel.dataset.ready = "true";
-  elements.panel.innerHTML = `<nav class="breadcrumbs" aria-label="現在地"><button type="button" data-panel-home>地図</button><span>›</span><button type="button" data-panel-genre>${escapeHtml(genre.title)}</button><span>›</span><b>標本</b></nav>
+  elements.panel.innerHTML = `<div class="item-explore-dock">
+      <nav class="breadcrumbs" aria-label="現在地"><button type="button" data-panel-home>ジャンル選択</button><span>›</span><button type="button" data-panel-genre>${escapeHtml(genre.title)}</button><span>›</span><b>${Math.max(0, index + 1)} / ${items.length}</b></nav>
+      <div class="item-pagination" aria-label="標本の前後移動"><button type="button" data-previous${previous ? "" : " disabled"}>← 前へ</button><strong>${escapeHtml(item.title)}</strong><button type="button" data-next${next ? "" : " disabled"}>次へ →</button></div>
+      <div id="branch-options" class="branch-options"><p>次の行き先を探しています…</p></div>
+    </div>
     ${renderTrail()}
     <div class="item-media">${renderMedia(item, true, true)}</div>
-    <div class="item-heading"><p class="section-number">SPECIMEN ${index >= 0 ? String(index + 1).padStart(3, "0") : "---"} / ${escapeHtml(item.family)} / ${escapeHtml(mediaTypeOf(item))}</p><h2>${escapeHtml(item.title)}</h2><p class="curator-note">${escapeHtml(item.curatorNote)}</p></div>
-    <div class="panel-tags static">${(item.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
-    <dl class="metadata">${metadataRows(item)}</dl>
-    <a class="source-button" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer">原典を見る ↗</a>
-    <div class="item-pagination" aria-label="標本の前後移動"><button type="button" data-previous${previous ? "" : " disabled"}>← 前の標本</button><span>${Math.max(0, index + 1)} / ${items.length}</span><button type="button" data-next${next ? "" : " disabled"}>次の標本 →</button></div>
-    <section class="branch-section"><div class="panel-section-heading"><h3>次はどちらへ</h3></div><div id="branch-options" class="branch-options"><p>関係を探しています…</p></div></section>`;
+    <div class="item-heading"><p class="section-number">SPECIMEN ${index >= 0 ? String(index + 1).padStart(3, "0") : "---"} / ${escapeHtml(item.family)} / ${escapeHtml(mediaTypeOf(item))}</p><h2>${escapeHtml(item.title)}</h2><dl class="metadata">${recordDateRow(item)}</dl><a class="source-button" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer">原典を見る ↗</a></div>
+    <details class="item-information"><summary>この標本の採集メモ</summary><p class="curator-note">${escapeHtml(item.curatorNote)}</p></details>`;
   elements.panel.querySelector("[data-panel-home]").addEventListener("click", () => showEmptyPanel());
   elements.panel.querySelector("[data-panel-genre]").addEventListener("click", () => { state.selectedItem = null; updateUrl(genre.id); renderGenrePanel(genre, entry); });
   elements.panel.querySelector("[data-previous]").addEventListener("click", () => previous && showItem(genre, previous));
@@ -415,7 +448,7 @@ async function randomEntry() {
   const candidate = pool[Math.floor(Math.random() * pool.length)];
   if (!candidate) return;
   await selectGenre(candidate.genre.id, { itemId: candidate.item.id });
-  elements.explorer.scrollIntoView({ behavior: "smooth", block: "start" });
+  revealPanelOnMobile();
 }
 
 function setView(view) {
@@ -448,8 +481,9 @@ function setupMapPan() {
 async function renderRecentUpdates() {
   try {
     const genres = await Promise.all(state.published.map((entry) => fetchGenre(entry.id)));
-    const updates = genres.flatMap((genre) => (genre.history || []).map((item) => ({ ...item, genreId: genre.id, genreTitle: genre.title })))
-      .sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 4);
+    let sequence = 0;
+    const updates = genres.flatMap((genre) => (genre.history || []).map((item) => ({ ...item, genreId: genre.id, genreTitle: genre.title, sequence: sequence++ })))
+      .sort((a, b) => String(b.date).localeCompare(String(a.date)) || b.sequence - a.sequence).slice(0, 4);
     elements.recentUpdates.innerHTML = updates.map((item) => `<li><time>${escapeHtml(item.date)}</time><button type="button" data-update-genre="${escapeHtml(item.genreId)}">${escapeHtml(item.genreTitle)}</button><p>${escapeHtml(item.summary || item.note || item.action || "更新")}</p></li>`).join("");
     elements.recentUpdates.querySelectorAll("[data-update-genre]").forEach((button) => button.addEventListener("click", () => { selectGenre(button.dataset.updateGenre); elements.explorer.scrollIntoView({ behavior: "smooth" }); }));
   } catch {
@@ -482,6 +516,9 @@ async function init() {
     if (!response.ok) throw new Error(`${response.status} ${genreIndexPath}`);
     state.index = await response.json();
     state.published = state.index.genres.filter((genre) => genre.status === "published");
+    document.querySelector("#overview-genre-count").textContent = state.published.length;
+    document.querySelector("#overview-item-count").textContent = state.published.reduce((sum, genre) => sum + Number(genre.itemCount || 0), 0);
+    document.querySelector(".status").lastChild.textContent = ` ${state.published.length} GENRES / ${state.published.reduce((sum, genre) => sum + Number(genre.itemCount || 0), 0)} SPECIMENS`;
     renderMap();
     setupMapPan();
     showEmptyPanel(false);
@@ -492,8 +529,6 @@ async function init() {
   }
 }
 
-document.querySelector("#start-exploration").addEventListener("click", randomEntry);
-document.querySelector("[data-list-start]").addEventListener("click", () => setView("list"));
 document.querySelectorAll("[data-view]").forEach((button) => button.addEventListener("click", () => setView(button.dataset.view)));
 document.querySelector("[data-home-link]").addEventListener("click", (event) => { event.preventDefault(); showEmptyPanel(); scrollTo({ top: 0, behavior: "smooth" }); });
 elements.panel.querySelector("[data-random-entry]").addEventListener("click", randomEntry);
