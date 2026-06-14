@@ -42,12 +42,26 @@ $selections = @(
     @{ title = 'File:20 Colegate - dated rainwater head - geograph.org.uk - 5918139.jpg'; family = '雨水頭'; note = '番地のある建物と日付入り部材を直接対応させられる都市資料。'; fallback = 'https://t0.geograph.org.uk/stamped/5918139_43144d35.jpg' },
     @{ title = 'File:Cricklade, St. Sampson''s Church, Clearly dated rainwater hopper - geograph.org.uk - 5443169.jpg'; family = 'ホッパー'; note = '遠目でも読める年号が、教会の改修履歴を外壁に掲示している。'; fallback = 'https://t0.geograph.org.uk/stamped/5443169_ac1fa817.jpg' },
     @{ title = 'File:Dated drainpipe, Belfast - geograph.org.uk - 1405661.jpg'; family = '縦樋'; note = '大学施設の縦樋に残る日付が、設備交換を免れた建築の署名になる。'; fallback = 'https://t0.geograph.org.uk/stamped/1405661_ae65bc71.jpg' },
-    @{ title = 'File:Drainpipe embellishment, dated 1867 - geograph.org.uk - 257788.jpg'; family = '縦樋'; note = '1867年の装飾が、細い配管を壁面の記念物へ変えている。'; fallback = 'https://t0.geograph.org.uk/stamped/257788_26a2f9b8.jpg' }
+    @{ title = 'File:Drainpipe embellishment, dated 1867 - geograph.org.uk - 257788.jpg'; family = '縦樋'; note = '1867年の装飾が、細い配管を壁面の記念物へ変えている。'; fallback = 'https://t0.geograph.org.uk/stamped/257788_26a2f9b8.jpg' },
+    @{ title = 'File:Rainwater head of 1757 at Nanteos.JPG'; family = '雨水頭'; note = '1757年とパウエル家の頭文字が、鉛製ホッパーを家系の記録媒体にしている。' },
+    @{ title = 'File:Photograph of a rain hopper with initials GHBF dated 1913 at Buckingham Place, SW1.JPG'; family = 'ホッパー'; note = '1913年の取得年と所有者の頭文字が、建物の来歴を排水設備に刻んでいる。' },
+    @{ title = 'File:St James''s Church, Church Lane, Rowledge (May 2015) (Rainwater Head).JPG'; family = '雨水頭'; note = '1869年の教会建築が、正面装飾ではなく雨水頭にも明記されている。' },
+    @{ title = 'File:Rainwater head at 48 & 50 St Helens Road, Prescot.jpg'; family = '雨水頭'; note = '連続する二戸の年代情報を、一つの雨水頭から建物単位で追跡できる。' },
+    @{ title = 'File:Dated rainwater head, Edgware Delivery Office - geograph.org.uk - 3689688.jpg'; family = '雨水頭'; note = '郵便配達局の業務建築にも、年号入り鋳物を残す慣習が及んだ例。' },
+    @{ title = 'File:Eltham cemetery, dated rainwater hopper - geograph.org.uk - 4111750.jpg'; family = 'ホッパー'; note = '墓地施設の静かな外壁で、日付入りホッパーが建設履歴を保持している。' },
+    @{ title = 'File:Former Bootham Bar Hotel rainwater head 01.jpg'; family = '雨水頭'; note = '1782年とJHの文字が、用途を変えた建物の初期所有者を現在へつなぐ。' },
+    @{ title = 'File:Rainwater head 5 High Petergate York 01.jpg'; family = '雨水頭'; note = '1763年とMTの鋳文字が、商業化した歴史住宅の旧来歴を示している。' },
+    @{ title = 'File:Rainwater hopper Tempest Anderson Hall.jpg'; family = 'ホッパー'; note = '1912年とTAの頭文字が、ホール名と排水設備を直接対応させている。' },
+    @{ title = 'File:Rainwater hopper 24 St Saviourgate.jpg'; family = 'ホッパー'; note = '1740年とMFの文字が、小さな器具に18世紀の所有記録を圧縮している。' },
+    @{ title = 'File:York Medical Society rainwater head May24 01.jpg'; family = '雨水頭'; note = '1590年の雨水頭が、今回の棚で最古層となる16世紀末の基準点を作る。' },
+    @{ title = 'File:Drainpipe dated 1927 on the Church of St Mary, from Graham Terrace, Belgravia, September 2024.jpg'; family = '縦樋'; note = '1927年の縦樋が、教会の近代改修を細い垂直部材に残している。' },
+    @{ title = 'File:External rain pipe dated 1911 on 45-49 Cleveland Street, Fitzrovia, April 2026.jpg'; family = '縦樋'; note = '1911年の建築年と外部配管が一致し、設備が建物の署名として機能している。' }
 )
 
 function PlainText([object]$value) {
     if ($null -eq $value) { return '' }
-    $text = ([System.Net.WebUtility]::HtmlDecode(([regex]::Replace([string]$value, '<[^>]+>', ' '))) -replace '\s+', ' ').Trim()
+    $withoutStyles = [regex]::Replace([string]$value, '<style\b[^>]*>.*?</style>', ' ', [Text.RegularExpressions.RegexOptions]::Singleline)
+    $text = ([System.Net.WebUtility]::HtmlDecode(([regex]::Replace($withoutStyles, '<[^>]+>', ' '))) -replace '\s+', ' ').Trim()
     return $text.Replace([char]0x92, "'")
 }
 
@@ -102,7 +116,7 @@ $collection = [ordered]@{
     title = '雨樋に刻まれた建築年'
     subtitle = '雨水頭・ホッパー・縦樋に残る日付鋳物'
     description = '屋根から水を逃がすための雨水頭、ホッパー、縦樋のうち、年号、頭文字、紋章的装飾を備えた例を集めた。交換されやすい設備部材が残ることで、建築の竣工、改修、所有の記憶が外壁に小さく固定される。'
-    method = 'Wikimedia Commonsで rainwater head、dated rainwater hopper、dated drainpipe を横断検索し、年号または年代を示す意匠を確認でき、作者と再利用条件を追跡できる英国の事例を選定した。'
+    method = 'Wikimedia Commonsで rainwater head、dated rainwater hopper、dated drainpipe、Hopper heads with dates を横断検索し、年号または年代を示す意匠を確認でき、作者と再利用条件を追跡できる英国の事例を選定した。'
     itemCount = $items.Count
     items = $items
 }
