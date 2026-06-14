@@ -363,18 +363,21 @@ async function allSpecimens() {
 
 function scoreCandidate(current, candidate, mode) {
   const shared = sharedTags(current.item, candidate.item).length;
-  const unvisited = state.exploration.visited.includes(candidate.key) ? 0 : 8;
   const differentGenre = current.genre.id !== candidate.genre.id;
   const differentFamily = current.item.family !== candidate.item.family;
   const differentMedia = mediaTypeOf(current.item) !== mediaTypeOf(candidate.item);
-  if (mode === "same") return unvisited + shared * 6 + (differentFamily ? 1 : 0) + (differentGenre ? 1 : 0);
-  if (mode === "cross") return unvisited + (differentGenre ? 12 : -20) + shared * 4 + relationWeight(current.entry, candidate.entry);
-  return unvisited + (differentGenre ? 6 : 0) + (differentFamily ? 5 : 0) + (differentMedia ? 5 : 0) - shared * 3;
+  if (mode === "same") return shared * 6 + (differentFamily ? 1 : 0) + (differentGenre ? 1 : 0);
+  if (mode === "cross") return (differentGenre ? 12 : -20) + shared * 4 + relationWeight(current.entry, candidate.entry);
+  return (differentGenre ? 6 : 0) + (differentFamily ? 5 : 0) + (differentMedia ? 5 : 0) - shared * 3;
 }
 
 function pickBranch(current, specimens, mode, used) {
-  const ranked = specimens
-    .filter((candidate) => candidate.key !== current.key && !used.has(candidate.key))
+  const eligible = specimens.filter((candidate) => candidate.key !== current.key && !used.has(candidate.key));
+  const unvisited = eligible.filter((candidate) => !state.exploration.visited.includes(candidate.key));
+  const recent = new Set(state.exploration.trail.map((entry) => entry.key));
+  const outsideRecentTrail = eligible.filter((candidate) => !recent.has(candidate.key));
+  const pool = unvisited.length ? unvisited : outsideRecentTrail.length ? outsideRecentTrail : eligible;
+  const ranked = pool
     .map((candidate) => ({ ...candidate, score: scoreCandidate(current, candidate, mode) + Math.random() * 1.5 }))
     .sort((a, b) => b.score - a.score);
   const preferred = mode === "same"
