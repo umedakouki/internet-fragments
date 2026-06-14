@@ -32,10 +32,31 @@ function Test-Asset([string]$path, [string]$label) {
     if ($seenAssets.ContainsKey($path)) { Add-Error "Duplicate local asset: $path" } else { $seenAssets[$path] = $true }
 }
 function Test-SourceLink([string]$url) {
-    $status = & curl.exe --ssl-no-revoke -L --head --silent --output NUL --write-out '%{http_code}' --connect-timeout 10 --max-time 30 -A 'InternetFragmentsValidator/2.0' $url
-    if ($LASTEXITCODE -ne 0 -or $status -in @('403', '405', '429')) {
-        $status = & curl.exe --ssl-no-revoke -L --range 0-0 --silent --output NUL --write-out '%{http_code}' --connect-timeout 10 --max-time 30 -A 'InternetFragmentsValidator/2.0' $url
-    }
+    $pythonCode = @'
+import sys
+import urllib.error
+import urllib.request
+
+url = sys.argv[1]
+
+def request(method):
+    headers = {'User-Agent': 'InternetFragmentsValidator/3.0'}
+    if method == 'GET':
+        headers['Range'] = 'bytes=0-0'
+    req = urllib.request.Request(url, headers=headers, method=method)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as response:
+            return response.status
+    except urllib.error.HTTPError as error:
+        return error.code
+
+status = request('HEAD')
+if status in (403, 405, 429):
+    status = request('GET')
+print(status)
+raise SystemExit(0 if 200 <= status < 400 else 1)
+'@
+    $status = & python -c $pythonCode $url
     if ($LASTEXITCODE -ne 0 -or [int]$status -lt 200 -or [int]$status -ge 400) { Add-Error "Source link failed ($status): $url" }
     Start-Sleep -Milliseconds 350
 }

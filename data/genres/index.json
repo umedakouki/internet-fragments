@@ -15,7 +15,8 @@
                                     "建築"
                                 ],
                        "relatedGenres":  [
-                                             "dated-rainwater-castings"
+                                             "dated-rainwater-castings",
+                                             "fire-insurance-marks"
                                          ],
                        "mapPosition":  {
                                            "x":  31,
@@ -40,13 +41,40 @@
                                     "文字景観"
                                 ],
                        "relatedGenres":  [
-                                             "street-letterforms"
+                                             "street-letterforms",
+                                             "fire-insurance-marks"
                                          ],
                        "mapPosition":  {
                                            "x":  69,
                                            "y":  55
                                        },
                        "representativeAsset":  "assets/collections/2026-06-14/149081475.jpg",
+                       "createdAt":  "2026-06-14",
+                       "updatedAt":  "2026-06-14"
+                   },
+                   {
+                       "id":  "fire-insurance-marks",
+                       "title":  "壁に残る火災保険標章",
+                       "subtitle":  "会社の紋章と文字を建物へ留めた小さな金属板",
+                       "itemCount":  20,
+                       "path":  "data/genres/fire-insurance-marks.json",
+                       "status":  "published",
+                       "tags":  [
+                                    "保険標章",
+                                    "建築部材",
+                                    "企業紋章",
+                                    "文字景観",
+                                    "金属工芸"
+                                ],
+                       "relatedGenres":  [
+                                             "street-letterforms",
+                                             "dated-rainwater-castings"
+                                         ],
+                       "mapPosition":  {
+                                           "x":  50,
+                                           "y":  22
+                                       },
+                       "representativeAsset":  "assets/collections/fire-insurance-marks/61685380.jpg",
                        "createdAt":  "2026-06-14",
                        "updatedAt":  "2026-06-14"
                    }
