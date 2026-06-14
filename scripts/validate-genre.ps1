@@ -32,32 +32,30 @@ function Test-Asset([string]$path, [string]$label) {
     if ($seenAssets.ContainsKey($path)) { Add-Error "Duplicate local asset: $path" } else { $seenAssets[$path] = $true }
 }
 function Test-SourceLink([string]$url) {
-    $pythonCode = @'
-import sys
-import urllib.error
-import urllib.request
-
-url = sys.argv[1]
-
-def request(method):
-    headers = {'User-Agent': 'InternetFragmentsValidator/3.0'}
-    if method == 'GET':
-        headers['Range'] = 'bytes=0-0'
-    req = urllib.request.Request(url, headers=headers, method=method)
-    try:
-        with urllib.request.urlopen(req, timeout=30) as response:
-            return response.status
-    except urllib.error.HTTPError as error:
-        return error.code
-
-status = request('HEAD')
-if status in (403, 405, 429):
-    status = request('GET')
-print(status)
-raise SystemExit(0 if 200 <= status < 400 else 1)
-'@
-    $status = & python -c $pythonCode $url
-    if ($LASTEXITCODE -ne 0 -or [int]$status -lt 200 -or [int]$status -ge 400) { Add-Error "Source link failed ($status): $url" }
+    $progressPreferenceBefore = $ProgressPreference
+    $ProgressPreference = 'SilentlyContinue'
+    $status = $null
+    $lastError = $null
+    try {
+        for ($attempt = 1; $attempt -le 4; $attempt++) {
+            foreach ($method in @('Head', 'Get')) {
+                try {
+                    $response = Invoke-WebRequest -Uri $url -Method $method -UseBasicParsing -MaximumRedirection 10 -TimeoutSec 30 -Headers @{ 'User-Agent' = 'InternetFragmentsValidator/3.1' }
+                    $status = [int]$response.StatusCode
+                } catch {
+                    $lastError = $_.Exception.Message
+                    if ($_.Exception.Response) { $status = [int]$_.Exception.Response.StatusCode } else { $status = $null }
+                }
+                if ($status -ge 200 -and $status -lt 400) { break }
+                if ($method -eq 'Head' -and $status -notin @(403, 405, 429)) { break }
+            }
+            if ($status -ge 200 -and $status -lt 400) { break }
+            if ($attempt -lt 4) { Start-Sleep -Seconds ([Math]::Pow(2, $attempt)) }
+        }
+    } finally {
+        $ProgressPreference = $progressPreferenceBefore
+    }
+    if ($status -lt 200 -or $status -ge 400) { Add-Error "Source link failed ($status; $lastError): $url" }
     Start-Sleep -Milliseconds 350
 }
 

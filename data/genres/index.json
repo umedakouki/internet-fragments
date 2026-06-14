@@ -131,6 +131,29 @@
       "representativeAsset": "assets/collections/fire-insurance-marks/61685380.jpg",
       "createdAt": "2026-06-14",
       "updatedAt": "2026-06-14"
+    },
+    {
+      "id": "anna-atkins-cyanotypes",
+      "title": "青に沈む海藻標本",
+      "subtitle": "アンナ・アトキンスが光で写し取った海藻の輪郭",
+      "itemCount": 10,
+      "path": "data/genres/anna-atkins-cyanotypes.json",
+      "status": "published",
+      "tags": [
+        "シアノタイプ",
+        "写真史",
+        "植物標本",
+        "科学図版",
+        "海藻"
+      ],
+      "relatedGenres": [],
+      "mapPosition": {
+        "x": 84,
+        "y": 25
+      },
+      "representativeAsset": "assets/collections/anna-atkins-cyanotypes/291515.jpg",
+      "createdAt": "2026-06-14",
+      "updatedAt": "2026-06-14"
     }
   ],
   "legacyCollections": {
