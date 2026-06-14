@@ -145,11 +145,6 @@ button:focus-visible, a:focus-visible, summary:focus-visible, select:focus-visib
 .genre-details time, .genre-details a { font: 8px var(--mono); }
 .genre-details li p { margin: 3px 0; font-size: 11px; }
 
-.trail { margin: 14px 0 18px; }
-.trail .panel-section-heading { margin-top: 0; }
-.trail-list { display: flex; gap: 7px; }
-.trail-list button { width: 27px; height: 27px; border: 1px solid var(--ink); border-radius: 50%; background: transparent; cursor: pointer; font: 8px var(--mono); }
-.trail-list button:last-child { color: var(--paper); background: var(--ink); }
 .item-media { min-height: 220px; display: grid; place-items: center; overflow: hidden; margin: 0 -22px 20px; background: var(--paper-deep); }
 .item-media > img, .item-media > video { width: 100%; max-height: 42vh; object-fit: contain; }
 .item-media .media-placeholder { min-height: 300px; }

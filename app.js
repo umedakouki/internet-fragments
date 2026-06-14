@@ -342,20 +342,6 @@ function renderGenrePanel(genre, entry) {
   revealPanelOnMobile();
 }
 
-function renderTrail() {
-  if (!state.exploration.trail.length) return "";
-  return `<div class="trail"><div class="panel-section-heading"><h3>今回の軌跡</h3><button class="text-button" type="button" data-reset-exploration>探索をリセット</button></div><div class="trail-list">${state.exploration.trail.map((entry, index) => `<button type="button" data-trail-genre="${escapeHtml(entry.genreId)}" data-trail-item="${escapeHtml(entry.itemId)}" aria-label="${escapeHtml(entry.title)}">${index + 1}</button>`).join("")}</div></div>`;
-}
-
-function attachTrailEvents() {
-  elements.panel.querySelectorAll("[data-trail-item]").forEach((button) => button.addEventListener("click", () => selectGenre(button.dataset.trailGenre, { itemId: button.dataset.trailItem })));
-  elements.panel.querySelector("[data-reset-exploration]")?.addEventListener("click", () => {
-    state.exploration = { visited: [], trail: [] };
-    saveExploration();
-    showEmptyPanel();
-  });
-}
-
 async function allSpecimens() {
   const genres = await Promise.all(state.published.map((entry) => fetchGenre(entry.id)));
   return genres.flatMap((genre) => genre.items.map((item) => ({ genre, entry: byId(genre.id), item, key: itemKey(genre.id, item.id) })));
@@ -432,7 +418,6 @@ function showItem(genre, item, options = {}) {
       <div class="item-pagination" aria-label="標本の前後移動"><button type="button" data-previous${previous ? "" : " disabled"}>← 前へ</button><strong>${escapeHtml(item.title)}</strong><button type="button" data-next${next ? "" : " disabled"}>次へ →</button></div>
       <div id="branch-options" class="branch-options"><p>次の行き先を探しています…</p></div>
     </div>
-    ${renderTrail()}
     <div class="item-media">${renderMedia(item, true, true)}</div>
     <div class="item-heading"><p class="section-number">SPECIMEN ${index >= 0 ? String(index + 1).padStart(3, "0") : "---"} / ${escapeHtml(item.family)} / ${escapeHtml(mediaTypeOf(item))}</p><h2>${escapeHtml(item.title)}</h2><dl class="metadata">${recordDateRow(item)}</dl><a class="source-button" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer">原典を見る ↗</a></div>
     <details class="item-information"><summary>この標本の採集メモ</summary><p class="curator-note">${escapeHtml(item.curatorNote)}</p></details>`;
@@ -440,7 +425,6 @@ function showItem(genre, item, options = {}) {
   elements.panel.querySelector("[data-panel-genre]").addEventListener("click", () => { state.selectedItem = null; updateUrl(genre.id); renderGenrePanel(genre, entry); });
   elements.panel.querySelector("[data-previous]").addEventListener("click", () => previous && showItem(genre, previous));
   elements.panel.querySelector("[data-next]").addEventListener("click", () => next && showItem(genre, next));
-  attachTrailEvents();
   renderBranches(genre, item);
 }
 
