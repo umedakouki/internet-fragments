@@ -15,29 +15,39 @@
       <span class="brand-mark">余</span><span>余白採集室</span>
     </a>
     <nav aria-label="主要ナビゲーション">
-      <a href="#explore" data-map-link>ジャンル地図</a>
-      <a href="#policy">採集方針</a>
+      <a href="#about">この場所について</a>
+      <a href="#explore" data-map-link>漂流地図</a>
     </nav>
     <span class="status"><i></i> OPEN ARCHIVE</span>
   </header>
 
   <main id="top">
-    <section id="explore" class="explorer" aria-labelledby="explorer-title">
-      <div class="explorer-heading">
+    <section id="about" class="site-intro" aria-labelledby="site-title">
+      <p class="eyebrow">AN ARCHIVE OF INTERNET FRAGMENTS</p>
+      <div class="site-intro-grid">
         <div>
-          <p class="eyebrow">DRIFT THROUGH UNNAMED GENRES</p>
-          <h1 id="explorer-title">棚から棚へ、<br><em>関係を漂流する。</em></h1>
+          <h1 id="site-title">余白採集室</h1>
+          <p class="intro-catch">名前のつく前のものを、<br>インターネットから拾う。</p>
         </div>
-        <div class="explorer-copy">
-          <p>日付ではなく、もの同士の似方から入る。気になる棚を選び、タグや隣接するジャンルをたどってください。</p>
+        <div class="site-intro-copy">
+          <p>写真、文章、音、映像、ウェブページ。媒体を問わず、まだ一般的な収集ジャンルになっていない断片を集める小さな標本室です。</p>
+          <p>標本は日付ではなく、似方や関係で棚につながります。地図上の気配を選ぶと、その場で棚の中を覗けます。</p>
           <div class="explorer-actions">
             <button id="random-genre" class="primary-action" type="button">どこかへ漂流</button>
             <button id="toggle-view" class="quiet-action" type="button" aria-pressed="false">一覧で見る</button>
           </div>
         </div>
       </div>
+    </section>
 
-      <div id="tag-filter" class="tag-filter" aria-label="ジャンルタグ"></div>
+    <section id="explore" class="explorer" aria-labelledby="explorer-title">
+      <div class="drift-heading">
+        <div>
+          <p class="eyebrow">DRIFT MAP</p>
+          <h2 id="explorer-title">気になる気配を選ぶ</h2>
+        </div>
+        <div id="tag-filter" class="tag-filter" aria-label="ジャンルタグ"></div>
+      </div>
 
       <div id="map-mode" class="map-mode">
         <div id="genre-map" class="genre-map" tabindex="0" aria-label="ジャンル漂流マップ。ドラッグして移動できます。">
@@ -49,9 +59,9 @@
           <button id="reset-map" class="map-reset" type="button">中心へ戻る</button>
         </div>
         <aside id="genre-preview" class="genre-preview" aria-live="polite">
-          <p class="section-number">SELECT A GENRE</p>
-          <h2>地図の棚を選んでください。</h2>
-          <p>共有タグと編集された関係線が、次の棚への道になります。</p>
+          <p class="section-number">SELECT A TRACE</p>
+          <h2>地図の気配を選ぶ</h2>
+          <p>ここに棚の説明、標本、隣の棚が現れます。ページを移らず、そのまま覗いていけます。</p>
         </aside>
       </div>
 
@@ -104,15 +114,6 @@
       </section>
     </section>
 
-    <section class="policy" id="policy">
-      <p class="section-number">COLLECTING POLICY</p>
-      <div class="policy-grid">
-        <article><span>01</span><h3>漂流する</h3><p>媒体を限定せず、隣接する資料へ横滑りする。</p></article>
-        <article><span>02</span><h3>棚を育てる</h3><p>新設、追補、分離、統合、非公開化をためらわない。</p></article>
-        <article><span>03</span><h3>関係を残す</h3><p>主ジャンルとタグで、標本を複製せず横断する。</p></article>
-        <article><span>04</span><h3>出典を残す</h3><p>原典、作者、権利条件を標本と切り離さない。</p></article>
-      </div>
-    </section>
   </main>
 
   <footer>

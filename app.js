@@ -1,6 +1,6 @@
 const genreIndexPath = "data/genres/index.json";
 const supportedMediaTypes = new Set(["image", "video", "audio", "text", "link"]);
-const state = { index: null, published: [], cache: new Map(), selected: null, current: null, tag: "すべて", panX: 0, panY: 0 };
+const state = { index: null, published: [], cache: new Map(), selected: null, current: null, tag: "すべて", panX: 0, panY: 0, previewOffset: 0, previewRequest: 0 };
 
 const elements = {
   explorer: document.querySelector("#explore"), genreView: document.querySelector("#genre-view"), map: document.querySelector("#genre-map"),
@@ -67,11 +67,12 @@ function mediaPlaceholder(item, type) {
   return `<div class="media-placeholder media-${type}"><span>${labels[type]}</span><p>${escapeHtml(summary)}</p></div>`;
 }
 
-function renderMedia(item, detailed = false) {
+function renderMedia(item, detailed = false, eager = false) {
   const type = mediaTypeOf(item), asset = localAssetOf(item), preview = previewOf(item), alt = escapeHtml(item.description || item.title);
-  if (type === "image" && asset) return `<img src="${escapeHtml(asset)}" alt="${alt}"${detailed ? "" : ' loading="lazy"'}>`;
+  const loading = detailed || eager ? "" : ' loading="lazy"';
+  if (type === "image" && asset) return `<img src="${escapeHtml(asset)}" alt="${alt}"${loading}>`;
   if (type === "video" && asset && detailed) return `<video controls preload="metadata"${preview ? ` poster="${escapeHtml(preview)}"` : ""}><source src="${escapeHtml(asset)}"></video>`;
-  if (type === "video" && preview) return `<img src="${escapeHtml(preview)}" alt="${alt}" loading="lazy">`;
+  if (type === "video" && preview) return `<img src="${escapeHtml(preview)}" alt="${alt}"${loading}>`;
   if (type === "video" && asset) return `<video muted preload="metadata"><source src="${escapeHtml(asset)}"></video>`;
   if (type === "audio" && asset && detailed) return `<div class="media-placeholder media-audio"><span>AUDIO</span><p>${alt}</p><audio controls preload="metadata" src="${escapeHtml(asset)}"></audio></div>`;
   return mediaPlaceholder(item, type);
@@ -93,7 +94,7 @@ function renderMap() {
   state.published.forEach((genre) => {
     const point = positions.get(genre.id), seed = hashNumber(genre.id);
     const node = document.createElement("button");
-    node.type = "button"; node.className = "genre-node"; node.dataset.genre = genre.id; node.dataset.tags = genre.tags.join("|");
+    node.type = "button"; node.className = `genre-node shape-${seed % 4}`; node.dataset.genre = genre.id; node.dataset.tags = genre.tags.join("|");
     node.style.left = `${point.x}%`; node.style.top = `${point.y}%`; node.style.setProperty("--drift-x", `${4 + seed % 8}px`); node.style.setProperty("--drift-y", `${4 + (seed >>> 4) % 7}px`); node.style.setProperty("--drift-time", `${8 + seed % 7}s`);
     node.innerHTML = `<span class="genre-node-image"><img src="${escapeHtml(genre.representativeAsset)}" alt=""></span><span class="genre-node-copy"><b>${escapeHtml(genre.title)}</b><small>${genre.itemCount} specimens</small></span>`;
     node.addEventListener("click", () => selectGenre(genre.id));
@@ -118,9 +119,9 @@ function renderMap() {
 }
 
 function setupTagFilter() {
-  const tags = ["すべて", ...new Set(state.published.flatMap((genre) => genre.tags))]; elements.tagFilter.replaceChildren();
-  tags.forEach((tag) => { const button = document.createElement("button"); button.type = "button"; button.textContent = tag; button.className = tag === state.tag ? "active" : "";
-    button.addEventListener("click", () => chooseTag(tag)); elements.tagFilter.append(button); });
+  const tags = ["すべて", ...new Set(state.published.flatMap((genre) => genre.tags))];
+  elements.tagFilter.innerHTML = `<label for="map-tag-select">タグで絞る</label><select id="map-tag-select">${tags.map((tag) => `<option value="${escapeHtml(tag)}"${tag === state.tag ? " selected" : ""}>${escapeHtml(tag)}</option>`).join("")}</select>`;
+  elements.tagFilter.querySelector("select").addEventListener("change", (event) => chooseTag(event.target.value));
 }
 
 function chooseTag(tag) {
@@ -143,13 +144,38 @@ function highlightRelations(id) {
   document.querySelectorAll(".map-lines line").forEach((line) => line.classList.toggle("active", Boolean(id) && (line.dataset.a === id || line.dataset.b === id)));
 }
 
-function selectGenre(id) {
-  const genre = byId(id); if (!genre) return; state.selected = id; highlightRelations(id);
+async function selectGenre(id) {
+  const genre = byId(id); if (!genre) return; const request = ++state.previewRequest; state.selected = id; state.previewOffset = 0; highlightRelations(id);
   document.querySelectorAll(".genre-node").forEach((node) => node.classList.toggle("selected", node.dataset.genre === id));
-  const related = state.published.filter((candidate) => candidate.id !== id && relationWeight(genre, candidate)).sort((a, b) => relationWeight(genre, b) - relationWeight(genre, a));
-  elements.preview.innerHTML = `<p class="section-number">SELECTED GENRE</p><img src="${escapeHtml(genre.representativeAsset)}" alt=""><h2>${escapeHtml(genre.title)}</h2><p>${escapeHtml(genre.subtitle)}</p><div class="preview-tags">${genre.tags.map((tag) => `<button type="button" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`).join("")}</div><dl><div><dt>標本</dt><dd>${genre.itemCount}</dd></div><div><dt>更新</dt><dd>${genre.updatedAt}</dd></div><div><dt>隣接</dt><dd>${related.length}</dd></div></dl><button class="primary-action open-selected" type="button">この棚を開く</button>`;
-  elements.preview.querySelector(".open-selected").addEventListener("click", () => openGenre(id));
+  elements.preview.dataset.genre = id; elements.preview.dataset.ready = "false";
+  elements.preview.innerHTML = `<div class="preview-loading"><span></span><p>${escapeHtml(genre.title)}を開いています</p></div>`;
+  try {
+    const genreData = await fetchGenre(id);
+    if (state.selected !== id || state.previewRequest !== request) return;
+    renderGenrePreview(genreData, genre);
+  } catch (error) {
+    if (state.selected === id && state.previewRequest === request) elements.preview.innerHTML = `<p class="error">棚を読み込めませんでした: ${escapeHtml(error.message)}</p>`;
+  }
+}
+
+function previewItems(genre, offset) {
+  const count = Math.min(4, genre.items.length);
+  return Array.from({ length: count }, (_, index) => genre.items[(offset + index) % genre.items.length]);
+}
+
+function renderGenrePreview(genre, entry) {
+  const related = state.published.filter((candidate) => candidate.id !== entry.id && relationWeight(entry, candidate)).sort((a, b) => relationWeight(entry, b) - relationWeight(entry, a));
+  const samples = previewItems(genre, state.previewOffset);
+  elements.preview.innerHTML = `<div class="preview-head"><p class="section-number">SELECTED GENRE</p><span>${genre.itemCount} specimens</span></div><div class="preview-cover"><img src="${escapeHtml(entry.representativeAsset)}" alt=""></div><h2>${escapeHtml(genre.title)}</h2><p class="preview-subtitle">${escapeHtml(genre.subtitle)}</p><p class="preview-description">${escapeHtml(genre.description)}</p><div class="preview-tags">${genre.tags.map((tag) => `<button type="button" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`).join("")}</div><div class="preview-section-title"><span>標本を覗く</span><button class="preview-shuffle" type="button">入れ替える</button></div><div class="preview-specimens">${samples.map((item) => `<button type="button" data-specimen="${escapeHtml(item.id)}"><span>${renderMedia(item, false, true)}</span><b>${escapeHtml(item.title)}</b></button>`).join("")}</div>${related.length ? `<div class="preview-section-title"><span>隣の棚</span></div><div class="preview-related">${related.map((candidate) => `<button type="button" data-related="${escapeHtml(candidate.id)}">${escapeHtml(candidate.title)}<small>${escapeHtml(sharedTags(entry, candidate).join(" / ") || "編集された関係")}</small></button>`).join("")}</div>` : ""}<button class="primary-action open-selected" type="button">棚の全標本を見る</button>`;
+  elements.preview.dataset.genre = entry.id; elements.preview.dataset.ready = "true";
+  elements.preview.querySelector(".open-selected").addEventListener("click", () => openGenre(entry.id));
+  elements.preview.querySelector(".preview-shuffle").addEventListener("click", () => { state.previewOffset = (state.previewOffset + 4) % genre.items.length; renderGenrePreview(genre, entry); });
   elements.preview.querySelectorAll("[data-tag]").forEach((button) => button.addEventListener("click", () => chooseTag(button.dataset.tag)));
+  elements.preview.querySelectorAll("[data-related]").forEach((button) => button.addEventListener("click", () => selectGenre(button.dataset.related)));
+  elements.preview.querySelectorAll("[data-specimen]").forEach((button) => button.addEventListener("click", () => {
+    const index = genre.items.findIndex((item) => String(item.id) === button.dataset.specimen);
+    if (index >= 0) openDialog(genre.items[index], index);
+  }));
 }
 
 async function fetchGenre(id) {
@@ -244,7 +270,10 @@ async function init() {
   } catch (error) { elements.explorer.innerHTML = `<p class="error">アーカイブを読み込めませんでした: ${escapeHtml(error.message)}</p>`; }
 }
 
-document.querySelectorAll("[data-map-link], .back-to-map").forEach((link) => link.addEventListener("click", (event) => { event.preventDefault(); showMap(); }));
+document.querySelectorAll("[data-map-link], .back-to-map").forEach((link) => link.addEventListener("click", (event) => {
+  event.preventDefault(); const focusMap = link.matches(".back-to-map") || link.getAttribute("href") === "#explore"; showMap();
+  if (focusMap) requestAnimationFrame(() => elements.explorer.scrollIntoView({ behavior: "smooth" }));
+}));
 document.querySelector("#random-genre").addEventListener("click", () => randomGenre()); document.querySelector("#random-neighbor").addEventListener("click", () => randomGenre(true));
 document.querySelector("#toggle-view").addEventListener("click", (event) => { const listMode = elements.list.hidden; elements.list.hidden = !listMode; document.querySelector("#map-mode").hidden = listMode; event.currentTarget.textContent = listMode ? "地図へ戻る" : "一覧で見る"; event.currentTarget.setAttribute("aria-pressed", String(listMode)); });
 document.querySelector(".dialog-close").addEventListener("click", () => elements.dialog.close()); elements.dialog.addEventListener("click", (event) => { if (event.target === elements.dialog) elements.dialog.close(); });
