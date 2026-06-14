@@ -1,0 +1,60 @@
+{
+  "id": "historic-sign-reference",
+  "title": "古書体看板の歴史比較資料",
+  "subtitle": "現存看板の棚から外した歴史写真の記録",
+  "description": "現在の街路に残る看板と撮影時点の異なる歴史写真を、公開探索へ混在させず来歴ごと保持する非公開棚。現時点では1920年代ストックホルムの書店ファサード1件を記録する。",
+  "method": "公開棚の観察単位を現存看板に統一する際、原典、権利、保存資産を失わないよう比較用の歴史写真を移した。新しい比較軸が成立するまで公開しない。",
+  "status": "archived",
+  "tags": [
+    "歴史資料",
+    "文字景観",
+    "欧州",
+    "看板"
+  ],
+  "relatedGenres": [
+    "european-historic-signs"
+  ],
+  "mapPosition": {
+    "x": 35,
+    "y": 30
+  },
+  "representativeItemId": "113297655",
+  "createdAt": "2026-06-14",
+  "updatedAt": "2026-06-14",
+  "history": [
+    {
+      "date": "2026-06-14",
+      "type": "archived",
+      "summary": "欧州の古書体看板を現存例に統一するため、1920年代の書店写真1件を比較資料として非公開保存した。",
+      "diaryPath": "diary/2026-06-14.md"
+    }
+  ],
+  "itemCount": 1,
+  "items": [
+    {
+      "id": "113297655",
+      "title": "August Rietz Bokhandel, Södermalmstorg 4, 1920-tal.jpg",
+      "family": "歴史資料",
+      "curatorNote": "現代看板の比較対象として収集した1920年代の書店ファサード。撮影時点が他標本と異なるため非公開棚で保持する。",
+      "localImage": "assets/collections/2026-06-13/113297655.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:August_Rietz_Bokhandel,_S%C3%B6dermalmstorg_4,_1920-tal.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/August_Rietz_Bokhandel%2C_S%C3%B6dermalmstorg_4%2C_1920-tal.jpg",
+      "artist": "Unknown author Unknown author",
+      "credit": "Digitala stadsmuseet",
+      "license": "Public domain",
+      "licenseUrl": null,
+      "description": "August Rietz Bokhandel, Södermalmstorg 4, ägaren August Rietz bakom disken.",
+      "date": "1920-tal",
+      "width": 2610,
+      "height": 1845,
+      "mediaType": "image",
+      "tags": [
+        "歴史資料",
+        "歴史の痕跡",
+        "文字景観",
+        "看板",
+        "欧州"
+      ]
+    }
+  ]
+}

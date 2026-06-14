@@ -1,9 +1,9 @@
 {
   "id": "european-historic-signs",
   "title": "欧州の古書体看板",
-  "subtitle": "フラクトゥール、ブラックレターと街路の歴史資料",
-  "description": "欧州の店舗、宿、施設、通りに残るフラクトゥール、ブラックレター、歴史的なラテン字形を集めた。現代の街路で古さや土地性を伝える12件に、1920年代の書店ファサード1件を比較資料として添える。",
-  "method": "Wikimedia CommonsをFraktur、blackletter、historic shop sign、street signの語と関連カテゴリで横断検索し、街路・店舗・施設の実景12件と、現代例を読むための歴史写真1件を選定した。",
+  "subtitle": "フラクトゥール、ブラックレターが現存する街路看板",
+  "description": "欧州の店舗、宿、施設、通りに現存するフラクトゥール、ブラックレター、歴史的なラテン字形を集めた。古い字形が現在の街路で土地性や歴史性を伝える12件を比較する。",
+  "method": "Wikimedia CommonsをFraktur、blackletter、historic shop sign、street signの語と関連カテゴリで横断検索し、街路・店舗・施設に現存する看板と表示12件を選定した。",
   "status": "published",
   "tags": [
     "文字景観",
@@ -30,9 +30,15 @@
       "type": "split",
       "summary": "街角の異体字標本から欧州の古書体看板と歴史写真13件を分離し、地域と文字体系を揃えた。",
       "diaryPath": "diary/2026-06-14.md"
+    },
+    {
+      "date": "2026-06-14",
+      "type": "moved",
+      "summary": "現存看板に比較軸を統一するため、1920年代の書店写真1件を非公開の歴史比較資料へ移した。",
+      "diaryPath": "diary/2026-06-14.md"
     }
   ],
-  "itemCount": 13,
+  "itemCount": 12,
   "items": [
     {
       "id": "133787833",
@@ -328,31 +334,6 @@
       "mediaType": "image",
       "tags": [
         "歴史的字形",
-        "歴史の痕跡",
-        "文字景観",
-        "看板",
-        "欧州"
-      ]
-    },
-    {
-      "id": "113297655",
-      "title": "August Rietz Bokhandel, Södermalmstorg 4, 1920-tal.jpg",
-      "family": "歴史資料",
-      "curatorNote": "現代看板の比較対象となる、1920年代の書店ファサード。",
-      "localImage": "assets/collections/2026-06-13/113297655.jpg",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:August_Rietz_Bokhandel,_S%C3%B6dermalmstorg_4,_1920-tal.jpg",
-      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/August_Rietz_Bokhandel%2C_S%C3%B6dermalmstorg_4%2C_1920-tal.jpg",
-      "artist": "Unknown author Unknown author",
-      "credit": "Digitala stadsmuseet",
-      "license": "Public domain",
-      "licenseUrl": null,
-      "description": "August Rietz Bokhandel, Södermalmstorg 4, ägaren August Rietz bakom disken.",
-      "date": "1920-tal",
-      "width": 2610,
-      "height": 1845,
-      "mediaType": "image",
-      "tags": [
-        "歴史資料",
         "歴史の痕跡",
         "文字景観",
         "看板",
