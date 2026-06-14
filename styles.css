@@ -161,8 +161,10 @@ footer p:last-child { text-align: right; }
   .site-header { height: 64px; padding: 0 20px; }
   .status { display: none; }
   .hero { min-height: auto; grid-template-columns: 1fr; padding: 70px 20px 55px; }
+  .hero-copy, .collection-intro > * { min-width: 0; }
   .hero-index { display: none; }
-  .hero h1 { font-size: 45px; }
+  .hero h1 { font-size: clamp(38px, 11.5vw, 45px); overflow-wrap: anywhere; }
+  .lead, .collection-intro h2, .collection-description { overflow-wrap: anywhere; }
   .collection-intro, .policy { padding: 72px 20px 48px; }
   .toolbar { align-items: flex-start; flex-direction: column; margin-inline: 20px; }
   .gallery { grid-template-columns: 1fr; padding: 0 20px 72px; }

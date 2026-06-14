@@ -6,6 +6,13 @@
       "itemCount": 15,
       "path": "data/collections/2026-06-13.json",
       "diaryPath": "diary/2026-06-13.md"
+    },
+    {
+      "date": "2026-06-14",
+      "title": "雨樋に刻まれた建築年",
+      "itemCount": 13,
+      "path": "data/collections/2026-06-14.json",
+      "diaryPath": "diary/2026-06-14.md"
     }
   ]
 }
