@@ -1,93 +1,59 @@
-# 余白採集室 日次運用指示
+# 余白採集室 日次運用
 
 ## 目的
 
-インターネット上のあらゆるものを、日付ではなく育ち続けるジャンルへ収集する。写真、イラスト、文章、ウェブページ、動画、音声、コード、データ、文書、ゲーム、投稿、メタデータだけの記録など、媒体は限定しない。並べたときの比較可能性と、出典・権利条件を追跡できることを優先する。
+インターネット上のあらゆる媒体から、比較でき、出典と権利条件を追跡できる標本を集める。写真、イラスト、文章、動画、音声、ウェブページ、コード、データ、文書、ゲーム、投稿、メタデータだけの記録も対象にする。
 
-## 毎回最初に確認するもの
+## 開始時
 
-1. この指示書
-2. 自動化メモ
-3. `git status --short --branch`
-4. `data/genres/index.json` と対象ジャンルJSON
-5. 直近の日記と公開サイト
+1. この指示書と自動化メモを読む。
+2. `git status --short --branch`、`data/genres/index.json`、対象ジャンル、直近の日記、公開サイトを確認する。
+3. 未コミット変更を戻さず、公開済み作業を重複させない。
 
-既存の未コミット変更を勝手に戻さない。当日分が公開済みでも、必要な修復や質のある追補がなければ重複作業をしない。
+## 1回の主作業
 
-## 日次処理
-
-毎回、次のうち1つを主作業として選ぶ。
+次のどれか1つを選ぶ。
 
 - 既存ジャンルを深掘りする
-- 新ジャンルを設ける
-- 標本をより適切な主ジャンルへ移す
+- 10〜50件で新ジャンルを始める
+- 標本を移動する
 - ジャンルを統合する
-- ジャンルを非公開アーカイブにする
+- ジャンルを非公開化する
 
-新ジャンルは10〜50件で開始する。既存ジャンルの追補に最低件数はなく、質のある1件だけでもよい。ジャンル全体の件数上限は設けない。
+既存ジャンルの追補は1件からでよい。件数上限は設けない。収集不能なら検索、原因、再試行方法を日記へ `frozen` と記録し、別テーマへ移る。
 
-収集できないテーマは、試した検索、失敗原因、再試行方法を当日の日記へ `frozen` と記録し、別テーマまたは別作業へ移る。HTTP 429や一時的な5xxでは待機を増やして再試行し、短時間の連続試行やTLS検証の無効化はしない。
-
-## データ
+## データ規則
 
 - 索引: `data/genres/index.json`
 - ジャンル: `data/genres/{genreId}.json`
 - 日記: `diary/YYYY-MM-DD.md`
-- 再配布可能な資産: `assets/collections/` 以下。既存パスは日付形式のままでよい
+- 再配布可能な資産: `assets/collections/`
 
-ジャンルIDは小文字英数字とハイフンで安定させ、題名変更後も変えない。ジャンルには `id`、`title`、`subtitle`、`description`、`method`、`status`、`tags`、`relatedGenres`、任意の `mapPosition`、`representativeItemId`、`createdAt`、`updatedAt`、`history`、`itemCount`、`items` を持たせる。
+ジャンルIDは小文字英数字とハイフンで固定する。標本は1つの主ジャンルにだけ置き、横断関係は `tags`、編集上の関係は `relatedGenres` で表す。
 
-標本は1つの主ジャンルだけに置き、横断関係は複数の `tags` で表す。標本には少なくとも `id`、`title`、`family`、`curatorNote`、`sourceUrl`、`mediaType`、`tags`、`license` または `rights` を持たせる。保存資産がある場合は作者名と `localAsset` または互換用の `localImage` も記録する。
+ジャンルには `id`、題名、説明、方法、状態、タグ、関連、代表資料、作成・更新日、履歴、件数、標本を持たせる。標本には `id`、題名、`family`、採集メモ、原典URL、媒体、タグ、権利情報を持たせる。保存資産がある場合は作者と資産パスも記録する。
 
-`mediaType` は `image`、`video`、`audio`、`text`、`link` のいずれか。再配布できない、容量が大きい、取得制限がある資料は複製せず、必要最小限の抜粋・説明・プレビュー・メタデータと原典リンクだけを保存する。歌詞、書籍、記事などを全文転載しない。
+`mediaType` は `image`、`video`、`audio`、`text`、`link`。再配布できない資料や大容量資料は複製せず、必要最小限の説明、プレビュー、メタデータ、原典リンクだけを保存する。全文転載をしない。
 
-## ジャンルの関係と状態
+`archived` は索引に残して非公開、統合元は `merged` と `redirectTo` を残す。変更はジャンル履歴と当日の日記の両方へ記録する。正規URLは `?genre={genreId}`、標本は `?genre={genreId}&item={itemId}`。旧日付URLは維持する。
 
-- 自動関係は共通タグから生成する
-- 編集上の関係は `relatedGenres` に記録する
-- 配置補正が必要な場合だけ `mapPosition: { x, y }` を0〜100で記録する
-- 非公開にする場合は `status: archived` とし、索引には残す
-- 統合する場合は旧項目を `status: merged`、`redirectTo` 付きで残す
-- 作成、追補、移動、分離、統合、非公開化はジャンルの `history` と当日の日記の両方へ追記する
+## 取得
 
-`?genre={genreId}` を正規URLとする。既存の `?collection=YYYY-MM-DD` は `legacyCollections` から対応ジャンルへ転送し、過去リンクを壊さない。
+- APIメタデータは一括取得し、ファイルは直列取得する。
+- 取得済みファイルを再利用し、中断後に再開可能にする。
+- ID、原典、作者、日付、権利、媒体を原典から確認する。
+- 重複、リンク切れ、出典不明、機械生成スパム、個人情報、違法性や誤解の危険が高い資料を除外する。
+- 429と一時的な5xxは待機を増やして再試行し、TLS検証を無効化しない。
+- 一時物は `output/` に置き、成功後に削除する。日付専用スクリプトを増やさない。
 
-## 取得と整理
+## 完了コマンド
 
-- APIは可能な限り一括取得し、ファイル取得だけを直列化する
-- 取得済みファイルは再取得せず、中断後に再開できるようにする
-- ID、原典URL、権利条件、作者、取得日、媒体情報を原典から確認する
-- 重複、リンク切れ、出典不明、機械生成スパム、個人情報、違法性や誤解の危険が高い資料を除外する
-- 一時ファイル、ブラウザープロファイル、スクリーンショットは `output/` に置き、成功後に不要なら削除する
-- 日付専用のJSONや収集スクリプトを新設しない。再利用価値のある処理だけをジャンル名または汎用名で残す
-
-Windows PowerShell 5で日本語スクリプトを実行する場合:
+収集と日記更新後、次の1コマンドで全検証、コミット、push、Pages確認まで行う。
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/run-utf8.ps1 -Path scripts/example.ps1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/run-automation.ps1 -Genre genre-id -CommitMessage "Describe the change" -Publish
 ```
 
-## 検証
+公開せずローカル検証だけ行う場合は `-Publish` を外す。この処理は全ジャンル整合性、対象原典リンク、PC・390px実ブラウザー、URL・履歴・枝分かれ、PagesのHTML・索引・ジャンルJSON・代表資産を確認する。
 
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-genre.ps1 -All
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-genre.ps1 -Genre genre-id -CheckLinks
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-site.ps1 -Genre genre-id
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-pages.ps1 -Genre genre-id
-```
-
-機械検証では、ジャンルID・状態・タグ・関連先・転送先・履歴順・日記・代表資料・件数・主所属・全棚横断のID／原典重複・ローカル資産・媒体・権利情報を確認する。
-
-実ブラウザーでは、PCと390pxで漂流マップ、タグ強調、ランダム選択、棚を開く、隣の棚、一覧切替、直接URL、旧日付URL転送、戻る・進む、媒体フィルター、詳細表示、原典リンク、横溢れ、JavaScriptエラーを確認する。`prefers-reduced-motion` でも操作可能であることを確認する。
-
-## 公開
-
-検証済みの意図した変更だけをコミットし、`main` へプッシュする。`gh` がPATHにない場合は `.tools/bin/gh.exe` を使う。Pages完了後、公開URLから次をHTTP 200で取得して内容も確認する。
-
-- HTML
-- `data/genres/index.json`
-- 変更したジャンルJSON
-- 代表資産または、メタデータのみの棚では代表原典リンク
-- 旧日付URLの転送表示
-
-失敗した工程は原因、実施した修復、次回の再試行方法を日記に残す。作業ツリーに意図した変更だけがあることを最後に確認する。
+失敗時は原因、修復、再試行コマンドを日記へ残す。意図した変更だけが残っていることを最後に確認する。

@@ -1,13 +1,34 @@
 const genreIndexPath = "data/genres/index.json";
 const supportedMediaTypes = new Set(["image", "video", "audio", "text", "link"]);
-const state = { index: null, published: [], cache: new Map(), selected: null, current: null, tag: "すべて", panX: 0, panY: 0, previewOffset: 0, previewRequest: 0 };
+const explorationStorageKey = "yohaku.exploration.v1";
+
+const state = {
+  index: null,
+  published: [],
+  cache: new Map(),
+  selectedGenre: null,
+  selectedItem: null,
+  tag: "すべて",
+  view: "map",
+  panX: 0,
+  panY: 0,
+  sampleOffset: 0,
+  itemFilter: "すべて",
+  showAll: false,
+  requestId: 0,
+  exploration: loadExploration()
+};
 
 const elements = {
-  explorer: document.querySelector("#explore"), genreView: document.querySelector("#genre-view"), map: document.querySelector("#genre-map"),
-  stage: document.querySelector("#map-stage"), lines: document.querySelector("#map-lines"), nodes: document.querySelector("#map-nodes"),
-  preview: document.querySelector("#genre-preview"), list: document.querySelector("#genre-list"), tagFilter: document.querySelector("#tag-filter"),
-  gallery: document.querySelector("#gallery"), filters: document.querySelector("#filters"), dialog: document.querySelector("#specimen-dialog"),
-  dialogContent: document.querySelector("#dialog-content")
+  explorer: document.querySelector("#explore"),
+  map: document.querySelector("#genre-map"),
+  stage: document.querySelector("#map-stage"),
+  lines: document.querySelector("#map-lines"),
+  nodes: document.querySelector("#map-nodes"),
+  list: document.querySelector("#genre-list"),
+  panel: document.querySelector("#exploration-panel"),
+  tagFilter: document.querySelector("#tag-filter"),
+  recentUpdates: document.querySelector("#recent-updates")
 };
 
 const escapeHtml = (value = "") => String(value)
@@ -18,6 +39,29 @@ const mediaTypeOf = (item) => supportedMediaTypes.has(item.mediaType) ? item.med
 const localAssetOf = (item) => item.localAsset || item.localImage || "";
 const previewOf = (item) => item.previewImage || (mediaTypeOf(item) === "image" ? localAssetOf(item) : "");
 const byId = (id) => state.published.find((genre) => genre.id === id);
+const itemKey = (genreId, itemId) => `${genreId}:${itemId}`;
+
+function loadExploration() {
+  try {
+    const stored = JSON.parse(sessionStorage.getItem(explorationStorageKey));
+    return { visited: Array.isArray(stored?.visited) ? stored.visited : [], trail: Array.isArray(stored?.trail) ? stored.trail : [] };
+  } catch {
+    return { visited: [], trail: [] };
+  }
+}
+
+function saveExploration() {
+  sessionStorage.setItem(explorationStorageKey, JSON.stringify(state.exploration));
+}
+
+function rememberItem(genreId, item) {
+  const key = itemKey(genreId, item.id);
+  if (!state.exploration.visited.includes(key)) state.exploration.visited.push(key);
+  state.exploration.trail = state.exploration.trail.filter((entry) => entry.key !== key);
+  state.exploration.trail.push({ key, genreId, itemId: String(item.id), title: item.title });
+  state.exploration.trail = state.exploration.trail.slice(-6);
+  saveExploration();
+}
 
 function hashNumber(value) {
   let hash = 2166136261;
@@ -25,24 +69,23 @@ function hashNumber(value) {
   return hash >>> 0;
 }
 
-function sharedTags(a, b) { return a.tags.filter((tag) => b.tags.includes(tag)); }
+function sharedTags(a, b) {
+  const other = new Set(b.tags || []);
+  return (a.tags || []).filter((tag) => other.has(tag));
+}
 
 function relationWeight(a, b) {
   const shared = sharedTags(a, b).length;
-  const manual = a.relatedGenres.includes(b.id) || b.relatedGenres.includes(a.id);
+  const manual = (a.relatedGenres || []).includes(b.id) || (b.relatedGenres || []).includes(a.id);
   return shared + (manual ? 2 : 0);
 }
 
 function computePositions(genres) {
   const points = genres.map((genre) => {
     const seed = hashNumber(genre.id);
-    return {
-      id: genre.id,
-      x: genre.mapPosition?.x ?? 18 + (seed % 65),
-      y: genre.mapPosition?.y ?? 20 + ((seed >>> 8) % 60),
-      anchor: Boolean(genre.mapPosition)
-    };
+    return { id: genre.id, x: genre.mapPosition?.x ?? 18 + (seed % 65), y: genre.mapPosition?.y ?? 20 + ((seed >>> 8) % 60), anchor: Boolean(genre.mapPosition) };
   });
+  const genreById = (id) => genres.find((genre) => genre.id === id);
   for (let step = 0; step < 90; step += 1) {
     for (let i = 0; i < points.length; i += 1) {
       for (let j = i + 1; j < points.length; j += 1) {
@@ -50,7 +93,7 @@ function computePositions(genres) {
         let dx = b.x - a.x, dy = b.y - a.y;
         const distance = Math.max(7, Math.hypot(dx, dy));
         dx /= distance; dy /= distance;
-        const weight = relationWeight(byId(a.id), byId(b.id));
+        const weight = relationWeight(genreById(a.id), genreById(b.id));
         const force = distance < 24 ? -(24 - distance) * 0.055 : weight ? Math.min(0.08, (distance - 34) * 0.0025 * weight) : 0;
         if (!a.anchor) { a.x += dx * force; a.y += dy * force; }
         if (!b.anchor) { b.x -= dx * force; b.y -= dy * force; }
@@ -90,51 +133,66 @@ function metadataRows(item) {
 
 function renderMap() {
   const positions = computePositions(state.published);
-  elements.nodes.replaceChildren(); elements.lines.replaceChildren(); elements.list.replaceChildren();
+  elements.nodes.replaceChildren();
+  elements.lines.replaceChildren();
+  elements.list.replaceChildren();
   state.published.forEach((genre) => {
     const point = positions.get(genre.id), seed = hashNumber(genre.id);
     const node = document.createElement("button");
-    node.type = "button"; node.className = `genre-node shape-${seed % 4}`; node.dataset.genre = genre.id; node.dataset.tags = genre.tags.join("|");
-    node.style.left = `${point.x}%`; node.style.top = `${point.y}%`; node.style.setProperty("--drift-x", `${4 + seed % 8}px`); node.style.setProperty("--drift-y", `${4 + (seed >>> 4) % 7}px`); node.style.setProperty("--drift-time", `${8 + seed % 7}s`);
-    node.innerHTML = `<span class="genre-node-image"><img src="${escapeHtml(genre.representativeAsset)}" alt=""></span><span class="genre-node-copy"><b>${escapeHtml(genre.title)}</b><small>${genre.itemCount} specimens</small></span>`;
+    node.type = "button";
+    node.className = `genre-node shape-${seed % 4}`;
+    node.dataset.genre = genre.id;
+    node.dataset.tags = genre.tags.join("|");
+    node.style.left = `${point.x}%`;
+    node.style.top = `${point.y}%`;
+    node.style.setProperty("--drift-x", `${4 + seed % 8}px`);
+    node.style.setProperty("--drift-y", `${4 + (seed >>> 4) % 7}px`);
+    node.style.setProperty("--drift-time", `${8 + seed % 7}s`);
+    node.innerHTML = `<span class="genre-node-image"><img src="${escapeHtml(genre.representativeAsset)}" alt=""></span><span class="genre-node-copy"><b>${escapeHtml(genre.title)}</b><small>${genre.itemCount}標本</small></span>`;
     node.addEventListener("click", () => selectGenre(genre.id));
-    node.addEventListener("dblclick", () => openGenre(genre.id));
     node.addEventListener("mouseenter", () => highlightRelations(genre.id));
-    node.addEventListener("mouseleave", () => highlightRelations(state.selected));
+    node.addEventListener("mouseleave", () => highlightRelations(state.selectedGenre));
     elements.nodes.append(node);
 
-    const card = document.createElement("button"); card.type = "button"; card.className = "genre-list-card";
-    card.innerHTML = `<img src="${escapeHtml(genre.representativeAsset)}" alt=""><span><small>${genre.tags.map(escapeHtml).join(" / ")}</small><b>${escapeHtml(genre.title)}</b><em>${genre.itemCount} specimens</em></span>`;
-    card.addEventListener("click", () => openGenre(genre.id)); elements.list.append(card);
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "genre-list-card";
+    card.dataset.genre = genre.id;
+    card.dataset.tags = genre.tags.join("|");
+    card.innerHTML = `<img src="${escapeHtml(genre.representativeAsset)}" alt=""><span><small>${genre.tags.map(escapeHtml).join(" / ")}</small><b>${escapeHtml(genre.title)}</b><em>${genre.itemCount}標本</em></span>`;
+    card.addEventListener("click", () => selectGenre(genre.id));
+    elements.list.append(card);
   });
-  for (let i = 0; i < state.published.length; i += 1) for (let j = i + 1; j < state.published.length; j += 1) {
-    const a = state.published[i], b = state.published[j], weight = relationWeight(a, b);
-    if (!weight) continue;
-    const pa = positions.get(a.id), pb = positions.get(b.id), line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-    line.setAttribute("x1", pa.x * 10); line.setAttribute("y1", pa.y * 6.4); line.setAttribute("x2", pb.x * 10); line.setAttribute("y2", pb.y * 6.4);
-    line.dataset.a = a.id; line.dataset.b = b.id; line.dataset.tags = sharedTags(a, b).join("|"); line.style.setProperty("--edge-weight", Math.min(3, weight));
-    elements.lines.append(line);
+  for (let i = 0; i < state.published.length; i += 1) {
+    for (let j = i + 1; j < state.published.length; j += 1) {
+      const a = state.published[i], b = state.published[j], weight = relationWeight(a, b);
+      if (!weight) continue;
+      const pa = positions.get(a.id), pb = positions.get(b.id), line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute("x1", pa.x * 10); line.setAttribute("y1", pa.y * 6.4); line.setAttribute("x2", pb.x * 10); line.setAttribute("y2", pb.y * 6.4);
+      line.dataset.a = a.id; line.dataset.b = b.id; line.dataset.tags = sharedTags(a, b).join("|"); line.style.setProperty("--edge-weight", Math.min(3, weight));
+      elements.lines.append(line);
+    }
   }
-  setupTagFilter(); applyMapFilter(); updateStageTransform();
+  setupTagFilter();
+  applyMapFilter();
+  updateStageTransform();
 }
 
 function setupTagFilter() {
   const tags = ["すべて", ...new Set(state.published.flatMap((genre) => genre.tags))];
-  elements.tagFilter.innerHTML = `<label for="map-tag-select">タグで絞る</label><select id="map-tag-select">${tags.map((tag) => `<option value="${escapeHtml(tag)}"${tag === state.tag ? " selected" : ""}>${escapeHtml(tag)}</option>`).join("")}</select>`;
-  elements.tagFilter.querySelector("select").addEventListener("change", (event) => chooseTag(event.target.value));
+  const body = elements.tagFilter.querySelector(".tag-filter-body");
+  body.innerHTML = `<label for="map-tag-select">表示するタグ</label><select id="map-tag-select">${tags.map((tag) => `<option value="${escapeHtml(tag)}"${tag === state.tag ? " selected" : ""}>${escapeHtml(tag)}</option>`).join("")}</select>`;
+  body.querySelector("select").addEventListener("change", (event) => chooseTag(event.target.value));
 }
 
 function chooseTag(tag) {
-  state.tag = tag; setupTagFilter(); applyMapFilter();
-  const selected = byId(state.selected);
-  if (tag !== "すべて" && (!selected || !selected.tags.includes(tag))) {
-    const next = state.published.find((genre) => genre.tags.includes(tag));
-    if (next) selectGenre(next.id);
-  }
+  state.tag = tag;
+  setupTagFilter();
+  applyMapFilter();
 }
 
 function applyMapFilter() {
-  document.querySelectorAll(".genre-node").forEach((node) => node.classList.toggle("filtered", state.tag !== "すべて" && !node.dataset.tags.split("|").includes(state.tag)));
+  document.querySelectorAll(".genre-node, .genre-list-card").forEach((node) => node.classList.toggle("filtered", state.tag !== "すべて" && !node.dataset.tags.split("|").includes(state.tag)));
   document.querySelectorAll(".map-lines line").forEach((line) => line.classList.toggle("filtered", state.tag !== "すべて" && !line.dataset.tags.split("|").includes(state.tag)));
 }
 
@@ -144,138 +202,306 @@ function highlightRelations(id) {
   document.querySelectorAll(".map-lines line").forEach((line) => line.classList.toggle("active", Boolean(id) && (line.dataset.a === id || line.dataset.b === id)));
 }
 
-async function selectGenre(id) {
-  const genre = byId(id); if (!genre) return; const request = ++state.previewRequest; state.selected = id; state.previewOffset = 0; highlightRelations(id);
+async function fetchGenre(id) {
+  if (state.cache.has(id)) return state.cache.get(id);
+  const entry = byId(id);
+  if (!entry) throw new Error(`Unknown genre: ${id}`);
+  const response = await fetch(entry.path);
+  if (!response.ok) throw new Error(`${response.status} ${entry.path}`);
+  const genre = await response.json();
+  state.cache.set(id, genre);
+  return genre;
+}
+
+function updateUrl(genreId = null, itemId = null, replace = false) {
+  const url = new URL(location.href);
+  url.search = "";
+  if (genreId) url.searchParams.set("genre", genreId);
+  if (genreId && itemId) url.searchParams.set("item", itemId);
+  const method = replace ? "replaceState" : "pushState";
+  history[method]({ genre: genreId, item: itemId }, "", `${url.pathname}${url.search}${url.hash}`);
+}
+
+function setSelectedNode(id) {
+  state.selectedGenre = id;
   document.querySelectorAll(".genre-node").forEach((node) => node.classList.toggle("selected", node.dataset.genre === id));
-  elements.preview.dataset.genre = id; elements.preview.dataset.ready = "false";
-  elements.preview.innerHTML = `<div class="preview-loading"><span></span><p>${escapeHtml(genre.title)}を開いています</p></div>`;
+  document.querySelectorAll(".genre-list-card").forEach((card) => card.classList.toggle("selected", card.dataset.genre === id));
+  highlightRelations(id);
+}
+
+async function selectGenre(id, options = {}) {
+  const entry = byId(id);
+  if (!entry) return showEmptyPanel(options.history !== false);
+  const requestId = ++state.requestId;
+  setSelectedNode(id);
+  state.selectedItem = null;
+  state.sampleOffset = 0;
+  state.itemFilter = "すべて";
+  state.showAll = false;
+  elements.panel.dataset.state = "loading";
+  elements.panel.innerHTML = `<div class="panel-loading"><span></span><p>${escapeHtml(entry.title)}を開いています</p></div>`;
+  if (options.history !== false && !options.itemId) updateUrl(id);
   try {
-    const genreData = await fetchGenre(id);
-    if (state.selected !== id || state.previewRequest !== request) return;
-    renderGenrePreview(genreData, genre);
+    const genre = await fetchGenre(id);
+    if (requestId !== state.requestId) return;
+    if (options.itemId) {
+      const item = genre.items.find((candidate) => String(candidate.id) === String(options.itemId));
+      if (item) return showItem(genre, item, { history: options.history, replace: options.replace });
+    }
+    renderGenrePanel(genre, entry);
   } catch (error) {
-    if (state.selected === id && state.previewRequest === request) elements.preview.innerHTML = `<p class="error">棚を読み込めませんでした: ${escapeHtml(error.message)}</p>`;
+    elements.panel.innerHTML = `<p class="error">棚を読み込めませんでした: ${escapeHtml(error.message)}</p>`;
   }
 }
 
-function previewItems(genre, offset) {
-  const count = Math.min(4, genre.items.length);
-  return Array.from({ length: count }, (_, index) => genre.items[(offset + index) % genre.items.length]);
+function showEmptyPanel(updateHistory = true) {
+  state.selectedGenre = null;
+  state.selectedItem = null;
+  highlightRelations(null);
+  document.querySelectorAll(".selected").forEach((node) => node.classList.remove("selected"));
+  if (updateHistory) updateUrl();
+  elements.panel.dataset.state = "empty";
+  elements.panel.innerHTML = `<div class="panel-empty"><p class="section-number">START HERE</p><h2>ひとつ選ぶと、探索が始まります。</h2><p>地図の気配や一覧の棚を選ぶと、ここに標本が現れます。</p><button class="primary-action" type="button" data-random-entry>偶然の標本を見る</button></div>`;
+  elements.panel.querySelector("[data-random-entry]").addEventListener("click", randomEntry);
 }
 
-function renderGenrePreview(genre, entry) {
-  const related = state.published.filter((candidate) => candidate.id !== entry.id && relationWeight(entry, candidate)).sort((a, b) => relationWeight(entry, b) - relationWeight(entry, a));
-  const samples = previewItems(genre, state.previewOffset);
-  elements.preview.innerHTML = `<div class="preview-head"><p class="section-number">SELECTED GENRE</p><span>${genre.itemCount} specimens</span></div><div class="preview-cover"><img src="${escapeHtml(entry.representativeAsset)}" alt=""></div><h2>${escapeHtml(genre.title)}</h2><p class="preview-subtitle">${escapeHtml(genre.subtitle)}</p><p class="preview-description">${escapeHtml(genre.description)}</p><div class="preview-tags">${genre.tags.map((tag) => `<button type="button" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`).join("")}</div><div class="preview-section-title"><span>標本を覗く</span><button class="preview-shuffle" type="button">入れ替える</button></div><div class="preview-specimens">${samples.map((item) => `<button type="button" data-specimen="${escapeHtml(item.id)}"><span>${renderMedia(item, false, true)}</span><b>${escapeHtml(item.title)}</b></button>`).join("")}</div>${related.length ? `<div class="preview-section-title"><span>隣の棚</span></div><div class="preview-related">${related.map((candidate) => `<button type="button" data-related="${escapeHtml(candidate.id)}">${escapeHtml(candidate.title)}<small>${escapeHtml(sharedTags(entry, candidate).join(" / ") || "編集された関係")}</small></button>`).join("")}</div>` : ""}<button class="primary-action open-selected" type="button">棚の全標本を見る</button>`;
-  elements.preview.dataset.genre = entry.id; elements.preview.dataset.ready = "true";
-  elements.preview.querySelector(".open-selected").addEventListener("click", () => openGenre(entry.id));
-  elements.preview.querySelector(".preview-shuffle").addEventListener("click", () => { state.previewOffset = (state.previewOffset + 4) % genre.items.length; renderGenrePreview(genre, entry); });
-  elements.preview.querySelectorAll("[data-tag]").forEach((button) => button.addEventListener("click", () => chooseTag(button.dataset.tag)));
-  elements.preview.querySelectorAll("[data-related]").forEach((button) => button.addEventListener("click", () => selectGenre(button.dataset.related)));
-  elements.preview.querySelectorAll("[data-specimen]").forEach((button) => button.addEventListener("click", () => {
-    const index = genre.items.findIndex((item) => String(item.id) === button.dataset.specimen);
-    if (index >= 0) openDialog(genre.items[index], index);
+function filteredItems(genre) {
+  return genre.items.filter((item) => state.itemFilter === "すべて" || item.family === state.itemFilter || mediaTypeOf(item) === state.itemFilter);
+}
+
+function renderItemButtons(items, genreId) {
+  return items.map((item) => `<button type="button" class="specimen-card" data-item="${escapeHtml(item.id)}"><span>${renderMedia(item, false)}</span><b>${escapeHtml(item.title)}</b><small>${escapeHtml(item.family)} / ${escapeHtml(mediaTypeOf(item))}</small></button>`).join("");
+}
+
+function renderGenrePanel(genre, entry) {
+  const options = ["すべて", ...new Set(genre.items.flatMap((item) => [item.family, mediaTypeOf(item)]))];
+  const items = filteredItems(genre);
+  const shown = state.showAll ? items : items.slice(state.sampleOffset, state.sampleOffset + 6);
+  const historyItems = [...(genre.history || [])].sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  elements.panel.dataset.state = "genre";
+  elements.panel.dataset.genre = genre.id;
+  elements.panel.dataset.ready = "true";
+  elements.panel.innerHTML = `<nav class="breadcrumbs" aria-label="現在地"><button type="button" data-panel-home>地図</button><span>›</span><b>${escapeHtml(genre.title)}</b></nav>
+    <div class="panel-heading"><p class="section-number">GENRE / ${genre.itemCount}標本</p><div class="panel-cover"><img src="${escapeHtml(entry.representativeAsset)}" alt=""></div><h2>${escapeHtml(genre.title)}</h2><p class="panel-subtitle">${escapeHtml(genre.subtitle)}</p><p>${escapeHtml(genre.description)}</p></div>
+    <div class="panel-tags">${genre.tags.map((tag) => `<button type="button" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`).join("")}</div>
+    <div class="panel-section-heading"><h3>標本を見る</h3><button type="button" class="text-button" data-shuffle>別の標本を表示</button></div>
+    <label class="item-filter">標本の絞り込み<select>${options.map((option) => `<option${option === state.itemFilter ? " selected" : ""}>${escapeHtml(option)}</option>`).join("")}</select></label>
+    <div class="specimen-grid">${renderItemButtons(shown, genre.id)}</div>
+    <button class="secondary-action" type="button" data-show-all>${state.showAll ? "標本を少なく表示" : `すべての標本を見る（${items.length}）`}</button>
+    <details class="genre-details"><summary>この棚の見方と更新履歴</summary><p>${escapeHtml(genre.method)}</p><ol>${historyItems.map((item) => { const diary = item.diaryPath || item.diary; return `<li><time>${escapeHtml(item.date)}</time><p>${escapeHtml(item.summary || item.note || item.action || "更新")}</p>${diary ? `<a href="${escapeHtml(diary)}">採集日記</a>` : ""}</li>`; }).join("")}</ol></details>`;
+  elements.panel.querySelector("[data-panel-home]").addEventListener("click", () => showEmptyPanel());
+  elements.panel.querySelectorAll("[data-tag]").forEach((button) => button.addEventListener("click", () => { chooseTag(button.dataset.tag); elements.tagFilter.open = true; }));
+  elements.panel.querySelector("[data-shuffle]").addEventListener("click", () => {
+    state.sampleOffset = items.length ? (state.sampleOffset + 6) % items.length : 0;
+    state.showAll = false;
+    renderGenrePanel(genre, entry);
+  });
+  elements.panel.querySelector(".item-filter select").addEventListener("change", (event) => {
+    state.itemFilter = event.target.value;
+    state.sampleOffset = 0;
+    state.showAll = false;
+    renderGenrePanel(genre, entry);
+  });
+  elements.panel.querySelector("[data-show-all]").addEventListener("click", () => { state.showAll = !state.showAll; renderGenrePanel(genre, entry); });
+  elements.panel.querySelectorAll("[data-item]").forEach((button) => button.addEventListener("click", () => {
+    const item = genre.items.find((candidate) => String(candidate.id) === button.dataset.item);
+    if (item) showItem(genre, item);
   }));
 }
 
-async function fetchGenre(id) {
-  if (state.cache.has(id)) return state.cache.get(id);
-  const entry = state.index.genres.find((genre) => genre.id === id); if (!entry) throw new Error(`ジャンル ${id} は見つかりません`);
-  if (entry.status === "merged" && entry.redirectTo) return fetchGenre(entry.redirectTo);
-  const response = await fetch(entry.path); if (!response.ok) throw new Error(`HTTP ${response.status}: ${entry.path}`);
-  const genre = await response.json(); state.cache.set(id, genre); return genre;
+function renderTrail() {
+  if (!state.exploration.trail.length) return "";
+  return `<div class="trail"><div class="panel-section-heading"><h3>今回の軌跡</h3><button class="text-button" type="button" data-reset-exploration>探索をリセット</button></div><div class="trail-list">${state.exploration.trail.map((entry, index) => `<button type="button" data-trail-genre="${escapeHtml(entry.genreId)}" data-trail-item="${escapeHtml(entry.itemId)}" aria-label="${escapeHtml(entry.title)}">${index + 1}</button>`).join("")}</div></div>`;
 }
 
-async function openGenre(id, updateHistory = true) {
-  const entry = state.index.genres.find((genre) => genre.id === id); if (!entry) return showMap(updateHistory);
-  if (entry.status === "merged" && entry.redirectTo) return openGenre(entry.redirectTo, updateHistory);
-  const genre = await fetchGenre(id); state.current = genre; renderGenre(genre); elements.explorer.hidden = true; elements.genreView.hidden = false;
-  if (updateHistory) { const url = new URL(location.href); url.search = ""; url.searchParams.set("genre", genre.id); history.pushState({ genre: genre.id }, "", url); }
-  scrollTo({ top: 0, behavior: "smooth" });
+function attachTrailEvents() {
+  elements.panel.querySelectorAll("[data-trail-item]").forEach((button) => button.addEventListener("click", () => selectGenre(button.dataset.trailGenre, { itemId: button.dataset.trailItem })));
+  elements.panel.querySelector("[data-reset-exploration]")?.addEventListener("click", () => {
+    state.exploration = { visited: [], trail: [] };
+    saveExploration();
+    showEmptyPanel();
+  });
 }
 
-function showMap(updateHistory = true) {
-  state.current = null; elements.genreView.hidden = true; elements.explorer.hidden = false;
-  if (updateHistory) { const url = new URL(location.href); url.search = ""; history.pushState({}, "", url); }
-  scrollTo({ top: 0, behavior: "smooth" });
+async function allSpecimens() {
+  const genres = await Promise.all(state.published.map((entry) => fetchGenre(entry.id)));
+  return genres.flatMap((genre) => genre.items.map((item) => ({ genre, entry: byId(genre.id), item, key: itemKey(genre.id, item.id) })));
 }
 
-function renderGenre(genre) {
-  document.querySelector("#collection-number").textContent = `GENRE / ${genre.id.toUpperCase()}`;
-  document.querySelector("#collection-title").textContent = genre.title; document.querySelector("#collection-subtitle").textContent = genre.subtitle;
-  document.querySelector("#collection-description").textContent = genre.description; document.querySelector("#item-count").textContent = String(genre.itemCount).padStart(2, "0");
-  document.querySelector("#field-note-method").textContent = genre.method;
-  document.querySelector("#genre-tags").innerHTML = genre.tags.map((tag) => `<button type="button">${escapeHtml(tag)}</button>`).join("");
-  document.querySelectorAll("#genre-tags button").forEach((button) => button.addEventListener("click", () => {
-    chooseTag(button.textContent); showMap();
-  }));
-  setupFilters(genre.items); renderItems(genre.items); renderRelated(genre); renderHistory(genre);
+function scoreCandidate(current, candidate, mode) {
+  const shared = sharedTags(current.item, candidate.item).length;
+  const unvisited = state.exploration.visited.includes(candidate.key) ? 0 : 8;
+  const differentGenre = current.genre.id !== candidate.genre.id;
+  const differentFamily = current.item.family !== candidate.item.family;
+  const differentMedia = mediaTypeOf(current.item) !== mediaTypeOf(candidate.item);
+  if (mode === "same") return unvisited + shared * 6 + (differentFamily ? 1 : 0) + (differentGenre ? 1 : 0);
+  if (mode === "cross") return unvisited + (differentGenre ? 12 : -20) + shared * 4 + relationWeight(current.entry, candidate.entry);
+  return unvisited + (differentGenre ? 6 : 0) + (differentFamily ? 5 : 0) + (differentMedia ? 5 : 0) - shared * 3;
 }
 
-function renderItems(items) { elements.gallery.replaceChildren(); items.forEach((item, index) => elements.gallery.append(renderCard(item, index))); }
-
-function renderCard(item, index) {
-  const figure = document.createElement("figure"); figure.className = "specimen"; figure.dataset.family = item.family; figure.dataset.mediaType = mediaTypeOf(item); figure.tabIndex = 0; figure.setAttribute("role", "button"); figure.setAttribute("aria-label", `${item.title} の詳細を見る`);
-  figure.innerHTML = `<div class="specimen-frame">${renderMedia(item)}<span class="specimen-number">${String(index + 1).padStart(3, "0")}</span></div><figcaption><span class="specimen-title">${escapeHtml(item.title)}</span><span class="specimen-family">${escapeHtml(item.family)}</span></figcaption><div class="specimen-tags">${(item.tags || []).slice(0, 3).map(escapeHtml).join(" · ")}</div>`;
-  const open = () => openDialog(item, index); figure.addEventListener("click", open); figure.addEventListener("keydown", (event) => { if (["Enter", " "].includes(event.key)) { event.preventDefault(); open(); } }); return figure;
+function pickBranch(current, specimens, mode, used) {
+  const ranked = specimens
+    .filter((candidate) => candidate.key !== current.key && !used.has(candidate.key))
+    .map((candidate) => ({ ...candidate, score: scoreCandidate(current, candidate, mode) + Math.random() * 1.5 }))
+    .sort((a, b) => b.score - a.score);
+  const preferred = mode === "same"
+    ? ranked.find((candidate) => sharedTags(current.item, candidate.item).length)
+    : mode === "cross"
+      ? ranked.find((candidate) => candidate.genre.id !== current.genre.id && sharedTags(current.item, candidate.item).length)
+      : ranked.find((candidate) => candidate.genre.id !== current.genre.id && candidate.item.family !== current.item.family);
+  return preferred || ranked[0] || null;
 }
 
-function setupFilters(items) {
-  const options = ["すべて", ...new Set(items.map((item) => item.family)), ...new Set(items.map(mediaTypeOf))]; elements.filters.replaceChildren();
-  options.forEach((option, index) => { const button = document.createElement("button"); button.type = "button"; button.className = `filter-button${index === 0 ? " active" : ""}`; button.textContent = option;
-    button.addEventListener("click", () => { document.querySelectorAll(".filter-button").forEach((candidate) => candidate.classList.remove("active")); button.classList.add("active"); document.querySelectorAll(".specimen").forEach((card) => { card.hidden = option !== "すべて" && card.dataset.family !== option && card.dataset.mediaType !== option; }); }); elements.filters.append(button); });
+async function renderBranches(genre, item) {
+  const target = elements.panel.querySelector("#branch-options");
+  if (!target) return;
+  try {
+    const specimens = await allSpecimens();
+    const current = specimens.find((candidate) => candidate.genre.id === genre.id && String(candidate.item.id) === String(item.id));
+    if (!current || state.selectedGenre !== genre.id || String(state.selectedItem) !== String(item.id)) return;
+    const used = new Set();
+    const definitions = [
+      ["same", "同じ徴を追う", "共通するタグや形から次へ"],
+      ["cross", "別のジャンルへ", "共通点を残して別の棚へ"],
+      ["far", "遠くへ逸れる", "異なる形や場所へ大きく移動"]
+    ];
+    const branches = definitions.map(([mode, label, description]) => {
+      const candidate = pickBranch(current, specimens, mode, used);
+      if (candidate) used.add(candidate.key);
+      return { mode, label, description, candidate };
+    }).filter((branch) => branch.candidate);
+    target.innerHTML = branches.map((branch) => `<button type="button" data-branch-genre="${escapeHtml(branch.candidate.genre.id)}" data-branch-item="${escapeHtml(branch.candidate.item.id)}"><small>${branch.label}</small><b>${escapeHtml(branch.candidate.item.title)}</b><span>${branch.description}</span></button>`).join("");
+    target.querySelectorAll("[data-branch-item]").forEach((button) => button.addEventListener("click", () => selectGenre(button.dataset.branchGenre, { itemId: button.dataset.branchItem })));
+  } catch (error) {
+    target.innerHTML = `<p class="error compact">次の候補を読み込めませんでした。</p>`;
+  }
 }
 
-function renderRelated(genre) {
-  const related = state.published.filter((candidate) => candidate.id !== genre.id && relationWeight(genre, candidate)).sort((a, b) => relationWeight(genre, b) - relationWeight(genre, a));
-  const container = document.querySelector("#related-genres"); container.replaceChildren();
-  if (!related.length) { container.innerHTML = "<p>現在、隣接する棚はありません。</p>"; return; }
-  related.forEach((entry) => { const button = document.createElement("button"); button.type = "button"; button.innerHTML = `<img src="${escapeHtml(entry.representativeAsset)}" alt=""><span><b>${escapeHtml(entry.title)}</b><small>${sharedTags(genre, entry).join(" / ") || "編集された関係"}</small></span>`; button.addEventListener("click", () => openGenre(entry.id)); container.append(button); });
+function showItem(genre, item, options = {}) {
+  const entry = byId(genre.id);
+  setSelectedNode(genre.id);
+  state.selectedItem = String(item.id);
+  rememberItem(genre.id, item);
+  const items = filteredItems(genre);
+  const index = items.findIndex((candidate) => String(candidate.id) === String(item.id));
+  const previous = index > 0 ? items[index - 1] : null;
+  const next = index >= 0 && index < items.length - 1 ? items[index + 1] : null;
+  if (options.history !== false) updateUrl(genre.id, item.id, options.replace);
+  elements.panel.dataset.state = "item";
+  elements.panel.dataset.genre = genre.id;
+  elements.panel.dataset.item = item.id;
+  elements.panel.dataset.ready = "true";
+  elements.panel.innerHTML = `<nav class="breadcrumbs" aria-label="現在地"><button type="button" data-panel-home>地図</button><span>›</span><button type="button" data-panel-genre>${escapeHtml(genre.title)}</button><span>›</span><b>標本</b></nav>
+    ${renderTrail()}
+    <div class="item-media">${renderMedia(item, true, true)}</div>
+    <div class="item-heading"><p class="section-number">SPECIMEN ${index >= 0 ? String(index + 1).padStart(3, "0") : "---"} / ${escapeHtml(item.family)} / ${escapeHtml(mediaTypeOf(item))}</p><h2>${escapeHtml(item.title)}</h2><p class="curator-note">${escapeHtml(item.curatorNote)}</p></div>
+    <div class="panel-tags static">${(item.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
+    <dl class="metadata">${metadataRows(item)}</dl>
+    <a class="source-button" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer">原典を見る ↗</a>
+    <div class="item-pagination" aria-label="標本の前後移動"><button type="button" data-previous${previous ? "" : " disabled"}>← 前の標本</button><span>${Math.max(0, index + 1)} / ${items.length}</span><button type="button" data-next${next ? "" : " disabled"}>次の標本 →</button></div>
+    <section class="branch-section"><div class="panel-section-heading"><h3>次はどちらへ</h3></div><div id="branch-options" class="branch-options"><p>関係を探しています…</p></div></section>`;
+  elements.panel.querySelector("[data-panel-home]").addEventListener("click", () => showEmptyPanel());
+  elements.panel.querySelector("[data-panel-genre]").addEventListener("click", () => { state.selectedItem = null; updateUrl(genre.id); renderGenrePanel(genre, entry); });
+  elements.panel.querySelector("[data-previous]").addEventListener("click", () => previous && showItem(genre, previous));
+  elements.panel.querySelector("[data-next]").addEventListener("click", () => next && showItem(genre, next));
+  attachTrailEvents();
+  renderBranches(genre, item);
 }
 
-function renderHistory(genre) {
-  const historyList = document.querySelector("#genre-history"); historyList.replaceChildren(); [...genre.history].sort((a, b) => b.date.localeCompare(a.date)).forEach((event) => { const item = document.createElement("li"); item.innerHTML = `<time>${escapeHtml(event.date)}</time><div><small>${escapeHtml(event.type)}</small><p>${escapeHtml(event.summary)}</p>${event.diaryPath ? `<a href="${escapeHtml(event.diaryPath)}">採集日記を読む ↗</a>` : ""}</div>`; historyList.append(item); });
+async function randomEntry() {
+  const specimens = await allSpecimens();
+  const unseen = specimens.filter((candidate) => !state.exploration.visited.includes(candidate.key));
+  const pool = unseen.length ? unseen : specimens;
+  const candidate = pool[Math.floor(Math.random() * pool.length)];
+  if (!candidate) return;
+  await selectGenre(candidate.genre.id, { itemId: candidate.item.id });
+  elements.explorer.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function openDialog(item, index) {
-  const sourceName = item.sourceName ? `${escapeHtml(item.sourceName)} で原典を見る` : "原典を見る";
-  elements.dialogContent.innerHTML = `<div class="dialog-layout"><div class="dialog-media">${renderMedia(item, true)}</div><div class="dialog-meta"><p class="section-number">SPECIMEN ${String(index + 1).padStart(3, "0")} / ${escapeHtml(item.family)} / ${mediaTypeOf(item)}</p><h3>${escapeHtml(item.title)}</h3><p class="curator-note">${escapeHtml(item.curatorNote)}</p><div class="dialog-tags">${(item.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div><dl class="metadata">${metadataRows(item)}</dl><a class="source-button" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer">${sourceName} ↗</a></div></div>`;
-  elements.dialog.showModal();
+function setView(view) {
+  state.view = view;
+  elements.map.hidden = view !== "map";
+  elements.list.hidden = view !== "list";
+  document.querySelectorAll("[data-view]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.view === view)));
 }
 
-function updateStageTransform() { elements.stage.style.transform = `translate(${state.panX}px, ${state.panY}px)`; }
+function updateStageTransform() {
+  elements.stage.style.transform = `translate(${state.panX}px, ${state.panY}px)`;
+}
 
 function setupMapPan() {
   let dragging = false, startX = 0, startY = 0, originX = 0, originY = 0;
-  elements.map.addEventListener("pointerdown", (event) => { if (event.target.closest("button")) return; dragging = true; startX = event.clientX; startY = event.clientY; originX = state.panX; originY = state.panY; elements.map.setPointerCapture(event.pointerId); });
-  elements.map.addEventListener("pointermove", (event) => { if (!dragging) return; state.panX = Math.max(-240, Math.min(240, originX + event.clientX - startX)); state.panY = Math.max(-140, Math.min(140, originY + event.clientY - startY)); updateStageTransform(); });
+  elements.map.addEventListener("pointerdown", (event) => {
+    if (event.target.closest("button") || (event.pointerType === "touch" && innerWidth <= 900)) return;
+    dragging = true; startX = event.clientX; startY = event.clientY; originX = state.panX; originY = state.panY; elements.map.setPointerCapture(event.pointerId);
+  });
+  elements.map.addEventListener("pointermove", (event) => {
+    if (!dragging) return;
+    state.panX = Math.max(-240, Math.min(240, originX + event.clientX - startX));
+    state.panY = Math.max(-140, Math.min(140, originY + event.clientY - startY));
+    updateStageTransform();
+  });
   elements.map.addEventListener("pointerup", () => { dragging = false; });
   document.querySelector("#reset-map").addEventListener("click", () => { state.panX = 0; state.panY = 0; updateStageTransform(); });
 }
 
-function randomGenre(neighborsOnly = false) {
-  let candidates = state.published;
-  if (!neighborsOnly && state.tag !== "すべて") candidates = candidates.filter((genre) => genre.tags.includes(state.tag));
-  if (neighborsOnly && state.current) candidates = state.published.filter((genre) => genre.id !== state.current.id && relationWeight(state.current, genre));
-  if (!candidates.length) return; const picked = candidates[Math.floor(Math.random() * candidates.length)]; neighborsOnly ? openGenre(picked.id) : selectGenre(picked.id);
+async function renderRecentUpdates() {
+  try {
+    const genres = await Promise.all(state.published.map((entry) => fetchGenre(entry.id)));
+    const updates = genres.flatMap((genre) => (genre.history || []).map((item) => ({ ...item, genreId: genre.id, genreTitle: genre.title })))
+      .sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 4);
+    elements.recentUpdates.innerHTML = updates.map((item) => `<li><time>${escapeHtml(item.date)}</time><button type="button" data-update-genre="${escapeHtml(item.genreId)}">${escapeHtml(item.genreTitle)}</button><p>${escapeHtml(item.summary || item.note || item.action || "更新")}</p></li>`).join("");
+    elements.recentUpdates.querySelectorAll("[data-update-genre]").forEach((button) => button.addEventListener("click", () => { selectGenre(button.dataset.updateGenre); elements.explorer.scrollIntoView({ behavior: "smooth" }); }));
+  } catch {
+    elements.recentUpdates.innerHTML = "<li>更新履歴を読み込めませんでした。</li>";
+  }
+}
+
+async function routeFromUrl(replaceLegacy = true) {
+  const params = new URLSearchParams(location.search);
+  const legacy = params.get("collection");
+  let genreId = params.get("genre");
+  if (legacy && state.index.legacyCollections?.[legacy]) {
+    genreId = state.index.legacyCollections[legacy];
+    updateUrl(genreId, null, true);
+  }
+  if (!genreId) return showEmptyPanel(false);
+  const entry = state.index.genres.find((genre) => genre.id === genreId);
+  if (entry?.status === "merged" && entry.redirectTo) {
+    genreId = entry.redirectTo;
+    updateUrl(genreId, null, true);
+  }
+  const published = byId(genreId);
+  if (!published) return showEmptyPanel(replaceLegacy);
+  await selectGenre(genreId, { itemId: params.get("item"), history: false });
 }
 
 async function init() {
   try {
-    const response = await fetch(genreIndexPath); if (!response.ok) throw new Error(`HTTP ${response.status}`); state.index = await response.json();
-    state.published = state.index.genres.filter((genre) => genre.status === "published"); renderMap(); setupMapPan();
-    const params = new URLSearchParams(location.search); const legacyDate = params.get("collection"); let requested = params.get("genre");
-    if (legacyDate && state.index.legacyCollections[legacyDate]) { requested = state.index.legacyCollections[legacyDate]; const url = new URL(location.href); url.search = ""; url.searchParams.set("genre", requested); history.replaceState({ genre: requested }, "", url); }
-    if (requested) await openGenre(requested, false); else showMap(false);
-  } catch (error) { elements.explorer.innerHTML = `<p class="error">アーカイブを読み込めませんでした: ${escapeHtml(error.message)}</p>`; }
+    const response = await fetch(genreIndexPath);
+    if (!response.ok) throw new Error(`${response.status} ${genreIndexPath}`);
+    state.index = await response.json();
+    state.published = state.index.genres.filter((genre) => genre.status === "published");
+    renderMap();
+    setupMapPan();
+    showEmptyPanel(false);
+    await routeFromUrl();
+    renderRecentUpdates();
+  } catch (error) {
+    elements.explorer.innerHTML = `<p class="error">アーカイブを読み込めませんでした: ${escapeHtml(error.message)}</p>`;
+  }
 }
 
-document.querySelectorAll("[data-map-link], .back-to-map").forEach((link) => link.addEventListener("click", (event) => {
-  event.preventDefault(); const focusMap = link.matches(".back-to-map") || link.getAttribute("href") === "#explore"; showMap();
-  if (focusMap) requestAnimationFrame(() => elements.explorer.scrollIntoView({ behavior: "smooth" }));
-}));
-document.querySelector("#random-genre").addEventListener("click", () => randomGenre()); document.querySelector("#random-neighbor").addEventListener("click", () => randomGenre(true));
-document.querySelector("#toggle-view").addEventListener("click", (event) => { const listMode = elements.list.hidden; elements.list.hidden = !listMode; document.querySelector("#map-mode").hidden = listMode; event.currentTarget.textContent = listMode ? "地図へ戻る" : "一覧で見る"; event.currentTarget.setAttribute("aria-pressed", String(listMode)); });
-document.querySelector(".dialog-close").addEventListener("click", () => elements.dialog.close()); elements.dialog.addEventListener("click", (event) => { if (event.target === elements.dialog) elements.dialog.close(); });
-addEventListener("popstate", (event) => { const id = event.state?.genre || new URLSearchParams(location.search).get("genre"); id ? openGenre(id, false) : showMap(false); });
+document.querySelector("#start-exploration").addEventListener("click", randomEntry);
+document.querySelector("[data-list-start]").addEventListener("click", () => setView("list"));
+document.querySelectorAll("[data-view]").forEach((button) => button.addEventListener("click", () => setView(button.dataset.view)));
+document.querySelector("[data-home-link]").addEventListener("click", (event) => { event.preventDefault(); showEmptyPanel(); scrollTo({ top: 0, behavior: "smooth" }); });
+elements.panel.querySelector("[data-random-entry]").addEventListener("click", randomEntry);
+addEventListener("popstate", () => routeFromUrl(false));
+addEventListener("keydown", (event) => {
+  if (!state.selectedItem || ["INPUT", "SELECT", "TEXTAREA", "BUTTON", "A"].includes(document.activeElement?.tagName)) return;
+  if (event.key === "ArrowLeft") elements.panel.querySelector("[data-previous]:not(:disabled)")?.click();
+  if (event.key === "ArrowRight") elements.panel.querySelector("[data-next]:not(:disabled)")?.click();
+});
+
 init();

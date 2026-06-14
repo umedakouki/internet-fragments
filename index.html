@@ -11,18 +11,18 @@
 <body>
   <div class="grain" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="brand" href="./" data-map-link aria-label="余白採集室 ジャンル地図へ">
+    <a class="brand" href="./" data-home-link aria-label="余白採集室のトップへ">
       <span class="brand-mark">余</span><span>余白採集室</span>
     </a>
     <nav aria-label="主要ナビゲーション">
+      <a href="#explore">探索する</a>
       <a href="#about">この場所について</a>
-      <a href="#explore" data-map-link>漂流地図</a>
     </nav>
     <span class="status"><i></i> OPEN ARCHIVE</span>
   </header>
 
   <main id="top">
-    <section id="about" class="site-intro" aria-labelledby="site-title">
+    <section class="site-intro" aria-labelledby="site-title">
       <p class="eyebrow">AN ARCHIVE OF INTERNET FRAGMENTS</p>
       <div class="site-intro-grid">
         <div>
@@ -30,90 +30,78 @@
           <p class="intro-catch">名前のつく前のものを、<br>インターネットから拾う。</p>
         </div>
         <div class="site-intro-copy">
-          <p>写真、文章、音、映像、ウェブページ。媒体を問わず、まだ一般的な収集ジャンルになっていない断片を集める小さな標本室です。</p>
-          <p>標本は日付ではなく、似方や関係で棚につながります。地図上の気配を選ぶと、その場で棚の中を覗けます。</p>
-          <div class="explorer-actions">
-            <button id="random-genre" class="primary-action" type="button">どこかへ漂流</button>
-            <button id="toggle-view" class="quiet-action" type="button" aria-pressed="false">一覧で見る</button>
+          <p>写真、文章、音、映像、ウェブページ。媒体を問わず、まだ一般的な収集ジャンルになっていない断片を、出典と権利情報とともに集めています。</p>
+          <p>地図から棚を選ぶか、偶然の標本から関係をたどってください。</p>
+          <div class="intro-actions">
+            <button id="start-exploration" class="primary-action" type="button">探索を始める</button>
+            <a class="text-action" href="#explore" data-list-start>一覧から選ぶ</a>
           </div>
         </div>
       </div>
     </section>
 
     <section id="explore" class="explorer" aria-labelledby="explorer-title">
-      <div class="drift-heading">
+      <div class="explorer-heading">
         <div>
-          <p class="eyebrow">DRIFT MAP</p>
+          <p class="eyebrow">EXPLORE</p>
           <h2 id="explorer-title">気になる気配を選ぶ</h2>
         </div>
-        <div id="tag-filter" class="tag-filter" aria-label="ジャンルタグ"></div>
+        <div class="explorer-tools">
+          <div class="view-switch" role="group" aria-label="ジャンルの表示方法">
+            <button type="button" data-view="map" aria-pressed="true">地図</button>
+            <button type="button" data-view="list" aria-pressed="false">一覧</button>
+          </div>
+          <details id="tag-filter" class="tag-filter">
+            <summary>タグで絞る</summary>
+            <div class="tag-filter-body"></div>
+          </details>
+        </div>
       </div>
 
-      <div id="map-mode" class="map-mode">
-        <div id="genre-map" class="genre-map" tabindex="0" aria-label="ジャンル漂流マップ。ドラッグして移動できます。">
-          <div id="map-stage" class="map-stage">
-            <svg id="map-lines" class="map-lines" viewBox="0 0 1000 640" aria-hidden="true"></svg>
-            <div id="map-nodes" class="map-nodes"></div>
+      <div class="exploration-layout">
+        <div class="exploration-surface">
+          <div id="genre-map" class="genre-map" tabindex="0" aria-label="ジャンル漂流地図。ジャンルを選択できます。">
+            <div id="map-stage" class="map-stage">
+              <svg id="map-lines" class="map-lines" viewBox="0 0 1000 640" aria-hidden="true"></svg>
+              <div id="map-nodes" class="map-nodes"></div>
+            </div>
+            <p class="map-hint">SELECT A GENRE / DRAG WITH A POINTER</p>
+            <button id="reset-map" class="map-reset text-button" type="button">地図を中央へ</button>
           </div>
-          <p class="map-hint">DRAG TO WANDER / SELECT A GENRE</p>
-          <button id="reset-map" class="map-reset" type="button">中心へ戻る</button>
+          <div id="genre-list" class="genre-list" hidden></div>
         </div>
-        <aside id="genre-preview" class="genre-preview" aria-live="polite">
-          <p class="section-number">SELECT A TRACE</p>
-          <h2>地図の気配を選ぶ</h2>
-          <p>ここに棚の説明、標本、隣の棚が現れます。ページを移らず、そのまま覗いていけます。</p>
+
+        <aside id="exploration-panel" class="exploration-panel" aria-live="polite">
+          <div class="panel-empty">
+            <p class="section-number">START HERE</p>
+            <h2>ひとつ選ぶと、探索が始まります。</h2>
+            <p>地図の気配や一覧の棚を選ぶと、ここに標本が現れます。</p>
+            <button class="primary-action" type="button" data-random-entry>偶然の標本を見る</button>
+          </div>
         </aside>
       </div>
-
-      <div id="genre-list" class="genre-list" hidden></div>
     </section>
 
-    <section id="genre-view" class="genre-view" hidden>
-      <div class="genre-nav">
-        <button class="back-to-map quiet-action" type="button">← ジャンル地図へ</button>
-        <button id="random-neighbor" class="quiet-action" type="button">隣の棚へ</button>
+    <section id="about" class="about-section" aria-labelledby="about-title">
+      <div>
+        <p class="eyebrow">ABOUT THIS ARCHIVE</p>
+        <h2 id="about-title">この場所について</h2>
       </div>
-
-      <div class="collection-intro">
-        <div>
-          <p id="collection-number" class="section-number">GENRE ---</p>
-          <h1 id="collection-title">読み込み中</h1>
-        </div>
-        <div class="collection-description">
-          <p id="collection-subtitle" class="subtitle"></p>
-          <p id="collection-description"></p>
-          <div id="genre-tags" class="detail-tags"></div>
-        </div>
-        <div class="collection-count"><strong id="item-count">--</strong><span>SPECIMENS</span></div>
+      <div class="about-grid">
+        <article>
+          <h3>採集方法</h3>
+          <p>標本は日付ではなく、似方や関係で育つジャンルへ置きます。各標本はひとつの主ジャンルに属し、複数のタグから別の棚へつながります。</p>
+        </article>
+        <article>
+          <h3>出典と権利</h3>
+          <p>各標本に原典と権利条件を付けます。再配布できない資料は複製せず、短い説明やメタデータと原典リンクだけを記録します。</p>
+        </article>
+        <article>
+          <h3>最近の更新</h3>
+          <ol id="recent-updates" class="recent-updates"><li>読み込み中</li></ol>
+        </article>
       </div>
-
-      <section class="toolbar" aria-label="標本の絞り込み">
-        <div id="filters" class="filters"></div>
-        <p>標本を選ぶと採集メモと権利情報を表示します。</p>
-      </section>
-      <section id="gallery" class="gallery" aria-live="polite"></section>
-
-      <section class="genre-context">
-        <div class="method-note">
-          <p class="section-number">CURATORIAL METHOD</p>
-          <h2>この棚の見方</h2>
-          <p id="field-note-method"></p>
-        </div>
-        <div>
-          <p class="section-number">NEIGHBORING GENRES</p>
-          <div id="related-genres" class="related-genres"></div>
-        </div>
-      </section>
-
-      <section class="history-section">
-        <div>
-          <p class="section-number">UPDATE HISTORY</p>
-          <h2>棚が変わった記録</h2>
-        </div>
-        <ol id="genre-history" class="genre-history"></ol>
-      </section>
     </section>
-
   </main>
 
   <footer>
@@ -121,11 +109,6 @@
     <p>Collected from the open web, with sources attached.</p>
     <p>© 2026 Curatorial notes / Materials retain their original rights.</p>
   </footer>
-
-  <dialog id="specimen-dialog" class="specimen-dialog">
-    <button class="dialog-close" type="button" aria-label="閉じる">×</button>
-    <div id="dialog-content"></div>
-  </dialog>
   <script src="app.js" defer></script>
 </body>
 </html>

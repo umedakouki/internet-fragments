@@ -96,7 +96,8 @@ foreach ($property in $index.legacyCollections.PSObject.Properties) {
 }
 
 $targets = if ($All) { @($entries | Where-Object { $_.status -ne 'merged' }) } else { @($entries | Where-Object { $_.id -eq $Genre }) }
-if ($targets.Count -eq 0) { Add-Error "Genre not found: $Genre" }
+$targetCount = @($targets).Count
+if ($targetCount -eq 0) { Add-Error "Genre not found: $Genre" }
 
 # Global ownership and duplicate checks intentionally scan every concrete genre.
 foreach ($entry in @($entries | Where-Object { $_.status -ne 'merged' })) {
@@ -150,4 +151,4 @@ foreach ($entry in @($entries | Where-Object { $_.status -ne 'merged' })) {
 }
 
 if ($errors.Count -gt 0) { $errors | ForEach-Object { Write-Output "ERROR $_" }; throw "Genre validation failed with $($errors.Count) error(s)" }
-Write-Output "PASS genres=$($targets.Count) specimens=$($seenIds.Count) assets=$($seenAssets.Count) linksChecked=$($CheckLinks.IsPresent)"
+Write-Output "PASS genres=$targetCount specimens=$($seenIds.Count) assets=$($seenAssets.Count) linksChecked=$($CheckLinks.IsPresent)"

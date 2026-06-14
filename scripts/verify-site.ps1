@@ -14,7 +14,8 @@ function Get-FreePort { $listener = [Net.Sockets.TcpListener]::new([Net.IPAddres
 $serverPort = Get-FreePort; $debugPort = Get-FreePort
 $baseUrl = "http://127.0.0.1:$serverPort/"
 $profile = Join-Path $output "chrome-profile-$PID"
-$desktopShot = Join-Path $output "genre-map-$Genre.png"; $mobileShot = Join-Path $output "genre-mobile-$Genre.png"
+$desktopShot = Join-Path $output "explore-desktop-$Genre.png"
+$mobileShot = Join-Path $output "explore-mobile-$Genre.png"
 $browserExe = @('C:\Program Files\Google\Chrome\Application\chrome.exe','C:\Program Files (x86)\Google\Chrome\Application\chrome.exe','C:\Program Files\Microsoft\Edge\Application\msedge.exe','C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe') | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
 if (-not $browserExe) { throw 'Chrome or Edge was not found.' }
 
@@ -22,7 +23,7 @@ $index = Get-Content -Raw -Encoding UTF8 (Join-Path $root 'data/genres/index.jso
 $entry = @($index.genres | Where-Object { $_.id -eq $Genre }) | Select-Object -First 1
 if (-not $entry) { throw "Genre not found: $Genre" }
 $genreData = Get-Content -Raw -Encoding UTF8 (Join-Path $root $entry.path) | ConvertFrom-Json
-$expectedCount = @($genreData.items).Count
+$firstItemId = [string]$genreData.items[0].id
 $publishedCount = @($index.genres | Where-Object { $_.status -eq 'published' }).Count
 $legacy = $index.legacyCollections.PSObject.Properties | Where-Object { $_.Value -eq $Genre } | Select-Object -First 1
 $serverProcess = $null; $browserProcess = $null; $socket = $null; $nextId = 0
@@ -40,7 +41,7 @@ function Send-Cdp([string]$method, [hashtable]$params = @{}) {
     }
 }
 function Invoke-Eval([string]$expression) { $response = Send-Cdp 'Runtime.evaluate' @{ expression = $expression; awaitPromise = $true; returnByValue = $true }; if ($response.exceptionDetails) { throw ($response.exceptionDetails | ConvertTo-Json -Compress -Depth 8) }; return $response.result.value }
-function Wait-For([string]$expression) { for ($attempt = 0; $attempt -lt 50; $attempt++) { if (Invoke-Eval $expression) { return }; Start-Sleep -Milliseconds 200 }; throw "Timed out waiting for: $expression" }
+function Wait-For([string]$expression) { for ($attempt = 0; $attempt -lt 80; $attempt++) { if (Invoke-Eval $expression) { return }; Start-Sleep -Milliseconds 150 }; throw "Timed out waiting for: $expression" }
 function Save-Screenshot([string]$path) { $shot = Send-Cdp 'Page.captureScreenshot' @{ format = 'png'; captureBeyondViewport = $false }; [IO.File]::WriteAllBytes($path, [Convert]::FromBase64String($shot.data)) }
 
 try {
@@ -58,42 +59,55 @@ try {
 
     Send-Cdp 'Page.navigate' @{ url = $baseUrl } | Out-Null
     Wait-For "document.querySelectorAll('.genre-node').length===$publishedCount"
-    $map = Invoke-Eval "(async()=>{const ready=async id=>{for(let i=0;i<80;i++){const p=document.querySelector('#genre-preview');if(p.dataset.genre===id&&p.dataset.ready==='true')return true;await new Promise(r=>setTimeout(r,50));}return false;};const n=[...document.querySelectorAll('.genre-node')];const before=n.map(x=>({id:x.dataset.genre,left:x.style.left,top:x.style.top}));n[0].click();await ready(n[0].dataset.genre);await Promise.all([...document.querySelectorAll('.preview-specimens img')].map(i=>i.complete?true:new Promise(r=>{i.addEventListener('load',r,{once:true});i.addEventListener('error',r,{once:true})})));const broken=[...document.querySelectorAll('.preview-specimens img')].filter(i=>i.naturalWidth===0).map(i=>i.src);const selected=Boolean(document.querySelector('.genre-node.selected'));const select=document.querySelector('#map-tag-select');const tag=[...select.options].slice(1).find(o=>n.some(x=>!x.dataset.tags.split('|').includes(o.value)));if(tag){select.value=tag.value;select.dispatchEvent(new Event('change',{bubbles:true}));await ready(state.selected);}const filtered=n.filter(x=>x.classList.contains('filtered')).length;const specimen=document.querySelector('.preview-specimens button');specimen.click();const dialogOpened=document.querySelector('#specimen-dialog').open;document.querySelector('.dialog-close').click();const related=document.querySelector('.preview-related button');const selectedBefore=state.selected;if(related){const target=related.dataset.related;related.click();await ready(target);}const relatedChanged=!related||state.selected!==selectedBefore;document.querySelector('#random-genre').click();await ready(state.selected);return {nodes:n.length,lines:document.querySelectorAll('.map-lines line').length,filtered,selected,preview:Boolean(document.querySelector('.open-selected')),previewSpecimens:document.querySelectorAll('.preview-specimens button').length,brokenPreviewImages:broken.length,brokenPreviewSources:broken,dialogOpened,relatedChanged,positions:before,errors:window.__verificationErrors};})()"
-    $layout = Invoke-Eval "(()=>{const original=state.published;const fixture=Array.from({length:14},(_,i)=>({id:'fixture-'+i,tags:['shared-'+(i%4),'group-'+(i%3)],relatedGenres:i?['fixture-'+(i-1)]:[]}));state.published=fixture;const first=[...computePositions(fixture).values()].map(p=>({id:p.id,x:p.x,y:p.y}));const second=[...computePositions(fixture).values()].map(p=>({id:p.id,x:p.x,y:p.y}));state.published=original;let min=999;for(let i=0;i<first.length;i++)for(let j=i+1;j<first.length;j++)min=Math.min(min,Math.hypot(first[i].x-first[j].x,first[i].y-first[j].y));document.querySelector('#toggle-view').click();const listCards=document.querySelectorAll('.genre-list-card').length;const listVisible=!document.querySelector('#genre-list').hidden;document.querySelector('#toggle-view').click();return {deterministic:JSON.stringify(first)===JSON.stringify(second),minimumDistance:min,listCards,listVisible};})()"
-    if ($KeepScreenshots) { Invoke-Eval "document.documentElement.style.scrollBehavior='auto';scrollTo(0,document.querySelector('#explore').offsetTop);Promise.all([...document.images].map(i=>i.complete?true:new Promise(r=>{i.addEventListener('load',r,{once:true});i.addEventListener('error',r,{once:true})})))" | Out-Null; Start-Sleep -Milliseconds 500; Save-Screenshot $desktopShot }
+    $initial = Invoke-Eval "(()=>({title:document.title,start:document.querySelector('#start-exploration').textContent.trim(),empty:document.querySelector('#exploration-panel').dataset.state==='empty',noDialog:!document.querySelector('dialog'),noGenrePage:!document.querySelector('#genre-view'),nodes:document.querySelectorAll('.genre-node').length,errors:window.__verificationErrors}))()"
 
-    Send-Cdp 'Page.navigate' @{ url = "$baseUrl`?genre=$Genre" } | Out-Null
-    Wait-For "document.querySelectorAll('.specimen').length===$expectedCount"
-    $detail = Invoke-Eval "(()=>{const first=document.querySelector('.specimen');first.click();const source=document.querySelector('.source-button');const filter=document.querySelectorAll('.filter-button')[1];document.querySelector('.dialog-close').click();filter.click();const result={url:location.search,title:document.querySelector('#collection-title').textContent,cards:document.querySelectorAll('.specimen').length,visible:[...document.querySelectorAll('.specimen')].filter(x=>!x.hidden).length,history:document.querySelectorAll('.genre-history li').length,related:document.querySelectorAll('.related-genres button').length,source:source.href,target:source.target,errors:window.__verificationErrors};document.querySelector('.back-to-map').click();result.mapAfterBack=!document.querySelector('#explore').hidden;history.back();return result;})()"
-    Start-Sleep -Milliseconds 400
-    $historyResult = Invoke-Eval "({genreVisible:!document.querySelector('#genre-view').hidden,url:location.search})"
+    $genreFlow = Invoke-Eval "(async()=>{const node=[...document.querySelectorAll('.genre-node')].find(x=>x.dataset.genre==='$Genre');node.click();for(let i=0;i<80&&document.querySelector('#exploration-panel').dataset.state!=='genre';i++)await new Promise(r=>setTimeout(r,80));const genreUrl=location.search;const samples=document.querySelectorAll('.specimen-card').length;document.querySelector('.specimen-card').click();for(let i=0;i<100&&document.querySelectorAll('#branch-options button').length<3;i++)await new Promise(r=>setTimeout(r,80));const itemUrl=location.search;const branches=[...document.querySelectorAll('#branch-options button')].map(x=>x.dataset.branchGenre+':'+x.dataset.branchItem);const source=document.querySelector('.source-button').href;const target=document.querySelector('.source-button').target;const before=itemUrl;const next=document.querySelector('[data-next]:not(:disabled)');if(next){next.click();await new Promise(r=>setTimeout(r,80));history.back();for(let i=0;i<60&&location.search!==before;i++)await new Promise(r=>setTimeout(r,80));}const backRestored=location.search===before;const branch=document.querySelector('#branch-options button');const branchKey=branch.dataset.branchGenre+':'+branch.dataset.branchItem;branch.click();for(let i=0;i<80&&document.querySelector('#exploration-panel').dataset.genre+':'+document.querySelector('#exploration-panel').dataset.item!==branchKey;i++)await new Promise(r=>setTimeout(r,80));return {genreUrl,itemUrl,samples,state:document.querySelector('#exploration-panel').dataset.state,branches:branches.length,uniqueBranches:new Set(branches).size,source,target,trail:document.querySelectorAll('.trail-list button').length,backRestored,branchChanged:document.querySelector('#exploration-panel').dataset.genre+':'+document.querySelector('#exploration-panel').dataset.item===branchKey,stored:Boolean(sessionStorage.getItem('yohaku.exploration.v1')),errors:window.__verificationErrors};})()"
 
-    $legacyResult = $null
+    $controls = Invoke-Eval "(()=>{document.querySelector('[data-view=list]').click();const listVisible=!document.querySelector('#genre-list').hidden;const listCards=document.querySelectorAll('.genre-list-card').length;document.querySelector('[data-view=map]').click();const details=document.querySelector('#tag-filter');details.open=true;const select=details.querySelector('select');const nodes=[...document.querySelectorAll('.genre-node')];const option=[...select.options].slice(1).find(o=>nodes.some(n=>!n.dataset.tags.split('|').includes(o.value)));if(option){select.value=option.value;select.dispatchEvent(new Event('change',{bubbles:true}));}return {listVisible,listCards,mapVisible:!document.querySelector('#genre-map').hidden,tagOpen:details.open,filtered:document.querySelectorAll('.genre-node.filtered').length};})()"
+
+    $layout = Invoke-Eval "(()=>{const original=state.published;const fixture=Array.from({length:14},(_,i)=>({id:'fixture-'+i,tags:['shared-'+(i%4),'group-'+(i%3)],relatedGenres:i?['fixture-'+(i-1)]:[]}));const first=[...computePositions(fixture).values()].map(p=>({id:p.id,x:p.x,y:p.y}));const second=[...computePositions(fixture).values()].map(p=>({id:p.id,x:p.x,y:p.y}));let min=999;for(let i=0;i<first.length;i++)for(let j=i+1;j<first.length;j++)min=Math.min(min,Math.hypot(first[i].x-first[j].x,first[i].y-first[j].y));state.published=original;return {deterministic:JSON.stringify(first)===JSON.stringify(second),minimumDistance:min};})()"
+
+    Send-Cdp 'Page.navigate' @{ url = "$baseUrl`?genre=$Genre&item=$firstItemId" } | Out-Null
+    Wait-For "document.querySelector('#exploration-panel').dataset.state==='item'"
+    $direct = Invoke-Eval "({url:location.search,genre:document.querySelector('#exploration-panel').dataset.genre,item:document.querySelector('#exploration-panel').dataset.item,branches:document.querySelectorAll('#branch-options button').length})"
+
     if ($legacy) {
         $legacyDate = [string]$legacy.Name
         Send-Cdp 'Page.navigate' @{ url = "$baseUrl`?collection=$legacyDate" } | Out-Null
-        Wait-For "document.querySelectorAll('.specimen').length===$expectedCount"
-        $legacyResult = Invoke-Eval "({url:location.search,cards:document.querySelectorAll('.specimen').length})"
-    }
+        Wait-For "location.search==='?genre=$Genre' && document.querySelector('#exploration-panel').dataset.state==='genre'"
+        $legacyResult = Invoke-Eval "({url:location.search,state:document.querySelector('#exploration-panel').dataset.state})"
+    } else { $legacyResult = $null }
 
     Send-Cdp 'Emulation.setDeviceMetricsOverride' @{ width = 390; height = 844; deviceScaleFactor = 1; mobile = $true } | Out-Null
+    Send-Cdp 'Page.navigate' @{ url = "$baseUrl`?genre=$Genre&item=$firstItemId" } | Out-Null
+    Wait-For "document.querySelector('#exploration-panel').dataset.state==='item'"
+    $mobile = Invoke-Eval "(()=>{const map=document.querySelector('#genre-map').getBoundingClientRect();const panel=document.querySelector('#exploration-panel').getBoundingClientRect();return {clientWidth:document.documentElement.clientWidth,scrollWidth:document.documentElement.scrollWidth,noOverflow:document.documentElement.scrollWidth<=document.documentElement.clientWidth,panelOverflow:getComputedStyle(document.querySelector('#exploration-panel')).overflowY,panelAfterMap:panel.top>=map.bottom-2,paginationPosition:getComputedStyle(document.querySelector('.item-pagination')).position,errors:window.__verificationErrors};})()"
+    if ($KeepScreenshots) { Save-Screenshot $mobileShot }
+
+    Send-Cdp 'Emulation.setDeviceMetricsOverride' @{ width = 1440; height = 1000; deviceScaleFactor = 1; mobile = $false } | Out-Null
     Send-Cdp 'Emulation.setEmulatedMedia' @{ features = @(@{ name = 'prefers-reduced-motion'; value = 'reduce' }) } | Out-Null
     Send-Cdp 'Page.navigate' @{ url = $baseUrl } | Out-Null
     Wait-For "document.querySelectorAll('.genre-node').length===$publishedCount"
-    $mobile = Invoke-Eval "({clientWidth:document.documentElement.clientWidth,scrollWidth:document.documentElement.scrollWidth,noOverflow:document.documentElement.scrollWidth<=document.documentElement.clientWidth,nodes:document.querySelectorAll('.genre-node').length,panel:getComputedStyle(document.querySelector('.genre-preview')).position,reducedMotion:parseFloat(getComputedStyle(document.querySelector('.genre-node')).animationDuration)<=0.01,errors:window.__verificationErrors})"
-    if ($KeepScreenshots) { Save-Screenshot $mobileShot }
+    $motion = Invoke-Eval "({reduced:parseFloat(getComputedStyle(document.querySelector('.genre-node')).animationDuration)<=0.01,errors:window.__verificationErrors})"
+    if ($KeepScreenshots) { Invoke-Eval "document.querySelector('#explore').scrollIntoView();true" | Out-Null; Start-Sleep -Milliseconds 300; Save-Screenshot $desktopShot }
 
-    $failed = $map.nodes -ne $publishedCount -or $map.lines -lt 1 -or $map.filtered -lt 1 -or -not $map.selected -or -not $map.preview -or $map.previewSpecimens -lt 1 -or $map.brokenPreviewImages -ne 0 -or -not $map.dialogOpened -or -not $map.relatedChanged -or @($map.errors).Count -ne 0 -or -not $layout.deterministic -or $layout.minimumDistance -lt 16 -or -not $layout.listVisible -or $layout.listCards -ne $publishedCount -or $detail.cards -ne $expectedCount -or $detail.visible -lt 1 -or $detail.history -lt 1 -or -not $detail.source.StartsWith('http') -or $detail.target -ne '_blank' -or -not $detail.mapAfterBack -or -not $historyResult.genreVisible -or @($detail.errors).Count -ne 0 -or -not $mobile.noOverflow -or $mobile.nodes -ne $publishedCount -or $mobile.panel -ne 'absolute' -or -not $mobile.reducedMotion -or @($mobile.errors).Count -ne 0
-    if ($legacyResult -and ($legacyResult.url -ne "?genre=$Genre" -or $legacyResult.cards -ne $expectedCount)) { $failed = $true }
-    $report = [ordered]@{ genre = $Genre; map = $map; layoutFixture = $layout; detail = $detail; browserHistory = $historyResult; legacyRedirect = $legacyResult; mobile = $mobile; screenshots = if ($KeepScreenshots) { @($desktopShot, $mobileShot) } else { @() } }
-    $report | ConvertTo-Json -Depth 8
+    $failed = [string]::IsNullOrWhiteSpace([string]$initial.start) -or -not $initial.empty -or -not $initial.noDialog -or -not $initial.noGenrePage -or $initial.nodes -ne $publishedCount -or @($initial.errors).Count -ne 0
+    $failed = $failed -or $genreFlow.genreUrl -ne "?genre=$Genre" -or -not $genreFlow.itemUrl.Contains("genre=$Genre&item=") -or $genreFlow.samples -lt 1 -or $genreFlow.state -ne 'item' -or $genreFlow.branches -ne 3 -or $genreFlow.uniqueBranches -ne 3 -or -not $genreFlow.source.StartsWith('http') -or $genreFlow.target -ne '_blank' -or $genreFlow.trail -lt 2 -or -not $genreFlow.backRestored -or -not $genreFlow.branchChanged -or -not $genreFlow.stored -or @($genreFlow.errors).Count -ne 0
+    $failed = $failed -or -not $controls.listVisible -or $controls.listCards -ne $publishedCount -or -not $controls.mapVisible -or -not $controls.tagOpen -or $controls.filtered -lt 1
+    $failed = $failed -or -not $layout.deterministic -or $layout.minimumDistance -lt 16
+    $failed = $failed -or $direct.url -ne "?genre=$Genre&item=$firstItemId" -or $direct.genre -ne $Genre -or $direct.item -ne $firstItemId
+    $failed = $failed -or -not $mobile.noOverflow -or $mobile.panelOverflow -ne 'visible' -or -not $mobile.panelAfterMap -or $mobile.paginationPosition -ne 'static' -or @($mobile.errors).Count -ne 0
+    $failed = $failed -or -not $motion.reduced -or @($motion.errors).Count -ne 0
+    if ($legacyResult -and ($legacyResult.url -ne "?genre=$Genre" -or $legacyResult.state -ne 'genre')) { $failed = $true }
+
+    [pscustomobject]@{ initial = $initial; genreFlow = $genreFlow; controls = $controls; layout = $layout; direct = $direct; legacy = $legacyResult; mobile = $mobile; motion = $motion } | ConvertTo-Json -Depth 8
     if ($failed) { throw 'Browser verification failed.' }
-}
-finally {
-    if ($socket) { $socket.Dispose() }
-    if ($browserProcess -and -not $browserProcess.HasExited) { Stop-Process -Id $browserProcess.Id -Force -ErrorAction SilentlyContinue }
-    if ($serverProcess -and -not $serverProcess.HasExited) { Stop-Process -Id $serverProcess.Id -Force -ErrorAction SilentlyContinue }
-    Start-Sleep -Milliseconds 300
-    $resolvedOutput = [IO.Path]::GetFullPath($output).TrimEnd('\') + '\'; $resolvedProfile = [IO.Path]::GetFullPath($profile)
-    if ($resolvedProfile.StartsWith($resolvedOutput, [StringComparison]::OrdinalIgnoreCase) -and (Test-Path -LiteralPath $resolvedProfile)) { Remove-Item -LiteralPath $resolvedProfile -Recurse -Force -ErrorAction SilentlyContinue }
+    Write-Host "Browser verification passed for $Genre."
+} finally {
+    if ($socket) { try { $socket.Dispose() } catch {} }
+    if ($browserProcess -and -not $browserProcess.HasExited) { try { $browserProcess.Kill() } catch {} }
+    if ($serverProcess -and -not $serverProcess.HasExited) { try { $serverProcess.Kill() } catch {} }
+    Start-Sleep -Milliseconds 250
+    if (Test-Path -LiteralPath $profile) { $resolved = [IO.Path]::GetFullPath($profile); if ($resolved.StartsWith([IO.Path]::GetFullPath($output), [StringComparison]::OrdinalIgnoreCase)) { Remove-Item -LiteralPath $resolved -Recurse -Force -ErrorAction SilentlyContinue } }
+    if (-not $KeepScreenshots) { Remove-Item -LiteralPath $desktopShot,$mobileShot -Force -ErrorAction SilentlyContinue }
 }

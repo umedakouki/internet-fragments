@@ -18,7 +18,7 @@
 python -m http.server 8000
 ```
 
-`http://localhost:8000` で漂流マップを表示します。特定ジャンルの正規URLは `?genre=genre-id` です。旧 `?collection=YYYY-MM-DD` は対応ジャンルへ転送されます。
+`http://localhost:8000` で漂流マップを表示します。ジャンルの正規URLは `?genre=genre-id`、標本の直接URLは `?genre=genre-id&item=item-id` です。旧 `?collection=YYYY-MM-DD` は対応ジャンルへ転送されます。
 
 ## 検証
 
@@ -26,6 +26,12 @@ python -m http.server 8000
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-genre.ps1 -All
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-site.ps1 -Genre street-letterforms
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/verify-pages.ps1 -Genre street-letterforms
+```
+
+日次作業の完了処理は次の1コマンドにまとめています。
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/run-automation.ps1 -Genre street-letterforms -CommitMessage "Update collection" -Publish
 ```
 
 ## 公開先
