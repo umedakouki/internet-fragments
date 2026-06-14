@@ -4,7 +4,7 @@
                        "id":  "street-letterforms",
                        "title":  "街角の異体字標本",
                        "subtitle":  "現代の看板に生き残る旧字・廃字・古書体",
-                       "itemCount":  15,
+                       "itemCount":  20,
                        "path":  "data/genres/street-letterforms.json",
                        "status":  "published",
                        "tags":  [
