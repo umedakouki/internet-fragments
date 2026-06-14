@@ -1,9 +1,47 @@
 {
-    "date":  "2026-06-14",
+    "id":  "dated-rainwater-castings",
     "title":  "雨樋に刻まれた建築年",
     "subtitle":  "雨水頭・ホッパー・縦樋に残る日付鋳物",
     "description":  "屋根から水を逃がすための雨水頭、ホッパー、縦樋のうち、年号、頭文字、紋章的装飾を備えた例を集めた。交換されやすい設備部材が残ることで、建築の竣工、改修、所有の記憶が外壁に小さく固定される。",
     "method":  "Wikimedia Commonsで rainwater head、dated rainwater hopper、dated drainpipe、Hopper heads with dates を横断検索し、年号または年代を示す意匠を確認でき、作者と再利用条件を追跡できる英国の事例を選定した。",
+    "status":  "published",
+    "tags":  [
+                 "建築部材",
+                 "年号",
+                 "鋳物",
+                 "外壁",
+                 "文字景観"
+             ],
+    "relatedGenres":  [
+                          "street-letterforms"
+                      ],
+    "mapPosition":  {
+                        "x":  69,
+                        "y":  55
+                    },
+    "representativeItemId":  "149081475",
+    "createdAt":  "2026-06-14",
+    "updatedAt":  "2026-06-14",
+    "history":  [
+                    {
+                        "date":  "2026-06-14",
+                        "type":  "created",
+                        "summary":  "年号や頭文字を備えた雨水頭、ホッパー、縦樋13件で棚を開始。",
+                        "diaryPath":  "diary/2026-06-14.md"
+                    },
+                    {
+                        "date":  "2026-06-14",
+                        "type":  "expanded",
+                        "summary":  "年代幅と建物用途を広げる13件を追加し、合計26件へ拡張。",
+                        "diaryPath":  "diary/2026-06-14.md"
+                    },
+                    {
+                        "date":  "2026-06-14",
+                        "type":  "migrated",
+                        "summary":  "日付棚から安定IDを持つジャンル棚へ移行し、タグと街角文字棚との関係を追加。",
+                        "diaryPath":  "diary/2026-06-14.md"
+                    }
+                ],
     "itemCount":  26,
     "items":  [
                   {
@@ -21,7 +59,14 @@
                       "description":  "Rainwater Head Rainwater hopper on St Andrew\u0027s church marked BC CW 1770",
                       "date":  "2009-05-28",
                       "width":  426,
-                      "height":  640
+                      "height":  640,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "106521121",
@@ -38,7 +83,14 @@
                       "description":  "Rainwater head, Topsham",
                       "date":  "2010-11-10",
                       "width":  640,
-                      "height":  459
+                      "height":  459,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "106788838",
@@ -55,7 +107,14 @@
                       "description":  "Rainwater head, Bovey Tracey",
                       "date":  "2010-12-12",
                       "width":  603,
-                      "height":  640
+                      "height":  640,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "113870543",
@@ -72,7 +131,14 @@
                       "description":  "Rainwater head at Howick Hall",
                       "date":  "2012-05-06",
                       "width":  536,
-                      "height":  800
+                      "height":  800,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "105935281",
@@ -89,7 +155,14 @@
                       "description":  "Rainwater head, Muswell Hill Telephone Exchange",
                       "date":  "2010-09-08",
                       "width":  1032,
-                      "height":  1880
+                      "height":  1880,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "51654349",
@@ -106,7 +179,14 @@
                       "description":  "A rainwater head, dated 1630, of Dowsby Hall , a Grade II* listed early 17th-century Jacobean house situated in Dowsby , 6 miles (10 km) to the to the north of Bourne in Lincolnshire , England.",
                       "date":  "2016-09-10 15:14:55",
                       "width":  480,
-                      "height":  640
+                      "height":  640,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "148038869",
@@ -123,7 +203,14 @@
                       "description":  "Fort George, rainwater head",
                       "date":  "2019-09-18",
                       "width":  1280,
-                      "height":  960
+                      "height":  960,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "139826395",
@@ -140,7 +227,14 @@
                       "description":  "Highfields Schools – Rainwater head",
                       "date":  "2018-01-01",
                       "width":  1280,
-                      "height":  1280
+                      "height":  1280,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "107955856",
@@ -157,7 +251,14 @@
                       "description":  "Old rainwater hopper-head, Fournier Street, Spitalfields",
                       "date":  "2011-04-11",
                       "width":  1200,
-                      "height":  1600
+                      "height":  1600,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "ホッパー",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "142091714",
@@ -174,7 +275,14 @@
                       "description":  "20 Colegate - dated rainwater head",
                       "date":  "2018-09-25",
                       "width":  800,
-                      "height":  586
+                      "height":  586,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "137817810",
@@ -191,7 +299,14 @@
                       "description":  "Cricklade, St. Sampson\u0027s Church: Clearly dated rainwater hopper",
                       "date":  "2017-05-19",
                       "width":  3678,
-                      "height":  2456
+                      "height":  2456,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "ホッパー",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "14143241",
@@ -208,7 +323,14 @@
                       "description":  "Dated drainpipe, Belfast Drainpipe, with date, on the Queen\u0027s University Department of Music, University Square.",
                       "date":  "2009-07-18",
                       "width":  548,
-                      "height":  423
+                      "height":  423,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "縦樋",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "11281870",
@@ -225,7 +347,14 @@
                       "description":  "Drainpipe embellishment, dated 1867 St Peter ad Vincula, Wisborough Green",
                       "date":  "2005-11-03",
                       "width":  480,
-                      "height":  640
+                      "height":  640,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "縦樋",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "27470563",
@@ -242,7 +371,14 @@
                       "description":  "Lead rainwater hopper. Initial P for the Powell family and dated 1757",
                       "date":  "2013-03-13 11:41:50",
                       "width":  1600,
-                      "height":  1200
+                      "height":  1200,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "46045111",
@@ -259,7 +395,14 @@
                       "description":  "This unusual rain hopper at 6 Buckingham Place SW1, is dated 1913 and bears the initials GHBF, George Henry Benton Fletcher acquired this house in 1913 and gave it to the National Trust in 1937.",
                       "date":  "2014-08-01 10:57:17",
                       "width":  5152,
-                      "height":  3864
+                      "height":  3864,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "ホッパー",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "101882322",
@@ -276,7 +419,14 @@
                       "description":  "Rainwater head dated 1869 at St James\u0027s Church, Church Lane, Rowledge, East Hampshire District, Hampshire, England. An Anglican church serving Rowledge, a village on the Surrey/Hampshire border. Most of the village is in Surrey, but the church is just on the Hampshire side of the boundary. The church is in the parish of Binsted, the nearest village in Hampshire.",
                       "date":  "2015-05-13",
                       "width":  1600,
-                      "height":  1400
+                      "height":  1400,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "112526616",
@@ -293,7 +443,14 @@
                       "description":  "The dated rainwater head of 48 \u0026 50 St Helens Road, Prescot.",
                       "date":  "2021-11-14 13:17:37",
                       "width":  3601,
-                      "height":  3404
+                      "height":  3404,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "121732003",
@@ -310,7 +467,14 @@
                       "description":  "Dated rainwater head, Edgware Delivery Office",
                       "date":  "2013-10-08",
                       "width":  530,
-                      "height":  800
+                      "height":  800,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "126471629",
@@ -327,7 +491,14 @@
                       "description":  "Eltham cemetery: dated rainwater hopper",
                       "date":  "2014-08-09",
                       "width":  640,
-                      "height":  639
+                      "height":  639,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "ホッパー",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "127704905",
@@ -344,7 +515,14 @@
                       "description":  "A house built in 1782 for Joseph Horner of Masham, a butter factor. It bears the initials JH and the date 1782 on a rainwater head. Latterly the Bootham Bar Hotel, the Lamb and Lion Inn and now The Fat Badger. Wikidata has entry Bootham Bar Hotel (Q26548952) with data related to this item.",
                       "date":  "2023-01-11 14:28:40",
                       "width":  4608,
-                      "height":  3456
+                      "height":  3456,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "127742555",
@@ -361,7 +539,14 @@
                       "description":  "5 and 5a, High Petergate, York. House, now estate agency and offices. c1700 with later alteration, C20 shopfront. Bears a rainwater head marked MT 1763. Grade II* listed. Wikidata has entry 5 and 5a, High Petergate (Q17549877) with data related to this item.",
                       "date":  "2023-01-11 14:27:52",
                       "width":  4608,
-                      "height":  3456
+                      "height":  3456,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "138023771",
@@ -378,7 +563,14 @@
                       "description":  "Rainwater hopper on Tempest Anderson Hall, York, initialled TA and dated 1912.",
                       "date":  "2023-07-25 16:16:43",
                       "width":  4608,
-                      "height":  3456
+                      "height":  3456,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "ホッパー",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "144875768",
@@ -395,7 +587,14 @@
                       "description":  "Rainwater hopper at 24 St Saviourgate, York, with the initials MF and dated 1740.",
                       "date":  "2024-01-19 15:59:18",
                       "width":  2196,
-                      "height":  2928
+                      "height":  2928,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "ホッパー",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "149081475",
@@ -412,7 +611,14 @@
                       "description":  "Rainwater head dated 1590 above entrance porch - York Medical Society, 23 Stonegate, York. House, late C16 with later alterations, now headquarters of York Medical Society and flats. Grade II* Wikidata has entry York Medical Society (Q17549350) with data related to this item.",
                       "date":  "2024-05-09 19:09:15",
                       "width":  4597,
-                      "height":  3448
+                      "height":  3448,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "雨水頭",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "152854321",
@@ -429,7 +635,14 @@
                       "description":  "Drainpipe dated 1927 on the Church of St Mary, from Graham Terrace, Belgravia, September 2024",
                       "date":  "2024-09-13",
                       "width":  3024,
-                      "height":  4032
+                      "height":  4032,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "縦樋",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "187640115",
@@ -446,7 +659,14 @@
                       "description":  "External rain pipe dated 1911 on 45-49 Cleveland Street, Fitzrovia , London W1. Built 1911. This is a photo of listed building number 1219525 .",
                       "date":  "2026-04-01",
                       "width":  3376,
-                      "height":  5707
+                      "height":  5707,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "縦樋",
+                                   "建築",
+                                   "記録",
+                                   "歴史の痕跡"
+                               ]
                   }
               ]
 }

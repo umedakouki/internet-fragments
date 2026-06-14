@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="インターネットの片隅に散らばる、まだ名前のない収集ジャンルを毎日ひとつずつ保存する標本室。">
+  <meta name="description" content="インターネット上のまだ名前のないジャンルを、関係をたどりながら探索する標本室。">
   <title>余白採集室 | Internet Fragments</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23171813'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='40' fill='%23ece9df'%3E%E4%BD%99%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
@@ -11,80 +11,106 @@
 <body>
   <div class="grain" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="余白採集室 ホーム">
-      <span class="brand-mark">余</span>
-      <span>余白採集室</span>
+    <a class="brand" href="./" data-map-link aria-label="余白採集室 ジャンル地図へ">
+      <span class="brand-mark">余</span><span>余白採集室</span>
     </a>
     <nav aria-label="主要ナビゲーション">
-      <a href="#collection">標本</a>
-      <a href="#field-note">採集記</a>
-      <a href="#policy">方針</a>
+      <a href="#explore" data-map-link>ジャンル地図</a>
+      <a href="#policy">採集方針</a>
     </nav>
-    <span class="status"><i></i> DAILY SURVEY</span>
+    <span class="status"><i></i> OPEN ARCHIVE</span>
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div id="hero-index" class="hero-index" aria-hidden="true">001</div>
-      <div class="hero-copy">
-        <p class="eyebrow">AN ARCHIVE OF UNNAMED GENRES</p>
-        <h1>まだ名前のないものを、<br><em>集めてから考える。</em></h1>
-        <p class="lead">インターネットの片隅に大量に散らばり、ひとつでは見過ごされる断片。毎日ひとつの仮説を立て、10～50件を同じ棚に置く。</p>
-      </div>
-      <div class="hero-aside">
-        <div class="date-block">
-          <span>CURRENT SURVEY</span>
-          <strong id="hero-date">----</strong>
+    <section id="explore" class="explorer" aria-labelledby="explorer-title">
+      <div class="explorer-heading">
+        <div>
+          <p class="eyebrow">DRIFT THROUGH UNNAMED GENRES</p>
+          <h1 id="explorer-title">棚から棚へ、<br><em>関係を漂流する。</em></h1>
         </div>
-        <p>収集は分類の後ではなく、分類を発見するために行う。</p>
+        <div class="explorer-copy">
+          <p>日付ではなく、もの同士の似方から入る。気になる棚を選び、タグや隣接するジャンルをたどってください。</p>
+          <div class="explorer-actions">
+            <button id="random-genre" class="primary-action" type="button">どこかへ漂流</button>
+            <button id="toggle-view" class="quiet-action" type="button" aria-pressed="false">一覧で見る</button>
+          </div>
+        </div>
       </div>
+
+      <div id="tag-filter" class="tag-filter" aria-label="ジャンルタグ"></div>
+
+      <div id="map-mode" class="map-mode">
+        <div id="genre-map" class="genre-map" tabindex="0" aria-label="ジャンル漂流マップ。ドラッグして移動できます。">
+          <div id="map-stage" class="map-stage">
+            <svg id="map-lines" class="map-lines" viewBox="0 0 1000 640" aria-hidden="true"></svg>
+            <div id="map-nodes" class="map-nodes"></div>
+          </div>
+          <p class="map-hint">DRAG TO WANDER / SELECT A GENRE</p>
+          <button id="reset-map" class="map-reset" type="button">中心へ戻る</button>
+        </div>
+        <aside id="genre-preview" class="genre-preview" aria-live="polite">
+          <p class="section-number">SELECT A GENRE</p>
+          <h2>地図の棚を選んでください。</h2>
+          <p>共有タグと編集された関係線が、次の棚への道になります。</p>
+        </aside>
+      </div>
+
+      <div id="genre-list" class="genre-list" hidden></div>
     </section>
 
-    <section class="collection-intro" id="collection">
-      <div>
-        <p id="collection-number" class="section-number">COLLECTION ---</p>
-        <h2 id="collection-title">読み込み中</h2>
+    <section id="genre-view" class="genre-view" hidden>
+      <div class="genre-nav">
+        <button class="back-to-map quiet-action" type="button">← ジャンル地図へ</button>
+        <button id="random-neighbor" class="quiet-action" type="button">隣の棚へ</button>
       </div>
-      <div class="collection-description">
-        <p id="collection-subtitle" class="subtitle"></p>
-        <p id="collection-description"></p>
-      </div>
-      <div class="collection-count">
-        <strong id="item-count">--</strong>
-        <span>SPECIMENS</span>
-      </div>
-    </section>
 
-    <section class="toolbar" aria-label="コレクションの絞り込み">
-      <div class="collection-picker">
-        <label for="collection-select">ARCHIVE</label>
-        <select id="collection-select" aria-label="表示するコレクション"></select>
+      <div class="collection-intro">
+        <div>
+          <p id="collection-number" class="section-number">GENRE ---</p>
+          <h1 id="collection-title">読み込み中</h1>
+        </div>
+        <div class="collection-description">
+          <p id="collection-subtitle" class="subtitle"></p>
+          <p id="collection-description"></p>
+          <div id="genre-tags" class="detail-tags"></div>
+        </div>
+        <div class="collection-count"><strong id="item-count">--</strong><span>SPECIMENS</span></div>
       </div>
-      <div id="filters" class="filters"></div>
-      <p>標本を選ぶと採集メモと権利情報を表示します。</p>
-    </section>
 
-    <section id="gallery" class="gallery" aria-live="polite"></section>
+      <section class="toolbar" aria-label="標本の絞り込み">
+        <div id="filters" class="filters"></div>
+        <p>標本を選ぶと採集メモと権利情報を表示します。</p>
+      </section>
+      <section id="gallery" class="gallery" aria-live="polite"></section>
 
-    <section class="field-note" id="field-note">
-      <div class="note-heading">
-        <p id="field-note-date" class="section-number">FIELD NOTE / ----</p>
-        <h2 id="field-note-title">採集の方法と、<br>今日の仮説。</h2>
-      </div>
-      <div class="note-body">
-        <p id="field-note-description"></p>
-        <p id="field-note-method"></p>
-        <a id="diary-link" class="text-link" href="diary/2026-06-13.md">採集日記を読む <span>↗</span></a>
-      </div>
+      <section class="genre-context">
+        <div class="method-note">
+          <p class="section-number">CURATORIAL METHOD</p>
+          <h2>この棚の見方</h2>
+          <p id="field-note-method"></p>
+        </div>
+        <div>
+          <p class="section-number">NEIGHBORING GENRES</p>
+          <div id="related-genres" class="related-genres"></div>
+        </div>
+      </section>
+
+      <section class="history-section">
+        <div>
+          <p class="section-number">UPDATE HISTORY</p>
+          <h2>棚が変わった記録</h2>
+        </div>
+        <ol id="genre-history" class="genre-history"></ol>
+      </section>
     </section>
 
     <section class="policy" id="policy">
       <p class="section-number">COLLECTING POLICY</p>
       <div class="policy-grid">
-        <article><span>01</span><h3>漂流する</h3><p>検索語を決めすぎず、隣接する資料へ横滑りする。</p></article>
-        <article><span>02</span><h3>並べる</h3><p>10～50件を同じ棚に置き、差異と反復を見る。</p></article>
-        <article><span>03</span><h3>出典を残す</h3><p>原典、作者、権利条件を標本と切り離さない。</p></article>
-        <article><span>04</span><h3>棚を作り直す</h3><p>ジャンルは仮説。凍結、結合、分離をためらわない。</p></article>
+        <article><span>01</span><h3>漂流する</h3><p>媒体を限定せず、隣接する資料へ横滑りする。</p></article>
+        <article><span>02</span><h3>棚を育てる</h3><p>新設、追補、分離、統合、非公開化をためらわない。</p></article>
+        <article><span>03</span><h3>関係を残す</h3><p>主ジャンルとタグで、標本を複製せず横断する。</p></article>
+        <article><span>04</span><h3>出典を残す</h3><p>原典、作者、権利条件を標本と切り離さない。</p></article>
       </div>
     </section>
   </main>
@@ -92,14 +118,13 @@
   <footer>
     <div class="brand footer-brand"><span class="brand-mark">余</span><span>余白採集室</span></div>
     <p>Collected from the open web, with sources attached.</p>
-    <p>© 2026 Curatorial notes / Images retain their original licenses.</p>
+    <p>© 2026 Curatorial notes / Materials retain their original rights.</p>
   </footer>
 
   <dialog id="specimen-dialog" class="specimen-dialog">
     <button class="dialog-close" type="button" aria-label="閉じる">×</button>
     <div id="dialog-content"></div>
   </dialog>
-
   <script src="app.js" defer></script>
 </body>
 </html>

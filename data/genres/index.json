@@ -1,0 +1,58 @@
+{
+    "genres":  [
+                   {
+                       "id":  "street-letterforms",
+                       "title":  "街角の異体字標本",
+                       "subtitle":  "現代の看板に生き残る旧字・廃字・古書体",
+                       "itemCount":  15,
+                       "path":  "data/genres/street-letterforms.json",
+                       "status":  "published",
+                       "tags":  [
+                                    "文字景観",
+                                    "街路",
+                                    "看板",
+                                    "タイポグラフィ",
+                                    "建築"
+                                ],
+                       "relatedGenres":  [
+                                             "dated-rainwater-castings"
+                                         ],
+                       "mapPosition":  {
+                                           "x":  31,
+                                           "y":  45
+                                       },
+                       "representativeAsset":  "assets/collections/2026-06-13/147647103.jpeg",
+                       "createdAt":  "2026-06-13",
+                       "updatedAt":  "2026-06-14"
+                   },
+                   {
+                       "id":  "dated-rainwater-castings",
+                       "title":  "雨樋に刻まれた建築年",
+                       "subtitle":  "雨水頭・ホッパー・縦樋に残る日付鋳物",
+                       "itemCount":  26,
+                       "path":  "data/genres/dated-rainwater-castings.json",
+                       "status":  "published",
+                       "tags":  [
+                                    "建築部材",
+                                    "年号",
+                                    "鋳物",
+                                    "外壁",
+                                    "文字景観"
+                                ],
+                       "relatedGenres":  [
+                                             "street-letterforms"
+                                         ],
+                       "mapPosition":  {
+                                           "x":  69,
+                                           "y":  55
+                                       },
+                       "representativeAsset":  "assets/collections/2026-06-14/149081475.jpg",
+                       "createdAt":  "2026-06-14",
+                       "updatedAt":  "2026-06-14"
+                   }
+               ],
+    "legacyCollections":  {
+                              "2026-06-13":  "street-letterforms",
+                              "2026-06-14":  "dated-rainwater-castings"
+                          }
+}

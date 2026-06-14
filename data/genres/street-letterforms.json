@@ -1,9 +1,41 @@
 {
-    "date":  "2026-06-13",
+    "id":  "street-letterforms",
     "title":  "街角の異体字標本",
     "subtitle":  "現代の看板に生き残る旧字・廃字・古書体",
     "description":  "標準化された文字の外側で、変体仮名、フラクトゥール、ブラックレターなどが店名や地名として生き続ける例を集めた。文字そのものだけでなく、建物、商い、観光、郷土意識との結びつきを観察する。",
     "method":  "Wikimedia Commonsを複数の文字史キーワードで横断検索し、街路・店舗・施設の実景を中心に選定。比較用の歴史写真を1件含む。",
+    "status":  "published",
+    "tags":  [
+                 "文字景観",
+                 "街路",
+                 "看板",
+                 "タイポグラフィ",
+                 "建築"
+             ],
+    "relatedGenres":  [
+                          "dated-rainwater-castings"
+                      ],
+    "mapPosition":  {
+                        "x":  31,
+                        "y":  45
+                    },
+    "representativeItemId":  "147647103",
+    "createdAt":  "2026-06-13",
+    "updatedAt":  "2026-06-14",
+    "history":  [
+                    {
+                        "date":  "2026-06-13",
+                        "type":  "created",
+                        "summary":  "街路や店舗に残る変体仮名、フラクトゥール、ブラックレターなど15件で棚を開始。",
+                        "diaryPath":  "diary/2026-06-13.md"
+                    },
+                    {
+                        "date":  "2026-06-14",
+                        "type":  "migrated",
+                        "summary":  "日付棚から安定IDを持つジャンル棚へ移行し、タグと雨樋鋳物棚との関係を追加。",
+                        "diaryPath":  "diary/2026-06-14.md"
+                    }
+                ],
     "itemCount":  15,
     "items":  [
                   {
@@ -21,7 +53,14 @@
                       "description":  "変体仮名 (Hentaigana)",
                       "date":  "2024-04-21 12:31:55",
                       "width":  4032,
-                      "height":  3024
+                      "height":  3024,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "変体仮名",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "33470396",
@@ -38,7 +77,14 @@
                       "description":  "嵐山付近、店名を変体仮名で書くレストラン・「よしだや」の看板",
                       "date":  "2013-12-17 17:32:06",
                       "width":  3264,
-                      "height":  2448
+                      "height":  2448,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "変体仮名",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "133787833",
@@ -55,7 +101,14 @@
                       "description":  "Straubing (DE), Nasenschild „Zum Bayerischen Löwen“ (sollte „Zum Bayeriſchen Löwen“ heißen",
                       "date":  "2023-05-01",
                       "width":  4944,
-                      "height":  3696
+                      "height":  3696,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "フラクトゥール",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "70345189",
@@ -72,7 +125,14 @@
                       "description":  "Shop “Haardt \u0026 Krüger”, Mölker Steig, Vienna , Austria",
                       "date":  "Taken on 14 June 2018, 10:19",
                       "width":  3364,
-                      "height":  5980
+                      "height":  5980,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "フラクトゥール",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "114184772",
@@ -89,7 +149,14 @@
                       "description":  "Ebersberg, Marienplatz, Schild „Johan Allinger, zum Faßlmetzger, 1821“.",
                       "date":  "2021-04-25",
                       "width":  3072,
-                      "height":  1152
+                      "height":  1152,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "フラクトゥール",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "129502977",
@@ -106,7 +173,14 @@
                       "description":  "Pleinfeld (DE), Nasenschild mit Krone an einer Metzgerei.",
                       "date":  "2022-08-02",
                       "width":  2400,
-                      "height":  1600
+                      "height":  1600,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "フラクトゥール",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "112402121",
@@ -123,7 +197,14 @@
                       "description":  "Berchtesgaden, Nasenschild des Gasthofs Goldener Bär",
                       "date":  "2021-11-06",
                       "width":  2928,
-                      "height":  2400
+                      "height":  2400,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "フラクトゥール",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "147539472",
@@ -140,7 +221,14 @@
                       "description":  "Mühldorf am Inn (DE), Nasenschild am Haus Stadtplatz 4",
                       "date":  "2024-03",
                       "width":  4400,
-                      "height":  2624
+                      "height":  2624,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "フラクトゥール",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "47262358",
@@ -157,7 +245,14 @@
                       "description":  "Nasenschild an der Schänke zur alten Wache auf der Festung Marienberg (Würzburg).",
                       "date":  "2016-02-27",
                       "width":  2312,
-                      "height":  1268
+                      "height":  1268,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "フラクトゥール",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "93624053",
@@ -174,7 +269,14 @@
                       "description":  "This media shows the protected monument of Saxony with the ID 09286734 KDSa/09286734 ( other ) .",
                       "date":  "2018-12-14",
                       "width":  4398,
-                      "height":  3299
+                      "height":  3299,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "フラクトゥール",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "151670442",
@@ -191,7 +293,14 @@
                       "description":  "Woman looking at a mannequin depicting a woman knitting, in a lace shop. Antwerp, Belgium",
                       "date":  "2014-06-18 15:09:19",
                       "width":  4140,
-                      "height":  2736
+                      "height":  2736,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "ブラックレター",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "169933154",
@@ -208,7 +317,14 @@
                       "description":  "Rue du Vieux-Billard 8, ancien bâtiment du quotidien « La Suisse ». Enseigne.",
                       "date":  "2025-07-12 19:59:09",
                       "width":  1124,
-                      "height":  2544
+                      "height":  2544,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "ブラックレター",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "174230437",
@@ -225,7 +341,14 @@
                       "description":  "Café and restaurant “Marienhöhe”, Norderney , Lower Saxony , Germany",
                       "date":  "Taken on 25 August 2025, 21:21",
                       "width":  6711,
-                      "height":  3775
+                      "height":  3775,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "歴史的字形",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "35395445",
@@ -242,7 +365,14 @@
                       "description":  "Herzberg am Harz - Junkernstraße",
                       "date":  "Taken on 2 July 2014, 12:52:50",
                       "width":  2752,
-                      "height":  1462
+                      "height":  1462,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "歴史的字形",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   },
                   {
                       "id":  "113297655",
@@ -259,7 +389,14 @@
                       "description":  "August Rietz Bokhandel, Södermalmstorg 4, ägaren August Rietz bakom disken.",
                       "date":  "1920-tal",
                       "width":  2610,
-                      "height":  1845
+                      "height":  1845,
+                      "mediaType":  "image",
+                      "tags":  [
+                                   "歴史資料",
+                                   "文字",
+                                   "都市",
+                                   "歴史の痕跡"
+                               ]
                   }
               ]
 }
