@@ -13,6 +13,8 @@ $indexPath = Join-Path $root 'data/genres/index.json'
 $errors = New-Object System.Collections.Generic.List[string]
 $allowedStatuses = @('published', 'archived', 'merged')
 $allowedMediaTypes = @('image', 'video', 'audio', 'text', 'link')
+$allowedRightsStatuses = @('clear', 'unknown', 'restricted')
+$allowedCaptureModes = @('stored', 'excerpt', 'linked')
 $seenIds = @{}
 $seenSources = @{}
 $seenAssets = @{}
@@ -136,6 +138,11 @@ foreach ($entry in @($entries | Where-Object { $_.status -ne 'merged' })) {
         if (@($item.tags).Count -eq 0) { Add-Error "Item has no tags: $label" }
         $mediaType = if ($item.mediaType) { [string]$item.mediaType } elseif ($item.localImage) { 'image' } else { 'link' }
         if ($allowedMediaTypes -notcontains $mediaType) { Add-Error "Unsupported mediaType at $label`: $mediaType" }
+        $rightsStatus = if ($item.rightsStatus) { [string]$item.rightsStatus } else { $null }
+        $captureMode = if ($item.captureMode) { [string]$item.captureMode } else { $null }
+        if ($rightsStatus -and $allowedRightsStatuses -notcontains $rightsStatus) { Add-Error "Unsupported rightsStatus at $label`: $rightsStatus" }
+        if ($captureMode -and $allowedCaptureModes -notcontains $captureMode) { Add-Error "Unsupported captureMode at $label`: $captureMode" }
+        if ($captureMode -eq 'stored' -and $rightsStatus -and $rightsStatus -ne 'clear') { Add-Error "Stored item must have clear rightsStatus: $label" }
         if (-not $item.license -and -not $item.rights) { Add-Error "Missing rights information: $label" }
         if ($item.sourceUrl) { Test-HttpUrl ([string]$item.sourceUrl) "$label.sourceUrl" }
         if ($seenIds.ContainsKey([string]$item.id)) { Add-Error "Specimen has multiple primary genres or duplicate id: $($item.id)" } else { $seenIds[[string]$item.id] = $entry.id }
