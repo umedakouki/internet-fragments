@@ -8,7 +8,6 @@ const state = {
   cache: new Map(),
   selectedGenre: null,
   selectedItem: null,
-  tag: "すべて",
   view: "map",
   panX: 0,
   panY: 0,
@@ -27,7 +26,6 @@ const elements = {
   nodes: document.querySelector("#map-nodes"),
   list: document.querySelector("#genre-list"),
   panel: document.querySelector("#exploration-panel"),
-  tagFilter: document.querySelector("#tag-filter"),
   recentUpdates: document.querySelector("#recent-updates")
 };
 
@@ -162,7 +160,6 @@ function renderMap() {
     node.type = "button";
     node.className = `genre-node shape-${seed % 4}`;
     node.dataset.genre = genre.id;
-    node.dataset.tags = genre.tags.join("|");
     node.style.left = `${point.x}%`;
     node.style.top = `${point.y}%`;
     node.style.setProperty("--drift-x", `${4 + seed % 8}px`);
@@ -178,8 +175,7 @@ function renderMap() {
     card.type = "button";
     card.className = "genre-list-card";
     card.dataset.genre = genre.id;
-    card.dataset.tags = genre.tags.join("|");
-    card.innerHTML = `<img src="${escapeHtml(genre.representativeAsset)}" alt=""><span><small>${genre.tags.map(escapeHtml).join(" / ")}</small><b>${escapeHtml(genre.title)}</b><em>${genre.itemCount}標本</em></span>`;
+    card.innerHTML = `<img src="${escapeHtml(genre.representativeAsset)}" alt=""><span><b>${escapeHtml(genre.title)}</b><em>${genre.itemCount}標本</em></span>`;
     card.addEventListener("click", () => selectGenre(genre.id));
     elements.list.append(card);
   });
@@ -189,31 +185,11 @@ function renderMap() {
       if (!weight) continue;
       const pa = positions.get(a.id), pb = positions.get(b.id), line = document.createElementNS("http://www.w3.org/2000/svg", "line");
       line.setAttribute("x1", pa.x * 10); line.setAttribute("y1", pa.y * 6.4); line.setAttribute("x2", pb.x * 10); line.setAttribute("y2", pb.y * 6.4);
-      line.dataset.a = a.id; line.dataset.b = b.id; line.dataset.tags = sharedTags(a, b).join("|"); line.style.setProperty("--edge-weight", Math.min(3, weight));
+      line.dataset.a = a.id; line.dataset.b = b.id; line.style.setProperty("--edge-weight", Math.min(3, weight));
       elements.lines.append(line);
     }
   }
-  setupTagFilter();
-  applyMapFilter();
   updateStageTransform();
-}
-
-function setupTagFilter() {
-  const tags = ["すべて", ...new Set(state.published.flatMap((genre) => genre.tags))];
-  const body = elements.tagFilter.querySelector(".tag-filter-body");
-  body.innerHTML = `<label for="map-tag-select">表示するタグ</label><select id="map-tag-select">${tags.map((tag) => `<option value="${escapeHtml(tag)}"${tag === state.tag ? " selected" : ""}>${escapeHtml(tag)}</option>`).join("")}</select>`;
-  body.querySelector("select").addEventListener("change", (event) => chooseTag(event.target.value));
-}
-
-function chooseTag(tag) {
-  state.tag = tag;
-  setupTagFilter();
-  applyMapFilter();
-}
-
-function applyMapFilter() {
-  document.querySelectorAll(".genre-node, .genre-list-card").forEach((node) => node.classList.toggle("filtered", state.tag !== "すべて" && !node.dataset.tags.split("|").includes(state.tag)));
-  document.querySelectorAll(".map-lines line").forEach((line) => line.classList.toggle("filtered", state.tag !== "すべて" && !line.dataset.tags.split("|").includes(state.tag)));
 }
 
 function highlightRelations(id) {
@@ -314,7 +290,6 @@ function renderGenrePanel(genre, entry) {
   elements.panel.innerHTML = `<div class="panel-topbar"><div class="panel-zone-title compact"><span>2</span><div><p class="section-number">EXPLORE SPECIMENS</p><h2>標本を探索する</h2></div></div><button type="button" class="text-button" data-random-entry>別の1点へ</button></div>
     <nav class="breadcrumbs" aria-label="現在地"><button type="button" data-panel-home>ジャンル選択</button><span>›</span><b>${escapeHtml(genre.title)}</b></nav>
     <div class="panel-heading"><p class="section-number">GENRE / ${genre.itemCount}標本</p><div class="panel-cover"><img src="${escapeHtml(entry.representativeAsset)}" alt=""></div><h2>${escapeHtml(genre.title)}</h2><p class="panel-subtitle">${escapeHtml(genre.subtitle)}</p><p>${escapeHtml(genre.description)}</p></div>
-    <div class="panel-tags">${genre.tags.map((tag) => `<button type="button" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`).join("")}</div>
     <div class="panel-section-heading"><h3>標本を見る</h3><button type="button" class="text-button" data-shuffle>別の標本を表示</button></div>
     <label class="item-filter">標本の絞り込み<select>${options.map((option) => `<option${option === state.itemFilter ? " selected" : ""}>${escapeHtml(option)}</option>`).join("")}</select></label>
     <div class="specimen-grid">${renderItemButtons(shown, genre.id)}</div>
@@ -322,7 +297,6 @@ function renderGenrePanel(genre, entry) {
     <details class="genre-details"><summary>この棚の見方と更新履歴</summary><p>${escapeHtml(genre.method)}</p><ol>${historyItems.map((item) => { const diary = item.diaryPath || item.diary; return `<li><time>${escapeHtml(item.date)}</time><p>${escapeHtml(item.summary || item.note || item.action || "更新")}</p>${diary ? `<a href="${escapeHtml(diary)}">採集日記</a>` : ""}</li>`; }).join("")}</ol></details>`;
   elements.panel.querySelector("[data-panel-home]").addEventListener("click", () => showEmptyPanel());
   elements.panel.querySelector("[data-random-entry]").addEventListener("click", randomEntry);
-  elements.panel.querySelectorAll("[data-tag]").forEach((button) => button.addEventListener("click", () => { chooseTag(button.dataset.tag); elements.tagFilter.open = true; }));
   elements.panel.querySelector("[data-shuffle]").addEventListener("click", () => {
     state.sampleOffset = items.length ? (state.sampleOffset + 6) % items.length : 0;
     state.showAll = false;

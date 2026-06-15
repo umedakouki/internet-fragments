@@ -58,7 +58,7 @@ try {
 
     Send-Cdp 'Page.navigate' @{ url = "$BaseUrl`?genre=$Genre" } | Out-Null
     Wait-For "document.querySelector('#exploration-panel').dataset.state==='genre'"
-    $directGenre = Invoke-Eval "({status:performance.getEntriesByType('navigation')[0].responseStatus,url:location.search,state:document.querySelector('#exploration-panel').dataset.state,genre:document.querySelector('#exploration-panel').dataset.genre,cards:document.querySelectorAll('.specimen-card').length})"
+    $directGenre = Invoke-Eval "({status:performance.getEntriesByType('navigation')[0].responseStatus,url:location.search,state:document.querySelector('#exploration-panel').dataset.state,genre:document.querySelector('#exploration-panel').dataset.genre,cards:document.querySelectorAll('.specimen-card').length,noTagUi:!document.querySelector('#tag-filter')&&!document.querySelector('.panel-tags')&&!document.querySelector('[data-tag]')})"
 
     Send-Cdp 'Page.navigate' @{ url = "$BaseUrl`?genre=$Genre&item=$firstItemId" } | Out-Null
     Wait-For "document.querySelector('#exploration-panel').dataset.state==='item' && document.querySelectorAll('#branch-options button').length===3"
@@ -72,7 +72,7 @@ try {
     } else { $legacyResult = $null }
 
     $failed = $public.htmlStatus -ne 200 -or $public.indexStatus -ne 200 -or $public.indexCount -ne $expectedCount -or $public.genreStatus -ne 200 -or $public.genreCount -ne $expectedCount -or $public.genreItems -ne $expectedCount -or $public.assetStatus -ne 200 -or -not $public.assetType.StartsWith('image/') -or $public.assetBytes -lt 1000
-    $failed = $failed -or $directGenre.status -ne 200 -or $directGenre.url -ne "?genre=$Genre" -or $directGenre.state -ne 'genre' -or $directGenre.genre -ne $Genre -or $directGenre.cards -lt 1
+    $failed = $failed -or $directGenre.status -ne 200 -or $directGenre.url -ne "?genre=$Genre" -or $directGenre.state -ne 'genre' -or $directGenre.genre -ne $Genre -or $directGenre.cards -lt 1 -or -not $directGenre.noTagUi
     $failed = $failed -or $directItem.status -ne 200 -or $directItem.url -ne "?genre=$Genre&item=$firstItemId" -or $directItem.state -ne 'item' -or $directItem.item -ne $firstItemId -or $directItem.branches -ne 3 -or -not $directItem.source.StartsWith('http')
     if ($legacyResult -and ($legacyResult.status -ne 200 -or $legacyResult.url -ne "?genre=$Genre" -or $legacyResult.state -ne 'genre')) { $failed = $true }
 
