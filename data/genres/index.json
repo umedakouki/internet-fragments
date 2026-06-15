@@ -4,7 +4,7 @@
       "id": "street-letterforms",
       "title": "街角に残る仮名と旧字",
       "subtitle": "変体仮名・旧字体・踊り字が現役の表示に残る例",
-      "itemCount": 7,
+      "itemCount": 10,
       "path": "data/genres/street-letterforms.json",
       "status": "published",
       "tags": [
@@ -25,7 +25,7 @@
       },
       "representativeAsset": "assets/collections/2026-06-13/147647103.jpeg",
       "createdAt": "2026-06-13",
-      "updatedAt": "2026-06-14"
+      "updatedAt": "2026-06-15"
     },
     {
       "id": "european-historic-signs",

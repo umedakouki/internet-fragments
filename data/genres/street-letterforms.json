@@ -3,7 +3,7 @@
   "title": "街角に残る仮名と旧字",
   "subtitle": "変体仮名・旧字体・踊り字が現役の表示に残る例",
   "description": "標準化された文字の外側で、変体仮名、旧字体、踊り字が店名や案内として現在も使われる例を集めた。字形だけでなく、商い、土地、手書き表示との結びつきを東アジアの街角で観察する。",
-  "method": "Wikimedia Commonsを変体仮名、旧字体、踊り字と看板の語で横断検索し、現役の店舗・施設・案内表示で字形を確認でき、作者と再利用条件を追跡できる7件を選定した。",
+  "method": "Wikimedia Commonsを変体仮名、旧字体、踊り字と看板の語で横断検索し、現役の店舗・施設・案内表示で字形を確認でき、作者と再利用条件を追跡できる10件を選定した。",
   "status": "published",
   "tags": [
     "文字景観",
@@ -23,7 +23,7 @@
   },
   "representativeItemId": "147647103",
   "createdAt": "2026-06-13",
-  "updatedAt": "2026-06-14",
+  "updatedAt": "2026-06-15",
   "history": [
     {
       "date": "2026-06-13",
@@ -48,9 +48,15 @@
       "type": "split",
       "summary": "欧州の古書体看板13件を独立棚へ分け、仮名・旧字体・踊り字7件に焦点を絞った。",
       "diaryPath": "diary/2026-06-14.md"
+    },
+    {
+      "date": "2026-06-15",
+      "type": "expanded",
+      "summary": "妻籠宿と恵比寿の看板、台湾の営業表示を追加し、変体仮名・旧字体・踊り字を各1件補強。",
+      "diaryPath": "diary/2026-06-15.md"
     }
   ],
-  "itemCount": 7,
+  "itemCount": 10,
   "items": [
     {
       "id": "147647103",
@@ -249,6 +255,96 @@
         "注意書き",
         "手書き",
         "案内表示",
+        "東アジア"
+      ]
+    },
+    {
+      "id": "31114422",
+      "title": "妻籠宿・吉村屋の蕎麦看板",
+      "family": "変体仮名",
+      "curatorNote": "宿場町の店先で、太い筆文字の変体仮名が建物、暖簾、案内板と重なりながら蕎麦店の印になる。",
+      "localImage": "assets/collections/street-letterforms/31114422.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Township_of_Tsumago-juku_6.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Township_of_Tsumago-juku_6.jpg",
+      "artist": "そらみみ",
+      "credit": "Own work",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "rights": "Wikimedia Commonsの原典記録でCC BY-SA 3.0と表示。",
+      "description": "長野県妻籠宿の町並みにある蕎麦店・吉村屋の看板。",
+      "date": "2014-02-04 13:58:10",
+      "width": 1280,
+      "height": 1707,
+      "mediaType": "image",
+      "acquiredAt": "2026-06-15",
+      "tags": [
+        "変体仮名",
+        "文字景観",
+        "看板",
+        "歴史の痕跡",
+        "妻籠宿",
+        "蕎麦店",
+        "宿場町",
+        "東アジア"
+      ]
+    },
+    {
+      "id": "3804628",
+      "title": "恵比寿「なゝ樹」の置き看板",
+      "family": "踊り字",
+      "curatorNote": "屋号の中央に平仮名の踊り字「ゝ」を置き、同じ音を繰り返す短い店名そのものを目印にしている。",
+      "localImage": "assets/collections/street-letterforms/3804628.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Togakushi_soba_signboard_by_yoppy_in_Ebisu,_Tokyo.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Togakushi_soba_signboard_by_yoppy_in_Ebisu%2C_Tokyo.jpg",
+      "artist": "yoppy",
+      "credit": "Flickr",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "rights": "Wikimedia Commonsの原典記録でCC BY 2.0と表示。",
+      "description": "東京都渋谷区恵比寿の戸隠そば店「なゝ樹」の置き看板。",
+      "date": "2007-11-06",
+      "width": 683,
+      "height": 1024,
+      "mediaType": "image",
+      "acquiredAt": "2026-06-15",
+      "tags": [
+        "踊り字",
+        "文字景観",
+        "看板",
+        "歴史の痕跡",
+        "恵比寿",
+        "蕎麦店",
+        "屋号",
+        "東アジア"
+      ]
+    },
+    {
+      "id": "77203204",
+      "title": "台湾の手書き「營業中」札",
+      "family": "旧字体",
+      "curatorNote": "木札へ手書きされた「營」が、印刷看板とは異なる線の揺れを伴って日常の営業表示に使われている。",
+      "localImage": "assets/collections/street-letterforms/77203204.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Japanese_%22open%22_sign_in_traditional_characters.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Japanese_%22open%22_sign_in_traditional_characters.jpg",
+      "artist": "Hippietrail",
+      "credit": "Own work",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "rights": "Wikimedia Commonsの原典記録でCC BY-SA 4.0と表示。",
+      "description": "台湾で使われる、繁体字の「營」を含む手書きの営業中表示。",
+      "date": "2019-03-06 13:01:54",
+      "width": 1280,
+      "height": 4356,
+      "mediaType": "image",
+      "acquiredAt": "2026-06-15",
+      "tags": [
+        "旧字体",
+        "文字景観",
+        "看板",
+        "歴史の痕跡",
+        "台湾",
+        "營業中",
+        "手書き",
         "東アジア"
       ]
     }
