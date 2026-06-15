@@ -134,9 +134,9 @@
     },
     {
       "id": "anna-atkins-cyanotypes",
-      "title": "青に沈む海藻標本",
-      "subtitle": "アンナ・アトキンスが光で写し取った海藻の輪郭",
-      "itemCount": 10,
+      "title": "青に写す標本と図面",
+      "subtitle": "海藻の輪郭から日本の青写真技術へ",
+      "itemCount": 14,
       "path": "data/genres/anna-atkins-cyanotypes.json",
       "status": "published",
       "tags": [
@@ -144,7 +144,9 @@
         "写真史",
         "植物標本",
         "科学図版",
-        "海藻"
+        "海藻",
+        "青写真",
+        "複写技術"
       ],
       "relatedGenres": [],
       "mapPosition": {
@@ -153,7 +155,7 @@
       },
       "representativeAsset": "assets/collections/anna-atkins-cyanotypes/291515.jpg",
       "createdAt": "2026-06-14",
-      "updatedAt": "2026-06-14"
+      "updatedAt": "2026-06-15"
     },
     {
       "id": "sundials-reading-shadow",
