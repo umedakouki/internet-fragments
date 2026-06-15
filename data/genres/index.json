@@ -31,7 +31,7 @@
       "id": "european-historic-signs",
       "title": "欧州の古書体看板",
       "subtitle": "フラクトゥール、ブラックレターが現存する街路看板",
-      "itemCount": 12,
+      "itemCount": 11,
       "path": "data/genres/european-historic-signs.json",
       "status": "published",
       "tags": [
@@ -52,17 +52,17 @@
       },
       "representativeAsset": "assets/collections/2026-06-13/133787833.jpeg",
       "createdAt": "2026-06-14",
-      "updatedAt": "2026-06-14"
+      "updatedAt": "2026-06-15"
     },
     {
       "id": "historic-sign-reference",
-      "title": "古書体看板の歴史比較資料",
-      "subtitle": "現存看板の棚から外した歴史写真の記録",
-      "itemCount": 1,
+      "title": "古書体看板の比較外資料",
+      "subtitle": "撮影時点または字形判定で公開棚から外した記録",
+      "itemCount": 2,
       "path": "data/genres/historic-sign-reference.json",
       "status": "archived",
       "tags": [
-        "歴史資料",
+        "比較外資料",
         "文字景観",
         "欧州",
         "看板"
@@ -76,7 +76,7 @@
       },
       "representativeAsset": "assets/collections/2026-06-13/113297655.jpg",
       "createdAt": "2026-06-14",
-      "updatedAt": "2026-06-14"
+      "updatedAt": "2026-06-15"
     },
     {
       "id": "dated-rainwater-castings",

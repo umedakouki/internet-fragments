@@ -2,8 +2,8 @@
   "id": "european-historic-signs",
   "title": "欧州の古書体看板",
   "subtitle": "フラクトゥール、ブラックレターが現存する街路看板",
-  "description": "欧州の店舗、宿、施設、通りに現存するフラクトゥール、ブラックレター、歴史的なラテン字形を集めた。古い字形が現在の街路で土地性や歴史性を伝える12件を比較する。",
-  "method": "Wikimedia CommonsをFraktur、blackletter、historic shop sign、street signの語と関連カテゴリで横断検索し、街路・店舗・施設に現存する看板と表示12件を選定した。",
+  "description": "欧州の店舗、宿、施設、通りに現存するフラクトゥールとブラックレターを集めた。古い字形が現在の街路で土地性や歴史性を伝える11件を比較する。",
+  "method": "Wikimedia CommonsをFraktur、blackletter、historic shop sign、street signの語と関連カテゴリで横断検索し、街路・店舗・施設に現存し、古書体の字形を画像で確認できる看板と表示11件を選定した。",
   "status": "published",
   "tags": [
     "文字景観",
@@ -23,7 +23,7 @@
   },
   "representativeItemId": "133787833",
   "createdAt": "2026-06-14",
-  "updatedAt": "2026-06-14",
+  "updatedAt": "2026-06-15",
   "history": [
     {
       "date": "2026-06-14",
@@ -36,9 +36,15 @@
       "type": "moved",
       "summary": "現存看板に比較軸を統一するため、1920年代の書店写真1件を非公開の歴史比較資料へ移した。",
       "diaryPath": "diary/2026-06-14.md"
+    },
+    {
+      "date": "2026-06-15",
+      "type": "moved",
+      "summary": "古書体を画像で確認できる標本へ統一し、サンセリフ表示のMarienhöhe 1件を非公開の比較外資料へ移した。Junkernstraßeはブラックレターへ再分類した。",
+      "diaryPath": "diary/2026-06-15.md"
     }
   ],
-  "itemCount": 12,
+  "itemCount": 11,
   "items": [
     {
       "id": "133787833",
@@ -57,6 +63,8 @@
       "width": 4944,
       "height": 3696,
       "mediaType": "image",
+      "rightsStatus": "clear",
+      "captureMode": "stored",
       "tags": [
         "フラクトゥール",
         "歴史の痕跡",
@@ -82,6 +90,8 @@
       "width": 3364,
       "height": 5980,
       "mediaType": "image",
+      "rightsStatus": "clear",
+      "captureMode": "stored",
       "tags": [
         "フラクトゥール",
         "歴史の痕跡",
@@ -107,6 +117,8 @@
       "width": 3072,
       "height": 1152,
       "mediaType": "image",
+      "rightsStatus": "clear",
+      "captureMode": "stored",
       "tags": [
         "フラクトゥール",
         "歴史の痕跡",
@@ -132,6 +144,8 @@
       "width": 2400,
       "height": 1600,
       "mediaType": "image",
+      "rightsStatus": "clear",
+      "captureMode": "stored",
       "tags": [
         "フラクトゥール",
         "歴史の痕跡",
@@ -157,6 +171,8 @@
       "width": 2928,
       "height": 2400,
       "mediaType": "image",
+      "rightsStatus": "clear",
+      "captureMode": "stored",
       "tags": [
         "フラクトゥール",
         "歴史の痕跡",
@@ -182,6 +198,8 @@
       "width": 4400,
       "height": 2624,
       "mediaType": "image",
+      "rightsStatus": "clear",
+      "captureMode": "stored",
       "tags": [
         "フラクトゥール",
         "歴史の痕跡",
@@ -207,6 +225,8 @@
       "width": 2312,
       "height": 1268,
       "mediaType": "image",
+      "rightsStatus": "clear",
+      "captureMode": "stored",
       "tags": [
         "フラクトゥール",
         "歴史の痕跡",
@@ -232,6 +252,8 @@
       "width": 4398,
       "height": 3299,
       "mediaType": "image",
+      "rightsStatus": "clear",
+      "captureMode": "stored",
       "tags": [
         "フラクトゥール",
         "歴史の痕跡",
@@ -257,6 +279,8 @@
       "width": 4140,
       "height": 2736,
       "mediaType": "image",
+      "rightsStatus": "clear",
+      "captureMode": "stored",
       "tags": [
         "ブラックレター",
         "歴史の痕跡",
@@ -282,6 +306,8 @@
       "width": 1124,
       "height": 2544,
       "mediaType": "image",
+      "rightsStatus": "clear",
+      "captureMode": "stored",
       "tags": [
         "ブラックレター",
         "歴史の痕跡",
@@ -291,35 +317,10 @@
       ]
     },
     {
-      "id": "174230437",
-      "title": "Norderney, Marienhöhe -- 2025 -- 9295-9.jpg",
-      "family": "歴史的字形",
-      "curatorNote": "観光地の現在と、過去を想起させる文字設計が同居する。",
-      "localImage": "assets/collections/2026-06-13/174230437.jpg",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Norderney,_Marienh%C3%B6he_--_2025_--_9295-9.jpg",
-      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Norderney%2C_Marienh%C3%B6he_--_2025_--_9295-9.jpg",
-      "artist": "Dietmar Rabich",
-      "credit": "Own work",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "description": "Café and restaurant “Marienhöhe”, Norderney , Lower Saxony , Germany",
-      "date": "Taken on 25 August 2025, 21:21",
-      "width": 6711,
-      "height": 3775,
-      "mediaType": "image",
-      "tags": [
-        "歴史的字形",
-        "歴史の痕跡",
-        "文字景観",
-        "看板",
-        "欧州"
-      ]
-    },
-    {
       "id": "35395445",
       "title": "Herzberg am Harz Junkernstrasse.jpg",
-      "family": "歴史的字形",
-      "curatorNote": "通りの情報が、地域固有の文字景観として記録されている。",
+      "family": "ブラックレター",
+      "curatorNote": "通り名をブラックレター、解説をサンセリフで組み、同じ表示の中で歴史性と可読性を役割分担している。",
       "localImage": "assets/collections/2026-06-13/35395445.jpg",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Herzberg_am_Harz_Junkernstrasse.jpg",
       "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Herzberg_am_Harz_Junkernstrasse.jpg",
@@ -332,8 +333,10 @@
       "width": 2752,
       "height": 1462,
       "mediaType": "image",
+      "rightsStatus": "clear",
+      "captureMode": "stored",
       "tags": [
-        "歴史的字形",
+        "ブラックレター",
         "歴史の痕跡",
         "文字景観",
         "看板",

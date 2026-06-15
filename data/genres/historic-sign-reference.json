@@ -1,12 +1,12 @@
 {
   "id": "historic-sign-reference",
-  "title": "古書体看板の歴史比較資料",
-  "subtitle": "現存看板の棚から外した歴史写真の記録",
-  "description": "現在の街路に残る看板と撮影時点の異なる歴史写真を、公開探索へ混在させず来歴ごと保持する非公開棚。現時点では1920年代ストックホルムの書店ファサード1件を記録する。",
-  "method": "公開棚の観察単位を現存看板に統一する際、原典、権利、保存資産を失わないよう比較用の歴史写真を移した。新しい比較軸が成立するまで公開しない。",
+  "title": "古書体看板の比較外資料",
+  "subtitle": "撮影時点または字形判定で公開棚から外した記録",
+  "description": "欧州の古書体看板を選ぶ過程で、撮影時点が他標本と異なる歴史写真と、古書体として採用できなかった現代表示を来歴ごと保持する非公開棚。選外の理由を消さず、公開棚の判断基準を後から検証できるようにする。",
+  "method": "公開棚を現存し、画像からフラクトゥールまたはブラックレターを確認できる表示へ統一した。原典、権利、保存資産を失わないよう、年代または字形が比較軸から外れる資料を理由付きで移している。新しい比較軸が成立するまで公開しない。",
   "status": "archived",
   "tags": [
-    "歴史資料",
+    "比較外資料",
     "文字景観",
     "欧州",
     "看板"
@@ -20,16 +20,22 @@
   },
   "representativeItemId": "113297655",
   "createdAt": "2026-06-14",
-  "updatedAt": "2026-06-14",
+  "updatedAt": "2026-06-15",
   "history": [
     {
       "date": "2026-06-14",
       "type": "archived",
       "summary": "欧州の古書体看板を現存例に統一するため、1920年代の書店写真1件を比較資料として非公開保存した。",
       "diaryPath": "diary/2026-06-14.md"
+    },
+    {
+      "date": "2026-06-15",
+      "type": "moved",
+      "summary": "古書体の字形を確認できない2025年のMarienhöhe表示1件を公開棚から移し、字形判定の比較外資料として非公開保存した。",
+      "diaryPath": "diary/2026-06-15.md"
     }
   ],
-  "itemCount": 1,
+  "itemCount": 2,
   "items": [
     {
       "id": "113297655",
@@ -48,9 +54,38 @@
       "width": 2610,
       "height": 1845,
       "mediaType": "image",
+      "rightsStatus": "clear",
+      "captureMode": "stored",
       "tags": [
         "歴史資料",
         "歴史の痕跡",
+        "文字景観",
+        "看板",
+        "欧州"
+      ]
+    },
+    {
+      "id": "174230437",
+      "title": "Norderney, Marienhöhe -- 2025 -- 9295-9.jpg",
+      "family": "字形判定外",
+      "curatorNote": "2025年の施設表示だが、画像で確認できる字形は単純な大文字サンセリフで、古書体看板の比較軸には入らない。観光地の建築が古さを想起させても、雰囲気だけで字形を分類しないための選外記録として保持する。",
+      "localImage": "assets/collections/2026-06-13/174230437.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Norderney,_Marienh%C3%B6he_--_2025_--_9295-9.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Norderney%2C_Marienh%C3%B6he_--_2025_--_9295-9.jpg",
+      "artist": "Dietmar Rabich",
+      "credit": "Own work",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "description": "Café and restaurant “Marienhöhe”, Norderney , Lower Saxony , Germany",
+      "date": "Taken on 25 August 2025, 21:21",
+      "width": 6711,
+      "height": 3775,
+      "mediaType": "image",
+      "rightsStatus": "clear",
+      "captureMode": "stored",
+      "tags": [
+        "比較外資料",
+        "字形判定外",
         "文字景観",
         "看板",
         "欧州"
