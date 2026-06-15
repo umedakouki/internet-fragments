@@ -108,7 +108,7 @@
     {
       "id": "fire-insurance-marks",
       "title": "壁に残る火災保険標章",
-      "subtitle": "会社の紋章と文字を建物へ留めた小さな金属板",
+      "subtitle": "東京から辿る、社名・紋章・寓意像を壁へ留めた金属板",
       "itemCount": 20,
       "path": "data/genres/fire-insurance-marks.json",
       "status": "published",
@@ -130,7 +130,7 @@
       },
       "representativeAsset": "assets/collections/fire-insurance-marks/61685380.jpg",
       "createdAt": "2026-06-14",
-      "updatedAt": "2026-06-14"
+      "updatedAt": "2026-06-15"
     },
     {
       "id": "anna-atkins-cyanotypes",
