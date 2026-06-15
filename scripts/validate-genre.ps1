@@ -18,6 +18,7 @@ $allowedCaptureModes = @('stored', 'excerpt', 'linked')
 $seenIds = @{}
 $seenSources = @{}
 $seenAssets = @{}
+$nodePath = $null
 
 function Add-Error([string]$message) { $script:errors.Add($message) }
 function Require-Value([object]$value, [string]$label) {
@@ -33,11 +34,43 @@ function Test-Asset([string]$path, [string]$label) {
     if (-not (Test-Path -LiteralPath (Join-Path $root $path))) { Add-Error "Asset file not found: $path" }
     if ($seenAssets.ContainsKey($path)) { Add-Error "Duplicate local asset: $path" } else { $seenAssets[$path] = $true }
 }
+function Find-NodeExecutable {
+    if ($script:nodePath) { return $script:nodePath }
+    $command = Get-Command node.exe -ErrorAction SilentlyContinue
+    $candidates = @(
+        $env:INTERNET_FRAGMENTS_NODE,
+        $(if ($command) { $command.Source } else { $null }),
+        (Join-Path $env:ProgramFiles 'Adobe\Adobe Creative Cloud Experience\libs\node.exe'),
+        (Join-Path $env:ProgramFiles 'Common Files\Adobe\Creative Cloud Libraries\libs\node.exe')
+    ) | Where-Object { $_ -and (Test-Path -LiteralPath $_) }
+    $script:nodePath = $candidates | Select-Object -First 1
+    return $script:nodePath
+}
+function Test-SourceLinkWithNode([string]$url) {
+    $node = Find-NodeExecutable
+    if (-not $node) { return $null }
+    $script = @'
+const https = require('https');
+const url = process.argv[1];
+const request = https.get(url, { headers: { 'User-Agent': 'InternetFragmentsValidator/3.2' } }, response => {
+  console.log(response.statusCode || 0);
+  response.resume();
+});
+request.setTimeout(30000, () => request.destroy(new Error('timeout')));
+request.on('error', error => { console.error(error.message); process.exit(2); });
+'@
+    $output = & $node --use-system-ca -e $script $url 2>$null
+    if ($LASTEXITCODE -ne 0 -or -not $output) { return $null }
+    $parsed = 0
+    if ([int]::TryParse([string]($output | Select-Object -Last 1), [ref]$parsed)) { return $parsed }
+    return $null
+}
 function Test-SourceLink([string]$url) {
     $progressPreferenceBefore = $ProgressPreference
     $ProgressPreference = 'SilentlyContinue'
     $status = $null
     $lastError = $null
+    $useNodeFallback = $false
     try {
         for ($attempt = 1; $attempt -le 4; $attempt++) {
             foreach ($method in @('Head', 'Get')) {
@@ -47,15 +80,22 @@ function Test-SourceLink([string]$url) {
                 } catch {
                     $lastError = $_.Exception.Message
                     if ($_.Exception.Response) { $status = [int]$_.Exception.Response.StatusCode } else { $status = $null }
+                    if (-not $status) { $useNodeFallback = $true }
                 }
                 if ($status -ge 200 -and $status -lt 400) { break }
+                if ($useNodeFallback) { break }
                 if ($method -eq 'Head' -and $status -notin @(403, 405, 429)) { break }
             }
             if ($status -ge 200 -and $status -lt 400) { break }
+            if ($useNodeFallback) { break }
             if ($attempt -lt 4) { Start-Sleep -Seconds ([Math]::Pow(2, $attempt)) }
         }
     } finally {
         $ProgressPreference = $progressPreferenceBefore
+    }
+    if ($status -lt 200 -or $status -ge 400) {
+        $nodeStatus = Test-SourceLinkWithNode $url
+        if ($nodeStatus) { $status = $nodeStatus; $lastError = 'Checked with Node.js using the system CA store after Windows PowerShell TLS failure.' }
     }
     if ($status -lt 200 -or $status -ge 400) { Add-Error "Source link failed ($status; $lastError): $url" }
     Start-Sleep -Milliseconds 350

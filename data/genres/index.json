@@ -158,8 +158,8 @@
     {
       "id": "sundials-reading-shadow",
       "title": "影で時を読む日時計",
-      "subtitle": "据置・携帯・折畳みの盤面に太陽の位置を移す計時器",
-      "itemCount": 10,
+      "subtitle": "江戸の紙盤から携帯・折畳み器まで、影を時刻へ変える読み方",
+      "itemCount": 13,
       "path": "data/genres/sundials-reading-shadow.json",
       "status": "published",
       "tags": [
@@ -167,7 +167,10 @@
         "計時器",
         "科学機器",
         "太陽",
-        "金属工芸"
+        "金属工芸",
+        "江戸",
+        "東アジア",
+        "時間制度"
       ],
       "relatedGenres": [],
       "mapPosition": {

@@ -1,16 +1,19 @@
 {
   "id": "sundials-reading-shadow",
   "title": "影で時を読む日時計",
-  "subtitle": "据置・携帯・折畳みの盤面に太陽の位置を移す計時器",
-  "description": "18世紀前後の日時計を中心に、固定した水平盤、持ち運べる小型盤、方位磁針を組み込んだ盤、蓋を開いて使う二折盤、壁面用の垂直盤、他の日時計を合わせる校正器を集めた。時刻を数字だけで表示せず、緯度、方角、影を一枚の盤面へ組み立てる道具の違いを観察する。",
-  "method": "The Metropolitan Museum of ArtのOpen Access APIで日時計を検索し、作者、制作年、素材、Public Domain表示、公開画像を原典記録で確認した。単なる時計や日時計を意匠として持つ別用途の品は除き、影を読む盤面が主機能として確認できる10件を形式別に選定した。",
+  "subtitle": "江戸の紙盤から携帯・折畳み器まで、影を時刻へ変える読み方",
+  "description": "日本では、時の鐘が届かない場所で紙製日時計や方位磁石付きの携帯日時計が使われた。その読み方を出発点に、清朝の赤道型盤、欧米の据置・携帯・折畳み器、現在の日時計展示へ辿る。影の位置や長さを、土地、季節、方角、目盛へ結び直す方法の違いを観察する。",
+  "method": "セイコーミュージアム銀座の公開解説から、江戸後期の紙製・携帯日時計、清朝の赤道型日時計、2026年の企画展を確認した。ページ本文や画像は複製せず、短い観察文と原典リンクだけを記録した。比較対象として、The Metropolitan Museum of ArtのOpen Access APIでPublic Domain表示を確認した欧米の日時計10件を形式別に保存している。",
   "status": "published",
   "tags": [
     "日時計",
     "計時器",
     "科学機器",
     "太陽",
-    "金属工芸"
+    "金属工芸",
+    "江戸",
+    "東アジア",
+    "時間制度"
   ],
   "relatedGenres": [],
   "mapPosition": {
@@ -26,9 +29,15 @@
       "type": "created",
       "summary": "Met Open Accessの日時計10件を形式別に整理して棚を開始。",
       "diaryPath": "diary/2026-06-15.md"
+    },
+    {
+      "date": "2026-06-15",
+      "type": "deepened",
+      "summary": "江戸の紙製日時計、清朝の赤道型盤、現在の企画展をリンク標本として加え、日本から影の読み方を辿る棚へ再構成。",
+      "diaryPath": "diary/2026-06-15.md"
     }
   ],
-  "itemCount": 10,
+  "itemCount": 13,
   "items": [
     {
       "id": "17560",
@@ -249,6 +258,60 @@
       "mediaType": "image",
       "acquiredAt": "2026-06-15",
       "tags": ["日時計", "計時器", "科学機器", "太陽", "金属工芸", "校正複合器", "調整"]
+    },
+    {
+      "id": "seiko-edo-paper-sundial",
+      "title": "江戸後期の紙製日時計と地域の時刻",
+      "family": "紙製盤",
+      "curatorNote": "時の鐘が届かない場所で、季節札を立てて影の長さを読む。地域ごとの日の長さに合わせた盤が道中案内へ付属したという記述から、日時計が旅と土地の道具だったことが見える。",
+      "sourceUrl": "https://museum.seiko.co.jp/knowledge/ElementalTimepieces05/",
+      "creator": "セイコーミュージアム銀座",
+      "repository": "セイコーミュージアム銀座",
+      "license": "All rights reserved",
+      "rights": "原典サイトの著作権表示に従い、本文と画像を複製せずリンクと観察文のみを記録。",
+      "rightsStatus": "restricted",
+      "captureMode": "linked",
+      "description": "江戸後期に普及した紙製日時計と、方位磁石を備えた携帯日時計の使い方を紹介する公開解説。",
+      "date": "江戸後期",
+      "mediaType": "text",
+      "acquiredAt": "2026-06-15",
+      "tags": ["日時計", "江戸", "紙製盤", "携帯", "方位磁石", "地域差", "時間制度"]
+    },
+    {
+      "id": "seiko-qing-equatorial-sundial",
+      "title": "清朝の赤道型（コマ型）日時計",
+      "family": "赤道型盤",
+      "curatorNote": "棒を北極星へ向け、赤道に平行な文字盤の表裏を季節で読み替える。十二支の時刻目盛を持つ東アジアの盤として、欧州製携帯器とは異なる影の受け方を比較できる。",
+      "sourceUrl": "https://museum.seiko.co.jp/collections/timepieces/collect001/",
+      "creator": "作者不詳",
+      "repository": "セイコーミュージアム銀座",
+      "license": "All rights reserved",
+      "rights": "収蔵品ページの本文と画像を複製せず、所蔵情報、短い観察文、原典リンクのみを記録。",
+      "rightsStatus": "restricted",
+      "captureMode": "linked",
+      "description": "1700年代清朝の赤道型日時計。北極星へ向けた棒と、表裏に十二支の目盛を持つ。",
+      "date": "1700年代（清朝）",
+      "mediaType": "link",
+      "acquiredAt": "2026-06-15",
+      "tags": ["日時計", "東アジア", "清朝", "赤道型盤", "十二支", "季節", "方位"]
+    },
+    {
+      "id": "seiko-2026-shadow-exhibition",
+      "title": "企画展「すべては影からはじまった」",
+      "family": "現在の展示",
+      "curatorNote": "2026年6月の東京で、収蔵日時計、江戸時代の紙製日時計の復刻、現代の日時計デザイン、天文学を同じ企画へ置く。古い器物が現在の展示と教育へどう戻るかを示す記録として採集した。",
+      "sourceUrl": "https://museum.seiko.co.jp/information/20260524095833/",
+      "creator": "セイコーミュージアム銀座",
+      "repository": "セイコーミュージアム銀座",
+      "license": "All rights reserved",
+      "rights": "告知ページの本文と画像を複製せず、開催情報、短い観察文、原典リンクのみを記録。",
+      "rightsStatus": "restricted",
+      "captureMode": "linked",
+      "description": "2026年6月9日から7月19日まで開催される、日時計の歴史と現在を扱う企画展の告知。",
+      "date": "2026-05-24",
+      "mediaType": "link",
+      "acquiredAt": "2026-06-15",
+      "tags": ["日時計", "東京", "企画展", "紙製盤", "復刻", "天文学", "現代デザイン"]
     }
   ]
 }
