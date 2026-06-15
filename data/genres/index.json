@@ -154,6 +154,29 @@
       "representativeAsset": "assets/collections/anna-atkins-cyanotypes/291515.jpg",
       "createdAt": "2026-06-14",
       "updatedAt": "2026-06-14"
+    },
+    {
+      "id": "sundials-reading-shadow",
+      "title": "影で時を読む日時計",
+      "subtitle": "据置・携帯・折畳みの盤面に太陽の位置を移す計時器",
+      "itemCount": 10,
+      "path": "data/genres/sundials-reading-shadow.json",
+      "status": "published",
+      "tags": [
+        "日時計",
+        "計時器",
+        "科学機器",
+        "太陽",
+        "金属工芸"
+      ],
+      "relatedGenres": [],
+      "mapPosition": {
+        "x": 22,
+        "y": 20
+      },
+      "representativeAsset": "assets/collections/sundials-reading-shadow/188849.jpg",
+      "createdAt": "2026-06-15",
+      "updatedAt": "2026-06-15"
     }
   ],
   "legacyCollections": {
