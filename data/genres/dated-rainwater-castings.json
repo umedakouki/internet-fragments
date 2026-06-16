@@ -1,9 +1,9 @@
 {
     "id":  "dated-rainwater-castings",
     "title":  "雨樋に刻まれた建築年",
-    "subtitle":  "雨水頭・ホッパー・縦樋に残る日付鋳物",
-    "description":  "屋根から水を逃がすための雨水頭、ホッパー、縦樋のうち、年号、頭文字、紋章的装飾を備えた例を集めた。交換されやすい設備部材が残ることで、建築の竣工、改修、所有の記憶が外壁に小さく固定される。",
-    "method":  "Wikimedia Commonsで rainwater head、dated rainwater hopper、dated drainpipe、Hopper heads with dates を横断検索し、年号または年代を示す意匠を確認でき、作者と再利用条件を追跡できる英国の事例を選定した。",
+    "subtitle":  "日本の雨樋感覚から辿る、外壁の排水部材に残った建築年・所有者・施設名",
+    "description":  "日本の住まいで雨樋や鎖樋が水を逃がす実用部材として見過ごされやすいことを出発点に、外壁の排水部材が建築年、改修年、所有者の頭文字、施設の用途を記録する例を集めた。英国の雨水頭、ホッパー、縦樋では、交換されやすい設備が小さな銘板となり、建物の来歴を街路に固定している。",
+    "method":  "既存のWikimedia Commons収集資料を再確認し、部材名別だった分類を、外壁で何を記録しているかに基づく4系統へ並べ直した。画像は追加取得せず、Commonsと原配布元で確認済みの明示ライセンス画像として権利形式を整理した。",
     "status":  "published",
     "tags":  [
                  "建築部材",
@@ -23,7 +23,7 @@
                     },
     "representativeItemId":  "149081475",
     "createdAt":  "2026-06-14",
-    "updatedAt":  "2026-06-14",
+    "updatedAt":  "2026-06-16",
     "history":  [
                     {
                         "date":  "2026-06-14",
@@ -48,6 +48,12 @@
                         "type":  "related",
                         "summary":  "文字景観の分割に合わせ、欧州の古書体看板との関連を追加。",
                         "diaryPath":  "diary/2026-06-14.md"
+                    },
+                    {
+                        "date":  "2026-06-16",
+                        "type":  "reorganized",
+                        "summary":  "部材名別の分類を、建築・改修年、所有者・頭文字、施設・用途、外壁装飾・場所記憶へ再編し、26件を権利形式へ移行。",
+                        "diaryPath":  "diary/2026-06-16.md"
                     }
                 ],
     "itemCount":  26,
@@ -55,7 +61,7 @@
                   {
                       "id":  "14306596",
                       "title":  "Rainwater Head - geograph.org.uk - 1550161.jpg",
-                      "family":  "雨水頭",
+                      "family":  "建築・改修年",
                       "curatorNote":  "教会の改修年1770とイニシャルが、排水部材を小さな建築銘板に変えている。",
                       "localImage":  "assets/collections/2026-06-14/14306596.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Rainwater_Head_-_geograph.org.uk_-_1550161.jpg",
@@ -74,12 +80,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "106521121",
                       "title":  "Rainwater head, Topsham - geograph.org.uk - 2156318.jpg",
-                      "family":  "雨水頭",
+                      "family":  "外壁装飾・場所記憶",
                       "curatorNote":  "壁面設備の実用品に、所有者や年代を示す装飾が組み込まれた例。",
                       "localImage":  "assets/collections/2026-06-14/106521121.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Rainwater_head,_Topsham_-_geograph.org.uk_-_2156318.jpg",
@@ -98,12 +106,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "106788838",
                       "title":  "Rainwater head, Bovey Tracey - geograph.org.uk - 2198297.jpg",
-                      "family":  "雨水頭",
+                      "family":  "外壁装飾・場所記憶",
                       "curatorNote":  "雨水の入口が、建物正面の記憶を留める縦長の標本になっている。",
                       "localImage":  "assets/collections/2026-06-14/106788838.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Rainwater_head,_Bovey_Tracey_-_geograph.org.uk_-_2198297.jpg",
@@ -122,12 +132,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "113870543",
                       "title":  "Rainwater head at Howick Hall - geograph.org.uk - 2975675.jpg",
-                      "family":  "雨水頭",
+                      "family":  "外壁装飾・場所記憶",
                       "curatorNote":  "邸宅の外壁で、紋章的な意匠と排水機能が同じ鋳物に重なる。",
                       "localImage":  "assets/collections/2026-06-14/113870543.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Rainwater_head_at_Howick_Hall_-_geograph.org.uk_-_2975675.jpg",
@@ -146,12 +158,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "105935281",
                       "title":  "Rainwater head, Muswell Hill Telephone Exchange - geograph.org.uk - 2057463.jpg",
-                      "family":  "雨水頭",
+                      "family":  "施設・用途",
                       "curatorNote":  "通信施設の建築年を、目立たない雨水部材が現在まで運んでいる。",
                       "localImage":  "assets/collections/2026-06-14/105935281.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Rainwater_head,_Muswell_Hill_Telephone_Exchange_-_geograph.org.uk_-_2057463.jpg",
@@ -170,12 +184,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "51654349",
                       "title":  "Rainwater head, Dowsby Hall.jpg",
-                      "family":  "雨水頭",
+                      "family":  "建築・改修年",
                       "curatorNote":  "1630年の年号が残る初期例で、住宅史と設備史を一点で結ぶ。",
                       "localImage":  "assets/collections/2026-06-14/51654349.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Rainwater_head,_Dowsby_Hall.jpg",
@@ -194,12 +210,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "148038869",
                       "title":  "Fort George, rainwater head - geograph.org.uk - 6285268.jpg",
-                      "family":  "雨水頭",
+                      "family":  "施設・用途",
                       "curatorNote":  "軍事建築の規律的な壁面に、鋳造文字が小さな年代層を作る。",
                       "localImage":  "assets/collections/2026-06-14/148038869.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Fort_George,_rainwater_head_-_geograph.org.uk_-_6285268.jpg",
@@ -218,12 +236,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "139826395",
                       "title":  "Highfields Schools – Rainwater head - geograph.org.uk - 5643454.jpg",
-                      "family":  "雨水頭",
+                      "family":  "施設・用途",
                       "curatorNote":  "学校建築の公共性が、校名板ではなく排水設備の装飾にも現れる。",
                       "localImage":  "assets/collections/2026-06-14/139826395.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Highfields_Schools_%E2%80%93_Rainwater_head_-_geograph.org.uk_-_5643454.jpg",
@@ -242,12 +262,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "107955856",
                       "title":  "Old rainwater hopper-head, Fournier Street, Spitalfields - geograph.org.uk - 2403559.jpg",
-                      "family":  "ホッパー",
+                      "family":  "外壁装飾・場所記憶",
                       "curatorNote":  "街路から見落としやすい高所の器具に、地区の時間が凝縮されている。",
                       "localImage":  "assets/collections/2026-06-14/107955856.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Old_rainwater_hopper-head,_Fournier_Street,_Spitalfields_-_geograph.org.uk_-_2403559.jpg",
@@ -266,12 +288,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "142091714",
                       "title":  "20 Colegate - dated rainwater head - geograph.org.uk - 5918139.jpg",
-                      "family":  "雨水頭",
+                      "family":  "建築・改修年",
                       "curatorNote":  "番地のある建物と日付入り部材を直接対応させられる都市資料。",
                       "localImage":  "assets/collections/2026-06-14/142091714.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:20_Colegate_-_dated_rainwater_head_-_geograph.org.uk_-_5918139.jpg",
@@ -290,12 +314,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "137817810",
                       "title":  "Cricklade, St. Sampson\u0027s Church, Clearly dated rainwater hopper - geograph.org.uk - 5443169.jpg",
-                      "family":  "ホッパー",
+                      "family":  "建築・改修年",
                       "curatorNote":  "遠目でも読める年号が、教会の改修履歴を外壁に掲示している。",
                       "localImage":  "assets/collections/2026-06-14/137817810.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Cricklade,_St._Sampson%27s_Church,_Clearly_dated_rainwater_hopper_-_geograph.org.uk_-_5443169.jpg",
@@ -314,12 +340,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "14143241",
                       "title":  "Dated drainpipe, Belfast - geograph.org.uk - 1405661.jpg",
-                      "family":  "縦樋",
+                      "family":  "施設・用途",
                       "curatorNote":  "大学施設の縦樋に残る日付が、設備交換を免れた建築の署名になる。",
                       "localImage":  "assets/collections/2026-06-14/14143241.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Dated_drainpipe,_Belfast_-_geograph.org.uk_-_1405661.jpg",
@@ -338,12 +366,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "11281870",
                       "title":  "Drainpipe embellishment, dated 1867 - geograph.org.uk - 257788.jpg",
-                      "family":  "縦樋",
+                      "family":  "建築・改修年",
                       "curatorNote":  "1867年の装飾が、細い配管を壁面の記念物へ変えている。",
                       "localImage":  "assets/collections/2026-06-14/11281870.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Drainpipe_embellishment,_dated_1867_-_geograph.org.uk_-_257788.jpg",
@@ -362,12 +392,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "27470563",
                       "title":  "Rainwater head of 1757 at Nanteos.JPG",
-                      "family":  "雨水頭",
+                      "family":  "所有者・頭文字",
                       "curatorNote":  "1757年とパウエル家の頭文字が、鉛製ホッパーを家系の記録媒体にしている。",
                       "localImage":  "assets/collections/2026-06-14/27470563.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Rainwater_head_of_1757_at_Nanteos.JPG",
@@ -386,12 +418,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "46045111",
                       "title":  "Photograph of a rain hopper with initials GHBF dated 1913 at Buckingham Place, SW1.JPG",
-                      "family":  "ホッパー",
+                      "family":  "所有者・頭文字",
                       "curatorNote":  "1913年の取得年と所有者の頭文字が、建物の来歴を排水設備に刻んでいる。",
                       "localImage":  "assets/collections/2026-06-14/46045111.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Photograph_of_a_rain_hopper_with_initials_GHBF_dated_1913_at_Buckingham_Place,_SW1.JPG",
@@ -410,12 +444,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "101882322",
                       "title":  "St James\u0027s Church, Church Lane, Rowledge (May 2015) (Rainwater Head).JPG",
-                      "family":  "雨水頭",
+                      "family":  "建築・改修年",
                       "curatorNote":  "1869年の教会建築が、正面装飾ではなく雨水頭にも明記されている。",
                       "localImage":  "assets/collections/2026-06-14/101882322.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:St_James%27s_Church,_Church_Lane,_Rowledge_(May_2015)_(Rainwater_Head).JPG",
@@ -434,12 +470,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "112526616",
                       "title":  "Rainwater head at 48 \u0026 50 St Helens Road, Prescot.jpg",
-                      "family":  "雨水頭",
+                      "family":  "建築・改修年",
                       "curatorNote":  "連続する二戸の年代情報を、一つの雨水頭から建物単位で追跡できる。",
                       "localImage":  "assets/collections/2026-06-14/112526616.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Rainwater_head_at_48_%26_50_St_Helens_Road,_Prescot.jpg",
@@ -458,12 +496,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "121732003",
                       "title":  "Dated rainwater head, Edgware Delivery Office - geograph.org.uk - 3689688.jpg",
-                      "family":  "雨水頭",
+                      "family":  "施設・用途",
                       "curatorNote":  "郵便配達局の業務建築にも、年号入り鋳物を残す慣習が及んだ例。",
                       "localImage":  "assets/collections/2026-06-14/121732003.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Dated_rainwater_head,_Edgware_Delivery_Office_-_geograph.org.uk_-_3689688.jpg",
@@ -482,12 +522,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "126471629",
                       "title":  "Eltham cemetery, dated rainwater hopper - geograph.org.uk - 4111750.jpg",
-                      "family":  "ホッパー",
+                      "family":  "施設・用途",
                       "curatorNote":  "墓地施設の静かな外壁で、日付入りホッパーが建設履歴を保持している。",
                       "localImage":  "assets/collections/2026-06-14/126471629.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Eltham_cemetery,_dated_rainwater_hopper_-_geograph.org.uk_-_4111750.jpg",
@@ -506,12 +548,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "127704905",
                       "title":  "Former Bootham Bar Hotel rainwater head 01.jpg",
-                      "family":  "雨水頭",
+                      "family":  "所有者・頭文字",
                       "curatorNote":  "1782年とJHの文字が、用途を変えた建物の初期所有者を現在へつなぐ。",
                       "localImage":  "assets/collections/2026-06-14/127704905.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Former_Bootham_Bar_Hotel_rainwater_head_01.jpg",
@@ -530,12 +574,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "127742555",
                       "title":  "Rainwater head 5 High Petergate York 01.jpg",
-                      "family":  "雨水頭",
+                      "family":  "所有者・頭文字",
                       "curatorNote":  "1763年とMTの鋳文字が、商業化した歴史住宅の旧来歴を示している。",
                       "localImage":  "assets/collections/2026-06-14/127742555.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Rainwater_head_5_High_Petergate_York_01.jpg",
@@ -554,12 +600,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "138023771",
                       "title":  "Rainwater hopper Tempest Anderson Hall.jpg",
-                      "family":  "ホッパー",
+                      "family":  "所有者・頭文字",
                       "curatorNote":  "1912年とTAの頭文字が、ホール名と排水設備を直接対応させている。",
                       "localImage":  "assets/collections/2026-06-14/138023771.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Rainwater_hopper_Tempest_Anderson_Hall.jpg",
@@ -578,12 +626,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "144875768",
                       "title":  "Rainwater hopper 24 St Saviourgate.jpg",
-                      "family":  "ホッパー",
+                      "family":  "所有者・頭文字",
                       "curatorNote":  "1740年とMFの文字が、小さな器具に18世紀の所有記録を圧縮している。",
                       "localImage":  "assets/collections/2026-06-14/144875768.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Rainwater_hopper_24_St_Saviourgate.jpg",
@@ -602,12 +652,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "149081475",
                       "title":  "York Medical Society rainwater head May24 01.jpg",
-                      "family":  "雨水頭",
+                      "family":  "建築・改修年",
                       "curatorNote":  "1590年の雨水頭が、今回の棚で最古層となる16世紀末の基準点を作る。",
                       "localImage":  "assets/collections/2026-06-14/149081475.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:York_Medical_Society_rainwater_head_May24_01.jpg",
@@ -626,12 +678,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "152854321",
                       "title":  "Drainpipe dated 1927 on the Church of St Mary, from Graham Terrace, Belgravia, September 2024.jpg",
-                      "family":  "縦樋",
+                      "family":  "建築・改修年",
                       "curatorNote":  "1927年の縦樋が、教会の近代改修を細い垂直部材に残している。",
                       "localImage":  "assets/collections/2026-06-14/152854321.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:Drainpipe_dated_1927_on_the_Church_of_St_Mary,_from_Graham_Terrace,_Belgravia,_September_2024.jpg",
@@ -650,12 +704,14 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   },
                   {
                       "id":  "187640115",
                       "title":  "External rain pipe dated 1911 on 45-49 Cleveland Street, Fitzrovia, April 2026.jpg",
-                      "family":  "縦樋",
+                      "family":  "建築・改修年",
                       "curatorNote":  "1911年の建築年と外部配管が一致し、設備が建物の署名として機能している。",
                       "localImage":  "assets/collections/2026-06-14/187640115.jpg",
                       "sourceUrl":  "https://commons.wikimedia.org/wiki/File:External_rain_pipe_dated_1911_on_45-49_Cleveland_Street,_Fitzrovia,_April_2026.jpg",
@@ -674,7 +730,9 @@
                                    "建築",
                                    "記録",
                                    "歴史の痕跡"
-                               ]
+                               ],
+                      "rightsStatus":  "clear",
+                      "captureMode":  "stored"
                   }
               ]
 }

@@ -81,7 +81,7 @@
     {
       "id": "dated-rainwater-castings",
       "title": "雨樋に刻まれた建築年",
-      "subtitle": "雨水頭・ホッパー・縦樋に残る日付鋳物",
+      "subtitle": "日本の雨樋感覚から辿る、外壁の排水部材に残った建築年・所有者・施設名",
       "itemCount": 26,
       "path": "data/genres/dated-rainwater-castings.json",
       "status": "published",
@@ -103,7 +103,7 @@
       },
       "representativeAsset": "assets/collections/2026-06-14/149081475.jpg",
       "createdAt": "2026-06-14",
-      "updatedAt": "2026-06-14"
+      "updatedAt": "2026-06-16"
     },
     {
       "id": "fire-insurance-marks",
