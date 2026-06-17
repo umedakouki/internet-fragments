@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Service shutdown notices and rescue links</title>
+  <desc id="desc">A neutral diagram of notices, redirects, archive boxes, and broken links.</desc>
+  <rect width="960" height="640" fill="#f7f3ea"/>
+  <g fill="none" stroke="#2c3138" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M150 134h270v152H150z"/>
+    <path d="M186 182h168M186 224h112"/>
+    <path d="M540 92h270v152H540z"/>
+    <path d="M576 140h156M576 182h96"/>
+    <path d="M190 418h250v116H190z"/>
+    <path d="M226 462h136"/>
+    <path d="M574 366h214v166H574z"/>
+    <path d="M614 418h134M614 464h82"/>
+    <path d="M421 210c42 0 76-1 118-1"/>
+    <path d="M468 208l34-28M468 208l34 28"/>
+    <path d="M444 477c56-9 83-32 130-70"/>
+    <path d="M552 420l12-43M552 420l44 3"/>
+    <path d="M298 286c10 58 10 82 4 132"/>
+    <path d="M273 382l31 38 31-38"/>
+  </g>
+  <g fill="#d84f37">
+    <circle cx="420" cy="134" r="18"/>
+    <circle cx="810" cy="92" r="18"/>
+    <circle cx="788" cy="532" r="18"/>
+  </g>
+  <g fill="#2f7d7a">
+    <rect x="88" y="86" width="74" height="38" rx="7"/>
+    <rect x="702" y="284" width="74" height="38" rx="7"/>
+    <rect x="372" y="536" width="74" height="38" rx="7"/>
+  </g>
+  <g fill="#2c3138" font-family="Arial, sans-serif" font-size="34" font-weight="700">
+    <text x="180" y="82">CLOSE</text>
+    <text x="570" y="302">ARCHIVE</text>
+    <text x="188" y="580">REDIRECT</text>
+  </g>
+</svg>

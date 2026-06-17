@@ -182,6 +182,31 @@
       "representativeAsset": "assets/collections/sundials-reading-shadow/188849.jpg",
       "createdAt": "2026-06-15",
       "updatedAt": "2026-06-15"
+    },
+    {
+      "id": "service-shutdown-notices",
+      "title": "閉じるサービスの告知と救出メモ",
+      "subtitle": "ブログ、掲示板、ホームページが終了時に残す期限、移行導線、保存作戦",
+      "itemCount": 10,
+      "path": "data/genres/service-shutdown-notices.json",
+      "status": "published",
+      "tags": [
+        "サービス終了",
+        "個人サイト",
+        "ブログ",
+        "掲示板",
+        "アーカイブ",
+        "移行",
+        "リンク切れ"
+      ],
+      "relatedGenres": [],
+      "mapPosition": {
+        "x": 76,
+        "y": 76
+      },
+      "representativeAsset": "assets/collections/service-shutdown-notices/notice-map.svg",
+      "createdAt": "2026-06-17",
+      "updatedAt": "2026-06-17"
     }
   ],
   "legacyCollections": {

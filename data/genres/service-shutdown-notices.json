@@ -1,0 +1,256 @@
+{
+  "id": "service-shutdown-notices",
+  "title": "閉じるサービスの告知と救出メモ",
+  "subtitle": "ブログ、掲示板、ホームページが終了時に残す期限、移行導線、保存作戦",
+  "description": "日本語圏の個人サイト、ブログ、掲示板が閉じるときに出す短い告知を出発点に、移行ヘルプ、Wayback保存ページ、ArchiveTeamの救出メモへ辿る。サービス終了は単なる消滅ではなく、期限、エクスポート、リダイレクト、読み取り専用化、保存済みデータの案内としてインターネット上に再配置される。その定型文と周辺リンクを、画像ではなく公開ページの状態として観察する。",
+  "method": "公式告知または運営元ヘルプで到達できるものを優先し、原ページが閉じている場合はWaybackの保存URLやArchiveTeamの公開メモを標本にした。本文や画面は複製せず、ページタイトル、日付、状態、リンク関係を記録する。日本語圏のはてなダイアリー、Yahoo!ジオシティーズ、teacup.、LINE BLOGから始め、GeoCities、Google+、Yahoo! Groupsなど国外の救出文化へ広げた。",
+  "status": "published",
+  "tags": [
+    "サービス終了",
+    "個人サイト",
+    "ブログ",
+    "掲示板",
+    "アーカイブ",
+    "移行",
+    "リンク切れ"
+  ],
+  "relatedGenres": [],
+  "mapPosition": {
+    "x": 76,
+    "y": 76
+  },
+  "representativeItemId": "hatena-diary-end-2018",
+  "createdAt": "2026-06-17",
+  "updatedAt": "2026-06-17",
+  "history": [
+    {
+      "date": "2026-06-17",
+      "type": "created",
+      "summary": "日本語圏のサービス終了告知と移行・救出ページを出発点に、公式告知、ヘルプ、Wayback、ArchiveTeamの10件で棚を開始。",
+      "diaryPath": "diary/2026-06-17.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "hatena-diary-end-2018",
+      "title": "2019年春「はてなダイアリー」終了のお知らせ",
+      "family": "公式終了告知",
+      "curatorNote": "ウェブ日記の終了を、統合先への移行依頼、追記、関連記事リンクを重ねた長い運営文として残している。",
+      "sourceUrl": "https://diary.hatenastaff.com/entry/20180830/blog_unify",
+      "creator": "株式会社はてな",
+      "repository": "はてなダイアリー日記",
+      "rights": "運営元の公開告知。本文は複製せずリンクと観察文のみ記録。",
+      "description": "はてなダイアリーの終了予定とはてなブログへの統合を告知した公式記事。",
+      "date": "2018-08-30",
+      "mediaType": "text",
+      "tags": [
+        "サービス終了",
+        "ブログ",
+        "移行",
+        "公式告知",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "hatena-diary-import-help",
+      "title": "【提供終了】はてなダイアリーからのインポート",
+      "family": "移行・エクスポート導線",
+      "curatorNote": "終了済み機能のヘルプが残り、記事、コメント、スター、ブックマーク、RSSリダイレクトまでを移行単位として列挙している。",
+      "sourceUrl": "https://help.hatenablog.com/entry/import",
+      "creator": "株式会社はてな",
+      "repository": "はてなブログ ヘルプ",
+      "rights": "運営元の公開ヘルプ。本文は複製せずリンクと観察文のみ記録。",
+      "description": "はてなダイアリーからはてなブログへ移行するための提供終了済みヘルプ。",
+      "date": "2013-06-24",
+      "mediaType": "text",
+      "tags": [
+        "サービス終了",
+        "ブログ",
+        "移行",
+        "ヘルプ",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "teacup-end-2022",
+      "title": "teacup. byGMO サービス終了のお知らせ",
+      "family": "公式終了告知",
+      "curatorNote": "レンタル掲示板の長い利用史が、終了日と謝辞だけの短い企業サイト告知へ圧縮されている。",
+      "sourceUrl": "https://www.gmo.media/teacup/?id=236",
+      "creator": "GMOメディア株式会社",
+      "repository": "GMO MEDIA",
+      "rights": "運営元の公開告知。本文は複製せずリンクと観察文のみ記録。",
+      "description": "teacup. byGMOのサービス終了を知らせる運営元ページ。",
+      "date": "2022-08-01",
+      "mediaType": "text",
+      "tags": [
+        "サービス終了",
+        "掲示板",
+        "公式告知",
+        "日本語圏",
+        "レンタルサービス"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "yahoo-geocities-jp-wayback-2019",
+      "title": "Yahoo!ジオシティーズ サービス終了のお知らせ",
+      "family": "Waybackに残る告知",
+      "curatorNote": "原ページの終了告知自体をWaybackで読む標本。移行方法、FAQ、歴史説明が、閉鎖後の保存ページとして再配置されている。",
+      "sourceUrl": "https://web.archive.org/web/20190331062603/https://info-geocities.yahoo.co.jp/close/",
+      "creator": "Yahoo! JAPAN",
+      "repository": "Internet Archive Wayback Machine",
+      "rights": "Waybackで公開されている保存ページ。本文や画面は複製せずリンクと観察文のみ記録。",
+      "description": "Yahoo!ジオシティーズの終了告知をWayback Machineで保存したページ。",
+      "date": "2019-03-31",
+      "mediaType": "text",
+      "tags": [
+        "サービス終了",
+        "個人サイト",
+        "Wayback",
+        "移行",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "line-blog-archiveteam-2023",
+      "title": "LINE BLOG - Archiveteam",
+      "family": "救出メモ",
+      "curatorNote": "公式告知ではなく、読み取り専用化と閉鎖時刻、CDNの残存、アプリ依存の編集導線を保存作業のメモとして整理している。",
+      "sourceUrl": "https://wiki.archiveteam.org/index.php/LINE_BLOG",
+      "creator": "ArchiveTeam contributors",
+      "repository": "ArchiveTeam Wiki",
+      "rights": "公開Wikiページ。ライセンスと寄稿者は原典に従い、本文は複製せずリンクと観察文のみ記録。",
+      "description": "LINE BLOGの閉鎖と保存状況を記録するArchiveTeamのページ。",
+      "date": "2023-06-29",
+      "mediaType": "text",
+      "tags": [
+        "サービス終了",
+        "ブログ",
+        "救出メモ",
+        "アーカイブ",
+        "日本語圏"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "yahoo-blog-archiveteam",
+      "title": "Yahoo! Blog - Archiveteam",
+      "family": "救出メモ",
+      "curatorNote": "Yahoo!のブログ閉鎖を国・地域別に分け、終了日、保存状態、取得プロジェクトを並べることで、単一サービス名の下の地域差を見せている。",
+      "sourceUrl": "https://wiki.archiveteam.org/index.php/Yahoo!_Blog",
+      "creator": "ArchiveTeam contributors",
+      "repository": "ArchiveTeam Wiki",
+      "rights": "公開Wikiページ。ライセンスと寄稿者は原典に従い、本文は複製せずリンクと観察文のみ記録。",
+      "description": "Yahoo! Blog各地域版の閉鎖と保存状況を記録するArchiveTeamのページ。",
+      "date": "2013-01-16",
+      "mediaType": "text",
+      "tags": [
+        "サービス終了",
+        "ブログ",
+        "救出メモ",
+        "アーカイブ",
+        "地域差"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "geocities-archiveteam-2009",
+      "title": "GeoCities - Archiveteam",
+      "family": "救出メモ",
+      "curatorNote": "ジオシティーズを都市の比喩ではなく、torrent、patch、tracker、IRCチャンネルを伴う保存作戦として記述している。",
+      "sourceUrl": "https://wiki.archiveteam.org/index.php/GeoCities",
+      "creator": "ArchiveTeam contributors",
+      "repository": "ArchiveTeam Wiki",
+      "rights": "公開Wikiページ。ライセンスと寄稿者は原典に従い、本文は複製せずリンクと観察文のみ記録。",
+      "description": "GeoCitiesの閉鎖と保存作戦を記録するArchiveTeamのページ。",
+      "date": "2009",
+      "mediaType": "text",
+      "tags": [
+        "サービス終了",
+        "個人サイト",
+        "救出メモ",
+        "アーカイブ",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "google-plus-shutdown-faq",
+      "title": "Frequently asked questions about the Google+ shutdown",
+      "family": "移行・エクスポート導線",
+      "curatorNote": "閉鎖告知がヘルプセンターに吸収され、個人向け、Workspace向け、データ削除、代替導線をFAQ形式で分岐させている。",
+      "sourceUrl": "https://support.google.com/chat/answer/14087009?hl=en",
+      "creator": "Google",
+      "repository": "Google Chat Help",
+      "rights": "運営元の公開ヘルプ。本文は複製せずリンクと観察文のみ記録。",
+      "description": "Google+個人向けサービスの終了について説明するGoogleのヘルプページ。",
+      "date": "2019-04-02",
+      "mediaType": "text",
+      "tags": [
+        "サービス終了",
+        "SNS",
+        "移行",
+        "ヘルプ",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "google-plus-archiveteam",
+      "title": "Google+ - Archiveteam",
+      "family": "救出メモ",
+      "curatorNote": "公式FAQが削除と移行を説明する一方、こちらはプロフィールとコミュニティの保存率を分け、失われ方を数字とプロジェクト名で示す。",
+      "sourceUrl": "https://wiki.archiveteam.org/index.php/Google_Plus",
+      "creator": "ArchiveTeam contributors",
+      "repository": "ArchiveTeam Wiki",
+      "rights": "公開Wikiページ。ライセンスと寄稿者は原典に従い、本文は複製せずリンクと観察文のみ記録。",
+      "description": "Google+の閉鎖と保存状況を記録するArchiveTeamのページ。",
+      "date": "2019-04-02",
+      "mediaType": "text",
+      "tags": [
+        "サービス終了",
+        "SNS",
+        "救出メモ",
+        "アーカイブ",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "yahoo-groups-archiveteam",
+      "title": "Yahoo! Groups - Archiveteam",
+      "family": "救出メモ",
+      "curatorNote": "メーリングリスト、写真、ファイル、投票、カレンダーが一体だった場を、取得ツール、tracker、IRCチャンネルで読み替えている。",
+      "sourceUrl": "https://wiki.archiveteam.org/index.php/Yahoo!_Groups",
+      "creator": "ArchiveTeam contributors",
+      "repository": "ArchiveTeam Wiki",
+      "rights": "公開Wikiページ。ライセンスと寄稿者は原典に従い、本文は複製せずリンクと観察文のみ記録。",
+      "description": "Yahoo! Groupsの閉鎖と保存状況を記録するArchiveTeamのページ。",
+      "date": "2019-12-14",
+      "mediaType": "text",
+      "tags": [
+        "サービス終了",
+        "掲示板",
+        "救出メモ",
+        "アーカイブ",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    }
+  ]
+}
