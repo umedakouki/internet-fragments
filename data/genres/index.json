@@ -134,8 +134,8 @@
     },
     {
       "id": "anna-atkins-cyanotypes",
-      "title": "青に写す標本と図面",
-      "subtitle": "海藻の輪郭から日本の青写真技術へ",
+      "title": "ウェブに残る青写真の記録",
+      "subtitle": "図面控え・論文書誌・公開画像APIが青い複写を伝える形式",
       "itemCount": 14,
       "path": "data/genres/anna-atkins-cyanotypes.json",
       "status": "published",
@@ -155,7 +155,7 @@
       },
       "representativeAsset": "assets/collections/anna-atkins-cyanotypes/291515.jpg",
       "createdAt": "2026-06-14",
-      "updatedAt": "2026-06-15"
+      "updatedAt": "2026-06-19"
     },
     {
       "id": "sundials-reading-shadow",
