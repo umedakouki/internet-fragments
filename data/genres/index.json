@@ -163,7 +163,7 @@
       "subtitle": "江戸の紙盤から携帯・折畳み器まで、影を時刻へ変える読み方",
       "itemCount": 13,
       "path": "data/genres/sundials-reading-shadow.json",
-      "status": "published",
+      "status": "archived",
       "tags": [
         "日時計",
         "計時器",
@@ -181,7 +181,7 @@
       },
       "representativeAsset": "assets/collections/sundials-reading-shadow/188849.jpg",
       "createdAt": "2026-06-15",
-      "updatedAt": "2026-06-15"
+      "updatedAt": "2026-06-19"
     },
     {
       "id": "service-shutdown-notices",
