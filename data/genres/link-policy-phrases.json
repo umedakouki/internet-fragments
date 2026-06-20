@@ -1,0 +1,258 @@
+{
+  "id": "link-policy-phrases",
+  "title": "リンクを置く前の定型文",
+  "subtitle": "「リンクフリー」から深いリンク、フレーム、推薦誤認までを区切るサイトポリシー",
+  "description": "日本の公共サイトで長く使われてきた「リンクフリー」「許可や連絡は不要」という言い回しを入口に、リンク先の明示、別窓、フレーム禁止、深いリンク、ロゴ利用、推薦と誤認させない条件を辿る。国外の政府・国際機関では、リンクを歓迎する文、完全なページへ向ける指定、公共ドメインの説明、推奨文例まで現れる。ページをつなぐだけのHTML要素が、各組織の名前と画面の境界を守る短い規則へ変換される様子を観察する。",
+  "method": "公開中の運営元サイトポリシーで、外部サイトから当該サイトへリンクする条件を直接確認できたものを選んだ。日本の気象庁、国土交通省、JST、NICT、JNTOから始め、そこで現れた許可不要、フレーム、ロゴ、推薦誤認という語を手掛かりに、英国政府、英国国立公文書館、WHO、CDCへ広げた。本文や画面は複製せず、取得時点のページタイトル、条件の構造、原典URLだけを記録する。",
+  "status": "published",
+  "tags": [
+    "リンクポリシー",
+    "サイトポリシー",
+    "リンクフリー",
+    "フレーム",
+    "深いリンク",
+    "ロゴ",
+    "ウェブ作法"
+  ],
+  "relatedGenres": [
+    "service-shutdown-notices"
+  ],
+  "mapPosition": {
+    "x": 47,
+    "y": 79
+  },
+  "representativeItemId": "jma-link-free",
+  "createdAt": "2026-06-20",
+  "updatedAt": "2026-06-20",
+  "history": [
+    {
+      "date": "2026-06-20",
+      "type": "created",
+      "summary": "日本の公共サイトに残るリンクフリーの定型文を入口に、許可、表示方法、深いリンク、ロゴ、推薦誤認を区切る国内外10件で棚を開始。",
+      "diaryPath": "diary/2026-06-20.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "jma-link-free",
+      "title": "気象庁ホームページについて：リンクについて",
+      "family": "許可不要・出典明示",
+      "curatorNote": "「リンクフリー」を、トップだけでなく各ページにも適用し、許可も連絡も不要と明記する。一方で気象庁へのリンクであることの明示、URL変更、情報利用の免責を同じ段落へ並べる。",
+      "sourceUrl": "https://www.jma.go.jp/jma/kishou/info/coment.html",
+      "creator": "気象庁",
+      "repository": "気象庁ホームページ",
+      "rights": "運営元の公開サイトポリシー。本文や画面は複製せず、リンクと観察文のみ記録。",
+      "description": "各ページへのリンクを許可・連絡不要とし、出典明示やURL変更への注意を添える気象庁の案内。",
+      "date": "2026-06-20取得",
+      "mediaType": "text",
+      "tags": [
+        "リンクフリー",
+        "許可不要",
+        "深いリンク",
+        "出典明示",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "mlit-link-new-window",
+      "title": "国土交通省：リンク・著作権・免責事項",
+      "family": "表示方法の指定",
+      "curatorNote": "原則リンクフリーで連絡不要としながら、ページを別サイトの一部に見せないことと、新しいウインドウで開くことまで指定する。自由という語の直後に画面表示の作法が続く。",
+      "sourceUrl": "https://www.mlit.go.jp/link.html",
+      "creator": "国土交通省",
+      "repository": "国土交通省ウェブサイト",
+      "rights": "運営元の公開サイトポリシー。本文やバナー画像は複製せず、リンクと観察文のみ記録。",
+      "description": "リンクの連絡を不要としつつ、別窓表示、フレーム回避、バナーの改変禁止を指定する案内。",
+      "date": "2026-06-20取得",
+      "mediaType": "text",
+      "tags": [
+        "リンクフリー",
+        "別窓",
+        "フレーム",
+        "バナー",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "jst-link-no-request",
+      "title": "JSTサイトポリシー：リンクについて",
+      "family": "フレーム禁止",
+      "curatorNote": "リンク許可願いを不要とする一方、ページ全体または一部をフレームへ取り込むリンクを拒む。トップ以外のURLが予告なく消える可能性も、リンクする側が引き受ける条件として添える。",
+      "sourceUrl": "https://www.jst.go.jp/site_policy.html",
+      "creator": "国立研究開発法人科学技術振興機構",
+      "repository": "JSTウェブサイト",
+      "rights": "運営元の公開サイトポリシー。本文や画面は複製せず、リンクと観察文のみ記録。",
+      "description": "許可願いは不要だが、フレーム内表示を断り、深いURLの公開中止や変更を注意するサイトポリシー。",
+      "date": "2026-06-20取得",
+      "mediaType": "text",
+      "tags": [
+        "許可不要",
+        "フレーム",
+        "深いリンク",
+        "URL変更",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "nict-link-free-frame",
+      "title": "NICTサイトポリシー：リンクについて",
+      "family": "フレーム禁止",
+      "curatorNote": "リンクは自由と短く認めた直後、リンク先ページが別サイトの構成要素に見えるフレーム表示だけを境界として示す。転載や引用の条件は別見出しへ分け、リンクと複製を区別する。",
+      "sourceUrl": "https://www.nict.go.jp/policy/index.html",
+      "creator": "国立研究開発法人情報通信研究機構",
+      "repository": "NICTウェブサイト",
+      "rights": "運営元の公開サイトポリシー。本文や画面は複製せず、リンクと観察文のみ記録。",
+      "description": "リンクを自由としつつ、ページがリンク元の一部に見えるフレーム表示を禁じるサイトポリシー。",
+      "date": "2026-06-20取得",
+      "mediaType": "text",
+      "tags": [
+        "リンクフリー",
+        "フレーム",
+        "複製との区別",
+        "研究機関",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "jnto-link-conditions",
+      "title": "JNTO Terms of Use：Conditions for Placing Links",
+      "family": "リンク元の審査",
+      "curatorNote": "訪日情報の入口URLを指定し、掲示板、誤解を招く情報、権利侵害のおそれがあるサイトからのリンクを禁じる。フレームを避けるための古いHTML属性まで記し、リンク元の文脈を審査対象にする。",
+      "sourceUrl": "https://www.japan.travel/en/terms-of-use/",
+      "creator": "Japan National Tourism Organization",
+      "repository": "Travel Japan",
+      "rights": "運営元の公開利用規約。本文や画面は複製せず、リンクと観察文のみ記録。",
+      "description": "リンク先URL、リンク元サイトの種類、フレーム回避用のHTML属性を条件として列挙する英語版利用規約。",
+      "date": "2026-06-20取得",
+      "mediaType": "text",
+      "tags": [
+        "リンク元審査",
+        "掲示板",
+        "フレーム",
+        "HTML属性",
+        "日本発"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "govuk-link-welcome",
+      "title": "GOV.UK terms and conditions：Linking to GOV.UK",
+      "family": "歓迎と推薦誤認",
+      "curatorNote": "他サイトからのリンクを歓迎しつつ、有料クリックと政府の推薦・提携を名乗る場合だけ連絡を求める。リンクという無料の移動と、課金や権威の借用を別の行為として切り分ける。",
+      "sourceUrl": "https://www.gov.uk/help/terms-conditions",
+      "creator": "Government Digital Service",
+      "repository": "GOV.UK",
+      "rights": "Open Government Licence対象の公開ページ。本文は複製せず、リンクと観察文のみ記録。",
+      "description": "リンクを歓迎し、有料リンクや政府の推薦・提携を示す場合に許可を求める英国政府の利用条件。",
+      "date": "2026-06-20取得",
+      "mediaType": "text",
+      "tags": [
+        "リンク歓迎",
+        "有料リンク",
+        "推薦誤認",
+        "政府サイト",
+        "国外"
+      ],
+      "rightsStatus": "clear",
+      "captureMode": "linked"
+    },
+    {
+      "id": "uk-national-archives-hyperlinks",
+      "title": "The National Archives：Hyperlinks",
+      "family": "リンクの推奨",
+      "curatorNote": "ハイパーテキストリンクを設けることを一文で奨励し、その直後からデジタル複製、画像利用、第三者著作権の条件へ移る。リンクと資料複製の境界が見出しの切替として表れる。",
+      "sourceUrl": "https://www.nationalarchives.gov.uk/terms-and-conditions/copyright/",
+      "creator": "The National Archives",
+      "repository": "The National Archives website",
+      "rights": "Open Government Licence対象の公開案内。本文や資料画像は複製せず、リンクと観察文のみ記録。",
+      "description": "サイトへのハイパーテキストリンクを奨励し、資料画像の複製条件とは別に扱う英国国立公文書館の案内。",
+      "date": "2026-06-20取得",
+      "mediaType": "text",
+      "tags": [
+        "リンク推奨",
+        "複製との区別",
+        "公文書館",
+        "Open Government Licence",
+        "国外"
+      ],
+      "rightsStatus": "clear",
+      "captureMode": "linked"
+    },
+    {
+      "id": "who-link-complete-pages",
+      "title": "WHO：Linking",
+      "family": "完全ページへの限定",
+      "curatorNote": "許可なしのリンクを通常のインターネット利用として認めながら、ページ内の画像や文章だけ、直接PDFではなく、ナビゲーションで到達できる完全なページへ向けるよう求める。リンク先の粒度を規則にする。",
+      "sourceUrl": "https://www.who.int/about/policies/publishing/copyright/linking",
+      "creator": "World Health Organization",
+      "repository": "WHO website",
+      "rights": "運営元の公開リンク方針。本文やロゴは複製せず、リンクと観察文のみ記録。",
+      "description": "許可不要としつつ、ページの一部分や直接ダウンロードファイルではなく完全なページへのリンクを求める方針。",
+      "date": "2026-06-20取得",
+      "mediaType": "text",
+      "tags": [
+        "許可不要",
+        "深いリンク",
+        "直接ファイル",
+        "ロゴ",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "cdc-link-public-domain",
+      "title": "CDC：Linking to CDC.gov",
+      "family": "リンク素材と文例",
+      "curatorNote": "公共ドメインなので無料・無許可でリンクできると説明し、ボタン、バッジ、埋め込みコード、短文と長文の紹介例まで用意する。リンクを禁止事項ではなく配布可能な小さな広報部品として扱う。",
+      "sourceUrl": "https://www.cdc.gov/other/link.html",
+      "creator": "Centers for Disease Control and Prevention",
+      "repository": "CDC.gov",
+      "rights": "米国連邦政府のPublic Domainページとして原典に明記。本文や画像は複製せず、リンクと観察文のみ記録。",
+      "description": "公共ドメインを根拠に無許可のリンクを認め、リンク用画像と紹介文例を配布するCDCの案内。",
+      "date": "2026-06-20取得",
+      "mediaType": "text",
+      "tags": [
+        "Public Domain",
+        "許可不要",
+        "バッジ",
+        "埋め込みコード",
+        "国外"
+      ],
+      "rightsStatus": "clear",
+      "captureMode": "linked"
+    },
+    {
+      "id": "who-links-from-site",
+      "title": "WHO：Links from the WHO website",
+      "family": "歓迎と推薦誤認",
+      "curatorNote": "同じページ内で、WHOへ向かうリンクは許可不要とする一方、WHOから外部へ向かうリンクは推薦と解釈され得るため限定する。一本のリンクでも、矢印の向きで組織が引き受ける意味が変わる。",
+      "sourceUrl": "https://www.who.int/about/policies/publishing/copyright/linking#links-from-the-who-website",
+      "creator": "World Health Organization",
+      "repository": "WHO website",
+      "rights": "運営元の公開リンク方針。本文やロゴは複製せず、リンクと観察文のみ記録。",
+      "description": "外部サイトへのリンクが推薦と読まれる可能性を理由に、WHOから出すリンクを限定する方針。",
+      "date": "2026-06-20取得",
+      "mediaType": "text",
+      "tags": [
+        "推薦誤認",
+        "外部リンク",
+        "リンク方向",
+        "国際機関",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    }
+  ]
+}

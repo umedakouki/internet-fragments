@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">リンクを置く前の定型文</title>
+  <desc id="desc">複数のページを矢印で結び、許可、フレーム、出典、ロゴの境界を示す中立的な図。</desc>
+  <rect width="1200" height="800" fill="#f2efe7"/>
+  <g fill="none" stroke="#24352f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="105" y="245" width="300" height="310" rx="24" fill="#dbe4de"/>
+    <rect x="795" y="245" width="300" height="310" rx="24" fill="#e9dfca"/>
+    <path d="M405 340h300"/>
+    <path d="m655 292 50 48-50 48"/>
+    <path d="M795 465H495" stroke-dasharray="18 18"/>
+    <path d="m545 417-50 48 50 48"/>
+    <path d="M525 160h150v120H525z" fill="#c9d2df"/>
+  </g>
+  <g fill="#24352f" font-family="'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif" text-anchor="middle">
+    <text x="600" y="92" font-size="42" font-weight="700">リンクを置く前の定型文</text>
+    <text x="255" y="375" font-size="34" font-weight="700">LINK FROM</text>
+    <text x="255" y="425" font-size="27">許可・連絡</text>
+    <text x="945" y="375" font-size="34" font-weight="700">LINK TO</text>
+    <text x="945" y="425" font-size="27">出典・推薦</text>
+    <text x="600" y="214" font-size="25" font-weight="700">FRAME?</text>
+    <text x="600" y="650" font-size="25">深いリンク　別窓　ロゴ　完全なページ</text>
+  </g>
+</svg>

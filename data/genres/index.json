@@ -207,6 +207,33 @@
       "representativeAsset": "assets/collections/service-shutdown-notices/notice-map.svg",
       "createdAt": "2026-06-17",
       "updatedAt": "2026-06-17"
+    },
+    {
+      "id": "link-policy-phrases",
+      "title": "リンクを置く前の定型文",
+      "subtitle": "「リンクフリー」から深いリンク、フレーム、推薦誤認までを区切るサイトポリシー",
+      "itemCount": 10,
+      "path": "data/genres/link-policy-phrases.json",
+      "status": "published",
+      "tags": [
+        "リンクポリシー",
+        "サイトポリシー",
+        "リンクフリー",
+        "フレーム",
+        "深いリンク",
+        "ロゴ",
+        "ウェブ作法"
+      ],
+      "relatedGenres": [
+        "service-shutdown-notices"
+      ],
+      "mapPosition": {
+        "x": 47,
+        "y": 79
+      },
+      "representativeAsset": "assets/collections/link-policy-phrases/link-boundaries.svg",
+      "createdAt": "2026-06-20",
+      "updatedAt": "2026-06-20"
     }
   ],
   "legacyCollections": {
