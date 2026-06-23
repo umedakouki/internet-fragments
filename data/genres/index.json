@@ -234,6 +234,34 @@
       "representativeAsset": "assets/collections/link-policy-phrases/link-boundaries.svg",
       "createdAt": "2026-06-20",
       "updatedAt": "2026-06-20"
+    },
+    {
+      "id": "robots-txt-boundaries",
+      "title": "robots.txt の通せんぼ文",
+      "subtitle": "検索、投稿、保存サイトがクローラーへ見せる短い許可と拒否",
+      "itemCount": 10,
+      "path": "data/genres/robots-txt-boundaries.json",
+      "status": "published",
+      "tags": [
+        "robots.txt",
+        "クローラー",
+        "検索",
+        "API",
+        "Sitemap",
+        "ウェブ作法",
+        "機械可読"
+      ],
+      "relatedGenres": [
+        "link-policy-phrases",
+        "service-shutdown-notices"
+      ],
+      "mapPosition": {
+        "x": 61,
+        "y": 68
+      },
+      "representativeAsset": "assets/collections/robots-txt-boundaries/robots-gate.svg",
+      "createdAt": "2026-06-23",
+      "updatedAt": "2026-06-23"
     }
   ],
   "legacyCollections": {

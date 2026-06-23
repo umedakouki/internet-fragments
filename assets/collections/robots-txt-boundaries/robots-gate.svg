@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">robots.txt boundary diagram</title>
+  <desc id="desc">A neutral diagram of crawler rules, allow paths, disallow paths, and sitemap routes.</desc>
+  <rect width="1200" height="760" fill="#f5f7f2"/>
+  <rect x="94" y="96" width="1012" height="568" rx="8" fill="#fffefa" stroke="#26312c" stroke-width="4"/>
+  <rect x="126" y="132" width="948" height="72" fill="#dce8ee" stroke="#26312c" stroke-width="3"/>
+  <text x="158" y="178" font-family="Consolas, 'Courier New', monospace" font-size="34" fill="#26312c">User-agent: *</text>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="28" fill="#26312c">
+    <text x="166" y="280">Allow: /search/howsearchworks</text>
+    <text x="166" y="346">Disallow: /api/internal/</text>
+    <text x="166" y="412">Disallow: /users/*/bookmarks</text>
+    <text x="166" y="478">Crawl-delay: 5</text>
+    <text x="166" y="544">Sitemap: /sitemap.xml</text>
+  </g>
+  <g stroke="#26312c" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M746 270h142"/>
+    <path d="M746 336h142"/>
+    <path d="M746 402h142"/>
+    <path d="M746 468h142"/>
+    <path d="M746 534h142"/>
+  </g>
+  <g>
+    <circle cx="914" cy="270" r="28" fill="#8fc2a3" stroke="#26312c" stroke-width="4"/>
+    <path d="M901 270l10 10 18-22" fill="none" stroke="#26312c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="914" cy="336" r="28" fill="#e08a78" stroke="#26312c" stroke-width="4"/>
+    <path d="M901 323l26 26M927 323l-26 26" fill="none" stroke="#26312c" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="914" cy="402" r="28" fill="#e08a78" stroke="#26312c" stroke-width="4"/>
+    <path d="M901 389l26 26M927 389l-26 26" fill="none" stroke="#26312c" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="914" cy="468" r="28" fill="#e7c766" stroke="#26312c" stroke-width="4"/>
+    <path d="M914 450v18l14 10" fill="none" stroke="#26312c" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="914" cy="534" r="28" fill="#7aa8d6" stroke="#26312c" stroke-width="4"/>
+    <path d="M898 535h32M914 519v32" fill="none" stroke="#26312c" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <path d="M132 624h936" stroke="#26312c" stroke-width="3"/>
+  <text x="154" y="614" font-family="Consolas, 'Courier New', monospace" font-size="24" fill="#66706b">robots.txt as a public, machine-readable boundary</text>
+</svg>

@@ -1,0 +1,259 @@
+{
+  "id": "robots-txt-boundaries",
+  "title": "robots.txt の通せんぼ文",
+  "subtitle": "検索、投稿、保存サイトがクローラーへ見せる短い許可と拒否",
+  "description": "日本語圏のポータル、EC、動画、創作、ソーシャルブックマークに置かれた `robots.txt` を入口に、クローラーへ向けた `User-agent`、`Disallow`、`Allow`、`Crawl-delay`、`Sitemap` の並びを採集する。人間向けのリンクポリシーではなく、機械に読ませるための公開テキストが、検索結果、投稿ページ、API、ログイン導線、保存サイト、政府サイトの境界をどう区切るかを見る。",
+  "method": "公開URLで直接読める `robots.txt` だけを対象にし、本文全文やスクリーンショットは保存しない。2026-06-23時点のHTTP 200を確認し、行の種類、URLパターンの粒度、特定クローラー名、SitemapやCrawl-delayの有無を自分の観察文で記録した。Yahoo! JAPAN、楽天、ニコニコ、pixiv、はてなブックマーク、国立国会図書館から始め、Google、Wikipedia、Internet Archive、GOV.UKへ広げた。",
+  "status": "published",
+  "tags": [
+    "robots.txt",
+    "クローラー",
+    "検索",
+    "API",
+    "Sitemap",
+    "ウェブ作法",
+    "機械可読"
+  ],
+  "relatedGenres": [
+    "link-policy-phrases",
+    "service-shutdown-notices"
+  ],
+  "mapPosition": {
+    "x": 61,
+    "y": 68
+  },
+  "representativeItemId": "yahoo-japan-robots-ai-bots",
+  "createdAt": "2026-06-23",
+  "updatedAt": "2026-06-23",
+  "history": [
+    {
+      "date": "2026-06-23",
+      "type": "created",
+      "summary": "日本語圏の公開 robots.txt を入口に、検索、投稿、API、保存、政府サイトの機械可読な許可と拒否を10件で棚化。",
+      "diaryPath": "diary/2026-06-23.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "yahoo-japan-robots-ai-bots",
+      "title": "Yahoo! JAPAN robots.txt",
+      "family": "クローラー名で区切る短文",
+      "curatorNote": "検索ポータルの入口に、一般的なクローラー欄とは別に生成AI系ボット名を個別に置く。短いファイルの中で、検索のための巡回と学習用の取得が別の相手として扱われている。",
+      "sourceUrl": "https://www.yahoo.co.jp/robots.txt",
+      "creator": "LINEヤフー株式会社",
+      "repository": "Yahoo! JAPAN",
+      "rights": "運営元が公開する robots.txt。全文は複製せず、URLと観察文のみ記録。",
+      "description": "Yahoo! JAPANの公開 robots.txt。特定クローラーと一般クローラーを分ける短い機械可読テキスト。",
+      "date": "2026-06-23取得",
+      "mediaType": "text",
+      "tags": [
+        "robots.txt",
+        "検索ポータル",
+        "AIクローラー",
+        "日本語圏",
+        "機械可読"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "rakuten-robots-shop-paths",
+      "title": "楽天市場 robots.txt",
+      "family": "EC内のパス指定",
+      "curatorNote": "店舗、画像、保守用らしきディレクトリ、個別HTMLのワイルドカードが並び、同じ商業サイト内でも検索に見せる面と閉じる面が細かく分かれている。小さなアイコンやロゴだけを許す行も境界を目立たせる。",
+      "sourceUrl": "https://www.rakuten.co.jp/robots.txt",
+      "creator": "楽天グループ株式会社",
+      "repository": "楽天市場",
+      "rights": "運営元が公開する robots.txt。全文は複製せず、URLと観察文のみ記録。",
+      "description": "楽天市場の公開 robots.txt。ECサイト内のディレクトリ、個別店舗、画像や保守パスをクローラー向けに区切る。",
+      "date": "2026-06-23取得",
+      "mediaType": "text",
+      "tags": [
+        "robots.txt",
+        "EC",
+        "ディレクトリ",
+        "Allow",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "nicovideo-robots-video-site",
+      "title": "ニコニコ robots.txt",
+      "family": "投稿サイトの機能面",
+      "curatorNote": "動画サイトの表側だけでなく、検索、API、マイリスト、推薦、翻訳、スタンプ、アンケートのような機能名が巡回対象外のパスとして現れる。文化の名前がURL構造として残る標本でもある。",
+      "sourceUrl": "https://www.nicovideo.jp/robots.txt",
+      "creator": "株式会社ドワンゴ",
+      "repository": "ニコニコ",
+      "rights": "運営元が公開する robots.txt。全文は複製せず、URLと観察文のみ記録。",
+      "description": "ニコニコの公開 robots.txt。動画投稿サービスの検索、API、推薦、スタンプなどの機能面をパスで区切る。",
+      "date": "2026-06-23取得",
+      "mediaType": "text",
+      "tags": [
+        "robots.txt",
+        "動画",
+        "API",
+        "投稿文化",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "pixiv-robots-unlisted-social",
+      "title": "pixiv robots.txt",
+      "family": "創作SNSの非公開寄りURL",
+      "curatorNote": "作品、ユーザー、フォロワー、ブックマーク、コメント、未公開URL、戻り先パラメータが、言語別パスも含めて列挙される。創作物そのものではなく、閲覧導線と関係性のURLが境界になる。",
+      "sourceUrl": "https://www.pixiv.net/robots.txt",
+      "creator": "ピクシブ株式会社",
+      "repository": "pixiv",
+      "rights": "運営元が公開する robots.txt。全文は複製せず、URLと観察文のみ記録。",
+      "description": "pixivの公開 robots.txt。創作SNS内の未公開作品、フォロー関係、ブックマーク、戻り先パラメータなどをクローラー向けに区切る。",
+      "date": "2026-06-23取得",
+      "mediaType": "text",
+      "tags": [
+        "robots.txt",
+        "創作SNS",
+        "非公開URL",
+        "ブックマーク",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "hatena-bookmark-robots-api-delay",
+      "title": "はてなブックマーク robots.txt",
+      "family": "APIと待機時間",
+      "curatorNote": "ブックマーク数、エントリー画像、関連エントリー、ブラウザー拡張、内部APIがまとめて巡回対象外になり、さらに待機時間が添えられる。人間が押す小さなボタンの裏側が、機械向けには別の流量制御として読める。",
+      "sourceUrl": "https://b.hatena.ne.jp/robots.txt",
+      "creator": "株式会社はてな",
+      "repository": "はてなブックマーク",
+      "rights": "運営元が公開する robots.txt。全文は複製せず、URLと観察文のみ記録。",
+      "description": "はてなブックマークの公開 robots.txt。API、ボタン、拡張機能、関連エントリーとCrawl-delayを並べる。",
+      "date": "2026-06-23取得",
+      "mediaType": "text",
+      "tags": [
+        "robots.txt",
+        "ソーシャルブックマーク",
+        "API",
+        "Crawl-delay",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "ndl-robots-open-sitemap",
+      "title": "国立国会図書館 robots.txt",
+      "family": "開放とサイトマップ",
+      "curatorNote": "拒否の列挙ではなく、全体を許可し、Sitemapへ渡すだけの簡潔な構成になっている。収集と検索のための機関が、自分のウェブサイトでは道案内に近い robots.txt を置く対照例。",
+      "sourceUrl": "https://www.ndl.go.jp/robots.txt",
+      "creator": "国立国会図書館",
+      "repository": "国立国会図書館ウェブサイト",
+      "rights": "運営元が公開する robots.txt。全文は複製せず、URLと観察文のみ記録。",
+      "description": "国立国会図書館の公開 robots.txt。全体許可とSitemapだけで構成された簡潔な機械可読テキスト。",
+      "date": "2026-06-23取得",
+      "mediaType": "text",
+      "tags": [
+        "robots.txt",
+        "図書館",
+        "Sitemap",
+        "検索",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "google-robots-search-boundaries",
+      "title": "Google robots.txt",
+      "family": "検索結果の内側",
+      "curatorNote": "検索サービス自身の robots.txt では、検索結果、設定、画像結果、各種パラメータが許可と拒否の細かい組み合わせで並ぶ。検索へ見せるための規則が、検索サービスの内側には別の規則として戻ってくる。",
+      "sourceUrl": "https://www.google.com/robots.txt",
+      "creator": "Google",
+      "repository": "Google Search",
+      "rights": "運営元が公開する robots.txt。全文は複製せず、URLと観察文のみ記録。",
+      "description": "Googleの公開 robots.txt。検索結果、検索説明ページ、設定、URLパラメータを細かく許可・拒否する。",
+      "date": "2026-06-23取得",
+      "mediaType": "text",
+      "tags": [
+        "robots.txt",
+        "検索",
+        "URLパラメータ",
+        "Allow",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "wikipedia-robots-bot-names",
+      "title": "Wikipedia robots.txt",
+      "family": "ボット名の名簿",
+      "curatorNote": "Wikipediaの入口では、多数のクローラー名が名指しされ、空の拒否、全面拒否、待機時間、サイトマップが混在する。百科事典の記事本文ではなく、過去の巡回者の名前が蓄積した管理テキストとして読める。",
+      "sourceUrl": "https://www.wikipedia.org/robots.txt",
+      "creator": "Wikimedia Foundation contributors",
+      "repository": "Wikipedia",
+      "rights": "公開 robots.txt。権利条件は原典側に従い、全文は複製せず、URLと観察文のみ記録。",
+      "description": "Wikipediaの公開 robots.txt。多数のクローラー名、拒否、待機時間、Sitemapを含む大きな機械可読テキスト。",
+      "date": "2026-06-23取得",
+      "mediaType": "text",
+      "tags": [
+        "robots.txt",
+        "百科事典",
+        "クローラー名",
+        "Crawl-delay",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "internet-archive-robots-control",
+      "title": "Internet Archive robots.txt",
+      "family": "保存サイトの管理面",
+      "curatorNote": "保存と再公開を担うサイトの robots.txt が、制御や報告のような管理パスだけを短く閉じ、Sitemapを示す。ウェブを集める側にも、集められる側としての最小限の境界がある。",
+      "sourceUrl": "https://archive.org/robots.txt",
+      "creator": "Internet Archive",
+      "repository": "Internet Archive",
+      "rights": "運営元が公開する robots.txt。全文は複製せず、URLと観察文のみ記録。",
+      "description": "Internet Archiveの公開 robots.txt。管理パスの拒否とSitemapだけを短く示す。",
+      "date": "2026-06-23取得",
+      "mediaType": "text",
+      "tags": [
+        "robots.txt",
+        "アーカイブ",
+        "Sitemap",
+        "管理パス",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "govuk-robots-print-search-delay",
+      "title": "GOV.UK robots.txt",
+      "family": "政府サイトの検索と印刷",
+      "curatorNote": "印刷用ページ、全体検索、サイトマップがまず並び、その後に特定クローラー名と待機時間、全面拒否が続く。人間向けには統一された政府サイトが、機械向けには検索、印刷、巡回者ごとの境界へ分解される。",
+      "sourceUrl": "https://www.gov.uk/robots.txt",
+      "creator": "Government Digital Service",
+      "repository": "GOV.UK",
+      "rights": "Open Government Licence対象サイトの公開 robots.txt。全文は複製せず、URLと観察文のみ記録。",
+      "description": "GOV.UKの公開 robots.txt。印刷URL、検索URL、Sitemap、クローラー別のCrawl-delayや拒否を含む。",
+      "date": "2026-06-23取得",
+      "mediaType": "text",
+      "tags": [
+        "robots.txt",
+        "政府サイト",
+        "Sitemap",
+        "Crawl-delay",
+        "国外"
+      ],
+      "rightsStatus": "clear",
+      "captureMode": "linked"
+    }
+  ]
+}
