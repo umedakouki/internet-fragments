@@ -1,0 +1,259 @@
+{
+  "id": "video-comment-overlays",
+  "title": "流れるコメントが育てた定番動画",
+  "subtitle": "ニコニコの弾幕とYouTubeのコメント欄が、再生ページをネット上の待ち合わせ場所にする",
+  "description": "日本語圏の動画投稿文化、とくにニコニコ動画の画面上を流れるコメントから出発し、動画ページが単なる視聴URLではなく、弾幕、空耳、歌詞入力、職人芸、再訪コメント、釣りリンク、再投稿経路を重ねる場所になる状態を採集する。国外側はYouTubeのコメント欄や共有URLで反復されるミーム動画へ広げ、同じ動画でもコメントの置かれ方がプラットフォームごとに変わることを見る。",
+  "method": "2026-06-25時点で公開URLがHTTP 200を返し、ページの公開メタタイトルを取得できる動画ページを対象にした。動画本体、サムネイル、コメント本文、タグ全文は保存せず、URL、公開名、ページ種別、短い観察文だけを記録する。ニコニコ動画の古典的な投稿ページから始め、YouTubeで世界的に共有されたミュージックビデオとミーム再投稿へ広げた。",
+  "status": "published",
+  "tags": [
+    "動画コメント",
+    "ニコニコ動画",
+    "YouTube",
+    "弾幕",
+    "ミーム",
+    "再投稿",
+    "コメント欄"
+  ],
+  "relatedGenres": [
+    "service-shutdown-notices",
+    "link-policy-phrases"
+  ],
+  "mapPosition": {
+    "x": 30,
+    "y": 75
+  },
+  "representativeItemId": "nicovideo-onmyoji-danmaku",
+  "createdAt": "2026-06-25",
+  "updatedAt": "2026-06-25",
+  "history": [
+    {
+      "date": "2026-06-25",
+      "type": "created",
+      "summary": "ニコニコ動画の流れるコメントを入口に、YouTubeのコメント欄・再投稿ミームまで、動画ページが反復視聴と書き込みの場所になる状態を10件で棚化。",
+      "diaryPath": "diary/2026-06-25.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "nicovideo-onmyoji-danmaku",
+      "title": "新・豪血寺一族 -煩悩解放 - レッツゴー！陰陽師",
+      "family": "弾幕の合図",
+      "curatorNote": "ニコニコ初期の代表的な定番動画として、視聴ページ自体が掛け声、反復句、画面上を流れるコメントを読む場所になった。映像の保存ではなく、同じURLへ戻って書き込む作法を標本にする。",
+      "sourceUrl": "https://www.nicovideo.jp/watch/sm9",
+      "creator": "ニコニコ動画投稿者",
+      "repository": "ニコニコ動画",
+      "rights": "動画、サムネイル、コメント本文は複製せず、公開ページURLと観察文のみ記録。",
+      "description": "ニコニコ動画の公開動画ページ。初期の弾幕的な視聴作法を示す定番URLとして扱う。",
+      "date": "2026-06-25取得",
+      "mediaType": "video",
+      "tags": [
+        "ニコニコ動画",
+        "弾幕",
+        "掛け声",
+        "定番動画",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "nicovideo-kumikyoku-comment-memory",
+      "title": "組曲『ニコニコ動画』",
+      "family": "連結された元ネタ",
+      "curatorNote": "複数の楽曲、ネタ、コメントの反応が一つの長いページに積み重なる。動画説明欄の参照先や画面コメントが、当時の人気断片をまとめて思い出す索引のように働く。",
+      "sourceUrl": "https://www.nicovideo.jp/watch/sm500873",
+      "creator": "ニコニコ動画投稿者",
+      "repository": "ニコニコ動画",
+      "rights": "動画、サムネイル、コメント本文は複製せず、公開ページURLと観察文のみ記録。",
+      "description": "ニコニコ動画の公開動画ページ。複数の流行断片をメドレー化し、コメントと参照で結ぶページ。",
+      "date": "2026-06-25取得",
+      "mediaType": "video",
+      "tags": [
+        "ニコニコ動画",
+        "メドレー",
+        "元ネタ",
+        "コメント記憶",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "nicovideo-mikumiku-call-and-response",
+      "title": "【初音ミク】みくみくにしてあげる♪【してやんよ】",
+      "family": "歌詞と応答",
+      "curatorNote": "VOCALOID曲の投稿ページが、歌詞、掛け声、キャラクター名、視聴者の応答を重ねる場所になる。動画本文より、曲名と短い定型句がコメントで反復される状態を記録する。",
+      "sourceUrl": "https://www.nicovideo.jp/watch/sm1097445",
+      "creator": "ニコニコ動画投稿者",
+      "repository": "ニコニコ動画",
+      "rights": "動画、サムネイル、コメント本文は複製せず、公開ページURLと観察文のみ記録。",
+      "description": "ニコニコ動画の公開動画ページ。VOCALOID曲と視聴者の応答が重なる定番URL。",
+      "date": "2026-06-25取得",
+      "mediaType": "video",
+      "tags": [
+        "ニコニコ動画",
+        "VOCALOID",
+        "初音ミク",
+        "歌詞コメント",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "nicovideo-bad-apple-shadow-loop",
+      "title": "【東方】Bad Apple!!　ＰＶ【影絵】",
+      "family": "再制作と同期視聴",
+      "curatorNote": "影絵PVは、動画そのものの再制作性と、タイミングを合わせて流れるコメントの読み方が重なる。後のYouTube再投稿や海外解説へもつながる、日本語圏から国外へ広がる節点として置く。",
+      "sourceUrl": "https://www.nicovideo.jp/watch/sm8628149",
+      "creator": "ニコニコ動画投稿者",
+      "repository": "ニコニコ動画",
+      "rights": "動画、サムネイル、コメント本文は複製せず、公開ページURLと観察文のみ記録。",
+      "description": "ニコニコ動画の公開動画ページ。東方二次創作PVと同期コメントが結びつく定番URL。",
+      "date": "2026-06-25取得",
+      "mediaType": "video",
+      "tags": [
+        "ニコニコ動画",
+        "東方",
+        "Bad Apple!!",
+        "再投稿",
+        "同期コメント"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "nicovideo-melt-vocaloid-page",
+      "title": "初音ミク　が　オリジナル曲を歌ってくれたよ「メルト」",
+      "family": "原曲ページへの回帰",
+      "curatorNote": "カバー、歌ってみた、派生動画が増えても、原曲ページのURLはコメントと再訪の基準点として残る。視聴者が時間を越えて同じページへ戻ることで、投稿日の古さも文化の一部になる。",
+      "sourceUrl": "https://www.nicovideo.jp/watch/sm1715919",
+      "creator": "ニコニコ動画投稿者",
+      "repository": "ニコニコ動画",
+      "rights": "動画、サムネイル、コメント本文は複製せず、公開ページURLと観察文のみ記録。",
+      "description": "ニコニコ動画の公開動画ページ。VOCALOID原曲ページが派生と再訪コメントの基準点になる例。",
+      "date": "2026-06-25取得",
+      "mediaType": "video",
+      "tags": [
+        "ニコニコ動画",
+        "VOCALOID",
+        "初音ミク",
+        "原曲",
+        "再訪"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "nicovideo-donald-remix-comments",
+      "title": "M.C.ドナルドはダンスに夢中なのか？最終鬼畜道化師ドナルド・Ｍ",
+      "family": "MADの空耳と反復",
+      "curatorNote": "MAD動画では、元ネタ名、空耳、反復される音声、視聴者の突っ込みがページ上で絡み合う。短いコメントが映像の別レイヤーになり、見方そのものを共有する。",
+      "sourceUrl": "https://www.nicovideo.jp/watch/sm2057168",
+      "creator": "ニコニコ動画投稿者",
+      "repository": "ニコニコ動画",
+      "rights": "動画、サムネイル、コメント本文は複製せず、公開ページURLと観察文のみ記録。",
+      "description": "ニコニコ動画の公開動画ページ。MAD動画の空耳、反復、画面コメントの重なりを見る例。",
+      "date": "2026-06-25取得",
+      "mediaType": "video",
+      "tags": [
+        "ニコニコ動画",
+        "MAD",
+        "空耳",
+        "反復",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "nicovideo-senbonzakura-comment-stage",
+      "title": "『初音ミク』千本桜『オリジナル曲PV』",
+      "family": "PVと歌詞の舞台化",
+      "curatorNote": "PV付きVOCALOID曲のページでは、歌詞、映像、キャラクター、弾幕的な応援が同時に読まれる。曲の外部展開を追う前に、投稿ページ上のコメント層を文化の入口として残す。",
+      "sourceUrl": "https://www.nicovideo.jp/watch/sm15630734",
+      "creator": "ニコニコ動画投稿者",
+      "repository": "ニコニコ動画",
+      "rights": "動画、サムネイル、コメント本文は複製せず、公開ページURLと観察文のみ記録。",
+      "description": "ニコニコ動画の公開動画ページ。VOCALOID曲のPV、歌詞、コメントが同時に読まれる例。",
+      "date": "2026-06-25取得",
+      "mediaType": "video",
+      "tags": [
+        "ニコニコ動画",
+        "VOCALOID",
+        "初音ミク",
+        "PV",
+        "歌詞コメント"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "youtube-rickroll-comment-trap",
+      "title": "Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)",
+      "family": "釣りリンクと再訪",
+      "curatorNote": "YouTubeでは画面上をコメントが流れないが、このURL自体が釣りリンクとして流通し、コメント欄には騙されたことや戻ってきたことを書く定型が積もる。再生ページがミームの着地点になる国外側の対照例。",
+      "sourceUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "creator": "Rick Astley / YouTube公開ページ",
+      "repository": "YouTube",
+      "rights": "動画、サムネイル、コメント本文は複製せず、公開ページURLと観察文のみ記録。",
+      "description": "YouTubeの公開動画ページ。Rickrollの着地点として、URL共有とコメント欄の再訪定型を観察する。",
+      "date": "2026-06-25取得",
+      "mediaType": "video",
+      "tags": [
+        "YouTube",
+        "Rickroll",
+        "釣りリンク",
+        "コメント欄",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "youtube-gangnam-style-global-comments",
+      "title": "PSY - GANGNAM STYLE(강남스타일) M/V",
+      "family": "世界的再生数のコメント欄",
+      "curatorNote": "国境を越えて共有されたミュージックビデオでは、コメント欄が言語の混在、記録更新の記念、久しぶりに見に来た報告を受け止める場所になる。日本語圏の弾幕とは別形式の集合的な再訪メモとして見る。",
+      "sourceUrl": "https://www.youtube.com/watch?v=9bZkp7q19f0",
+      "creator": "PSY / YouTube公開ページ",
+      "repository": "YouTube",
+      "rights": "動画、サムネイル、コメント本文は複製せず、公開ページURLと観察文のみ記録。",
+      "description": "YouTubeの公開動画ページ。世界的に共有されたMVのコメント欄と再訪文化を見る例。",
+      "date": "2026-06-25取得",
+      "mediaType": "video",
+      "tags": [
+        "YouTube",
+        "ミュージックビデオ",
+        "コメント欄",
+        "再訪",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "youtube-heyyeyaa-repost-caption",
+      "title": "HEYYEYAAEYAAAEYAEYAA",
+      "family": "再投稿ミームの説明欄",
+      "curatorNote": "短い叫び声のようなタイトル、説明欄の権利断り、コメント欄の反復が、再投稿されたミーム動画の古い空気を残している。公式性よりも、コピーされたページが共有先として生き続ける状態を記録する。",
+      "sourceUrl": "https://www.youtube.com/watch?v=ZZ5LpwO-An4",
+      "creator": "YouTube投稿者",
+      "repository": "YouTube",
+      "rights": "動画、サムネイル、コメント本文は複製せず、公開ページURLと観察文のみ記録。",
+      "description": "YouTubeの公開動画ページ。再投稿ミームのタイトル、説明欄、コメント反復が残る例。",
+      "date": "2026-06-25取得",
+      "mediaType": "video",
+      "tags": [
+        "YouTube",
+        "再投稿",
+        "ミーム",
+        "説明欄",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">流れるコメントが重なる動画ページの模式図</title>
+  <desc id="desc">再生画面の上を短いコメント行が横切り、下にURLとコメント欄の線が残る中立的な図版。</desc>
+  <rect width="960" height="540" fill="#f7f4ed"/>
+  <rect x="98" y="70" width="764" height="400" rx="8" fill="#20242a"/>
+  <rect x="134" y="106" width="692" height="250" rx="4" fill="#11151b"/>
+  <path d="M430 180 L430 282 L520 231 Z" fill="#f4f0e6"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M178 138 H430" stroke="#8bd3dd" stroke-width="22"/>
+    <path d="M494 151 H760" stroke="#ffd166" stroke-width="18"/>
+    <path d="M246 208 H610" stroke="#f28482" stroke-width="20"/>
+    <path d="M138 276 H382" stroke="#b8e986" stroke-width="16"/>
+    <path d="M540 300 H810" stroke="#cdb4db" stroke-width="19"/>
+  </g>
+  <g fill="#f7f4ed" font-family="Arial, sans-serif" font-size="24" font-weight="700">
+    <text x="190" y="146">wwwwww</text>
+    <text x="506" y="159">888888</text>
+    <text x="258" y="216">弾幕</text>
+    <text x="150" y="283">また来た</text>
+    <text x="552" y="308">never gonna</text>
+  </g>
+  <rect x="134" y="382" width="420" height="16" rx="8" fill="#f4f0e6"/>
+  <rect x="134" y="414" width="596" height="12" rx="6" fill="#8bd3dd"/>
+  <rect x="134" y="438" width="510" height="12" rx="6" fill="#ffd166"/>
+  <circle cx="790" cy="424" r="28" fill="#f28482"/>
+  <path d="M780 424 h20 M790 414 v20" stroke="#20242a" stroke-width="8" stroke-linecap="round"/>
+</svg>

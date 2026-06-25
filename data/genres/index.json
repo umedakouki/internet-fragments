@@ -262,6 +262,34 @@
       "representativeAsset": "assets/collections/robots-txt-boundaries/robots-gate.svg",
       "createdAt": "2026-06-23",
       "updatedAt": "2026-06-23"
+    },
+    {
+      "id": "video-comment-overlays",
+      "title": "流れるコメントが育てた定番動画",
+      "subtitle": "ニコニコの弾幕とYouTubeのコメント欄が、再生ページをネット上の待ち合わせ場所にする",
+      "itemCount": 10,
+      "path": "data/genres/video-comment-overlays.json",
+      "status": "published",
+      "tags": [
+        "動画コメント",
+        "ニコニコ動画",
+        "YouTube",
+        "弾幕",
+        "ミーム",
+        "再投稿",
+        "コメント欄"
+      ],
+      "relatedGenres": [
+        "service-shutdown-notices",
+        "link-policy-phrases"
+      ],
+      "mapPosition": {
+        "x": 30,
+        "y": 75
+      },
+      "representativeAsset": "assets/collections/video-comment-overlays/comment-stream.svg",
+      "createdAt": "2026-06-25",
+      "updatedAt": "2026-06-25"
     }
   ],
   "legacyCollections": {
