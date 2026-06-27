@@ -290,6 +290,35 @@
       "representativeAsset": "assets/collections/video-comment-overlays/comment-stream.svg",
       "createdAt": "2026-06-25",
       "updatedAt": "2026-06-25"
+    },
+    {
+      "id": "trackback-ping-relics",
+      "title": "トラックバック欄が残した往復リンク",
+      "subtitle": "ブログ間通知が、操作マニュアル、無効化設定、仕様文書として残る",
+      "itemCount": 10,
+      "path": "data/genres/trackback-ping-relics.json",
+      "status": "published",
+      "tags": [
+        "トラックバック",
+        "ピンバック",
+        "ブログ",
+        "WordPress",
+        "Movable Type",
+        "リンク",
+        "スパム対策"
+      ],
+      "relatedGenres": [
+        "link-policy-phrases",
+        "service-shutdown-notices",
+        "robots-txt-boundaries"
+      ],
+      "mapPosition": {
+        "x": 16,
+        "y": 64
+      },
+      "representativeAsset": "assets/collections/trackback-ping-relics/trackback-loop.svg",
+      "createdAt": "2026-06-27",
+      "updatedAt": "2026-06-27"
     }
   ],
   "legacyCollections": {

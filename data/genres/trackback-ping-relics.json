@@ -1,0 +1,260 @@
+{
+  "id": "trackback-ping-relics",
+  "title": "トラックバック欄が残した往復リンク",
+  "subtitle": "ブログ間通知が、操作マニュアル、無効化設定、仕様文書として残る",
+  "description": "日本語圏のブログで使われたトラックバックを入口に、リンクを張ったことを相手記事へ通知する仕組みが、交流機能、SEO解説、スパム対策、WordPressの無効化設定、Pingback仕様、Movable TypeのWayback保存文書へ分かれて残る状態を採集する。本文や画面ではなく、トラックバックURL、送信、受信、ピンバック、承認待ち、拒否設定という短い語が、ブログ同士の往復リンクをどう説明し直しているかを見る。",
+  "method": "2026-06-27時点で公開URLがHTTP 200を返したページを対象にした。国内側はFC2ブログの送信マニュアル、日本語Wikipedia、国内のトラックバック解説・WordPress設定記事から始め、国外側はWordPress公式ドキュメント、Pingback 1.0仕様、Movable TypeのTrackBack技術文書のWayback保存へ広げた。記事本文、画面、ロゴは保存せず、URL、ページ種別、公開名、取得日、短い観察文だけを記録する。",
+  "status": "published",
+  "tags": [
+    "トラックバック",
+    "ピンバック",
+    "ブログ",
+    "WordPress",
+    "Movable Type",
+    "リンク",
+    "スパム対策"
+  ],
+  "relatedGenres": [
+    "link-policy-phrases",
+    "service-shutdown-notices",
+    "robots-txt-boundaries"
+  ],
+  "mapPosition": {
+    "x": 16,
+    "y": 64
+  },
+  "representativeItemId": "fc2-trackback-send-manual",
+  "createdAt": "2026-06-27",
+  "updatedAt": "2026-06-27",
+  "history": [
+    {
+      "date": "2026-06-27",
+      "type": "created",
+      "summary": "日本語ブログのトラックバック操作を入口に、SEO解説、WordPress設定、Pingback仕様、Movable Typeの保存文書まで、ブログ間通知が残る場所を10件で棚化。",
+      "diaryPath": "diary/2026-06-27.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "fc2-trackback-send-manual",
+      "title": "トラックバックを送信する",
+      "family": "操作マニュアル",
+      "curatorNote": "トラックバックURLを入力して送るという操作が、ブログ記事を書く画面の一手順として残っている。リンクを張るだけではなく、相手側へ通知する作法を国内ブログサービスのヘルプから見る入口にした。",
+      "sourceUrl": "https://help.fc2.com/blog/manual/group99/1322",
+      "creator": "FC2",
+      "repository": "FC2blogヘルプ",
+      "rights": "運営元の公開マニュアル。本文や画面は複製せずリンクと観察文のみ記録。",
+      "description": "FC2ブログでトラックバックを送信する手順を説明する公開ヘルプ。",
+      "date": "2026-06-27取得",
+      "mediaType": "text",
+      "tags": [
+        "トラックバック",
+        "FC2ブログ",
+        "操作マニュアル",
+        "日本語圏",
+        "送信"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "ja-wikipedia-trackback-summary",
+      "title": "トラックバック - Wikipedia",
+      "family": "用語の要約",
+      "curatorNote": "ブログの主要機能としての説明、略称、Movable Type由来、スパム問題が一つの用語ページに圧縮されている。機能が現役操作から、説明される対象へ移った状態を示す。",
+      "sourceUrl": "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%83%90%E3%83%83%E3%82%AF",
+      "creator": "Wikipedia contributors",
+      "repository": "Wikipedia日本語版",
+      "rights": "公開Wikiページ。ライセンスと寄稿者は原典に従い、本文は複製せずリンクと観察文のみ記録。",
+      "description": "トラックバックの概要を説明する日本語Wikipediaページ。",
+      "date": "2026-06-27取得",
+      "mediaType": "text",
+      "tags": [
+        "トラックバック",
+        "用語",
+        "ブログ",
+        "Movable Type",
+        "日本語圏"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "gmo-trackback-seo-explainer",
+      "title": "トラックバックとは？仕組みや設定方法、メリット・デメリットについて解説",
+      "family": "SEO解説としての再説明",
+      "curatorNote": "トラックバックがブログ間交流の機能としてではなく、SEO、アクセス増加、注意点を説明する記事として再配置されている。古いブログ機能が検索流入向けの解説文へ変わる例として置く。",
+      "sourceUrl": "https://gmotech.jp/semlabo/seo/blog/what-is-a-trackback/",
+      "creator": "GMO TECH",
+      "repository": "WEB集客ラボ byGMO",
+      "rights": "公開解説記事。本文や画面は複製せずリンクと観察文のみ記録。",
+      "description": "トラックバックの仕組み、設定、メリット、注意点を説明する国内SEO系記事。",
+      "date": "2026-06-27取得",
+      "mediaType": "text",
+      "tags": [
+        "トラックバック",
+        "SEO",
+        "解説記事",
+        "ブログ",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "elemarke-trackback-caution",
+      "title": "トラックバックとは？仕組みや使い方、注意点までわかりやすく解説",
+      "family": "注意点つき解説",
+      "curatorNote": "使い方だけでなく注意点を前面に出し、トラックバックを便利な通知機能と迷惑通知の両方として説明している。機能の評価が、交流から運用リスクへ寄っている。",
+      "sourceUrl": "https://windom-kk.co.jp/marketing/archives/5900",
+      "creator": "株式会社ウィンドム",
+      "repository": "Elemarke",
+      "rights": "公開解説記事。本文や画面は複製せずリンクと観察文のみ記録。",
+      "description": "トラックバックの仕組み、使い方、注意点を説明する国内マーケティング記事。",
+      "date": "2026-06-27取得",
+      "mediaType": "text",
+      "tags": [
+        "トラックバック",
+        "注意点",
+        "スパム対策",
+        "解説記事",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "chewy-trackback-beginner-usage",
+      "title": "トラックバックとは？ブログ初心者が知っておきたい必要性・使い方・用例を徹底解説",
+      "family": "初心者向け用例",
+      "curatorNote": "『ブログ初心者』へ向けて、トラックバックをリンク通知の用例として説明している。かつて自然に使われたブログ語が、改めて言い換えられる対象になっている。",
+      "sourceUrl": "https://chewy.jp/businessmanner/1851/",
+      "creator": "CHEWY編集部",
+      "repository": "CHEWY",
+      "rights": "公開解説記事。本文や画面は複製せずリンクと観察文のみ記録。",
+      "description": "トラックバックの必要性、使い方、用例を初心者向けに説明する国内記事。",
+      "date": "2026-06-27取得",
+      "mediaType": "text",
+      "tags": [
+        "トラックバック",
+        "ブログ初心者",
+        "用例",
+        "解説記事",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "starry-wordpress-trackback-disable",
+      "title": "WordPressトラックバックとは？ピンバックとの違いから無効化・非表示の設定方法を解説",
+      "family": "無効化の説明",
+      "curatorNote": "WordPress上のトラックバックが、ピンバックとの違い、非表示、無効化の設定として説明されている。通知機能が残っていることより、止め方を知るページとして見つかる状態を記録する。",
+      "sourceUrl": "https://starry-9.com/blog/wordpress-trackback/",
+      "creator": "STARRY",
+      "repository": "STARRYブログ",
+      "rights": "公開解説記事。本文や画面は複製せずリンクと観察文のみ記録。",
+      "description": "WordPressのトラックバック、ピンバック、無効化設定を説明する国内記事。",
+      "date": "2026-06-27取得",
+      "mediaType": "text",
+      "tags": [
+        "WordPress",
+        "トラックバック",
+        "ピンバック",
+        "無効化",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "webst8-wordpress-trackback-pingback",
+      "title": "WordPressトラックバック・ピンバックとは？意味と使い方",
+      "family": "WordPress語としての再整理",
+      "curatorNote": "トラックバックとピンバックを並べ、WordPressの通知機能として意味と使い方を整理している。ブログサービス固有の作法が、CMS設定語として残る変化を見る。",
+      "sourceUrl": "https://webst8.com/blog/wordpress-trackback-pingback/",
+      "creator": "WEBST8",
+      "repository": "WEBST8のブログ",
+      "rights": "公開解説記事。本文や画面は複製せずリンクと観察文のみ記録。",
+      "description": "WordPressのトラックバックとピンバックの意味、使い方を説明する国内記事。",
+      "date": "2026-06-27取得",
+      "mediaType": "text",
+      "tags": [
+        "WordPress",
+        "トラックバック",
+        "ピンバック",
+        "CMS",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "wordpress-introduction-trackbacks",
+      "title": "Introduction to Blogging",
+      "family": "公式ドキュメント内の機能説明",
+      "curatorNote": "WordPress公式ドキュメントでは、トラックバックとピンバックがブログ入門の一部として説明される。日本語圏の解説記事から辿ると、機能の語彙がCMSの標準説明へ接続する。",
+      "sourceUrl": "https://wordpress.org/documentation/article/introduction-to-blogging/#trackbacks",
+      "creator": "WordPress.org contributors",
+      "repository": "WordPress.org Documentation",
+      "rights": "WordPress.orgの公開ドキュメント。本文は複製せずリンクと観察文のみ記録。",
+      "description": "WordPress公式ドキュメントのブログ入門ページ内にあるトラックバック説明。",
+      "date": "2026-06-27取得",
+      "mediaType": "text",
+      "tags": [
+        "WordPress",
+        "トラックバック",
+        "ピンバック",
+        "公式ドキュメント",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "wordpress-discussion-settings-pings",
+      "title": "Settings Discussion screen",
+      "family": "受信設定と承認待ち",
+      "curatorNote": "Discussion設定では、投稿からリンク先へ通知すること、他ブログからのリンク通知を許可すること、コメント承認が同じ画面で扱われる。トラックバックが読者コメントと管理画面の境界に置かれる例。",
+      "sourceUrl": "https://wordpress.org/documentation/article/settings-discussion-screen/",
+      "creator": "WordPress.org contributors",
+      "repository": "WordPress.org Documentation",
+      "rights": "WordPress.orgの公開ドキュメント。本文は複製せずリンクと観察文のみ記録。",
+      "description": "WordPressのDiscussion設定画面を説明する公式ドキュメント。",
+      "date": "2026-06-27取得",
+      "mediaType": "text",
+      "tags": [
+        "WordPress",
+        "設定画面",
+        "ピンバック",
+        "承認待ち",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "pingback-10-spec",
+      "title": "Pingback 1.0",
+      "family": "仕様文書",
+      "curatorNote": "ピンバックは、ブログ記事の雰囲気ではなくXML-RPCとURIで定義される通知仕様として読める。トラックバックの後に残った自動通知の語彙を、仕様文書の形で置く。",
+      "sourceUrl": "https://www.hixie.ch/specs/pingback/pingback",
+      "creator": "Ian Hickson",
+      "repository": "hixie.ch",
+      "rights": "公開仕様文書。本文は複製せずリンクと観察文のみ記録。",
+      "description": "Pingback 1.0の仕様文書。",
+      "date": "2026-06-27取得",
+      "mediaType": "text",
+      "tags": [
+        "Pingback",
+        "XML-RPC",
+        "仕様文書",
+        "URI",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    }
+  ]
+}
