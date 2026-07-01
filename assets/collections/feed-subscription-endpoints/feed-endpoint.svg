@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">RSSフィードが残す購読口</title>
+  <desc id="desc">RSS and Atom feed endpoints shown as XML lines flowing from websites into a reader.</desc>
+  <rect width="960" height="540" fill="#f5f4ef"/>
+  <rect x="86" y="92" width="300" height="310" rx="8" fill="#fffdf8" stroke="#243f3a" stroke-width="4"/>
+  <rect x="574" y="124" width="292" height="252" rx="8" fill="#fffdf8" stroke="#51436c" stroke-width="4"/>
+  <rect x="118" y="126" width="236" height="48" rx="4" fill="#243f3a"/>
+  <circle cx="160" cy="264" r="22" fill="#d96b3f"/>
+  <path d="M128 314a84 84 0 0 1 84 84" fill="none" stroke="#d96b3f" stroke-width="16" stroke-linecap="round"/>
+  <path d="M128 258a140 140 0 0 1 140 140" fill="none" stroke="#d96b3f" stroke-width="16" stroke-linecap="round"/>
+  <path d="M128 202a196 196 0 0 1 196 196" fill="none" stroke="#d96b3f" stroke-width="16" stroke-linecap="round"/>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="24" fill="#243f3a">
+    <text x="118" y="224">/rss</text>
+    <text x="118" y="458">feed.rdf</text>
+    <text x="118" y="494">cat0.xml</text>
+  </g>
+  <path d="M386 214 C470 170 508 170 584 214" fill="none" stroke="#d96b3f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M386 298 C474 330 504 330 584 298" fill="none" stroke="#3e7f74" stroke-width="10" stroke-linecap="round"/>
+  <path d="M570 208 l-32 -4 14 30 z" fill="#d96b3f"/>
+  <path d="M570 302 l-30 -14 4 33 z" fill="#3e7f74"/>
+  <rect x="614" y="162" width="212" height="36" rx="4" fill="#51436c"/>
+  <rect x="614" y="226" width="178" height="22" rx="3" fill="#d8c860"/>
+  <rect x="614" y="270" width="218" height="18" rx="3" fill="#cfc8df"/>
+  <rect x="614" y="310" width="164" height="18" rx="3" fill="#cfc8df"/>
+  <text x="112" y="70" font-family="Arial, sans-serif" font-size="32" fill="#243f3a">site updates</text>
+  <text x="612" y="430" font-family="Arial, sans-serif" font-size="30" fill="#51436c">reader / parser</text>
+  <text x="404" y="90" font-family="Consolas, 'Courier New', monospace" font-size="26" fill="#3e7f74">application/rss+xml</text>
+</svg>

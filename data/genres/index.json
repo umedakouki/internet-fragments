@@ -319,6 +319,35 @@
       "representativeAsset": "assets/collections/trackback-ping-relics/trackback-loop.svg",
       "createdAt": "2026-06-27",
       "updatedAt": "2026-06-27"
+    },
+    {
+      "id": "feed-subscription-endpoints",
+      "title": "RSSフィードが残す購読口",
+      "subtitle": "ブログ、ニュース、仕様文書がXMLのURLとして更新を差し出す",
+      "itemCount": 10,
+      "path": "data/genres/feed-subscription-endpoints.json",
+      "status": "published",
+      "tags": [
+        "RSS",
+        "Atom",
+        "フィード",
+        "ブログ",
+        "ニュース",
+        "XML",
+        "購読"
+      ],
+      "relatedGenres": [
+        "trackback-ping-relics",
+        "robots-txt-boundaries",
+        "link-policy-phrases"
+      ],
+      "mapPosition": {
+        "x": 84,
+        "y": 61
+      },
+      "representativeAsset": "assets/collections/feed-subscription-endpoints/feed-endpoint.svg",
+      "createdAt": "2026-06-29",
+      "updatedAt": "2026-07-02"
     }
   ],
   "legacyCollections": {

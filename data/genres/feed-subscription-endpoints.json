@@ -1,0 +1,266 @@
+{
+  "id": "feed-subscription-endpoints",
+  "title": "RSSフィードが残す購読口",
+  "subtitle": "ブログ、ニュース、仕様文書がXMLのURLとして更新を差し出す",
+  "description": "日本語圏のブログ、動画ニュース、ニュースサイト、ソフトウェア配布サイトに残るRSS/RDFフィードURLを入口に、記事本文ではなく、更新を読むための機械可読な購読口を採集する。ブラウザ上では目立たなくなった `rss`、`feed`、`.rdf`、`.xml`、`application/rss+xml` といった短い語が、はてな、ニコニコ、GIGAZINE、窓の杜、NHKから、WordPress、Mozilla、RSS 2.0仕様、Atom仕様へつながる状態を見る。",
+  "method": "2026-06-29時点で公開URLがHTTP 200を返したフィードURLまたは仕様文書を対象にした。国内側ははてなのブログフィード、ニコニコインフォ、GIGAZINE、窓の杜、NHKニュースのRSS/RDF/XMLから始め、国外側はWordPress News、Mozilla Blog、RSS 2.0 Specification、RFC 4287へ広げた。フィード本文、記事本文、ロゴ、画面は保存せず、URL、公開名、Content-Typeや形式、取得日、短い観察文だけを記録する。",
+  "status": "published",
+  "tags": [
+    "RSS",
+    "Atom",
+    "フィード",
+    "ブログ",
+    "ニュース",
+    "XML",
+    "購読"
+  ],
+  "relatedGenres": [
+    "trackback-ping-relics",
+    "robots-txt-boundaries",
+    "link-policy-phrases"
+  ],
+  "mapPosition": {
+    "x": 84,
+    "y": 61
+  },
+  "representativeItemId": "hatena-blog-staff-rss",
+  "createdAt": "2026-06-29",
+  "updatedAt": "2026-07-02",
+  "history": [
+    {
+      "date": "2026-06-29",
+      "type": "created",
+      "summary": "日本語圏のブログ・ニュースRSSを入口に、RSS/RDF/Atomの購読口がURLとContent-Typeとして残る状態を10件で棚化。",
+      "diaryPath": "diary/2026-06-29.md"
+    },
+    {
+      "date": "2026-07-02",
+      "type": "verified",
+      "summary": "未コミットの前回作業を引き継ぎ、地図座標をモバイル表示に収めたうえでリンク・ブラウザー検証と公開処理へ進めた。",
+      "diaryPath": "diary/2026-07-02.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "hatena-blog-staff-rss",
+      "title": "はてなブログ開発ブログ RSS",
+      "family": "ブログ更新の購読口",
+      "curatorNote": "はてなブログのスタッフ告知が、画面の購読ボタンではなく `/rss` という短いURLで読める。日本語ブログサービスの運営日誌が、読者に見せる記事ページとは別にRSSの入口を残している。",
+      "sourceUrl": "https://staff.hatenablog.com/rss",
+      "creator": "株式会社はてな",
+      "repository": "はてなブログ開発ブログ",
+      "rights": "運営元が公開するRSSフィード。記事本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "はてなブログ開発ブログの公開RSSフィード。`application/rss+xml` として取得できる。",
+      "date": "2026-06-29取得",
+      "mediaType": "text",
+      "tags": [
+        "RSS",
+        "はてなブログ",
+        "ブログ",
+        "日本語圏",
+        "購読"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "hatena-developer-blog-rss",
+      "title": "Hatena Developer Blog RSS",
+      "family": "開発者ブログのフィード",
+      "curatorNote": "開発者向けのブログでも、通常の記事一覧とは別に `/rss` が残る。人間向けのタイトルは英語混じりでも、はてな社内の技術更新がRSSリーダーへ渡る形を維持している。",
+      "sourceUrl": "https://developer.hatenastaff.com/rss",
+      "creator": "株式会社はてな",
+      "repository": "Hatena Developer Blog",
+      "rights": "運営元が公開するRSSフィード。記事本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "Hatena Developer Blogの公開RSSフィード。`application/rss+xml` として取得できる。",
+      "date": "2026-06-29取得",
+      "mediaType": "text",
+      "tags": [
+        "RSS",
+        "開発者ブログ",
+        "はてな",
+        "日本語圏",
+        "技術"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "nicovideo-info-feed",
+      "title": "ニコニコインフォ RSS",
+      "family": "サービス告知のフィード",
+      "curatorNote": "動画サービスの公式告知が、動画ページではなくニュースフィードとして配信される。ニコニコ文化の表側ではコメントが流れる一方、運営情報はRSSのXMLとして静かに更新される。",
+      "sourceUrl": "https://blog.nicovideo.jp/niconews/feed/",
+      "creator": "株式会社ドワンゴ",
+      "repository": "ニコニコインフォ",
+      "rights": "運営元が公開するRSSフィード。記事本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "ニコニコインフォの公開RSSフィード。サービス告知をXMLとして配信する。",
+      "date": "2026-06-29取得",
+      "mediaType": "text",
+      "tags": [
+        "RSS",
+        "ニコニコ",
+        "サービス告知",
+        "動画文化",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "gigazine-rss-20",
+      "title": "GIGAZINE RSS 2.0",
+      "family": "ニュースサイトのRSS 2.0",
+      "curatorNote": "`rss_2.0` というURLが、ニュースサイトの大量更新をリーダーへ流す古い入口として残っている。記事を読む場所ではなく、更新の順番を機械が拾うための通路として採集する。",
+      "sourceUrl": "https://gigazine.net/news/rss_2.0/",
+      "creator": "GIGAZINE",
+      "repository": "GIGAZINE",
+      "rights": "運営元が公開するRSSフィード。記事本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "GIGAZINEの公開RSS 2.0フィード。",
+      "date": "2026-06-29取得",
+      "mediaType": "text",
+      "tags": [
+        "RSS 2.0",
+        "ニュース",
+        "GIGAZINE",
+        "日本語圏",
+        "更新"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "impress-watch-forest-rdf",
+      "title": "窓の杜 RDF",
+      "family": "RDFとしてのニュースフィード",
+      "curatorNote": "Windowsソフト紹介の更新が、`.rdf` のURLで配信されている。RSS 1.0/RDF系の名残が、今もニュース一覧の裏側でファイル名として見える。",
+      "sourceUrl": "https://forest.watch.impress.co.jp/data/rss/1.0/wf/feed.rdf",
+      "creator": "株式会社インプレス",
+      "repository": "窓の杜",
+      "rights": "運営元が公開するRDF/RSSフィード。記事本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "窓の杜の公開RSS 1.0/RDFフィード。",
+      "date": "2026-06-29取得",
+      "mediaType": "text",
+      "tags": [
+        "RSS 1.0",
+        "RDF",
+        "ソフトウェア",
+        "ニュース",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "nhk-news-rss-xml",
+      "title": "NHKニュース RSS",
+      "family": "公共ニュースのXML",
+      "curatorNote": "公共ニュースのトップ更新が、サイト本文とは別の `.xml` として配信される。スマートフォン通知やSNS以前の購読感覚が、今もニュースの機械可読な入口として残っている。",
+      "sourceUrl": "https://www3.nhk.or.jp/rss/news/cat0.xml",
+      "creator": "日本放送協会",
+      "repository": "NHKニュース",
+      "rights": "運営元が公開するRSSフィード。記事本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "NHKニュースの公開RSS/XMLフィード。",
+      "date": "2026-06-29取得",
+      "mediaType": "text",
+      "tags": [
+        "RSS",
+        "XML",
+        "ニュース",
+        "公共放送",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "wordpress-news-feed",
+      "title": "WordPress News Feed",
+      "family": "CMS標準のフィード",
+      "curatorNote": "日本語圏のブログ機能から辿ると、WordPress本体のニュースも `/feed/` で配信されている。トラックバックやピンバックを残したCMSが、更新通知ではRSSの標準的な出口を保つ。",
+      "sourceUrl": "https://wordpress.org/news/feed/",
+      "creator": "WordPress.org contributors",
+      "repository": "WordPress News",
+      "rights": "WordPress.orgが公開するRSSフィード。記事本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "WordPress Newsの公開RSSフィード。",
+      "date": "2026-06-29取得",
+      "mediaType": "text",
+      "tags": [
+        "RSS",
+        "WordPress",
+        "CMS",
+        "ブログ",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "mozilla-blog-feed",
+      "title": "The Mozilla Blog Feed",
+      "family": "組織ブログのフィード",
+      "curatorNote": "ブラウザを作る組織のブログにも、RSSフィードが通常の更新経路として残っている。RSSリーダー機能がブラウザの中心から退いた後も、ウェブ組織の発信はXMLで購読できる。",
+      "sourceUrl": "https://blog.mozilla.org/en/feed/",
+      "creator": "Mozilla",
+      "repository": "The Mozilla Blog",
+      "rights": "Mozillaが公開するRSSフィード。記事本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "The Mozilla Blogの公開RSSフィード。",
+      "date": "2026-06-29取得",
+      "mediaType": "text",
+      "tags": [
+        "RSS",
+        "Mozilla",
+        "ブラウザ",
+        "組織ブログ",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "rss-board-specification",
+      "title": "RSS 2.0 Specification",
+      "family": "RSS仕様文書",
+      "curatorNote": "各サイトのフィードURLから辿ると、RSS 2.0は現在も仕様文書として読める。購読口の実例だけでなく、`channel`、`item`、`link` といった語が標準の説明文に固定される場所を置く。",
+      "sourceUrl": "https://www.rssboard.org/rss-specification",
+      "creator": "RSS Advisory Board",
+      "repository": "RSS Advisory Board",
+      "rights": "公開仕様文書。本文は複製せず、URLと観察文のみ記録。",
+      "description": "RSS 2.0 Specificationの公開ページ。",
+      "date": "2026-06-29取得",
+      "mediaType": "text",
+      "tags": [
+        "RSS 2.0",
+        "仕様文書",
+        "XML",
+        "channel",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "ietf-rfc-4287-atom",
+      "title": "RFC 4287 - The Atom Syndication Format",
+      "family": "Atom仕様文書",
+      "curatorNote": "RSSだけでなく、Atomもフィードのもう一つの形式として標準化されている。日本語圏のRSS実例から国外の仕様へ広げることで、購読口がブログ文化と標準文書の両方にまたがることが見える。",
+      "sourceUrl": "https://datatracker.ietf.org/doc/html/rfc4287",
+      "creator": "IETF",
+      "repository": "IETF Datatracker",
+      "rights": "公開RFCページ。本文は複製せず、URLと観察文のみ記録。",
+      "description": "The Atom Syndication Formatを定義するRFC 4287の公開HTML。",
+      "date": "2026-06-29取得",
+      "mediaType": "text",
+      "tags": [
+        "Atom",
+        "RFC",
+        "仕様文書",
+        "XML",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    }
+  ]
+}
