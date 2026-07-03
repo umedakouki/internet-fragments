@@ -1,0 +1,260 @@
+{
+  "id": "search-avoidance-meta-tags",
+  "title": "検索避けを置くメタタグ",
+  "subtitle": "ファンサイト語の検索避けから、noindex と X-Robots-Tag へ広がるページ単位の隠し方",
+  "description": "日本語圏の二次創作・個人サイト文化で使われる「検索避け」という言い方を出発点に、検索結果へ出さないための説明、`noindex`、`nofollow`、`nosnippet`、`X-Robots-Tag`、検索エンジン別の対応表へ辿る。robots.txt がサイト入口の機械可読な境界なら、この棚はページの head、HTTPヘッダー、コミュニティ用語に置かれた、見つかりすぎないための小さな文言を観察する。",
+  "method": "2026-07-03時点で公開URLがHTTP 200を返したページを対象にした。国内側はピクシブ百科事典、ニコニコ大百科、同人用語系ページに残る「検索避け」の説明から始め、実装側は Google 検索セントラル、MDN、Bing Webmaster Tools の robots meta / noindex / X-Robots-Tag / snippet 管理へ広げた。本文や画面は保存せず、ページ名、公開名、公開URL、取得日、短い観察文だけを記録する。",
+  "status": "published",
+  "tags": [
+    "検索避け",
+    "noindex",
+    "robots meta",
+    "X-Robots-Tag",
+    "二次創作",
+    "検索",
+    "ウェブ作法"
+  ],
+  "relatedGenres": [
+    "robots-txt-boundaries",
+    "link-policy-phrases",
+    "service-shutdown-notices"
+  ],
+  "mapPosition": {
+    "x": 78,
+    "y": 43
+  },
+  "representativeItemId": "pixiv-dic-search-avoidance",
+  "createdAt": "2026-07-03",
+  "updatedAt": "2026-07-03",
+  "history": [
+    {
+      "date": "2026-07-03",
+      "type": "created",
+      "summary": "日本語圏の「検索避け」から、noindex、robots meta、X-Robots-Tag、検索結果スニペット管理へつながるページ単位の非表示作法を10件で棚化。",
+      "diaryPath": "diary/2026-07-03.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "pixiv-dic-search-avoidance",
+      "title": "検索避け - ピクシブ百科事典",
+      "family": "ファン文化の用語化",
+      "curatorNote": "二次創作の説明語として「検索避け」が百科事典化され、タグ、伏字、見つかり方への注意が同じ語に集まる。実装コードではなく、検索結果に出すぎないための共同の言い方として採集する。",
+      "sourceUrl": "https://dic.pixiv.net/a/%E6%A4%9C%E7%B4%A2%E9%81%BF%E3%81%91",
+      "creator": "pixivユーザー",
+      "repository": "ピクシブ百科事典",
+      "rights": "公開ユーザー編集ページ。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "ピクシブ百科事典にある「検索避け」の公開記事。",
+      "date": "2026-07-03取得",
+      "mediaType": "text",
+      "tags": [
+        "検索避け",
+        "pixiv",
+        "二次創作",
+        "用語",
+        "日本語圏"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "nicopedia-search-avoidance",
+      "title": "検索避け - ニコニコ大百科",
+      "family": "動画・掲示板側の用語化",
+      "curatorNote": "ニコニコ大百科では、動画文化や掲示板的な説明の場に「検索避け」が置かれる。作品名や人物名を直接書かない作法が、ページ本文ではなく記事名と周辺語から見える。",
+      "sourceUrl": "https://dic.nicovideo.jp/a/%E6%A4%9C%E7%B4%A2%E9%81%BF%E3%81%91",
+      "creator": "ニコニコ大百科ユーザー",
+      "repository": "ニコニコ大百科",
+      "rights": "公開ユーザー編集ページ。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "ニコニコ大百科にある「検索避け」の公開単語記事。",
+      "date": "2026-07-03取得",
+      "mediaType": "text",
+      "tags": [
+        "検索避け",
+        "ニコニコ大百科",
+        "動画文化",
+        "用語",
+        "日本語圏"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "paradisearmy-search-engine-avoidance",
+      "title": "検索よけ / 検索エンジン対策",
+      "family": "個人サイト向けの説明",
+      "curatorNote": "古い同人・個人サイト向けの用語集では、検索エンジンへの出方をサイト運営の基礎知識として説明する。文字化けしやすい古いHTMLの状態も含め、検索されることへの生活感覚が残っている。",
+      "sourceUrl": "https://www.paradisearmy.com/doujin/pasok_kensaku_yoke.htm",
+      "creator": "ぱらだいす☆あ〜み〜",
+      "repository": "同人用語の基礎知識",
+      "rights": "公開個人サイトページ。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "同人用語系サイトにある検索避け・検索エンジン対策の公開ページ。",
+      "date": "2026-07-03取得",
+      "mediaType": "text",
+      "tags": [
+        "検索避け",
+        "個人サイト",
+        "同人",
+        "検索エンジン",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "google-robots-meta-ja",
+      "title": "Robots meta タグ、data-nosnippet、X-Robots-Tag の設定",
+      "family": "検索エンジン側の実装説明",
+      "curatorNote": "ファンサイト語の「検索避け」は、実装側では `robots` メタタグ、`data-nosnippet`、HTTPヘッダーの設定表になる。ページ本文ではなく、検索結果への出方を指示する語彙として置く。",
+      "sourceUrl": "https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag?hl=ja",
+      "creator": "Google",
+      "repository": "Google 検索セントラル",
+      "rights": "公開ドキュメント。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "Google 検索セントラルの robots meta タグと X-Robots-Tag 設定ページ。",
+      "date": "2026-07-03取得",
+      "mediaType": "text",
+      "tags": [
+        "robots meta",
+        "X-Robots-Tag",
+        "Google",
+        "検索",
+        "日本語"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "google-noindex-ja",
+      "title": "noindex を使用してコンテンツをインデックスから除外する",
+      "family": "noindex の手順",
+      "curatorNote": "検索避けの感覚が、Googleの説明ではインデックスから除外する手順へ変換される。`noindex` はページを消すのではなく、検索結果へ載せない依頼として働く。",
+      "sourceUrl": "https://developers.google.com/search/docs/crawling-indexing/block-indexing?hl=ja",
+      "creator": "Google",
+      "repository": "Google 検索セントラル",
+      "rights": "公開ドキュメント。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "Google 検索セントラルの noindex によるインデックス除外説明ページ。",
+      "date": "2026-07-03取得",
+      "mediaType": "text",
+      "tags": [
+        "noindex",
+        "Google",
+        "インデックス",
+        "検索",
+        "日本語"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "google-supported-meta-tags-ja",
+      "title": "Google がサポートしているメタタグと属性",
+      "family": "対応タグの一覧",
+      "curatorNote": "`googlebot`、`robots`、`nositelinkssearchbox` など、検索結果を制御する語が対応表として並ぶ。隠れるための作法が、検索エンジンに読ませる正式な名前へ整理されている。",
+      "sourceUrl": "https://developers.google.com/search/docs/crawling-indexing/special-tags?hl=ja",
+      "creator": "Google",
+      "repository": "Google 検索セントラル",
+      "rights": "公開ドキュメント。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "Google が検索でサポートするメタタグと属性の一覧ページ。",
+      "date": "2026-07-03取得",
+      "mediaType": "text",
+      "tags": [
+        "meta tag",
+        "Googlebot",
+        "検索",
+        "対応表",
+        "日本語"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "google-snippet-control-ja",
+      "title": "スニペットの管理・メタ ディスクリプションについて",
+      "family": "検索結果の見え方",
+      "curatorNote": "検索結果に載るかどうかだけでなく、どれだけ見えるかもメタタグの対象になる。`nosnippet` や `max-snippet` は、ページ内容の露出量を小さく調整する文法として読める。",
+      "sourceUrl": "https://developers.google.com/search/docs/appearance/snippet?hl=ja",
+      "creator": "Google",
+      "repository": "Google 検索セントラル",
+      "rights": "公開ドキュメント。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "Google 検索結果のスニペットとメタディスクリプション管理の説明ページ。",
+      "date": "2026-07-03取得",
+      "mediaType": "text",
+      "tags": [
+        "nosnippet",
+        "スニペット",
+        "検索結果",
+        "Google",
+        "日本語"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "mdn-robots-meta-ja",
+      "title": "HTML <meta name=\"robots\"> 属性値",
+      "family": "HTMLリファレンス",
+      "curatorNote": "検索エンジン向けの隠し方が、MDNではHTMLのメタデータ名として説明される。文化語としての検索避けから、head要素内の属性値へ視点を移す接続点になる。",
+      "sourceUrl": "https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Elements/meta/name/robots",
+      "creator": "MDN contributors",
+      "repository": "MDN Web Docs",
+      "rights": "公開ドキュメント。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "MDN Web Docs日本語版の robots メタタグ属性値リファレンス。",
+      "date": "2026-07-03取得",
+      "mediaType": "text",
+      "tags": [
+        "robots meta",
+        "HTML",
+        "MDN",
+        "noindex",
+        "日本語"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "mdn-x-robots-tag-ja",
+      "title": "X-Robots-Tag ヘッダー",
+      "family": "HTTPヘッダーでの指示",
+      "curatorNote": "HTMLのheadに書けないPDFやファイルにも、HTTPヘッダーとして検索ロボットへの指示を付けられる。ページ内の隠しタグから、レスポンスヘッダーの文言へ観察範囲が広がる。",
+      "sourceUrl": "https://developer.mozilla.org/ja/docs/Web/HTTP/Reference/Headers/X-Robots-Tag",
+      "creator": "MDN contributors",
+      "repository": "MDN Web Docs",
+      "rights": "公開ドキュメント。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "MDN Web Docs日本語版の X-Robots-Tag HTTPヘッダーリファレンス。",
+      "date": "2026-07-03取得",
+      "mediaType": "text",
+      "tags": [
+        "X-Robots-Tag",
+        "HTTP",
+        "MDN",
+        "noindex",
+        "日本語"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "bing-supported-robots-meta",
+      "title": "Robots meta tags and attributes that Bing supports",
+      "family": "検索エンジン別の対応",
+      "curatorNote": "同じ `noindex` や `nofollow` でも、検索エンジン別の対応表として読まれる。Google中心の説明からBingへ広げると、検索避けは単一の呪文ではなく、各クローラーに解釈される指示だと分かる。",
+      "sourceUrl": "https://www.bing.com/webmasters/help/robots-meta-tags-and-attributes-that-bing-supports-5198d240",
+      "creator": "Microsoft",
+      "repository": "Bing Webmaster Tools Help",
+      "rights": "公開ヘルプドキュメント。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "Bing がサポートする robots meta タグと属性を説明する公開ヘルプページ。",
+      "date": "2026-07-03取得",
+      "mediaType": "text",
+      "tags": [
+        "Bing",
+        "robots meta",
+        "noindex",
+        "検索",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">検索避けを置くメタタグ</title>
+  <desc id="desc">A neutral diagram showing search avoidance as noindex metadata between a webpage and search results.</desc>
+  <rect width="960" height="540" fill="#f4f1e9"/>
+  <rect x="72" y="82" width="320" height="360" rx="8" fill="#fffdf7" stroke="#2f3f38" stroke-width="4"/>
+  <rect x="104" y="120" width="256" height="52" rx="4" fill="#2f3f38"/>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="23" fill="#2f3f38">
+    <text x="108" y="226">&lt;meta name="robots"</text>
+    <text x="132" y="262">content="noindex"&gt;</text>
+    <text x="108" y="326">X-Robots-Tag:</text>
+    <text x="132" y="362">noindex, nosnippet</text>
+  </g>
+  <rect x="584" y="112" width="282" height="300" rx="8" fill="#fffdf7" stroke="#4d4362" stroke-width="4"/>
+  <rect x="624" y="154" width="202" height="30" rx="4" fill="#4d4362"/>
+  <rect x="624" y="218" width="172" height="22" rx="3" fill="#d6c45a"/>
+  <rect x="624" y="260" width="214" height="18" rx="3" fill="#d9d5e5"/>
+  <rect x="624" y="302" width="190" height="18" rx="3" fill="#d9d5e5"/>
+  <rect x="624" y="344" width="148" height="18" rx="3" fill="#d9d5e5"/>
+  <path d="M398 210 C474 174 512 174 586 210" fill="none" stroke="#c7564f" stroke-width="11" stroke-linecap="round"/>
+  <path d="M398 322 C476 354 512 354 586 322" fill="none" stroke="#407b70" stroke-width="11" stroke-linecap="round"/>
+  <path d="M548 182 L612 246" fill="none" stroke="#c7564f" stroke-width="15" stroke-linecap="round"/>
+  <path d="M612 182 L548 246" fill="none" stroke="#c7564f" stroke-width="15" stroke-linecap="round"/>
+  <path d="M572 326 l-30 -14 4 33 z" fill="#407b70"/>
+  <text x="96" y="66" font-family="Arial, sans-serif" font-size="30" fill="#2f3f38">fan site / page head</text>
+  <text x="606" y="466" font-family="Arial, sans-serif" font-size="30" fill="#4d4362">search result</text>
+  <text x="418" y="118" font-family="Consolas, 'Courier New', monospace" font-size="26" fill="#c7564f">noindex</text>
+  <text x="404" y="438" font-family="Consolas, 'Courier New', monospace" font-size="24" fill="#407b70">linked only</text>
+</svg>

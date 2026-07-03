@@ -348,6 +348,35 @@
       "representativeAsset": "assets/collections/feed-subscription-endpoints/feed-endpoint.svg",
       "createdAt": "2026-06-29",
       "updatedAt": "2026-07-02"
+    },
+    {
+      "id": "search-avoidance-meta-tags",
+      "title": "検索避けを置くメタタグ",
+      "subtitle": "ファンサイト語の検索避けから、noindex と X-Robots-Tag へ広がるページ単位の隠し方",
+      "itemCount": 10,
+      "path": "data/genres/search-avoidance-meta-tags.json",
+      "status": "published",
+      "tags": [
+        "検索避け",
+        "noindex",
+        "robots meta",
+        "X-Robots-Tag",
+        "二次創作",
+        "検索",
+        "ウェブ作法"
+      ],
+      "relatedGenres": [
+        "robots-txt-boundaries",
+        "link-policy-phrases",
+        "service-shutdown-notices"
+      ],
+      "mapPosition": {
+        "x": 78,
+        "y": 43
+      },
+      "representativeAsset": "assets/collections/search-avoidance-meta-tags/noindex-shade.svg",
+      "createdAt": "2026-07-03",
+      "updatedAt": "2026-07-03"
     }
   ],
   "legacyCollections": {
