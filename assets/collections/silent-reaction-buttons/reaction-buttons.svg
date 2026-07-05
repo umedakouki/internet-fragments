@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">無言の反応ボタン</title>
+  <desc id="desc">A neutral diagram of small web reaction buttons turning into API event records.</desc>
+  <rect width="960" height="540" fill="#f6f2eb"/>
+  <rect x="82" y="84" width="310" height="352" rx="8" fill="#fffdf8" stroke="#31413b" stroke-width="4"/>
+  <rect x="116" y="126" width="242" height="34" rx="4" fill="#31413b"/>
+  <rect x="116" y="196" width="214" height="18" rx="3" fill="#c8c0a8"/>
+  <rect x="116" y="232" width="184" height="18" rx="3" fill="#c8c0a8"/>
+  <rect x="116" y="268" width="232" height="18" rx="3" fill="#c8c0a8"/>
+  <g fill="#d9534f" stroke="#31413b" stroke-width="4">
+    <rect x="122" y="334" width="54" height="44" rx="8"/>
+    <rect x="194" y="334" width="54" height="44" rx="8"/>
+    <rect x="266" y="334" width="54" height="44" rx="8"/>
+  </g>
+  <text x="138" y="364" font-family="Arial, sans-serif" font-size="28" fill="#fffdf8">*</text>
+  <text x="210" y="364" font-family="Arial, sans-serif" font-size="28" fill="#fffdf8">+</text>
+  <text x="282" y="364" font-family="Arial, sans-serif" font-size="28" fill="#fffdf8">1</text>
+  <path d="M406 224 C478 180 526 180 598 224" fill="none" stroke="#407b70" stroke-width="10" stroke-linecap="round"/>
+  <path d="M406 314 C480 356 524 356 598 314" fill="none" stroke="#c98b2b" stroke-width="10" stroke-linecap="round"/>
+  <path d="M560 200 l42 22 -42 22 z" fill="#407b70"/>
+  <path d="M560 292 l42 22 -42 22 z" fill="#c98b2b"/>
+  <rect x="612" y="92" width="266" height="338" rx="8" fill="#fffdf8" stroke="#4d4362" stroke-width="4"/>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="25" fill="#4d4362">
+    <text x="646" y="154">POST /reaction</text>
+    <text x="646" y="210">type: like</text>
+    <text x="646" y="258">emoji: star</text>
+    <text x="646" y="306">count: 1</text>
+    <text x="646" y="354">silent: true</text>
+  </g>
+  <circle cx="812" cy="146" r="22" fill="#d9534f"/>
+  <path d="M802 146 h20 M812 136 v20" stroke="#fffdf8" stroke-width="5" stroke-linecap="round"/>
+  <text x="94" y="62" font-family="Arial, sans-serif" font-size="30" fill="#31413b">page / post</text>
+  <text x="616" y="468" font-family="Arial, sans-serif" font-size="30" fill="#4d4362">reaction event</text>
+  <text x="414" y="128" font-family="Arial, sans-serif" font-size="26" fill="#407b70">clap / star</text>
+  <text x="420" y="430" font-family="Arial, sans-serif" font-size="26" fill="#c98b2b">like / favourite</text>
+</svg>

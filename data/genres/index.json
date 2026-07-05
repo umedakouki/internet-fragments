@@ -377,6 +377,35 @@
       "representativeAsset": "assets/collections/search-avoidance-meta-tags/noindex-shade.svg",
       "createdAt": "2026-07-03",
       "updatedAt": "2026-07-03"
+    },
+    {
+      "id": "silent-reaction-buttons",
+      "title": "無言の反応ボタン",
+      "subtitle": "拍手、スター、いいね、Favourite、emoji reaction が本文の外に残す小さな応答口",
+      "itemCount": 10,
+      "path": "data/genres/silent-reaction-buttons.json",
+      "status": "published",
+      "tags": [
+        "拍手",
+        "スター",
+        "いいね",
+        "リアクション",
+        "SNS",
+        "API",
+        "ウェブ作法"
+      ],
+      "relatedGenres": [
+        "video-comment-overlays",
+        "link-policy-phrases",
+        "search-avoidance-meta-tags"
+      ],
+      "mapPosition": {
+        "x": 58,
+        "y": 33
+      },
+      "representativeAsset": "assets/collections/silent-reaction-buttons/reaction-buttons.svg",
+      "createdAt": "2026-07-04",
+      "updatedAt": "2026-07-04"
     }
   ],
   "legacyCollections": {

@@ -1,0 +1,260 @@
+{
+  "id": "silent-reaction-buttons",
+  "title": "無言の反応ボタン",
+  "subtitle": "拍手、スター、いいね、Favourite、emoji reaction が本文の外に残す小さな応答口",
+  "description": "日本語圏の個人サイトやブログで、本文コメントより軽く置かれた「拍手」「スター」を出発点に、動画・写真SNSの高評価、分散SNSのFavourite、仕様書やAPI上のLike/Reactionへ辿る。ここでは作品本文や投稿内容ではなく、1クリックの反応がボタン名、ヘルプ、標準語彙、APIメソッドとして保存される状態を観察する。",
+  "method": "2026-07-04時点で公開URLがHTTP 200を返した公式ページ、ヘルプ、開発者文書、標準仕様を対象にした。国内側はFC2拍手、はてなスター、Misskeyのリアクション説明から始め、YouTube、Instagram、Facebook、Mastodon、ActivityPub、GitHub、Slackへ広げた。画面、ロゴ、投稿本文、利用者データは保存せず、ページ名、公開元、URL、取得日、短い観察文だけを記録する。",
+  "status": "published",
+  "tags": [
+    "拍手",
+    "スター",
+    "いいね",
+    "リアクション",
+    "SNS",
+    "API",
+    "ウェブ作法"
+  ],
+  "relatedGenres": [
+    "video-comment-overlays",
+    "link-policy-phrases",
+    "search-avoidance-meta-tags"
+  ],
+  "mapPosition": {
+    "x": 58,
+    "y": 33
+  },
+  "representativeItemId": "fc2-web-clap",
+  "createdAt": "2026-07-04",
+  "updatedAt": "2026-07-04",
+  "history": [
+    {
+      "date": "2026-07-04",
+      "type": "created",
+      "summary": "日本語圏の拍手・スター文化から、SNSのいいね、Favourite、標準仕様、リアクションAPIへ広がる無言の反応口を10件で棚化。",
+      "diaryPath": "diary/2026-07-04.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "fc2-web-clap",
+      "title": "FC2拍手",
+      "family": "個人サイトの拍手口",
+      "curatorNote": "コメント欄より軽い応援として、拍手と短いメッセージを送る入口がサービス名になっている。個人サイトの読後感が、本文の外側にある小さなボタンとして残る例として採集する。",
+      "sourceUrl": "https://clap.fc2.com/",
+      "creator": "FC2",
+      "repository": "FC2拍手",
+      "rights": "公開サービスページ。画面やロゴは複製せず、URLと観察文のみ記録。",
+      "description": "FC2が提供するWeb拍手型コミュニケーションツールの公開ページ。",
+      "date": "2026-07-04取得",
+      "mediaType": "text",
+      "tags": [
+        "拍手",
+        "個人サイト",
+        "FC2",
+        "応援",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "hatena-star-home",
+      "title": "はてなスター",
+      "family": "ブログ横断のスター",
+      "curatorNote": "ブログ記事やページに星を付ける反応が、コメントではなく小さな星の数として横断的に置かれる。読んだこと、よかったこと、そこにいたことが、本文外の記号として残る。",
+      "sourceUrl": "https://s.hatena.ne.jp/",
+      "creator": "株式会社はてな",
+      "repository": "はてなスター",
+      "rights": "公開サービスページ。画面やロゴは複製せず、URLと観察文のみ記録。",
+      "description": "はてなが提供するスター型リアクションサービスの公開ページ。",
+      "date": "2026-07-04取得",
+      "mediaType": "text",
+      "tags": [
+        "スター",
+        "はてな",
+        "ブログ",
+        "リアクション",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "misskey-reaction-guide",
+      "title": "リアクション - Misskey",
+      "family": "分散SNSの絵文字リアクション",
+      "curatorNote": "Misskeyでは、投稿への応答が絵文字リアクションとして説明される。日本語圏のSNS利用感覚から、いいね一種類ではない反応名と絵文字選択の文化へ視点を広げる接続点になる。",
+      "sourceUrl": "https://misskey-hub.net/ja/docs/for-users/features/reaction/",
+      "creator": "Misskey Project",
+      "repository": "Misskey Hub",
+      "rights": "公開ドキュメント。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "Misskey Hub日本語版にあるリアクション機能の説明ページ。",
+      "date": "2026-07-04取得",
+      "mediaType": "text",
+      "tags": [
+        "Misskey",
+        "リアクション",
+        "絵文字",
+        "分散SNS",
+        "日本語"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "youtube-like-dislike-help",
+      "title": "動画を高く評価または低く評価する",
+      "family": "動画視聴の高低評価",
+      "curatorNote": "動画ページでは、コメントを書く前に高評価・低評価のボタンで視聴者の反応が数値化される。ニコニコの流れるコメントとは別の、無言で集計される視聴後の印として置く。",
+      "sourceUrl": "https://support.google.com/youtube/answer/6083270?hl=ja",
+      "creator": "Google",
+      "repository": "YouTube ヘルプ",
+      "rights": "公開ヘルプページ。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "YouTubeの高評価・低評価操作を説明する日本語ヘルプページ。",
+      "date": "2026-07-04取得",
+      "mediaType": "text",
+      "tags": [
+        "YouTube",
+        "高評価",
+        "低評価",
+        "動画",
+        "日本語"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "instagram-like-help",
+      "title": "Instagram ヘルプセンターのいいね説明",
+      "family": "写真SNSのLike",
+      "curatorNote": "写真やリールへの反応が、コメント本文ではなくハート型のLikeとして扱われる。画像そのものではなく、投稿の横に付く軽い肯定の操作をヘルプページ経由で記録する。",
+      "sourceUrl": "https://help.instagram.com/608907489162623",
+      "creator": "Meta",
+      "repository": "Instagram Help Center",
+      "rights": "公開ヘルプページ。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "InstagramのLike操作に関する公開ヘルプページ。",
+      "date": "2026-07-04取得",
+      "mediaType": "text",
+      "tags": [
+        "Instagram",
+        "Like",
+        "ハート",
+        "写真SNS",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "facebook-like-button-docs",
+      "title": "Facebook ソーシャルプラグイン",
+      "family": "外部サイト用Likeボタン",
+      "curatorNote": "SNS内の反応が、外部サイトへ埋め込むプラグインとして説明される。個人サイトの拍手ボタンから辿ると、反応ボタンがページ外のプラットフォームへ接続する部品になったことが見える。",
+      "sourceUrl": "https://developers.facebook.com/docs/plugins/like-button/",
+      "creator": "Meta",
+      "repository": "Meta for Developers",
+      "rights": "公開開発者文書。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "FacebookのLikeボタンを含むソーシャルプラグインの開発者向け説明ページ。",
+      "date": "2026-07-04取得",
+      "mediaType": "text",
+      "tags": [
+        "Facebook",
+        "Like Button",
+        "ソーシャルプラグイン",
+        "埋め込み",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "mastodon-favourite-docs",
+      "title": "Mastodon favourite API",
+      "family": "分散SNSのFavourite",
+      "curatorNote": "Mastodonでは、投稿への好意的な反応が favourite としてAPIメソッドにも現れる。いいねが中央プラットフォームのボタンだけでなく、分散SNSの操作名として残る例として見る。",
+      "sourceUrl": "https://docs.joinmastodon.org/methods/statuses/#favourite",
+      "creator": "Mastodon gGmbH",
+      "repository": "Mastodon documentation",
+      "rights": "公開ドキュメント。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "Mastodonのstatuses APIにあるfavourite操作の公開ドキュメント。",
+      "date": "2026-07-04取得",
+      "mediaType": "text",
+      "tags": [
+        "Mastodon",
+        "favourite",
+        "API",
+        "分散SNS",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "activitypub-like-activity",
+      "title": "ActivityPub Like activity",
+      "family": "標準仕様としてのLike",
+      "curatorNote": "分散SNS上のLikeは、仕様書ではActivityとして扱われる。ボタンの見た目ではなく、Outboxに置かれる行為名としてLikeが記述される場所を標本にする。",
+      "sourceUrl": "https://www.w3.org/TR/activitypub/#like-activity-outbox",
+      "creator": "W3C",
+      "repository": "ActivityPub",
+      "rights": "公開仕様文書。本文は複製せず、URLと観察文のみ記録。",
+      "description": "ActivityPub仕様書にあるLike activityの説明箇所。",
+      "date": "2026-07-04取得",
+      "mediaType": "text",
+      "tags": [
+        "ActivityPub",
+        "Like",
+        "仕様文書",
+        "分散SNS",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "github-reactions-api",
+      "title": "GitHub Reactions REST API",
+      "family": "開発平台のリアクションAPI",
+      "curatorNote": "IssueやPull Request上の反応が、絵文字名とREST APIエンドポイントとして整理される。開発作業の会話でも、文章を書かずに反応だけを残す入口が機械可読な形を持つ。",
+      "sourceUrl": "https://docs.github.com/ja/rest/reactions/reactions?apiVersion=2022-11-28",
+      "creator": "GitHub",
+      "repository": "GitHub Docs",
+      "rights": "公開ドキュメント。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "GitHub ReactionsのREST APIエンドポイントを説明する日本語ドキュメント。",
+      "date": "2026-07-04取得",
+      "mediaType": "text",
+      "tags": [
+        "GitHub",
+        "reaction",
+        "API",
+        "絵文字",
+        "日本語"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "slack-reactions-add-api",
+      "title": "Slack reactions.add method",
+      "family": "チャット上のemoji reaction",
+      "curatorNote": "チームチャットの会話では、返信文の代わりにemoji reactionを付ける操作がAPIメソッドとして残る。拍手やスターから始まった無言の応答が、仕事用チャットの自動化対象にもなる。",
+      "sourceUrl": "https://docs.slack.dev/reference/methods/reactions.add/",
+      "creator": "Slack Technologies",
+      "repository": "Slack Developer Docs",
+      "rights": "公開開発者文書。本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "Slack Web APIのreactions.addメソッドを説明する公開ドキュメント。",
+      "date": "2026-07-04取得",
+      "mediaType": "text",
+      "tags": [
+        "Slack",
+        "reaction",
+        "emoji",
+        "API",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    }
+  ]
+}
