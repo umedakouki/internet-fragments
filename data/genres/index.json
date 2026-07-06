@@ -406,6 +406,35 @@
       "representativeAsset": "assets/collections/silent-reaction-buttons/reaction-buttons.svg",
       "createdAt": "2026-07-04",
       "updatedAt": "2026-07-04"
+    },
+    {
+      "id": "profile-link-hubs",
+      "title": "プロフィールに畳まれたリンク集",
+      "subtitle": "プロフカード、HTML名刺、link in bio がSNS外の自己紹介を1つのURLへ圧縮する",
+      "itemCount": 10,
+      "path": "data/genres/profile-link-hubs.json",
+      "status": "published",
+      "tags": [
+        "プロフィール",
+        "リンク集",
+        "SNS",
+        "自己紹介",
+        "link in bio",
+        "個人サイト",
+        "ウェブ作法"
+      ],
+      "relatedGenres": [
+        "link-policy-phrases",
+        "silent-reaction-buttons",
+        "service-shutdown-notices"
+      ],
+      "mapPosition": {
+        "x": 36,
+        "y": 62
+      },
+      "representativeAsset": "assets/collections/profile-link-hubs/profile-hub.svg",
+      "createdAt": "2026-07-06",
+      "updatedAt": "2026-07-06"
     }
   ],
   "legacyCollections": {

@@ -1,0 +1,260 @@
+{
+  "id": "profile-link-hubs",
+  "title": "プロフィールに畳まれたリンク集",
+  "subtitle": "プロフカード、HTML名刺、link in bio がSNS外の自己紹介を1つのURLへ圧縮する",
+  "description": "日本語圏のSNS利用で見かける「プロフカード」「HTML名刺」から始め、プロフィール欄へ置く1本のURLが、自己紹介、外部SNS、作品、依頼先、ショップ、支援窓口を束ねる形式を観察する。古い個人サイトのリンク集とは違い、ここでは複数の活動場所を、SNSプロフィールから飛ぶ公開ハブへ畳み込む作法を見る。",
+  "method": "2026-07-06時点で公開URLがHTTP 200を返した公式トップページまたは公開サービス説明ページを対象にした。国内側はプロフカード、HTML名刺、Pontから始め、国外側は Linktree、about.me、Carrd、Lnk.Bio、Campsite.bio、Bio Link、Bio Sites へ広げた。個別ユーザーのプロフィール本文、顔写真、作品画像、ロゴ、画面キャプチャは保存せず、サービス名、公開元、URL、取得日、短い観察文だけを記録する。",
+  "status": "published",
+  "tags": [
+    "プロフィール",
+    "リンク集",
+    "SNS",
+    "自己紹介",
+    "link in bio",
+    "個人サイト",
+    "ウェブ作法"
+  ],
+  "relatedGenres": [
+    "link-policy-phrases",
+    "silent-reaction-buttons",
+    "service-shutdown-notices"
+  ],
+  "mapPosition": {
+    "x": 36,
+    "y": 62
+  },
+  "representativeItemId": "profcard-profile-page",
+  "createdAt": "2026-07-06",
+  "updatedAt": "2026-07-06",
+  "history": [
+    {
+      "date": "2026-07-06",
+      "type": "created",
+      "summary": "日本語圏のプロフカード、HTML名刺、Pontから、link in bio型のプロフィールリンク集へ広がる公開ハブを10件で棚化。",
+      "diaryPath": "diary/2026-07-06.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "profcard-profile-page",
+      "title": "プロフカード",
+      "family": "日本語圏のプロフィールカード",
+      "curatorNote": "Twitterの短いプロフィールや固定ツイートだけでは収まらない自己紹介を、別URLのカードへ逃がす作法として見る。SNS内の発言ではなく、SNS外に置かれた公開プロフィールの入口を採集する。",
+      "sourceUrl": "https://profcard.info/",
+      "creator": "Diver Down LLC.",
+      "repository": "プロフカード",
+      "rights": "公開サービスページ。画面、ロゴ、個別プロフィール本文は複製せず、URLと観察文のみ記録。",
+      "description": "プロフィールをまとめて公開できる日本語圏向けサービスの公開ページ。",
+      "date": "2026-07-06取得",
+      "mediaType": "text",
+      "tags": [
+        "プロフカード",
+        "プロフィール",
+        "Twitter",
+        "自己紹介",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "html-meishi-link-list",
+      "title": "HTML名刺",
+      "family": "自己紹介サイトとしてのリンク集",
+      "curatorNote": "「名刺」という日常語で、SNSプロフィール欄に貼る自己紹介サイトとリンク集を説明している。装飾の強いポートフォリオではなく、活動先のURLを静かに束ねる形式として残す。",
+      "sourceUrl": "https://html.co.jp/",
+      "creator": "HTML名刺",
+      "repository": "HTML名刺",
+      "rights": "公開サービスページ。利用者プロフィール本文や画面は複製せず、URLと観察文のみ記録。",
+      "description": "TwitterやInstagramのプロフィール欄に貼る自己紹介サイトを作る公開サービスページ。",
+      "date": "2026-07-06取得",
+      "mediaType": "text",
+      "tags": [
+        "HTML名刺",
+        "リンク集",
+        "プロフィール",
+        "SNS",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "lnk-bio-multiple-links",
+      "title": "Lnk.Bio",
+      "family": "bio欄向けの複数リンク",
+      "curatorNote": "InstagramやTikTokなどのbio欄へ置く1つのURLに、複数の外部リンク、SNS、音楽、ショップを束ねる。プロフィール欄の狭さが、リンク集サービスの名前と価格表へ変換される例として採集する。",
+      "sourceUrl": "https://lnk.bio/",
+      "creator": "Lnk.Bio",
+      "repository": "Lnk.Bio",
+      "rights": "公開サービスページ。画面、ロゴ、利用者プロフィールは複製せず、URLと観察文のみ記録。",
+      "description": "Instagram、TikTok、YouTubeなどのbio欄向けに複数リンクを共有する公開サービスページ。",
+      "date": "2026-07-06取得",
+      "mediaType": "text",
+      "tags": [
+        "Lnk.Bio",
+        "link in bio",
+        "SNS",
+        "リンク集",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "pont-mobile-homepage",
+      "title": "Pont",
+      "family": "スマホで作るホームページ",
+      "curatorNote": "スマホだけでホームページを作るという言い方は、個人サイト作成とSNSプロフィールの中間にある。プロフィール欄から飛ぶ小さなホームページとして、リンク集より広い自己紹介の器を見る。",
+      "sourceUrl": "https://pont.co/",
+      "creator": "Pont",
+      "repository": "Pont",
+      "rights": "公開サービスページ。画面やロゴは複製せず、URLと観察文のみ記録。",
+      "description": "スマホからホームページを作成できるサービスの公開ページ。",
+      "date": "2026-07-06取得",
+      "mediaType": "text",
+      "tags": [
+        "Pont",
+        "ホームページ",
+        "プロフィール",
+        "スマホ",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "linktree-link-in-bio",
+      "title": "Linktree",
+      "family": "link in bio の定番化",
+      "curatorNote": "SNSプロフィール欄の1本のURLを、他のSNS、動画、ショップ、告知へ配るハブとして明示している。日本語圏のプロフ文化から国外の link in bio という商品名化された語へ広げる接続点になる。",
+      "sourceUrl": "https://linktr.ee/",
+      "creator": "Linktree Pty Ltd",
+      "repository": "Linktree",
+      "rights": "公開サービスページ。画面、ロゴ、利用者プロフィールは複製せず、URLと観察文のみ記録。",
+      "description": "複数リンクを1つのプロフィールURLから共有するlink in bioサービスの公開ページ。",
+      "date": "2026-07-06取得",
+      "mediaType": "text",
+      "tags": [
+        "Linktree",
+        "link in bio",
+        "SNS",
+        "リンク集",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "about-me-personal-homepage",
+      "title": "about.me",
+      "family": "個人ホームページの再包装",
+      "curatorNote": "個人の紹介ページをシンプルなURLとして持つ発想が、AI Twinや連絡導線まで含むプロフィールページへ更新されている。個人サイトの名刺化が、SNS時代の外部プロフィールとして残る例にする。",
+      "sourceUrl": "https://about.me/",
+      "creator": "about.me",
+      "repository": "about.me",
+      "rights": "公開サービスページ。掲載例、顔写真、プロフィール本文は複製せず、URLと観察文のみ記録。",
+      "description": "個人プロフィールページを作成できる公開サービスページ。",
+      "date": "2026-07-06取得",
+      "mediaType": "text",
+      "tags": [
+        "about.me",
+        "プロフィール",
+        "個人サイト",
+        "ホームページ",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "carrd-one-page-sites",
+      "title": "Carrd",
+      "family": "1ページサイト作成",
+      "curatorNote": "プロフィール、ポートフォリオ、リンク集、告知ページが、1ページサイト作成ツールの用途として並ぶ。SNSプロフィールから飛ぶ先が、専用プロフィールサービスではなく汎用の1ページサイトへも広がる。",
+      "sourceUrl": "https://carrd.co/",
+      "creator": "Carrd",
+      "repository": "Carrd",
+      "rights": "公開サービスページ。テンプレート画像や利用者サイトは複製せず、URLと観察文のみ記録。",
+      "description": "無料でレスポンシブな1ページサイトを作成できるサービスの公開ページ。",
+      "date": "2026-07-06取得",
+      "mediaType": "text",
+      "tags": [
+        "Carrd",
+        "1ページサイト",
+        "プロフィール",
+        "リンク集",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "campsite-bio-link-tool",
+      "title": "Campsite.bio",
+      "family": "Instagram向けリンクハブ",
+      "curatorNote": "Instagram、TikTok、その他SNSのbio欄向けに、ひとつのURLから複数のリンクへ誘導する道具として説明される。SNSの投稿本文ではなく、プロフィール欄の外側に置く回遊口を標本にする。",
+      "sourceUrl": "https://campsite.bio/",
+      "creator": "Campsite.bio",
+      "repository": "Campsite.bio",
+      "rights": "公開サービスページ。画面、サンプル画像、利用者プロフィールは複製せず、URLと観察文のみ記録。",
+      "description": "Instagram、TikTokなどのためのlink in bio作成サービスの公開ページ。",
+      "date": "2026-07-06取得",
+      "mediaType": "text",
+      "tags": [
+        "Campsite.bio",
+        "link in bio",
+        "Instagram",
+        "リンク集",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "bio-link-launch-site",
+      "title": "Bio Link",
+      "family": "短いbio URL",
+      "curatorNote": "サービス名そのものが bio link になり、プロフィール欄のURLを短く覚えやすい公開ページとして扱う。リンク集の内容より、bio欄に置くためのURL形式が商品化されている点を見る。",
+      "sourceUrl": "https://bio.link/",
+      "creator": "Bio Link",
+      "repository": "Bio Link",
+      "rights": "公開サービスページ。画面や利用者プロフィールは複製せず、URLと観察文のみ記録。",
+      "description": "SNSプロフィール向けの短いbioリンクページを作成する公開サービスページ。",
+      "date": "2026-07-06取得",
+      "mediaType": "text",
+      "tags": [
+        "Bio Link",
+        "bio link",
+        "プロフィール",
+        "リンク集",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "bio-sites-profile-link",
+      "title": "Bio Sites",
+      "family": "無料bioリンクページ",
+      "curatorNote": "bio.site のURLが biosites.com へ案内され、InstagramやTikTok向けの無料bioリンクとして説明される。短いドメイン名と実サービス名のずれも、プロフィール欄で覚えやすいURLを求める文化の一部として見る。",
+      "sourceUrl": "https://bio.site/",
+      "creator": "Bio Sites",
+      "repository": "Bio Sites",
+      "rights": "公開サービスページ。画面、テンプレート、利用者プロフィールは複製せず、URLと観察文のみ記録。",
+      "description": "InstagramやTikTok向けの無料link in bioページを作成する公開サービスページ。",
+      "date": "2026-07-06取得",
+      "mediaType": "text",
+      "tags": [
+        "Bio Sites",
+        "bio link",
+        "SNS",
+        "リンク集",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    }
+  ]
+}

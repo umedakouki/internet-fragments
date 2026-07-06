@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Profile link hub diagram</title>
+  <desc id="desc">A neutral diagram showing one profile URL branching to several outside links.</desc>
+  <rect width="960" height="640" fill="#f7f4ee"/>
+  <rect x="286" y="92" width="388" height="456" rx="28" fill="#ffffff" stroke="#20252b" stroke-width="10"/>
+  <circle cx="480" cy="178" r="58" fill="#e8c047" stroke="#20252b" stroke-width="8"/>
+  <rect x="366" y="268" width="228" height="30" rx="15" fill="#20252b"/>
+  <rect x="398" y="318" width="164" height="18" rx="9" fill="#9aa3aa"/>
+  <g fill="none" stroke="#20252b" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M480 386 C376 386 310 340 250 292"/>
+    <path d="M480 386 C384 420 318 470 250 516"/>
+    <path d="M480 386 C576 420 642 470 710 516"/>
+    <path d="M480 386 C584 386 650 340 710 292"/>
+  </g>
+  <g fill="#6fb3a6" stroke="#20252b" stroke-width="8">
+    <rect x="154" y="236" width="160" height="74" rx="18"/>
+    <rect x="154" y="480" width="160" height="74" rx="18"/>
+    <rect x="646" y="480" width="160" height="74" rx="18"/>
+    <rect x="646" y="236" width="160" height="74" rx="18"/>
+  </g>
+  <g fill="#20252b">
+    <circle cx="194" cy="273" r="9"/>
+    <circle cx="234" cy="273" r="9"/>
+    <circle cx="274" cy="273" r="9"/>
+    <rect x="186" y="512" width="96" height="8" rx="4"/>
+    <rect x="686" y="512" width="88" height="8" rx="4"/>
+    <path d="M704 269 h52 m-26 -26 v52" stroke="#20252b" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <rect x="398" y="426" width="164" height="44" rx="22" fill="#e15f46" stroke="#20252b" stroke-width="8"/>
+  <path d="M442 448 h76" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+</svg>
