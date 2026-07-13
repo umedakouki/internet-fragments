@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">埋め込みコードの貼り付け口</title>
+  <desc id="desc">URL, iframe, oEmbed, and script tags flowing into a browser page.</desc>
+  <rect width="960" height="540" fill="#f5f7f4"/>
+  <rect x="92" y="74" width="776" height="392" rx="22" fill="#ffffff" stroke="#24342f" stroke-width="8"/>
+  <rect x="92" y="74" width="776" height="58" rx="22" fill="#dce7df"/>
+  <circle cx="132" cy="104" r="10" fill="#e85f4c"/>
+  <circle cx="166" cy="104" r="10" fill="#e8b14c"/>
+  <circle cx="200" cy="104" r="10" fill="#4f9d69"/>
+  <rect x="146" y="178" width="296" height="48" rx="10" fill="#e9f0ec" stroke="#93a79d" stroke-width="3"/>
+  <rect x="146" y="248" width="250" height="26" rx="8" fill="#c9d8d0"/>
+  <rect x="146" y="294" width="320" height="26" rx="8" fill="#c9d8d0"/>
+  <rect x="146" y="340" width="210" height="26" rx="8" fill="#c9d8d0"/>
+  <rect x="538" y="176" width="268" height="164" rx="16" fill="#24342f"/>
+  <polygon points="642,214 642,302 716,258" fill="#f3c65f"/>
+  <path d="M520 392h300" stroke="#5d7c72" stroke-width="10" stroke-linecap="round"/>
+  <path d="M548 424h244" stroke="#5d7c72" stroke-width="10" stroke-linecap="round"/>
+  <g fill="none" stroke="#346a7a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M318 424l-48-48 48-48"/>
+    <path d="M642 424l48-48-48-48"/>
+    <path d="M420 430l120-108"/>
+  </g>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="32" fill="#24342f">
+    <text x="170" y="213">URL :embed</text>
+    <text x="552" y="386">&lt;iframe&gt;</text>
+  </g>
+</svg>

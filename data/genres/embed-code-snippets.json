@@ -1,0 +1,260 @@
+{
+  "id": "embed-code-snippets",
+  "title": "埋め込みコード",
+  "subtitle": "URLやiframeをブログ、地図、動画、資料へ移植する小さなHTML手順",
+  "description": "日本語圏のブログ編集で見かける「リンクを貼る」「埋め込む」「貼り付けタグ」から始め、動画、地図、カレンダー、音楽、コード片、デザイン試作を外部ページへ持ち込む公開ヘルプと仕様を採集する。観察対象は埋め込まれる動画や地図そのものではなく、URLを渡す、HTMLをコピーする、oEmbedで解決する、iframeやscriptを貼る、権限を確認するというネット上の移植手順である。",
+  "method": "2026-07-13時点で公開URLを検証し、公式ヘルプ、仕様文書、公開ドキュメントだけを対象にした。ヘルプ本文、生成された埋め込みコード、スクリーンショット、ロゴ、サンプルコンテンツは複製せず、URL、公開元、取得日、短い観察文のみを記録する。コード断片は各サービスの規約や公開文書に依存するため、棚内では再配布せずリンク記録に留める。",
+  "status": "published",
+  "tags": [
+    "埋め込み",
+    "iframe",
+    "oEmbed",
+    "ブログ",
+    "動画",
+    "地図",
+    "ウェブ作法"
+  ],
+  "relatedGenres": [
+    "link-policy-phrases",
+    "video-comment-overlays",
+    "feed-subscription-endpoints"
+  ],
+  "mapPosition": {
+    "x": 15,
+    "y": 33
+  },
+  "representativeItemId": "hatena-blog-embed-link-insert",
+  "createdAt": "2026-07-13",
+  "updatedAt": "2026-07-13",
+  "history": [
+    {
+      "date": "2026-07-13",
+      "type": "created",
+      "summary": "日本語圏のブログ埋め込みから、oEmbed、iframe、音楽、地図、コード、デザイン試作へ広がる貼り付け手順を10件で棚化。",
+      "diaryPath": "diary/2026-07-13.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "hatena-blog-embed-link-insert",
+      "title": "はてなブログ リンクの挿入とコンテンツの埋め込み",
+      "family": "URLを貼るだけのブログ埋め込み",
+      "curatorNote": "日本語圏のブログ編集画面で、URLの貼り付けがリンク、タイトル、画像、埋め込みへ分岐する状態を見る。HTMLを手で書く前に、貼り付け形式を選ぶ小さな窓が外部コンテンツの受け口になる。",
+      "sourceUrl": "https://help.hatenablog.com/entry/editor/advlink",
+      "creator": "Hatena Co., Ltd.",
+      "repository": "はてなブログ ヘルプ",
+      "rights": "公開ヘルプページ。本文、画像、コード例は複製せず、URLと観察文のみ記録。",
+      "description": "URLの貼り付けから、タイトル、URL、画像、埋め込みなどの形式を選ぶはてなブログのヘルプページ。",
+      "date": "2026-07-13取得",
+      "mediaType": "text",
+      "tags": [
+        "はてなブログ",
+        "埋め込み",
+        "ブログ",
+        "URL",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "oembed-url-representation",
+      "title": "oEmbed",
+      "family": "URLを埋め込み表現へ変換する仕様",
+      "curatorNote": "ブログやCMSがURLだけを受け取り、外部サービスから埋め込み用のHTMLやメタデータを取り出す仕組みとして見る。個別サービスの貼り付けタグの背後に、URL、endpoint、JSON/XMLの取り決めがある。",
+      "sourceUrl": "https://oembed.com/",
+      "creator": "Cal Henderson, Mike Malone, Leah Culver, Richard Crowley",
+      "repository": "oEmbed",
+      "rights": "公開仕様ページ。仕様本文やコード例は複製せず、URLと観察文のみ記録。",
+      "description": "第三者サイト上でURLを埋め込み表現に変換するための公開仕様文書。",
+      "date": "2026-07-13取得",
+      "mediaType": "text",
+      "tags": [
+        "oEmbed",
+        "API",
+        "JSON",
+        "HTML",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "youtube-embed-videos-playlists",
+      "title": "YouTube Embed videos & playlists",
+      "family": "動画プレイヤーのiframe化",
+      "curatorNote": "動画の共有ボタンからHTMLコードをコピーし、別サイトの本文へ再生枠を置く手順を見る。プライバシー強化モード、開始秒、字幕、埋め込み禁止など、動画ページが外へ出るときの条件も一緒に付いてくる。",
+      "sourceUrl": "https://support.google.com/youtube/answer/171780",
+      "creator": "Google / YouTube",
+      "repository": "YouTube Help",
+      "rights": "公開ヘルプページ。動画、画像、コード例は複製せず、URLと観察文のみ記録。",
+      "description": "YouTube動画やプレイリストをWebサイトやブログへ埋め込む手順を説明するヘルプページ。",
+      "date": "2026-07-13取得",
+      "mediaType": "video",
+      "tags": [
+        "YouTube",
+        "iframe",
+        "動画",
+        "共有",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "google-maps-copy-html",
+      "title": "Google Maps Embed a map",
+      "family": "地図をHTMLとして共有する手順",
+      "curatorNote": "生活圏の場所案内を、スクリーンショットではなく地図サービスの埋め込みHTMLとしてブログや店舗ページへ置く形式を見る。地図は画像ではなく、共有メニューからコピーされるHTMLの枠として移動する。",
+      "sourceUrl": "https://support.google.com/maps/answer/7101463",
+      "creator": "Google",
+      "repository": "Google Maps Help",
+      "rights": "公開ヘルプページ。地図画像、画面、コードは複製せず、URLと観察文のみ記録。",
+      "description": "Google Mapsのルート、場所、地図を共有し、Webページへ埋め込む操作を説明するヘルプページ。",
+      "date": "2026-07-13取得",
+      "mediaType": "link",
+      "tags": [
+        "Google Maps",
+        "地図",
+        "iframe",
+        "共有",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "google-calendar-website-embed",
+      "title": "Google Calendar Add a calendar to your website",
+      "family": "予定表をサイトへ置くiframe",
+      "curatorNote": "店舗、学校、団体の予定表が、個別ページを更新する代わりにカレンダーの埋め込みとして外へ出る。予定そのものより、公開範囲と埋め込みコードを設定してサイトへ貼る運用を見る。",
+      "sourceUrl": "https://support.google.com/calendar/answer/41207",
+      "creator": "Google",
+      "repository": "Google Calendar Help",
+      "rights": "公開ヘルプページ。画面、予定データ、コード例は複製せず、URLと観察文のみ記録。",
+      "description": "GoogleカレンダーをWebサイトへ追加する手順を説明するヘルプページ。",
+      "date": "2026-07-13取得",
+      "mediaType": "link",
+      "tags": [
+        "Google Calendar",
+        "iframe",
+        "予定表",
+        "公開範囲",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "spotify-embeds-documentation",
+      "title": "Spotify Embeds",
+      "family": "音楽プレイヤーの埋め込み",
+      "curatorNote": "楽曲やプレイリストを、自分のページにファイルとして置くのではなく、Spotifyの埋め込みプレイヤーとして呼び出す形式を見る。音源の再配布ではなく、再生枠とサービス規約を連れてくるリンクになる。",
+      "sourceUrl": "https://developer.spotify.com/documentation/embeds",
+      "creator": "Spotify",
+      "repository": "Spotify for Developers",
+      "rights": "公開ドキュメント。音源、画面、コード例は複製せず、URLと観察文のみ記録。",
+      "description": "SpotifyのコンテンツをWebページへ埋め込むための開発者向けドキュメント。",
+      "date": "2026-07-13取得",
+      "mediaType": "audio",
+      "tags": [
+        "Spotify",
+        "音楽",
+        "iframe",
+        "プレイヤー",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "soundcloud-track-playlist-embed",
+      "title": "SoundCloud oEmbed",
+      "family": "投稿音源をoEmbedでウィジェット化する手順",
+      "curatorNote": "個人やレーベルの音源が、oEmbed endpointから返るウィジェットHTMLとしてブログや告知ページに置かれる。音声ファイルではなく、トラック、セット、ユーザーURLを再生枠へ変換する公開手順として採集する。",
+      "sourceUrl": "https://developers.soundcloud.com/docs/oembed",
+      "creator": "SoundCloud",
+      "repository": "SoundCloud Developers",
+      "rights": "公開開発者ドキュメント。音源、波形画像、画面、コード例は複製せず、URLと観察文のみ記録。",
+      "description": "SoundCloud URLをoEmbed endpointで埋め込みウィジェットへ変換する方法を説明する開発者向け文書。",
+      "date": "2026-07-13取得",
+      "mediaType": "audio",
+      "tags": [
+        "SoundCloud",
+        "音楽",
+        "ウィジェット",
+        "プレイリスト",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "github-gist-embed-script",
+      "title": "GitHub Gist embedding",
+      "family": "コード片をscriptタグで貼る",
+      "curatorNote": "ブログ記事にコードを長く貼る代わりに、Gistの公開URLやscriptタグで外部のコード片を呼び出す形式を見る。コード本文の引用ではなく、コードを別サービスに預けて記事へ差し込む作法として扱う。",
+      "sourceUrl": "https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists",
+      "creator": "GitHub",
+      "repository": "GitHub Docs",
+      "rights": "公開ドキュメント。コード例、画面、個別Gist本文は複製せず、URLと観察文のみ記録。",
+      "description": "Gistの作成、共有、埋め込みに関するGitHub公式ドキュメント。",
+      "date": "2026-07-13取得",
+      "mediaType": "text",
+      "tags": [
+        "GitHub",
+        "Gist",
+        "script",
+        "コード",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "figma-files-prototypes-embed",
+      "title": "Figma Embed files and prototypes",
+      "family": "デザイン試作のライブ埋め込み",
+      "curatorNote": "仕様書やPRDの本文に、画像として書き出した画面ではなく、Figmaファイルやプロトタイプのライブ埋め込みを置く手順を見る。共有権限と埋め込みコードが、デザイン資料の公開範囲を決める。",
+      "sourceUrl": "https://help.figma.com/hc/en-us/articles/360039827134-Embed-files-and-prototypes",
+      "creator": "Figma",
+      "repository": "Figma Learn - Help Center",
+      "rights": "公開ヘルプページ。画面、プロトタイプ、コード例は複製せず、URLと観察文のみ記録。",
+      "description": "FigmaやFigJamのファイル、プロトタイプ、スライドを外部ツールやWebページへ埋め込む手順のヘルプページ。",
+      "date": "2026-07-13取得",
+      "mediaType": "link",
+      "tags": [
+        "Figma",
+        "プロトタイプ",
+        "埋め込み",
+        "共有権限",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "wordpress-embed-blocks",
+      "title": "WordPress Embeds",
+      "family": "CMSがURLから外部ブロックを作る",
+      "curatorNote": "動画、音声、投稿、資料などのURLを、CMSのブロックとして本文に差し込む形式を見る。貼り付けタグを直接扱う場合と、URLだけで埋め込みブロックへ変わる場合の境目を示す資料になる。",
+      "sourceUrl": "https://wordpress.org/documentation/article/embeds/",
+      "creator": "WordPress.org",
+      "repository": "WordPress Documentation",
+      "rights": "公開ドキュメント。本文、画像、一覧表は複製せず、URLと観察文のみ記録。",
+      "description": "WordPressの埋め込みブロックと、対応する外部サービスの一覧を説明するドキュメント。",
+      "date": "2026-07-13取得",
+      "mediaType": "text",
+      "tags": [
+        "WordPress",
+        "oEmbed",
+        "CMS",
+        "ブロック",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    }
+  ]
+}
