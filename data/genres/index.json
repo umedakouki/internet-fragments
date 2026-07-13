@@ -435,6 +435,35 @@
       "representativeAsset": "assets/collections/profile-link-hubs/profile-hub.svg",
       "createdAt": "2026-07-06",
       "updatedAt": "2026-07-06"
+    },
+    {
+      "id": "free-sound-material-pages",
+      "title": "音素材の配布口",
+      "subtitle": "動画、ゲーム、個人制作がBGMと効果音をリンク先の規約へ預ける",
+      "itemCount": 10,
+      "path": "data/genres/free-sound-material-pages.json",
+      "status": "published",
+      "tags": [
+        "フリーBGM",
+        "効果音",
+        "音素材",
+        "動画制作",
+        "ゲーム制作",
+        "利用規約",
+        "素材配布"
+      ],
+      "relatedGenres": [
+        "video-comment-overlays",
+        "profile-link-hubs",
+        "link-policy-phrases"
+      ],
+      "mapPosition": {
+        "x": 72,
+        "y": 24
+      },
+      "representativeAsset": "assets/collections/free-sound-material-pages/sound-materials.svg",
+      "createdAt": "2026-07-13",
+      "updatedAt": "2026-07-13"
     }
   ],
   "legacyCollections": {

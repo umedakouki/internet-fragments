@@ -1,0 +1,260 @@
+{
+  "id": "free-sound-material-pages",
+  "title": "音素材の配布口",
+  "subtitle": "動画、ゲーム、個人制作がBGMと効果音をリンク先の規約へ預ける",
+  "description": "日本語圏の動画投稿、ゲーム制作、個人サイト、配信素材の感覚から、BGMや効果音を直接保存するのではなく、配布ページ、利用規約、カテゴリ名、クレジット表記が公開URLとして残る状態を採集する。DOVA-SYNDROME、効果音ラボ、魔王魂、甘茶の音楽工房のような国内の素材配布ページから始め、Freesound と Incompetech へ広げることで、音声ファイルそのものではなく、ネット制作が音を借りるための入口を見る。",
+  "method": "2026-07-13時点で検証スクリプトのNode/system CA経路がHTTP 200を確認した公開トップページまたは配布ページを対象にした。音声ファイル、波形画像、ロゴ、画面キャプチャ、試聴サンプルは保存せず、公開URL、配布元、取得日、利用条件の所在、短い観察文だけを記録する。権利状態は配布元ごとの規約に依存するため、棚内では再配布せずリンク記録に留める。",
+  "status": "published",
+  "tags": [
+    "フリーBGM",
+    "効果音",
+    "音素材",
+    "動画制作",
+    "ゲーム制作",
+    "利用規約",
+    "素材配布"
+  ],
+  "relatedGenres": [
+    "video-comment-overlays",
+    "profile-link-hubs",
+    "link-policy-phrases"
+  ],
+  "mapPosition": {
+    "x": 72,
+    "y": 24
+  },
+  "representativeItemId": "dova-syndrome-bgm-library",
+  "createdAt": "2026-07-13",
+  "updatedAt": "2026-07-13",
+  "history": [
+    {
+      "date": "2026-07-13",
+      "type": "created",
+      "summary": "日本語圏のフリーBGM・効果音素材配布ページから、音声を複製せず公開URLと利用条件の所在を10件で棚化。",
+      "diaryPath": "diary/2026-07-13.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "dova-syndrome-bgm-library",
+      "title": "DOVA-SYNDROME",
+      "family": "動画・ゲーム向けBGM配布",
+      "curatorNote": "動画説明欄やゲーム素材欄で見かける「フリーBGM」の出どころを、楽曲ファイルではなく配布ページの入口として置く。曲数、検索、作曲者名、利用条件が、制作の裏側で参照される音の住所になっている。",
+      "sourceUrl": "https://dova-s.jp/",
+      "creator": "DOVA-SYNDROME",
+      "repository": "DOVA-SYNDROME",
+      "rights": "公開配布サイト。音声ファイル、波形、ロゴ、画面は複製せず、URLと観察文のみ記録。",
+      "description": "フリーBGM、ジングル、効果音を検索・ダウンロードできる日本語の音楽素材配布サイト。",
+      "date": "2026-07-13取得",
+      "mediaType": "audio",
+      "tags": [
+        "フリーBGM",
+        "動画制作",
+        "ゲーム制作",
+        "作曲者",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "soundeffect-lab-free-se",
+      "title": "効果音ラボ",
+      "family": "用途名で探す効果音",
+      "curatorNote": "「ボタン」「演出」「生活」「環境」のような用途名で効果音を探す感覚が、動画編集やゲーム制作の作業語として並ぶ。音を保存するのではなく、効果音が状況別に分類される配布口を見る。",
+      "sourceUrl": "https://soundeffect-lab.info/",
+      "creator": "効果音ラボ",
+      "repository": "効果音ラボ",
+      "rights": "公開配布サイト。音声ファイル、ロゴ、画面は複製せず、URLと観察文のみ記録。",
+      "description": "商用利用可能な効果音素材を用途別に公開する日本語サイト。",
+      "date": "2026-07-13取得",
+      "mediaType": "audio",
+      "tags": [
+        "効果音",
+        "動画編集",
+        "ゲーム制作",
+        "素材配布",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "maou-damashii-free-music",
+      "title": "魔王魂",
+      "family": "ゲーム感のある無料音楽",
+      "curatorNote": "RPG、バトル、歌もののようなジャンル感が、動画やゲームの制作語へそのまま移る。サイト名と曲名が作品クレジットに現れる状態を、音声ファイルではなく配布元の公開ページとして採集する。",
+      "sourceUrl": "https://maou.audio/",
+      "creator": "森田交一 / 魔王魂",
+      "repository": "魔王魂",
+      "rights": "公開配布サイト。音声ファイル、ジャケット画像、ロゴ、画面は複製せず、URLと観察文のみ記録。",
+      "description": "森田交一の無料音楽素材を公開する日本語サイト。",
+      "date": "2026-07-13取得",
+      "mediaType": "audio",
+      "tags": [
+        "フリー音楽",
+        "ゲーム制作",
+        "歌もの",
+        "クレジット",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "amacha-music-workshop",
+      "title": "甘茶の音楽工房",
+      "family": "個人制作のBGM素材",
+      "curatorNote": "「甘茶」という作者名とサイト名が、素材を借りた動画やゲームの説明文へ残る。大規模な投稿型ライブラリではなく、個人の音楽素材サイトがネット制作の共通参照先になる例として見る。",
+      "sourceUrl": "https://amachamusic.chagasi.com/",
+      "creator": "甘茶",
+      "repository": "甘茶の音楽工房",
+      "rights": "公開配布サイト。音声ファイル、画像、画面は複製せず、URLと観察文のみ記録。",
+      "description": "BGM素材・音楽素材を配布する日本語の個人サイト。",
+      "date": "2026-07-13取得",
+      "mediaType": "audio",
+      "tags": [
+        "フリーBGM",
+        "個人サイト",
+        "音楽素材",
+        "クレジット",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "otologic-free-sound-materials",
+      "title": "OtoLogic",
+      "family": "BGM・ジングル・効果音の横断配布",
+      "curatorNote": "BGM、ジングル、効果音が一つの素材サイト内で横断され、動画の短い区切りや配信の場面転換に使う音として探される。音の長さや用途が、ページのカテゴリ設計として見える。",
+      "sourceUrl": "https://otologic.jp/",
+      "creator": "OtoLogic",
+      "repository": "OtoLogic",
+      "rights": "公開配布サイト。音声ファイル、ロゴ、画面は複製せず、URLと観察文のみ記録。",
+      "description": "BGM、ジングル、効果音のフリー素材を公開する日本語サイト。",
+      "date": "2026-07-13取得",
+      "mediaType": "audio",
+      "tags": [
+        "BGM",
+        "ジングル",
+        "効果音",
+        "動画制作",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "on-jin-sound-effects",
+      "title": "On-Jin ～音人～",
+      "family": "生活音と演出音の配布",
+      "curatorNote": "効果音を生活音、環境音、操作音、演出音として分類する配布ページは、映像の不足を音で補う編集感覚をそのまま表す。個々の音ではなく、音を探すための分類語を標本にする。",
+      "sourceUrl": "https://on-jin.com/",
+      "creator": "On-Jin ～音人～",
+      "repository": "On-Jin ～音人～",
+      "rights": "公開配布サイト。音声ファイル、画像、画面は複製せず、URLと観察文のみ記録。",
+      "description": "フリー効果音を公開する日本語サイト。",
+      "date": "2026-07-13取得",
+      "mediaType": "audio",
+      "tags": [
+        "効果音",
+        "生活音",
+        "環境音",
+        "動画編集",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "hmix-gallery-free-bgm",
+      "title": "H/MIX GALLERY",
+      "family": "和風・RPG・ホラーのBGM素材",
+      "curatorNote": "和風、RPG、ホラーなどの用途語が、動画やゲームで必要な雰囲気を先に指定する検索語になる。古い素材サイトらしいカテゴリと作者名が、作品のクレジット欄へ接続する。",
+      "sourceUrl": "https://www.hmix.net/",
+      "creator": "H/MIX GALLERY",
+      "repository": "H/MIX GALLERY",
+      "rights": "公開配布サイト。音声ファイル、画像、画面は複製せず、URLと観察文のみ記録。",
+      "description": "和風、RPG、ホラーなどのBGM素材を公開する日本語サイト。",
+      "date": "2026-07-13取得",
+      "mediaType": "audio",
+      "tags": [
+        "フリーBGM",
+        "和風",
+        "RPG",
+        "ホラー",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "musmus-free-bgm",
+      "title": "MusMus",
+      "family": "商用利用OKを掲げるBGM配布",
+      "curatorNote": "「商用利用OK」「無料ダウンロード」のような短い条件語が、制作前の不安をほどく入口になる。曲の中身よりも、利用条件を読みながら音を選ぶネット制作の手順として採集する。",
+      "sourceUrl": "https://musmus.main.jp/",
+      "creator": "MusMus",
+      "repository": "MusMus",
+      "rights": "公開配布サイト。音声ファイル、画像、画面は複製せず、URLと観察文のみ記録。",
+      "description": "商用利用可能なフリーBGM・音楽素材を公開する日本語サイト。",
+      "date": "2026-07-13取得",
+      "mediaType": "audio",
+      "tags": [
+        "フリーBGM",
+        "商用利用",
+        "無料ダウンロード",
+        "利用規約",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "freesound-community-archive",
+      "title": "Freesound",
+      "family": "投稿型サウンドアーカイブ",
+      "curatorNote": "日本語の素材配布サイトから辿ると、国外には作者ごとの投稿音源、タグ、ライセンスが混在する大きな音のアーカイブがある。音を借りる感覚が、サイト単位の規約からアイテム単位のライセンス確認へ移る。",
+      "sourceUrl": "https://freesound.org/",
+      "creator": "Freesound",
+      "repository": "Freesound",
+      "rights": "投稿型公開サイト。個別音源ごとにライセンスが異なるため、音声ファイルや波形は複製せず、URLと観察文のみ記録。",
+      "description": "ユーザー投稿型のサウンド共有・検索サイト。",
+      "date": "2026-07-13取得",
+      "mediaType": "audio",
+      "tags": [
+        "sound archive",
+        "tags",
+        "Creative Commons",
+        "効果音",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "incompetech-royalty-free-music",
+      "title": "Incompetech Music",
+      "family": "royalty-free music の定番参照先",
+      "curatorNote": "日本語圏のフリーBGM感覚を外へ広げると、royalty-free music と作者名をクレジットする文化に接続する。動画説明欄で見かける英語の素材名と作者名が、配布ページのライセンス表記へ戻る。",
+      "sourceUrl": "https://incompetech.com/music/royalty-free/",
+      "creator": "Kevin MacLeod / Incompetech",
+      "repository": "Incompetech Music",
+      "rights": "公開配布サイト。音声ファイル、画像、画面は複製せず、URLと観察文のみ記録。",
+      "description": "Kevin MacLeodによるroyalty-free musicの公開配布ページ。",
+      "date": "2026-07-13取得",
+      "mediaType": "audio",
+      "tags": [
+        "royalty-free music",
+        "Creative Commons",
+        "クレジット",
+        "動画制作",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    }
+  ]
+}
