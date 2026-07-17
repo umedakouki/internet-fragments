@@ -1,0 +1,260 @@
+{
+  "id": "convenience-print-codes",
+  "title": "プリント予約番号",
+  "subtitle": "スマホのファイルがコンビニ複合機の番号・QR・期限へ変わる手順",
+  "description": "日本のコンビニで書類、写真、同人・推し活プリントを出す生活感覚から、ファイルそのものではなく、アップロード、予約番号、QRコード、有効期限、店頭マルチコピー機の操作へ変換される公開手順を採集する。セブン‐イレブンのnetprint、シャープのネットワークプリント、ローソン、ファミリーマート、デイリーヤマザキ、セイコーマートの案内から始め、国外のPrintMe系サービスへ広げることで、家庭用プリンターの有無よりも、ネット上のファイルが短い番号として街の機械に渡される形式を見る。",
+  "method": "2026-07-17時点で検証スクリプトのNode/system CA経路がHTTP 200を確認した公式ページ、公開ヘルプ、公開サービスページだけを対象にした。印刷対象の画像、文書、予約番号、QRコード、操作画面、ロゴは保存せず、公開URL、運営元、取得日、短い観察文のみを記録する。実在する個人のネップリ番号や印刷データは扱わない。",
+  "status": "published",
+  "tags": [
+    "コンビニプリント",
+    "ネットプリント",
+    "予約番号",
+    "QRコード",
+    "マルチコピー機",
+    "ファイル共有",
+    "生活インフラ"
+  ],
+  "relatedGenres": [
+    "profile-link-hubs",
+    "embed-code-snippets",
+    "free-sound-material-pages"
+  ],
+  "mapPosition": {
+    "x": 13,
+    "y": 82
+  },
+  "representativeItemId": "seven-eleven-multicopy-netprint",
+  "createdAt": "2026-07-17",
+  "updatedAt": "2026-07-17",
+  "history": [
+    {
+      "date": "2026-07-17",
+      "type": "created",
+      "summary": "コンビニ複合機へファイルを渡す予約番号・QR・有効期限の公開手順を10件で棚化。",
+      "diaryPath": "diary/2026-07-17.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "seven-eleven-multicopy-netprint",
+      "title": "セブン‐イレブン プリント",
+      "family": "予約番号とQRで店頭へ渡す",
+      "curatorNote": "スマホやPCから登録したファイルが、印刷物ではなくプリント予約番号やQRコードとしてコンビニ店頭へ持ち出される状態を見る。家の外で紙が必要になる場面が、アップロード、期限、複合機操作の手順に分解されている。",
+      "sourceUrl": "https://www.sej.co.jp/services/multicopy/print/",
+      "creator": "株式会社セブン‐イレブン・ジャパン",
+      "repository": "セブン‐イレブン マルチコピー機",
+      "rights": "公開サービスページ。画面、画像、予約番号、印刷データは複製せず、URLと観察文のみ記録。",
+      "description": "セブン‐イレブンのマルチコピー機で利用できるアプリ、写真、普通紙、ネットプリントなどの案内ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "セブン‐イレブン",
+        "netprint",
+        "予約番号",
+        "QRコード",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "seven-easy-netprint-app",
+      "title": "かんたんnetprint",
+      "family": "ログインなしの短期プリント",
+      "curatorNote": "ユーザー登録なしでPDFや写真を登録し、短い期限のあいだ番号やQRで取り出す手順を見る。アカウントではなく、その場限りの予約情報が紙への通行証になる。",
+      "sourceUrl": "https://www.sej.co.jp/services/netp_app.html",
+      "creator": "株式会社セブン‐イレブン・ジャパン",
+      "repository": "セブン‐イレブン サービス",
+      "rights": "公開サービスページ。アプリ画面、ロゴ、QRコード、印刷データは複製せず、URLと観察文のみ記録。",
+      "description": "セブン‐イレブンのかんたんnetprintアプリを紹介する公式ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "かんたんnetprint",
+        "スマホアプリ",
+        "QRコード",
+        "ユーザー登録不要",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "sharp-networkprint-portal",
+      "title": "ネットワークプリントサービス",
+      "family": "共有できるプリント番号",
+      "curatorNote": "コンビニ各社の店頭端末の背後に、シャープのネットワークプリント用ポータルがある。ファイルをアップロードして番号を受け取り、その番号を他人へ渡すことで、紙の受け取り場所が全国の複合機へ分散する。",
+      "sourceUrl": "https://networkprint.ne.jp/",
+      "creator": "シャープ株式会社 / シャープマーケティングジャパン株式会社",
+      "repository": "ネットワークプリントサービス",
+      "rights": "公開サービスページ。アップロードファイル、操作画面、番号、QRコードは複製せず、URLと観察文のみ記録。",
+      "description": "文書や画像を登録し、対応コンビニのマルチコピー機でプリントするネットワークプリントサービスの入口。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "ネットワークプリント",
+        "シャープ",
+        "プリント番号",
+        "ファイル共有",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "lawson-network-print-multicopy",
+      "title": "ローソン ネットワークプリント",
+      "family": "LINEと複合機をつなぐ",
+      "curatorNote": "ローソン店頭の複合機案内では、Web登録だけでなくLINEから写真や文書を送る導線が前面に出る。トーク画面で送ったファイルが、コンビニの読み取り口で使う番号やQRへ変わる。",
+      "sourceUrl": "https://mldata.lawson.co.jp/sp/service/others/multicopy/network-print.html",
+      "creator": "株式会社ローソン",
+      "repository": "ローソン マルチコピー機",
+      "rights": "公開サービスページ。画面、画像、LINE上の内容、番号、QRコードは複製せず、URLと観察文のみ記録。",
+      "description": "ローソンのマルチコピー機で使うネットワークプリントサービスの案内ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "ローソン",
+        "ネットワークプリント",
+        "LINE",
+        "マルチコピー機",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "lawson-content-print-number",
+      "title": "ローソン コンテンツプリント",
+      "family": "作品番号を買う店頭導線",
+      "curatorNote": "ユーザーがファイルを持ち込むだけでなく、公開されたコンテンツ番号を店頭端末へ入れて購入する形式を見る。ブロマイド、楽譜、新聞のような配布物が、商品棚ではなく検索語と番号で呼び出される。",
+      "sourceUrl": "https://mldata.lawson.co.jp/sp/service/others/print_online/",
+      "creator": "株式会社ローソン",
+      "repository": "ローソン コンテンツプリント",
+      "rights": "公開サービスページ。コンテンツ画像、番号、操作画面は複製せず、URLと観察文のみ記録。",
+      "description": "ローソンのマルチコピー機でコンテンツを選び、番号などで購入するプリントサービスの案内ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "ローソンプリント",
+        "コンテンツプリント",
+        "プリント番号",
+        "ブロマイド",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "familymart-networkprint",
+      "title": "ファミリーマート プリントサービス",
+      "family": "チェーン横断の複合機プリント",
+      "curatorNote": "ファミリーマートの案内では、写真、PDF、ネットワークプリント、コンテンツプリントが同じ店頭機械の機能として並ぶ。ファイルの出どころより、複合機が受け付ける形式と操作名が生活上の分類になる。",
+      "sourceUrl": "https://www.family.co.jp/services/print/print.html",
+      "creator": "株式会社ファミリーマート",
+      "repository": "ファミリーマート サービス",
+      "rights": "公開サービスページ。画面、画像、番号、印刷データは複製せず、URLと観察文のみ記録。",
+      "description": "ファミリーマートのマルチコピー機で利用できる写真、PDF、ネットワークプリント等の案内ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "ファミリーマート",
+        "マルチコピー機",
+        "ネットワークプリント",
+        "PDF",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "sharp-printsmash-app",
+      "title": "PrintSmash",
+      "family": "店頭Wi-Fiでスマホから渡す",
+      "curatorNote": "事前アップロードの番号とは別に、店頭でスマホと複合機を直接つなぎ、写真やPDFを渡すアプリの形式を見る。ファイルは公開URLにならず、店舗のWi-Fi接続と操作手順の中で一時的に移動する。",
+      "sourceUrl": "https://jp.sharp/print/prsm/index.html",
+      "creator": "シャープ株式会社",
+      "repository": "PrintSmash",
+      "rights": "公開アプリ紹介ページ。アプリ画面、画像、印刷データは複製せず、URLと観察文のみ記録。",
+      "description": "コンビニのマルチコピー機へスマートフォン内の写真やPDFを送るPrintSmashアプリの紹介ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "PrintSmash",
+        "スマホアプリ",
+        "Wi-Fi",
+        "PDF",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "daily-yamazaki-networkprint",
+      "title": "デイリーヤマザキ コピー・プリント",
+      "family": "店舗サービス表に残るネットワークプリント",
+      "curatorNote": "大きな専用ページではなく、店舗サービス一覧の料金表の中にネットワークプリントが置かれている。生活インフラとしては、詳しい物語よりも「ここでも番号で出せる」という短い項目が効いている。",
+      "sourceUrl": "https://www.daily-yamazaki.jp/service/",
+      "creator": "山崎製パン株式会社",
+      "repository": "デイリーヤマザキ サービス",
+      "rights": "公開サービスページ。料金表やページ本文は複製せず、URLと観察文のみ記録。",
+      "description": "デイリーヤマザキの店舗サービス一覧にあるコピー・プリント、ネットワークプリントの案内。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "デイリーヤマザキ",
+        "ネットワークプリント",
+        "店舗サービス",
+        "料金表",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "seicomart-networkprint",
+      "title": "セイコーマートのマルチコピー機",
+      "family": "地域チェーンのネットワークプリント",
+      "curatorNote": "北海道を中心にしたコンビニチェーンの案内でも、ネットワークプリントはコピー、FAX、チケットと並ぶ店頭機能として説明される。対応ファイル形式や店舗設置の条件が、全国一律ではない生活圏の差を残す。",
+      "sourceUrl": "https://www.seicomart.co.jp/service/print.html",
+      "creator": "株式会社セコマ",
+      "repository": "セイコーマート サービス",
+      "rights": "公開サービスページ。PDF手順、画面、画像、印刷データは複製せず、URLと観察文のみ記録。",
+      "description": "セイコーマートのマルチコピー機、プリント、ネットワークプリント等を説明する公式ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "セイコーマート",
+        "ネットワークプリント",
+        "地域チェーン",
+        "ファイル形式",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "printme-release-code",
+      "title": "PrintMe",
+      "family": "国外のrelease code型プリント",
+      "curatorNote": "日本のプリント予約番号から国外へ広げると、メールで送った文書をrelease codeで取り出すPrintMeの形式に接続する。番号を入力して店頭プリンターで出す発想は似ているが、コンビニ複合機ではなく公共・店舗プリンター網として説明される。",
+      "sourceUrl": "https://printme.com/",
+      "creator": "Fiery, LLC",
+      "repository": "PrintMe",
+      "rights": "公開サービスページ。画面、ロゴ、コード、印刷データは複製せず、URLと観察文のみ記録。",
+      "description": "ファイルをPrintMeサービスへ送り、release codeで対応プリンターから印刷するサービスの公式ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "PrintMe",
+        "release code",
+        "cloud print",
+        "public printer",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    }
+  ]
+}

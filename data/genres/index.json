@@ -493,6 +493,35 @@
       "representativeAsset": "assets/collections/embed-code-snippets/embed-code.svg",
       "createdAt": "2026-07-13",
       "updatedAt": "2026-07-13"
+    },
+    {
+      "id": "convenience-print-codes",
+      "title": "プリント予約番号",
+      "subtitle": "スマホのファイルがコンビニ複合機の番号・QR・期限へ変わる手順",
+      "itemCount": 10,
+      "path": "data/genres/convenience-print-codes.json",
+      "status": "published",
+      "tags": [
+        "コンビニプリント",
+        "ネットプリント",
+        "予約番号",
+        "QRコード",
+        "マルチコピー機",
+        "ファイル共有",
+        "生活インフラ"
+      ],
+      "relatedGenres": [
+        "profile-link-hubs",
+        "embed-code-snippets",
+        "free-sound-material-pages"
+      ],
+      "mapPosition": {
+        "x": 13,
+        "y": 82
+      },
+      "representativeAsset": "assets/collections/convenience-print-codes/print-code.svg",
+      "createdAt": "2026-07-17",
+      "updatedAt": "2026-07-17"
     }
   ],
   "legacyCollections": {
