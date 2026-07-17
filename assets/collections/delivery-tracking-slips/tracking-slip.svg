@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">不在票と追跡番号の模式図</title>
+  <desc id="desc">紙の不在票、追跡番号入力欄、配送状況の点列を表す自作図版。</desc>
+  <rect width="1200" height="800" fill="#f4f1ea"/>
+  <rect x="128" y="92" width="392" height="560" rx="18" fill="#fffdf8" stroke="#34312b" stroke-width="8"/>
+  <rect x="168" y="144" width="248" height="34" rx="8" fill="#34312b"/>
+  <rect x="168" y="216" width="304" height="18" rx="9" fill="#b7ad9e"/>
+  <rect x="168" y="262" width="210" height="18" rx="9" fill="#b7ad9e"/>
+  <rect x="168" y="346" width="264" height="74" rx="10" fill="#f0c96a" stroke="#34312b" stroke-width="6"/>
+  <path d="M192 383h216" stroke="#34312b" stroke-width="8" stroke-linecap="round" stroke-dasharray="24 18"/>
+  <rect x="168" y="472" width="304" height="86" rx="10" fill="#e4e0d7" stroke="#34312b" stroke-width="6"/>
+  <path d="M204 515h46m32 0h46m32 0h46" stroke="#34312b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M540 373h130" stroke="#34312b" stroke-width="10" stroke-linecap="round"/>
+  <path d="M642 325l58 48-58 48" fill="none" stroke="#34312b" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="690" y="138" width="380" height="472" rx="26" fill="#dce9e5" stroke="#34312b" stroke-width="8"/>
+  <rect x="742" y="202" width="276" height="70" rx="12" fill="#fffdf8" stroke="#34312b" stroke-width="6"/>
+  <path d="M774 237h166" stroke="#857b70" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="780" cy="360" r="20" fill="#3d7f72" stroke="#34312b" stroke-width="6"/>
+  <circle cx="880" cy="360" r="20" fill="#f0c96a" stroke="#34312b" stroke-width="6"/>
+  <circle cx="980" cy="360" r="20" fill="#fffdf8" stroke="#34312b" stroke-width="6"/>
+  <path d="M802 360h56m44 0h56" stroke="#34312b" stroke-width="6" stroke-linecap="round"/>
+  <rect x="742" y="442" width="276" height="38" rx="10" fill="#34312b"/>
+  <rect x="742" y="512" width="204" height="24" rx="12" fill="#857b70"/>
+</svg>

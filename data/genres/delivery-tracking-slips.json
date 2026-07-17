@@ -1,0 +1,260 @@
+{
+  "id": "delivery-tracking-slips",
+  "title": "不在票と追跡番号",
+  "subtitle": "紙の通知と送り状番号がWebフォーム、配達状況、再配達依頼へ変わる導線",
+  "description": "日本の宅配便でポストに残る不在連絡票、送り状番号、追跡ページ、再配達受付から始め、荷物そのものではなく、番号を入力するフォーム、配達状況の短い文、受取日時や場所を変える導線を採集する。日本郵便、ヤマト運輸、佐川急便の生活上の受付から、FedEx、Canada Post、Australia Post のtracking pageへ広げ、紙片やメール内の番号がネット上の状態表示へ変換される形式を見る。",
+  "method": "2026-07-17時点で検証スクリプトのNode/system CA経路がHTTP 200またはリダイレクトを確認した公式ページ、公開フォーム、公開ヘルプだけを対象にした。実在の追跡番号、不在票番号、配送状況、配達先、通知画面、アプリ画面、ロゴ、スクリーンショットは保存せず、公開URL、運営元、取得日、短い観察文のみを記録する。",
+  "status": "published",
+  "tags": [
+    "追跡番号",
+    "不在票",
+    "再配達",
+    "宅配便",
+    "配送状況",
+    "Webフォーム",
+    "生活インフラ"
+  ],
+  "relatedGenres": [
+    "convenience-print-codes",
+    "profile-link-hubs",
+    "service-shutdown-notices"
+  ],
+  "mapPosition": {
+    "x": 83,
+    "y": 80
+  },
+  "representativeItemId": "japan-post-receive-portal",
+  "createdAt": "2026-07-17",
+  "updatedAt": "2026-07-17",
+  "history": [
+    {
+      "date": "2026-07-17",
+      "type": "created",
+      "summary": "不在票・送り状番号・追跡フォーム・再配達受付が荷物をWeb上の状態へ変える導線を10件で棚化。",
+      "diaryPath": "diary/2026-07-17.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "japan-post-receive-portal",
+      "title": "日本郵便 受け取る",
+      "family": "受け取り入口に置かれた追跡と再配達",
+      "curatorNote": "日本郵便の受け取りページでは、追跡、再配達、日時変更、置き配が同じ生活上の入口に並ぶ。郵便物や荷物そのものではなく、問い合わせ番号を入力する欄と受け取り方の分岐として、配達後の用事がWebへ移る。",
+      "sourceUrl": "https://www.post.japanpost.jp/receive/",
+      "creator": "日本郵便株式会社",
+      "repository": "日本郵便 受け取る",
+      "rights": "公開サービスページ。画面、番号、通知内容、配送状況は複製せず、URLと観察文のみ記録。",
+      "description": "荷物のお問い合わせ、再配達等のお申込み、受け取り方変更などをまとめた日本郵便の受け取り案内ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "日本郵便",
+        "追跡番号",
+        "再配達",
+        "受け取り",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "japan-post-tracking-search",
+      "title": "郵便追跡サービス",
+      "family": "お問い合わせ番号を入れる検索",
+      "curatorNote": "伝票や発送メールにある番号が、郵便局の窓口ではなく検索フォームの入力値になる。番号を入れるだけの画面が、差し出し、引受、配達中、配達完了といった短い状態語へ荷物を変換する。",
+      "sourceUrl": "https://trackings.post.japanpost.jp/services/srv/search/",
+      "creator": "日本郵便株式会社",
+      "repository": "郵便追跡サービス",
+      "rights": "公開追跡フォーム。実在の番号、検索結果、配送状況は複製せず、URLと観察文のみ記録。",
+      "description": "お問い合わせ番号から郵便物・荷物等の配達状況を確認する日本郵便の追跡サービス。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "日本郵便",
+        "お問い合わせ番号",
+        "追跡",
+        "配送状況",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "japan-post-redelivery-request",
+      "title": "日本郵便 再配達等のお申込み",
+      "family": "不在票から再配達へ",
+      "curatorNote": "ポストに入った不在連絡票の番号や情報が、電話ではなくWebの再配達フォームへ移される。紙片が手元にあることを前提に、配達日、時間帯、受け取り方法を選び直す画面として採集する。",
+      "sourceUrl": "https://trackings.post.japanpost.jp/delivery/deli/",
+      "creator": "日本郵便株式会社",
+      "repository": "再配達等のお申込み",
+      "rights": "公開受付フォーム。実在の不在票番号、追跡番号、配達先、申込内容は複製せず、URLと観察文のみ記録。",
+      "description": "不在で届けられなかった郵便物等について再配達などを申し込む日本郵便の受付ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "日本郵便",
+        "不在票",
+        "再配達",
+        "Webフォーム",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "yamato-redelivery-guide",
+      "title": "ヤマト運輸 再配達依頼",
+      "family": "送り状番号から日時や場所を変える",
+      "curatorNote": "ヤマト運輸の再配達案内では、不在通知、送り状番号、ログイン、LINE、営業所やコンビニ受け取りがひと続きの選択肢になる。荷物を待つ生活リズムが、番号と場所変更のフォームへ分解されている。",
+      "sourceUrl": "https://www.kuronekoyamato.co.jp/ytc/customer/redelivery/",
+      "creator": "ヤマト運輸株式会社",
+      "repository": "ヤマト運輸 再配達依頼",
+      "rights": "公開サービスページ。画面、送り状番号、通知内容、個別配送状況は複製せず、URLと観察文のみ記録。",
+      "description": "送り状番号や不在通知から再配達、日時変更、場所変更などを案内するヤマト運輸のページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "ヤマト運輸",
+        "送り状番号",
+        "再配達",
+        "受取場所",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "yamato-tracking-form",
+      "title": "ヤマト運輸 荷物お問い合わせシステム",
+      "family": "伝票番号で見る配送状況",
+      "curatorNote": "宅急便の伝票番号が、店頭控えや発送メールから検索フォームへ移る。複数番号を並べて確認できる画面は、個別の荷物の中身よりも、番号列と配送ステータスの表として日常の待ち時間を扱う。",
+      "sourceUrl": "https://toi.kuronekoyamato.co.jp/cgi-bin/tneko",
+      "creator": "ヤマト運輸株式会社",
+      "repository": "荷物お問い合わせシステム",
+      "rights": "公開追跡フォーム。実在の伝票番号、検索結果、配送状況は複製せず、URLと観察文のみ記録。",
+      "description": "ヤマト運輸の荷物を伝票番号から追跡する公開問い合わせフォーム。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "ヤマト運輸",
+        "伝票番号",
+        "追跡",
+        "宅急便",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "sagawa-contact-tracking",
+      "title": "佐川急便 お問い合わせ",
+      "family": "問い合わせページ内の追跡と再配達",
+      "curatorNote": "佐川急便の問い合わせページでは、荷物追跡、Web集荷、再配達、LINE案内が同じ窓口に置かれる。追跡番号の入力欄と再配達のボタンが、電話や不在票の作業をWeb上の短い選択に置き換えている。",
+      "sourceUrl": "https://www.sagawa-exp.co.jp/contact/",
+      "creator": "佐川急便株式会社",
+      "repository": "佐川急便 お問い合わせ",
+      "rights": "公開サービスページ。画面、送り状番号、配送状況、通知内容は複製せず、URLと観察文のみ記録。",
+      "description": "荷物追跡、再配達、Web集荷などの入口をまとめた佐川急便のお問い合わせページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "佐川急便",
+        "追跡番号",
+        "再配達",
+        "LINE",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "sagawa-redelivery-request",
+      "title": "佐川急便 再配達のお申込み",
+      "family": "営業所番号と送り状番号",
+      "curatorNote": "佐川急便の再配達では、不在連絡票にある営業所番号とお問い合わせ送り状No.が申込の鍵になる。ひとつの追跡番号だけでなく、地域の営業所番号と組み合わせるところに、紙の通知がWebフォームへ移る痕跡が残る。",
+      "sourceUrl": "https://www.sagawa-exp.co.jp/redeliver/",
+      "creator": "佐川急便株式会社",
+      "repository": "佐川急便 再配達のお申込み",
+      "rights": "公開受付ページ。実在の営業所番号、送り状番号、不在票内容、申込内容は複製せず、URLと観察文のみ記録。",
+      "description": "不在連絡票の営業所番号やお問い合わせ送り状No.から再配達を依頼する佐川急便の案内ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "佐川急便",
+        "不在票",
+        "営業所番号",
+        "再配達",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "fedex-tracking-page",
+      "title": "FedEx Tracking",
+      "family": "tracking IDとdoor tagの配送管理",
+      "curatorNote": "日本の送り状番号から国外へ広げると、FedExではtracking ID、door tag、配送管理アプリが同じ追跡ページへ集まる。番号が荷物の現在地だけでなく、受取指示や配送管理の入口にもなる。",
+      "sourceUrl": "https://www.fedex.com/en-us/tracking.html",
+      "creator": "FedEx",
+      "repository": "FedEx Tracking",
+      "rights": "公開追跡ページ。実在のtracking ID、door tag、配送状況、画面画像は複製せず、URLと観察文のみ記録。",
+      "description": "FedExの荷物をtracking IDなどで追跡し、配送管理へ接続する公式ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "FedEx",
+        "tracking ID",
+        "door tag",
+        "delivery manager",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "canada-post-track-package",
+      "title": "Canada Post Track",
+      "family": "delivery notice cardとtracking number",
+      "curatorNote": "Canada Postの追跡ページは、tracking numberだけでなくdelivery notice card numberやreference numberにも触れる。日本の不在票と同じように、配達員が残した紙片の番号が、オンラインの受け取り確認へ接続する。",
+      "sourceUrl": "https://www.canadapost-postescanada.ca/track-reperage/en",
+      "creator": "Canada Post",
+      "repository": "Canada Post Track",
+      "rights": "公開追跡ページ。実在のtracking number、delivery notice card number、配送状況、画面画像は複製せず、URLと観察文のみ記録。",
+      "description": "Canada Postの荷物をtracking number、delivery notice card numberなどで追跡する公式ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "Canada Post",
+        "tracking number",
+        "delivery notice card",
+        "reference number",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "australia-post-track-parcel",
+      "title": "Australia Post Track a parcel",
+      "family": "tracking numberだけのparcel form",
+      "curatorNote": "Australia Postの追跡フォームでは、ログインしなくてもtracking numberを入れて荷物を確認できる。番号だけの入口と、アプリやアカウントで通知を増やす入口が並び、受け取りの不安をフォームと通知で管理する。",
+      "sourceUrl": "https://auspost.com.au/mypost/track/search?ilink=hfo",
+      "creator": "Australia Post",
+      "repository": "Australia Post Tracking",
+      "rights": "公開追跡ページ。実在のtracking number、配送状況、通知画像、画面画像は複製せず、URLと観察文のみ記録。",
+      "description": "Australia Postの荷物をtracking numberで確認する公式追跡ページ。",
+      "date": "2026-07-17取得",
+      "mediaType": "text",
+      "tags": [
+        "Australia Post",
+        "tracking number",
+        "parcel",
+        "delivery status",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    }
+  ]
+}

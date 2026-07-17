@@ -522,6 +522,35 @@
       "representativeAsset": "assets/collections/convenience-print-codes/print-code.svg",
       "createdAt": "2026-07-17",
       "updatedAt": "2026-07-17"
+    },
+    {
+      "id": "delivery-tracking-slips",
+      "title": "不在票と追跡番号",
+      "subtitle": "紙の通知と送り状番号がWebフォーム、配達状況、再配達依頼へ変わる導線",
+      "itemCount": 10,
+      "path": "data/genres/delivery-tracking-slips.json",
+      "status": "published",
+      "tags": [
+        "追跡番号",
+        "不在票",
+        "再配達",
+        "宅配便",
+        "配送状況",
+        "Webフォーム",
+        "生活インフラ"
+      ],
+      "relatedGenres": [
+        "convenience-print-codes",
+        "profile-link-hubs",
+        "service-shutdown-notices"
+      ],
+      "mapPosition": {
+        "x": 83,
+        "y": 80
+      },
+      "representativeAsset": "assets/collections/delivery-tracking-slips/tracking-slip.svg",
+      "createdAt": "2026-07-17",
+      "updatedAt": "2026-07-17"
     }
   ],
   "legacyCollections": {
