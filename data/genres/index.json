@@ -551,6 +551,35 @@
       "representativeAsset": "assets/collections/delivery-tracking-slips/tracking-slip.svg",
       "createdAt": "2026-07-17",
       "updatedAt": "2026-07-17"
+    },
+    {
+      "id": "login-verification-codes",
+      "title": "認証コードの入力待ち",
+      "subtitle": "SMS、メール、端末通知、復旧コードがログイン画面の短い数字になる",
+      "itemCount": 10,
+      "path": "data/genres/login-verification-codes.json",
+      "status": "published",
+      "tags": [
+        "認証コード",
+        "SMS認証",
+        "二段階認証",
+        "ログイン",
+        "本人確認",
+        "復旧コード",
+        "アカウント"
+      ],
+      "relatedGenres": [
+        "profile-link-hubs",
+        "search-avoidance-meta-tags",
+        "silent-reaction-buttons"
+      ],
+      "mapPosition": {
+        "x": 76,
+        "y": 52
+      },
+      "representativeAsset": "assets/collections/login-verification-codes/auth-code.svg",
+      "createdAt": "2026-07-18",
+      "updatedAt": "2026-07-18"
     }
   ],
   "legacyCollections": {

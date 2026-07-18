@@ -1,0 +1,260 @@
+{
+  "id": "login-verification-codes",
+  "title": "認証コードの入力待ち",
+  "subtitle": "SMS、メール、端末通知、復旧コードがログイン画面の短い数字になる",
+  "description": "日本語圏のLINE、Yahoo! JAPAN、PayPay、メルカリ、dアカウントで日常的に出会うSMS認証番号やセキュリティコードから始め、Google、Apple、Microsoft、GitHub の二段階認証・復旧コードへ広げる。観察対象は実際のコードや個人アカウントではなく、ログイン、機種変更、本人確認、復旧の場面で、メール、SMS、端末通知、保存ファイルが短い入力値として扱われる形式である。",
+  "method": "2026-07-18時点で検証スクリプトのNode/system CA経路がHTTP 200またはリダイレクトを確認した公式ヘルプ、公開サポート文書、公開サービス案内だけを対象にした。実在の認証番号、電話番号、メール本文、QRコード、復旧コード、ログイン画面、通知画面、ロゴ、スクリーンショットは保存せず、公開URL、運営元、取得日、短い観察文のみを記録する。",
+  "status": "published",
+  "tags": [
+    "認証コード",
+    "SMS認証",
+    "二段階認証",
+    "ログイン",
+    "本人確認",
+    "復旧コード",
+    "アカウント"
+  ],
+  "relatedGenres": [
+    "profile-link-hubs",
+    "search-avoidance-meta-tags",
+    "silent-reaction-buttons"
+  ],
+  "mapPosition": {
+    "x": 76,
+    "y": 52
+  },
+  "representativeItemId": "line-sms-verification-number",
+  "createdAt": "2026-07-18",
+  "updatedAt": "2026-07-18",
+  "history": [
+    {
+      "date": "2026-07-18",
+      "type": "created",
+      "summary": "SMS・メール・端末通知・復旧コードがログイン時の短い入力値になる場面を10件で棚化。",
+      "diaryPath": "diary/2026-07-18.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "line-sms-verification-number",
+      "title": "LINE 認証番号が届かない",
+      "family": "電話番号をアカウントへ結び直すSMS",
+      "curatorNote": "LINEの電話番号認証では、SMSまたは通話で届く認証番号が、機種変更やアカウント引き継ぎの入口になる。固定電話、050番号、データ専用SIMが除外される説明から、コード入力は単なる数字ではなく、生活で使っている携帯番号をアカウントの所有証明へ変える手順として見える。",
+      "sourceUrl": "https://help.line.me/line/smartphone?contentId=20000104&lang=ja",
+      "creator": "LINEヤフー株式会社",
+      "repository": "LINEヘルプセンター",
+      "rights": "公開ヘルプページ。認証番号、電話番号、通知、画面画像は複製せず、URLと観察文のみ記録。",
+      "description": "LINEで電話番号の認証ができない場合や、認証番号が届かない場合の公式ヘルプ。",
+      "date": "2026-07-18取得",
+      "mediaType": "text",
+      "tags": [
+        "LINE",
+        "SMS認証",
+        "認証番号",
+        "機種変更",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "yahoo-japan-sms-authentication",
+      "title": "Yahoo! JAPAN SMS認証とは",
+      "family": "確認コードを聞き出されないための注意書き",
+      "curatorNote": "Yahoo! JAPANのSMS認証説明では、携帯電話に届く確認コードを入力する仕組みと、他人に教えないという警告が同じページに置かれる。ログイン用の小さな数字は本人確認であると同時に、電話やSMSで聞き出される危険な情報としても扱われる。",
+      "sourceUrl": "https://support.yahoo-net.jp/PccLogin/s/article/H000010775",
+      "creator": "LINEヤフー株式会社",
+      "repository": "Yahoo! JAPANヘルプ",
+      "rights": "公開ヘルプページ。確認コード、SMS本文、個人ID、画面画像は複製せず、URLと観察文のみ記録。",
+      "description": "Yahoo! JAPAN IDのログインで利用されるSMS認証の仕組みと注意事項を説明する公式ページ。",
+      "date": "2026-07-18取得",
+      "mediaType": "text",
+      "tags": [
+        "Yahoo! JAPAN",
+        "SMS認証",
+        "確認コード",
+        "不正アクセス",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "paypay-sms-code-not-arriving",
+      "title": "PayPay SMS認証コードが届かない",
+      "family": "決済アプリの番号受信トラブル",
+      "curatorNote": "PayPayのヘルプでは、ログインや登録時に登録済み携帯番号へ届くSMS認証コードを前提に、届かない場合の確認が並ぶ。決済アプリの利用権限が、パスワードだけでなく、携帯電話番号、SMS受信設定、フィッシング注意の組み合わせで守られている。",
+      "sourceUrl": "https://paypay.ne.jp/help/c0012/",
+      "creator": "PayPay株式会社",
+      "repository": "PayPayヘルプ",
+      "rights": "公開ヘルプページ。SMS本文、認証コード、電話番号、アプリ画面、ロゴは複製せず、URLと観察文のみ記録。",
+      "description": "PayPayでSMS認証コードが届かない場合の確認事項をまとめた公式ヘルプ。",
+      "date": "2026-07-18取得",
+      "mediaType": "text",
+      "tags": [
+        "PayPay",
+        "SMS認証",
+        "決済アプリ",
+        "フィッシング",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "mercari-phone-verification-reason",
+      "title": "メルカリ 電話番号を認証する理由",
+      "family": "売買アプリで求められるSMS認証",
+      "curatorNote": "メルカリでは、新規登録、再ログイン、支払い用口座、購入時など複数の生活動作に電話番号認証が挟まる。フリマの取引そのものではなく、SMSで届く認証番号が、支払い、購入、端末変更の境目に置かれる形式を採集する。",
+      "sourceUrl": "https://help.jp.mercari.com/guide/articles/244/",
+      "creator": "株式会社メルカリ",
+      "repository": "メルカリガイド",
+      "rights": "公開ヘルプページ。認証番号、電話番号、アプリ画面、個別取引情報は複製せず、URLと観察文のみ記録。",
+      "description": "メルカリで電話番号認証が必要になる理由とタイミングを説明する公式ガイド。",
+      "date": "2026-07-18取得",
+      "mediaType": "text",
+      "tags": [
+        "メルカリ",
+        "電話番号認証",
+        "SMS",
+        "フリマアプリ",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "docomo-d-account-two-step-auth",
+      "title": "dアカウント 2段階認証",
+      "family": "SMSとメールで届くセキュリティコード",
+      "curatorNote": "dアカウントの2段階認証は、SMSまたは連絡先メールアドレスへ届く6桁のセキュリティコードを入力する方式として説明される。携帯回線、連絡先メール、パスキー、強弱設定が同じ認証導線に並び、通信契約とWebアカウントの境目がコード入力に集まる。",
+      "sourceUrl": "https://id.smt.docomo.ne.jp/src/utility/twostepauth.html",
+      "creator": "株式会社NTTドコモ",
+      "repository": "dアカウント",
+      "rights": "公開サービスページ。セキュリティコード、電話番号、メール本文、画面画像は複製せず、URLと観察文のみ記録。",
+      "description": "dアカウントの2段階認証とSMS/メールによるセキュリティコード入力を説明する公式ページ。",
+      "date": "2026-07-18取得",
+      "mediaType": "text",
+      "tags": [
+        "dアカウント",
+        "2段階認証",
+        "セキュリティコード",
+        "携帯回線",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "google-two-step-verification-help",
+      "title": "Google 2段階認証プロセス",
+      "family": "複数の本人確認チャレンジ",
+      "curatorNote": "Googleの2段階認証では、パスワードの後に、端末通知、認証アプリ、SMS、パスキーなどの追加確認が並ぶ。日本語圏のSMS認証から外へ広げると、ひとつの数字だけでなく、アカウントが状況に応じて別の本人確認チャレンジを選ぶ仕組みとして見える。",
+      "sourceUrl": "https://support.google.com/accounts/answer/185839?hl=ja",
+      "creator": "Google",
+      "repository": "Google アカウント ヘルプ",
+      "rights": "公開ヘルプページ。確認コード、通知、アカウント情報、画面画像は複製せず、URLと観察文のみ記録。",
+      "description": "Googleアカウントの2段階認証プロセスを有効にする方法と利用できる追加確認を説明する公式ヘルプ。",
+      "date": "2026-07-18取得",
+      "mediaType": "text",
+      "tags": [
+        "Google",
+        "2段階認証",
+        "確認コード",
+        "パスキー",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "apple-account-verification-code",
+      "title": "Apple Account verification code",
+      "family": "信頼済みデバイスに表示される6桁コード",
+      "curatorNote": "Apple Accountの二要素認証では、新しいデバイスやブラウザでのサインイン時に、信頼済みデバイスやSMS、電話で6桁の確認コードを受け取る。コードはメール本文の一部ではなく、すでに所有している端末と新しいログイン画面のあいだをつなぐ短い許可として働く。",
+      "sourceUrl": "https://support.apple.com/en-us/102606",
+      "creator": "Apple",
+      "repository": "Apple Support",
+      "rights": "公開サポートページ。確認コード、端末通知、電話番号、画面画像は複製せず、URLと観察文のみ記録。",
+      "description": "Apple Accountの二要素認証で確認コードを取得しサインインする方法を説明する公式サポートページ。",
+      "date": "2026-07-18取得",
+      "mediaType": "text",
+      "tags": [
+        "Apple Account",
+        "verification code",
+        "trusted device",
+        "two-factor authentication",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "microsoft-security-info-codes",
+      "title": "Microsoft Help us secure your account",
+      "family": "代替連絡先へ送るverification code",
+      "curatorNote": "Microsoftアカウントでは、サインイン時に本人確認が必要になると、アクセスできるメールアドレスや電話番号へverification codeを送る説明が出る。連絡先はプロフィール情報ではなく、今ログインしようとしている本人かどうかを確認する一時的な受け皿として扱われる。",
+      "sourceUrl": "https://support.microsoft.com/en-us/account-billing/help-us-secure-your-account-548970dd-45df-49ca-a21c-c87e47bd421c",
+      "creator": "Microsoft",
+      "repository": "Microsoft Support",
+      "rights": "公開サポートページ。セキュリティコード、メール本文、電話番号、画面画像は複製せず、URLと観察文のみ記録。",
+      "description": "Microsoftアカウントのサインイン時に代替メールアドレスや電話番号へverification codeを送って本人確認する流れを説明する公式サポートページ。",
+      "date": "2026-07-18取得",
+      "mediaType": "text",
+      "tags": [
+        "Microsoft",
+        "security code",
+        "verification method",
+        "passkey",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "github-recovery-codes-file",
+      "title": "GitHub recovery codes",
+      "family": "保存しておく復旧用コード列",
+      "curatorNote": "GitHubの2FA復旧コードは、SMSで毎回届く番号とは違い、あらかじめ保存しておく使い捨てのコード列として説明される。ログインできなくなったときに取り出すファイル名や保管場所まで含めて、コードがその場の通知ではなく、将来の復旧用の小さな資料になる。",
+      "sourceUrl": "https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication-recovery-methods",
+      "creator": "GitHub",
+      "repository": "GitHub Docs",
+      "rights": "公開ドキュメント。復旧コードそのもの、個人アカウント情報、画面画像は複製せず、URLと観察文のみ記録。",
+      "description": "GitHubで2FA復旧コードなどのアカウント復旧方法を設定する公式ドキュメント。",
+      "date": "2026-07-18取得",
+      "mediaType": "text",
+      "tags": [
+        "GitHub",
+        "2FA",
+        "recovery codes",
+        "account recovery",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "github-email-one-time-password",
+      "title": "GitHub one-time password recovery",
+      "family": "メールで始まるアカウント復旧",
+      "curatorNote": "GitHubで2FA手段を失った場合の復旧手順には、メールに送られるone-time passwordや、以前確認済みのデバイス、SSH key、personal access tokenが登場する。ひとつのコードが通れば終わりではなく、メール、端末、開発者用の鍵が段階的に本人確認へ使われる。",
+      "sourceUrl": "https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/recovering-your-account-if-you-lose-your-2fa-credentials",
+      "creator": "GitHub",
+      "repository": "GitHub Docs",
+      "rights": "公開ドキュメント。one-time password、復旧コード、メール本文、個人アカウント情報は複製せず、URLと観察文のみ記録。",
+      "description": "GitHubで2FA認証情報を失った場合に、復旧コードやone-time passwordなどでアカウントを復旧する手順を説明する公式ドキュメント。",
+      "date": "2026-07-18取得",
+      "mediaType": "text",
+      "tags": [
+        "GitHub",
+        "one-time password",
+        "2FA",
+        "account recovery",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    }
+  ]
+}
