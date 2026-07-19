@@ -580,6 +580,35 @@
       "representativeAsset": "assets/collections/login-verification-codes/auth-code.svg",
       "createdAt": "2026-07-18",
       "updatedAt": "2026-07-18"
+    },
+    {
+      "id": "unsubscribe-footer-links",
+      "title": "配信停止リンク",
+      "subtitle": "受信箱の下端、通知設定、List-Unsubscribe がメールや通知を止める導線になる",
+      "itemCount": 10,
+      "path": "data/genres/unsubscribe-footer-links.json",
+      "status": "published",
+      "tags": [
+        "配信停止",
+        "メールマガジン",
+        "通知設定",
+        "List-Unsubscribe",
+        "メール",
+        "購読",
+        "ウェブ作法"
+      ],
+      "relatedGenres": [
+        "link-policy-phrases",
+        "feed-subscription-endpoints",
+        "silent-reaction-buttons"
+      ],
+      "mapPosition": {
+        "x": 64,
+        "y": 48
+      },
+      "representativeAsset": "assets/collections/unsubscribe-footer-links/unsubscribe-link.svg",
+      "createdAt": "2026-07-20",
+      "updatedAt": "2026-07-20"
     }
   ],
   "legacyCollections": {

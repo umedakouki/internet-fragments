@@ -1,0 +1,260 @@
+{
+  "id": "unsubscribe-footer-links",
+  "title": "配信停止リンク",
+  "subtitle": "受信箱の下端、通知設定、List-Unsubscribe がメールや通知を止める導線になる",
+  "description": "日本語圏の受信箱で見かける「配信停止」「登録解除」「通知オフ」から始める。Yahoo!メール、Gmail、楽天市場、PayPay、LINE、LINEMO の案内では、不要になった配信がメール本文の下端、受信箱のボタン、アプリ内設定、専用フォームへ分かれて置かれる。そこから国外の送信者ガイドライン、Yahoo Sender Hub、RFC 8058、Mailchimp の置換タグへ広げ、読者側の小さな解除リンクが、送信者側ではヘッダー、フッター、ワンクリックURL、テンプレート変数として管理される形式を見る。",
+  "method": "2026-07-20時点で検証スクリプトのNode/system CA経路がHTTP 200を確認した公開ヘルプ、公式サポート、公開仕様、配信基盤ドキュメントだけを対象にした。個人のメール本文、配信停止URL、購読者ID、メールアドレス、通知画面、ロゴ、スクリーンショットは保存せず、公開URL、運営元、取得日、短い観察文のみを記録する。",
+  "status": "published",
+  "tags": [
+    "配信停止",
+    "メールマガジン",
+    "通知設定",
+    "List-Unsubscribe",
+    "メール",
+    "購読",
+    "ウェブ作法"
+  ],
+  "relatedGenres": [
+    "link-policy-phrases",
+    "feed-subscription-endpoints",
+    "silent-reaction-buttons"
+  ],
+  "mapPosition": {
+    "x": 64,
+    "y": 48
+  },
+  "representativeItemId": "yahoo-japan-mail-delivery-stop",
+  "createdAt": "2026-07-20",
+  "updatedAt": "2026-07-20",
+  "history": [
+    {
+      "date": "2026-07-20",
+      "type": "created",
+      "summary": "受信者の配信停止導線と送信者側のList-Unsubscribe・テンプレート管理を10件で棚化。",
+      "diaryPath": "diary/2026-07-20.md"
+    }
+  ],
+  "itemCount": 10,
+  "items": [
+    {
+      "id": "yahoo-japan-mail-delivery-stop",
+      "title": "Yahoo!メール 配信停止",
+      "family": "受信箱側で探す登録解除",
+      "curatorNote": "Yahoo!メールのヘルプは、広告メールやメルマガを止める操作を、届いたメールの本文ではなくメールサービス側の案内として見せる。解除リンクは送信者のページへ戻ることもあれば、受信箱の迷惑メール対策や表示機能の一部として読まれる。",
+      "sourceUrl": "https://support.yahoo-net.jp/PccMail/s/article/H000014535",
+      "creator": "LINEヤフー株式会社",
+      "repository": "Yahoo!メールヘルプ",
+      "rights": "公開ヘルプページ。個人のメール本文、配信停止URL、メールアドレス、画面画像は複製せず、URLと観察文のみ記録。",
+      "description": "Yahoo!メールで不要なメールや配信停止に関する操作を案内する公式ヘルプ。",
+      "date": "2026-07-20取得",
+      "mediaType": "text",
+      "tags": [
+        "Yahoo!メール",
+        "配信停止",
+        "メールマガジン",
+        "受信箱",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "gmail-unsubscribe-button",
+      "title": "Gmail メールの登録解除",
+      "family": "本文外に出る登録解除ボタン",
+      "curatorNote": "Gmailの日本語ヘルプでは、プロモーションメールやニュースレターから登録解除する操作が、メール本文中のリンクだけでなくGmail画面内の導線として説明される。送信者が置いたフッターの文言が、受信箱側のボタンや警告表示へ翻訳される点を採集する。",
+      "sourceUrl": "https://support.google.com/mail/answer/15433283?co=GENIE.Platform%3DDesktop&hl=ja",
+      "creator": "Google",
+      "repository": "Gmail ヘルプ",
+      "rights": "公開ヘルプページ。個人のメール本文、購読状態、画面画像、アカウント情報は複製せず、URLと観察文のみ記録。",
+      "description": "Gmailで不要なメールの登録を解除する方法を説明する日本語ヘルプ。",
+      "date": "2026-07-20取得",
+      "mediaType": "text",
+      "tags": [
+        "Gmail",
+        "登録解除",
+        "プロモーション",
+        "受信箱",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "rakuten-mailmag-stop",
+      "title": "楽天市場 メルマガ停止",
+      "family": "大量のショップ配信をまとめて止める",
+      "curatorNote": "楽天市場のメルマガ停止案内は、買い物の履歴やショップとの関係が、複数のメールマガジン購読状態として管理されることを示す。受信者にとっては受信箱の下端にある解除リンクだが、サービス側では一括停止、個別停止、反映待ちの設定群として扱われる。",
+      "sourceUrl": "https://ichiba-smp.faq.rakuten.net/detail/000002738",
+      "creator": "楽天グループ株式会社",
+      "repository": "楽天市場 ヘルプ・問い合わせ",
+      "rights": "公開ヘルプページ。個人の購読状態、メール本文、メールアドレス、画面画像は複製せず、URLと観察文のみ記録。",
+      "description": "楽天市場のメールマガジン配信停止に関する公式ヘルプ。",
+      "date": "2026-07-20取得",
+      "mediaType": "text",
+      "tags": [
+        "楽天市場",
+        "メルマガ",
+        "配信停止",
+        "EC",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "paypay-email-notification-settings",
+      "title": "PayPay メール通知設定",
+      "family": "決済アプリ内の案内メール設定",
+      "curatorNote": "PayPayのヘルプでは、キャンペーン情報や提携企業の商品案内を受け取るかどうかが、アプリに登録したメールアドレスの設定として説明される。配信停止リンクだけでなく、決済アプリ内の通知設定が受信箱の量を調整する場所になる。",
+      "sourceUrl": "https://paypay.ne.jp/help/c0318/",
+      "creator": "PayPay株式会社",
+      "repository": "PayPay ヘルプ",
+      "rights": "公開ヘルプページ。個人のメールアドレス、通知設定、アプリ画面、ロゴは複製せず、URLと観察文のみ記録。",
+      "description": "PayPayアプリに登録したメールアドレスへのメール通知設定を説明する公式ヘルプ。",
+      "date": "2026-07-20取得",
+      "mediaType": "text",
+      "tags": [
+        "PayPay",
+        "メール通知",
+        "キャンペーン",
+        "アプリ設定",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "line-notification-messages",
+      "title": "LINE 通知メッセージ",
+      "family": "友だち追加なしで届く通知を止める",
+      "curatorNote": "LINEの通知メッセージは、メールではなくトークに届く企業通知だが、配信を止める導線は受け取る側の設定として現れる。受信箱の解除リンクと同じ問いを、メールアドレスではなく電話番号照合とトーク画面の通知文化へ移して観察できる。",
+      "sourceUrl": "https://help.line.me/line/smartphone/?contentId=20011418&lang=ja",
+      "creator": "LINEヤフー株式会社",
+      "repository": "LINEヘルプセンター",
+      "rights": "公開ヘルプページ。トーク本文、通知内容、電話番号、画面画像、ロゴは複製せず、URLと観察文のみ記録。",
+      "description": "LINEの通知メッセージの仕組みと設定を説明する公式ヘルプ。",
+      "date": "2026-07-20取得",
+      "mediaType": "text",
+      "tags": [
+        "LINE",
+        "通知メッセージ",
+        "通知設定",
+        "トーク",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "linemo-mail-stop-form",
+      "title": "LINEMO 配信停止フォーム",
+      "family": "通信会社のキャンペーンメール停止口",
+      "curatorNote": "LINEMOの公式サイトには、メール配信停止のための専用ページが置かれている。メール本文の下端にある小さなリンクを辿ると、通信会社の販促、契約導線、キャンペーン案内を止めるための独立したフォームへ着く。",
+      "sourceUrl": "https://www.linemo.jp/mail/stop/",
+      "creator": "ソフトバンク株式会社",
+      "repository": "LINEMO 公式サイト",
+      "rights": "公開サービスページ。個人のメールアドレス、配信停止手続き内容、画面画像、ロゴは複製せず、URLと観察文のみ記録。",
+      "description": "LINEMOのメール配信停止手続きページ。",
+      "date": "2026-07-20取得",
+      "mediaType": "text",
+      "tags": [
+        "LINEMO",
+        "配信停止",
+        "メール",
+        "通信サービス",
+        "日本語圏"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "gmail-bulk-sender-unsubscribe",
+      "title": "Gmail 送信者ガイドライン",
+      "family": "解除リンクを送信者要件にする",
+      "curatorNote": "Gmailの送信者向けガイドラインでは、受信者が見つける登録解除が、送信者の認証、迷惑メール率、ヘッダー要件と並んで扱われる。読者側の便利ボタンは、国外の大量送信者にとってはList-Unsubscribeを含む到達性の条件になる。",
+      "sourceUrl": "https://support.google.com/mail/answer/81126?hl=ja",
+      "creator": "Google",
+      "repository": "Gmail ヘルプ",
+      "rights": "公開ヘルプページ。本文や図版を複製せず、URLと観察文のみ記録。",
+      "description": "Gmail宛てにメールを送信する送信者向け要件と推奨事項を説明する日本語ヘルプ。",
+      "date": "2026-07-20取得",
+      "mediaType": "text",
+      "tags": [
+        "Gmail",
+        "List-Unsubscribe",
+        "一括送信",
+        "送信者要件",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "yahoo-sender-subscription-hub",
+      "title": "Yahoo Sender Hub Subscription Hub",
+      "family": "購読管理を送信者機能にする",
+      "curatorNote": "YahooのSender Hubでは、購読管理が受信箱の迷惑メール対策ではなく、送信者向けの機能群として説明される。配信停止は読者が押すリンクであると同時に、送信側が苦情率や到達率を保つために設計するSubscription Hubになる。",
+      "sourceUrl": "https://senders.yahooinc.com/subhub/",
+      "creator": "Yahoo Inc.",
+      "repository": "Yahoo Sender Hub",
+      "rights": "公開ドキュメント。本文、UI画像、ブランド素材は複製せず、URLと観察文のみ記録。",
+      "description": "Yahoo Sender Hub内で提供されるSubscription Hub機能の案内ページ。",
+      "date": "2026-07-20取得",
+      "mediaType": "text",
+      "tags": [
+        "Yahoo",
+        "Subscription Hub",
+        "配信停止",
+        "deliverability",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    },
+    {
+      "id": "rfc8058-one-click-list-unsubscribe",
+      "title": "RFC 8058 One-Click",
+      "family": "ヘッダーで合図するワンクリック解除",
+      "curatorNote": "RFC 8058は、List-Unsubscribeヘッダーにワンクリック解除の合図を追加する仕様として読める。本文フッターの「配信停止」から辿ると、解除URLはメール本文の文章ではなく、受信クライアントが解釈できるヘッダー上の機械可読な約束にもなる。",
+      "sourceUrl": "https://www.rfc-editor.org/rfc/rfc8058.html",
+      "creator": "IETF / J. Levine / T. Herkula",
+      "repository": "RFC Editor",
+      "rights": "公開仕様文書。本文転載はせず、URL、仕様名、観察文のみ記録。",
+      "description": "List Email Headersでワンクリック解除機能を知らせるためのRFC 8058。",
+      "date": "2026-07-20取得",
+      "mediaType": "text",
+      "tags": [
+        "RFC 8058",
+        "List-Unsubscribe",
+        "メールヘッダー",
+        "one-click",
+        "国外"
+      ],
+      "rightsStatus": "unknown",
+      "captureMode": "linked"
+    },
+    {
+      "id": "mailchimp-unsubscribe-merge-tag",
+      "title": "Mailchimp unsubscribe merge tag",
+      "family": "テンプレート変数として置く解除リンク",
+      "curatorNote": "Mailchimpの案内では、解除リンクが本文中の固定文ではなく、キャンペーンテンプレートに入れる merge tag として説明される。受信者にはフッターの短いリンクとして見えるが、送信者側では置換タグ、配信リスト、法令順守、フッター編集の部品になる。",
+      "sourceUrl": "https://mailchimp.com/help/the-unsubscribe-merge-tag/",
+      "creator": "Intuit Mailchimp",
+      "repository": "Mailchimp Help Center",
+      "rights": "公開ヘルプページ。本文、UI画像、テンプレート例の転載はせず、URLと観察文のみ記録。",
+      "description": "Mailchimpキャンペーンにunsubscribe merge tagを追加する方法を説明する公式ヘルプ。",
+      "date": "2026-07-20取得",
+      "mediaType": "text",
+      "tags": [
+        "Mailchimp",
+        "unsubscribe",
+        "merge tag",
+        "メールテンプレート",
+        "国外"
+      ],
+      "rightsStatus": "restricted",
+      "captureMode": "linked"
+    }
+  ]
+}

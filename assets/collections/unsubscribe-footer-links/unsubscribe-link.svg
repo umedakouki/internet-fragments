@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">配信停止リンク</title>
+  <desc id="desc">メール本文の下端にある解除リンクと、送信者側のヘッダー設定を抽象化した自作図版。</desc>
+  <rect width="960" height="540" fill="#f5f1e8"/>
+  <rect x="86" y="68" width="788" height="404" rx="30" fill="#fffdfa" stroke="#233039" stroke-width="10"/>
+  <path d="M128 146h704" stroke="#233039" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="150" cy="108" r="13" fill="#db5b46" stroke="#233039" stroke-width="6"/>
+  <circle cx="194" cy="108" r="13" fill="#e6b84d" stroke="#233039" stroke-width="6"/>
+  <circle cx="238" cy="108" r="13" fill="#6aa59b" stroke="#233039" stroke-width="6"/>
+  <rect x="144" y="186" width="392" height="24" rx="12" fill="#233039"/>
+  <rect x="144" y="238" width="546" height="18" rx="9" fill="#9fa7aa"/>
+  <rect x="144" y="280" width="498" height="18" rx="9" fill="#c4c7c7"/>
+  <rect x="144" y="322" width="420" height="18" rx="9" fill="#c4c7c7"/>
+  <path d="M144 397h344" stroke="#db5b46" stroke-width="18" stroke-linecap="round"/>
+  <path d="M144 432h192" stroke="#233039" stroke-width="11" stroke-linecap="round"/>
+  <rect x="596" y="204" width="220" height="184" rx="24" fill="#e2d6bf" stroke="#233039" stroke-width="8"/>
+  <path d="M632 252h148M632 294h112M632 336h148" stroke="#233039" stroke-width="12" stroke-linecap="round"/>
+  <path d="M702 408c0 30-24 54-54 54s-54-24-54-54 24-54 54-54 54 24 54 54Z" fill="#6aa59b" stroke="#233039" stroke-width="8"/>
+  <path d="m626 409 17 17 31-39" fill="none" stroke="#233039" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M510 398c66-10 90-44 101-92" fill="none" stroke="#db5b46" stroke-width="9" stroke-linecap="round"/>
+  <path d="m609 306 25 16-32 10" fill="none" stroke="#db5b46" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
